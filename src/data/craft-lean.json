@@ -108,6 +108,30 @@
     "ucademy": {
       "lean": "founder_led",
       "note": "Business-driven education iteration before PM framework worship."
+    },
+    "capchase": {
+      "lean": "pm_craft",
+      "note": "Squads with dedicated PMs translate company OKRs into product bets."
+    },
+    "decathlon": {
+      "lean": "pm_craft",
+      "note": "PMM owns lifestyle repositioning with Head of Product — not only SKU pages."
+    },
+    "hello-app": {
+      "lean": "founder_led",
+      "note": "Founder acts as PM — coordinates CTO and open-source contributors."
+    },
+    "nominis": {
+      "lean": "founder_led",
+      "note": "CEO owns product definition, design, and mission handoff to tech."
+    },
+    "ting": {
+      "lean": "founder_led",
+      "note": "Founder pain from a logistics sales floor shapes the automation bet."
+    },
+    "eva": {
+      "lean": "founder_led",
+      "note": "Founder shipped a days-long public-health chatbot MVP before process."
     }
   }
 }

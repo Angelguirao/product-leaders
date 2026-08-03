@@ -271,5 +271,44 @@
       "pole": "Inclusion as scope law"
     },
     "note": "Innovamat replaces textbooks with a problem-first curriculum OS schools buy wholesale; ApoloKids treats accessibility as a core constraint that shapes kids’ game scope from day one."
+  },
+  {
+    "id": "underwriting-vs-rails",
+    "axis": "What is the fintech wedge?",
+    "a": {
+      "slug": "capchase",
+      "pole": "Underwriting as core IP"
+    },
+    "b": {
+      "slug": "devengo",
+      "pole": "Kill UX — sell rails"
+    },
+    "note": "Capchase expands funding products from a SaaS risk model; Devengo abandoned a me-too salary-advance consumer play and rebuilt as account-to-account payments infrastructure."
+  },
+  {
+    "id": "factory-vs-humanization",
+    "axis": "What makes DTC defensible?",
+    "a": {
+      "slug": "freshly-cosmetics",
+      "pole": "Own the factory"
+    },
+    "b": {
+      "slug": "dogfy-diet",
+      "pole": "Humanize the subscription"
+    },
+    "note": "Freshly Cosmetics vertically integrates lab→pack→DTC so ecommerce can change formulation without suppliers; Dogfy Diet bets the product is cooked, personalized pet meals — humanization, not aisle SKUs."
+  },
+  {
+    "id": "explore-data-vs-govern-ai",
+    "axis": "How do companies unlock their data?",
+    "a": {
+      "slug": "graphext",
+      "pole": "Explore without a gatekeeper"
+    },
+    "b": {
+      "slug": "capably",
+      "pole": "Prep + govern for AI"
+    },
+    "note": "Graphext’s bet is unused data becomes useful when exploration isn’t locked behind data science; Capably sells enterprise AI adoption as data prep, governance, and ops integration before hours can be delegated."
   }
 ]

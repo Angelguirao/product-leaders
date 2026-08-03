@@ -69,5 +69,36 @@
       "why": "Mostly Factorial philosophy via Itnig — Factorial already published."
     }
   ],
-  "tension_seeds": []
+  "tension_seeds": [
+    {
+      "a": "ting",
+      "b": "getinvoice",
+      "axis": "Whose hours does automation recover?",
+      "note": "Ting sells talk-time back to sales reps; GetInvoice is a solo-founder loop automating SMB invoice pain without a classic product org."
+    },
+    {
+      "a": "nova-talent",
+      "b": "thiga",
+      "axis": "Is community the product or the halo?",
+      "note": "Nova Talent builds a premium B2C professional community on top of B2B headhunting; Thiga treats La Product Conf as positioning infrastructure so consulting rides the community halo."
+    },
+    {
+      "a": "decathlon",
+      "b": "iskaypet",
+      "axis": "How does retail digital earn its keep?",
+      "note": "Decathlon Outdoor uses the app to sell experiences, not only gear; IskayPet ships digital only when stores and category P&L can absorb it."
+    },
+    {
+      "a": "mercado-libre",
+      "b": "cabify",
+      "axis": "Platform compound or marketplace balance?",
+      "note": "Mercado Libre judges bets by how they compound the ecosystem; Cabify balances two-sided liquidity as one system."
+    },
+    {
+      "a": "eva",
+      "b": "nominis",
+      "axis": "What is the learning/health distribution channel?",
+      "note": "Eva used conversational AI as the channel for teen public-health content; Nominis teaches kids English like Netflix — stories and gamification over drills."
+    }
+  ]
 }
