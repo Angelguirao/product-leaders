@@ -1,0 +1,76 @@
+{
+  "_meta": {
+    "blurb": "Browse lenses for the tension list — every id still appears once under All."
+  },
+  "themes": [
+    {
+      "id": "craft",
+      "label": "Craft & ownership",
+      "ids": [
+        "who-owns-discovery",
+        "product-engineering-vs-pm",
+        "pm-deleted-vs-pm-as-p-and-l",
+        "permission-vs-process",
+        "mobile-mvp-vs-pmm-strategy",
+        "autonomy-vs-cohesion"
+      ]
+    },
+    {
+      "id": "marketplace",
+      "label": "Marketplace & platform",
+      "ids": [
+        "liquidity-vs-retention",
+        "liquidity-vs-repeat",
+        "ecosystem-vs-liquidity",
+        "platform-vs-abstraction",
+        "primitives-vs-agents",
+        "buyer-vs-user",
+        "idle-storage-vs-crypto-primitives"
+      ]
+    },
+    {
+      "id": "gtm",
+      "label": "Growth & GTM",
+      "ids": [
+        "experiment-vs-sales",
+        "talk-time-vs-solo-maker",
+        "democratize-bots-vs-founder-rd",
+        "ugly-mvp-vs-travel-job",
+        "demand-signals-vs-travel-job"
+      ]
+    },
+    {
+      "id": "data",
+      "label": "Data & AI",
+      "ids": [
+        "explore-data-vs-govern-ai",
+        "instrument-later-vs-year-round"
+      ]
+    },
+    {
+      "id": "content",
+      "label": "Content & community",
+      "ids": [
+        "belonging-vs-curriculum-os",
+        "community-product-vs-halo",
+        "club-entertainment-vs-curation",
+        "collab-decks-vs-founder-forms",
+        "taste-vs-engineering",
+        "chat-channel-vs-netflix-kids",
+        "curriculum-os-vs-inclusion"
+      ]
+    },
+    {
+      "id": "industry",
+      "label": "Industry bets",
+      "ids": [
+        "underwriting-vs-rails",
+        "factory-vs-humanization",
+        "retail-pnl-vs-white-label",
+        "lifestyle-app-vs-retail-pnl",
+        "primary-account-vs-access",
+        "one-version-vs-vertical-os"
+      ]
+    }
+  ]
+}

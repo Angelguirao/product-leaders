@@ -71,18 +71,6 @@
   ],
   "tension_seeds": [
     {
-      "a": "atrapalo",
-      "b": "waynabox",
-      "axis": "Chase demand signals or design from the job?",
-      "note": "Atrápalo stayed multi-vertical by chasing empty capacity across leisure; Waynabox starts from the travel constraint even when AI makes mediocre interfaces cheap."
-    },
-    {
-      "a": "hello-app",
-      "b": "crossmint",
-      "axis": "What is the decentralized product bet?",
-      "note": "hello.app monetizes idle device storage into a network; Crossmint sells crypto primitives so apps can embed wallets without becoming a chain company."
-    },
-    {
       "a": "piper",
       "b": "ting",
       "axis": "Same sales-hours bet — different sharpness?",

@@ -861,6 +861,59 @@ button.text-link {
   letter-spacing: -0.015em;
 }
 
+.tension-filters {
+  margin: 0 0 2rem;
+}
+
+.tension-filters__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.filter-chip {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  background: transparent;
+  border: 1px solid var(--map-rule);
+  border-radius: var(--radius-control);
+  padding: 0.4rem 0.7rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.filter-chip:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.filter-chip.is-active {
+  color: var(--foreground);
+  border-color: color-mix(in srgb, var(--accent) 55%, var(--map-rule));
+  background: color-mix(in srgb, var(--accent-soft) 35%, var(--surface));
+}
+
+.filter-chip__count {
+  opacity: 0.65;
+  font-size: 0.65rem;
+}
+
+.tension[hidden] {
+  display: none !important;
+}
+
+.tension-empty {
+  margin: 0 0 2rem;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+
 .tension-list {
   display: flex;
   flex-direction: column;

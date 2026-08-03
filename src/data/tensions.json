@@ -401,5 +401,31 @@
       "pole": "Founder-led form R&D"
     },
     "note": "Pitch assumes presentations are team work with design-system consistency, not solo PowerPoint files; Typeform explores founder-led bets that fold into the form product or spin out as separate brands."
+  },
+  {
+    "id": "demand-signals-vs-travel-job",
+    "axis": "Chase demand signals or design from the job?",
+    "a": {
+      "slug": "atrapalo",
+      "pole": "Chase empty capacity across verticals"
+    },
+    "b": {
+      "slug": "waynabox",
+      "pole": "Design from the travel job"
+    },
+    "note": "Atrápalo stayed a multi-vertical leisure marketplace by chasing demand signals and empty capacity — they literally started selling tickets by fax; Waynabox starts from the travel constraint even when AI makes mediocre interfaces cheap."
+  },
+  {
+    "id": "idle-storage-vs-crypto-primitives",
+    "axis": "What is the decentralized product bet?",
+    "a": {
+      "slug": "hello-app",
+      "pole": "Monetize idle device storage"
+    },
+    "b": {
+      "slug": "crossmint",
+      "pole": "Crypto primitives for apps"
+    },
+    "note": "hello.app turns unused device capacity into a decentralized storage network users earn from; Crossmint sells wallet and chain primitives so product teams embed crypto without becoming a protocol company."
   }
 ]

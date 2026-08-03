@@ -16,16 +16,16 @@
       }
     },
     {
-      "id": "pm-purpose",
-      "prompt": "What is a PM for in your org?",
+      "id": "prove-or-polish",
+      "prompt": "When do you invest in polish?",
       "a": {
-        "label": "Delete the role if it doesn’t create unique value — technical leads hold the loop",
-        "tension": "pm-deleted-vs-pm-as-p-and-l",
+        "label": "Keep tools ugly until the market answers — process comes after demand",
+        "tension": "ugly-mvp-vs-travel-job",
         "side": "a"
       },
       "b": {
-        "label": "Each PM owns a P&L metric end-to-end, like a mini business unit",
-        "tension": "pm-deleted-vs-pm-as-p-and-l",
+        "label": "Design from the user job now — even when AI makes mediocre interfaces cheap",
+        "tension": "ugly-mvp-vs-travel-job",
         "side": "b"
       }
     },
@@ -44,30 +44,30 @@
       }
     },
     {
-      "id": "data-readiness",
-      "prompt": "When does product data need to be perfect?",
+      "id": "unlock-data",
+      "prompt": "How should a company unlock its data?",
       "a": {
-        "label": "Qualitative insight + whatever spreadsheet exists — instrument later",
-        "tension": "instrument-later-vs-year-round",
+        "label": "Let domain experts explore without a data-science gatekeeper",
+        "tension": "explore-data-vs-govern-ai",
         "side": "a"
       },
       "b": {
-        "label": "Build a year-round data product so the loop never waits on filing season",
-        "tension": "instrument-later-vs-year-round",
+        "label": "Prep, govern, and integrate ops before AI can take working hours",
+        "tension": "explore-data-vs-govern-ai",
         "side": "b"
       }
     },
     {
-      "id": "ship-gates",
-      "prompt": "How gated should shipping be?",
+      "id": "community-role",
+      "prompt": "What is community for in a product business?",
       "a": {
-        "label": "Skip CEO and sales gates — autonomy is the operating system",
-        "tension": "permission-vs-process",
+        "label": "Community is the product — curated connections beat placements alone",
+        "tension": "community-product-vs-halo",
         "side": "a"
       },
       "b": {
-        "label": "Pick explore / expand / extract methods by lifecycle stage — process matches maturity",
-        "tension": "permission-vs-process",
+        "label": "Community is positioning infrastructure — consulting rides the halo",
+        "tension": "community-product-vs-halo",
         "side": "b"
       }
     }
