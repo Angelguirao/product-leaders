@@ -4,7 +4,7 @@ import pagefind from "astro-pagefind";
 import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
-  site: "https://product-leaders.vercel.app",
+  site: "https://product-leaders-self.vercel.app",
   integrations: [
     sitemap(),
     pagefind({
