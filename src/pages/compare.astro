@@ -1,24 +1,48 @@
 ---
 import Base from "../layouts/Base.astro";
 import companies from "../data/companies.json";
+import tensions from "../data/tensions.json";
+import { craftFor, craftShort } from "../lib/craft.mjs";
 
 const options = companies
-  .map((c) => ({
-    slug: c.slug,
-    name: c.name,
-    stage: c.stage || "other",
-    thesis: c.thesis || "",
-    practices: c.practices || [],
-    ownership: c.episodes?.[0]?.ownership || [],
-    loop_bullets: c.episodes?.[0]?.loop_bullets || [],
-    loop_mermaid: Boolean(c.episodes?.[0]?.loop_mermaid),
-    context: c.episodes?.[0]?.context || "",
-    guest: c.episodes?.[0]?.guest || "",
-    role: c.episodes?.[0]?.role || "",
-  }))
+  .map((c) => {
+    const craft = craftFor(c.slug);
+    return {
+      slug: c.slug,
+      name: c.name,
+      stage: c.stage || "other",
+      thesis: c.thesis || "",
+      practices: c.practices || [],
+      ownership: c.episodes?.[0]?.ownership || [],
+      loop_bullets: c.episodes?.[0]?.loop_bullets || [],
+      loop_mermaid: Boolean(c.episodes?.[0]?.loop_mermaid),
+      context: c.episodes?.[0]?.context || "",
+      guest: c.episodes?.[0]?.guest || "",
+      role: c.episodes?.[0]?.role || "",
+      craft: craft
+        ? { lean: craft.lean, short: craftShort(craft.lean) }
+        : null,
+    };
+  })
   .sort((a, b) => a.name.localeCompare(b.name));
 
-const payload = JSON.stringify(options);
+const tensionIndex = tensions
+  .filter(
+    (t) =>
+      options.some((o) => o.slug === t.a.slug) &&
+      options.some((o) => o.slug === t.b.slug)
+  )
+  .map((t) => ({
+    id: t.id,
+    axis: t.axis,
+    note: t.note,
+    a: t.a.slug,
+    b: t.b.slug,
+    aPole: t.a.pole,
+    bPole: t.b.pole,
+  }));
+
+const payload = JSON.stringify({ orgs: options, tensions: tensionIndex });
 ---
 
 <Base
@@ -32,7 +56,7 @@ const payload = JSON.stringify(options);
       them apart in twenty seconds, the card isn’t sharp enough.
     </p>
     <div class="compare-presets" id="compare-presets">
-      <p class="section-label">Try a preset</p>
+      <p class="section-label">Curated arguments</p>
       <div class="compare-presets__row">
         <a class="peer-chip" href="/compare?a=atrapalo&amp;b=waynabox&amp;c=cabify"
           >Demand signals vs travel job</a
@@ -91,7 +115,7 @@ const payload = JSON.stringify(options);
     </div>
   </div>
 
-  <div class="compare-picker" id="compare-root" data-orgs={payload}>
+  <div class="compare-picker" id="compare-root" data-payload={payload}>
     <div class="compare-selects">
       <label>
         Org A
@@ -116,6 +140,7 @@ const payload = JSON.stringify(options);
         Copy compare link
       </button>
     </p>
+    <div class="compare-match" id="compare-match" hidden></div>
     <div class="compare-grid" id="compare-grid" aria-live="polite"></div>
   </div>
 </Base>
@@ -123,14 +148,18 @@ const payload = JSON.stringify(options);
 <script>
   const root = document.getElementById("compare-root");
   if (root) {
+    const data = JSON.parse(root.getAttribute("data-payload") || "{}");
     /** @type {Array<any>} */
-    const orgs = JSON.parse(root.getAttribute("data-orgs") || "[]");
+    const orgs = data.orgs || [];
+    /** @type {Array<any>} */
+    const tensionList = data.tensions || [];
     const bySlug = Object.fromEntries(orgs.map((o) => [o.slug, o]));
 
     const selA = /** @type {HTMLSelectElement} */ (document.getElementById("cmp-a"));
     const selB = /** @type {HTMLSelectElement} */ (document.getElementById("cmp-b"));
     const selC = /** @type {HTMLSelectElement} */ (document.getElementById("cmp-c"));
     const grid = document.getElementById("compare-grid");
+    const matchEl = document.getElementById("compare-match");
 
     function fillSelect(sel, includeEmpty) {
       if (!sel) return;
@@ -167,6 +196,13 @@ const payload = JSON.stringify(options);
         .replace(/"/g, "&quot;");
     }
 
+    function findTension(aSlug, bSlug) {
+      return tensionList.find(
+        (t) =>
+          (t.a === aSlug && t.b === bSlug) || (t.a === bSlug && t.b === aSlug)
+      );
+    }
+
     function card(o) {
       if (!o) return "";
       const ownership = (o.ownership || [])
@@ -177,9 +213,13 @@ const payload = JSON.stringify(options);
         .slice(0, 5)
         .map((b) => `<li>${esc(b)}</li>`)
         .join("");
+      const craft = o.craft
+        ? `<span class="craft-pill craft-pill--${esc(o.craft.lean)}">${esc(o.craft.short)}</span>`
+        : "";
       return `<article class="compare-card">
         <p class="section-label">${esc(o.stage)}</p>
         <h2><a href="/companies/${esc(o.slug)}">${esc(o.name)}</a></h2>
+        ${craft}
         <p class="compare-card__meta">${esc([o.guest, o.role].filter(Boolean).join(" · "))}</p>
         <p class="compare-card__thesis">${esc(o.thesis)}</p>
         ${o.context ? `<p class="compare-card__context">${esc(o.context)}</p>` : ""}
@@ -199,6 +239,27 @@ const payload = JSON.stringify(options);
       </article>`;
     }
 
+    function renderMatch(aSlug, bSlug) {
+      if (!matchEl) return;
+      const t = findTension(aSlug, bSlug);
+      if (!t) {
+        matchEl.hidden = true;
+        matchEl.innerHTML = "";
+        return;
+      }
+      matchEl.hidden = false;
+      matchEl.innerHTML = `
+        <p class="section-label">Matched tension</p>
+        <h2 class="compare-match__axis">${esc(t.axis)}</h2>
+        <p class="compare-match__note">${esc(t.note)}</p>
+        <p class="hero-actions">
+          <a class="hero-cta" href="/tensions/${esc(t.id)}">Open this tension →</a>
+          <a class="text-link" href="/desk?a=${esc(aSlug)}&amp;b=${esc(bSlug)}">Print desk cards</a>
+          <a class="text-link" href="/steal?go=1">Steal another bet</a>
+        </p>
+      `;
+    }
+
     function render() {
       const a = bySlug[selA?.value || ""];
       const b = bySlug[selB?.value || ""];
@@ -208,6 +269,7 @@ const payload = JSON.stringify(options);
         grid.style.setProperty("--compare-cols", String(Math.max(picked.length, 1)));
         grid.innerHTML = picked.map(card).join("");
       }
+      renderMatch(selA?.value || "", selB?.value || "");
       const q = new URLSearchParams();
       if (selA?.value) q.set("a", selA.value);
       if (selB?.value) q.set("b", selB.value);
@@ -220,11 +282,17 @@ const payload = JSON.stringify(options);
     selC?.addEventListener("change", render);
 
     document.getElementById("cmp-surprise")?.addEventListener("click", () => {
-      if (orgs.length < 2) return;
-      const pool = [...orgs].sort(() => Math.random() - 0.5);
-      if (selA) selA.value = pool[0].slug;
-      if (selB) selB.value = pool[1].slug;
-      if (selC) selC.value = pool[2]?.slug || "";
+      if (tensionList.length) {
+        const t = tensionList[Math.floor(Math.random() * tensionList.length)];
+        if (selA) selA.value = t.a;
+        if (selB) selB.value = t.b;
+        if (selC) selC.value = "";
+      } else if (orgs.length >= 2) {
+        const pool = [...orgs].sort(() => Math.random() - 0.5);
+        if (selA) selA.value = pool[0].slug;
+        if (selB) selB.value = pool[1].slug;
+        if (selC) selC.value = pool[2]?.slug || "";
+      }
       render();
     });
 

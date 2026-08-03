@@ -651,6 +651,43 @@ button.text-link {
   border-color: var(--accent);
 }
 
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem 1.25rem;
+  align-items: center;
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+  color: var(--surface);
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-control);
+  padding: 0.55rem 0.95rem;
+  text-decoration: none;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.hero-cta:hover {
+  background: color-mix(in srgb, var(--accent) 85%, #000);
+  border-color: color-mix(in srgb, var(--accent) 85%, #000);
+  color: var(--surface);
+}
+
+.tension-spotlight__axis a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.tension-spotlight__axis a:hover {
+  color: var(--accent);
+}
+
 .filter-count {
   margin: 0.75rem 0 0;
   font-family: var(--font-mono);
@@ -1007,13 +1044,55 @@ button.text-link {
   margin: 0;
 }
 
-.tension__pole h3 {
+.tension__pole h3,
+.tension__pole h2 {
   font-family: var(--font-display);
   font-weight: 500;
   font-size: 1.35rem;
   letter-spacing: -0.02em;
   margin: 0;
   line-height: 1.15;
+}
+
+.tension__pole h2 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.tension__pole h2 a:hover {
+  color: var(--accent);
+}
+
+.tension--solo .tension__pole:hover {
+  background: var(--surface);
+}
+
+.tension__own {
+  margin: 0.35rem 0 0;
+  padding: 0 0 0 1.1rem;
+  text-align: left;
+  font-size: 0.88rem;
+  line-height: 1.4;
+  color: var(--muted);
+}
+
+.tension__own li + li {
+  margin-top: 0.35rem;
+}
+
+.tension__own strong {
+  color: var(--foreground);
+  font-weight: 600;
+}
+
+.tension-steal-line {
+  margin: 1.25rem 0 0;
+  max-width: 42rem;
+  font-size: 1.02rem;
+}
+
+.tension-steal-line a {
+  color: var(--accent);
 }
 
 .tension__thesis {
@@ -1413,6 +1492,60 @@ button.text-link {
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--muted);
+}
+
+.desk-card__pole {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.desk-axis {
+  margin: 0 0 1.25rem;
+  max-width: 40rem;
+}
+
+.desk-axis h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.35rem;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.5rem;
+}
+
+.desk-axis p {
+  margin: 0 0 0.5rem;
+  color: var(--muted);
+}
+
+.desk-axis__steal {
+  color: var(--foreground) !important;
+  font-size: 1rem;
+}
+
+.compare-match {
+  margin: 1.25rem 0 1.5rem;
+  padding: 1.1rem 1.25rem;
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, var(--map-rule));
+  background: color-mix(in srgb, var(--accent-soft) 30%, var(--surface));
+  max-width: 48rem;
+}
+
+.compare-match__axis {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.45rem;
+}
+
+.compare-match__note {
+  margin: 0 0 0.85rem;
+  color: var(--muted);
+  font-size: 0.95rem;
 }
 
 .desk-card h2 {

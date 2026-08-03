@@ -34,9 +34,22 @@ const presets = tensions
     label: t.axis,
     a: t.a.slug,
     b: t.b.slug,
+    id: t.id,
   }));
 
-const payload = JSON.stringify(options);
+const tensionIndex = tensions
+  .filter((t) => bySlug[t.a.slug] && bySlug[t.b.slug])
+  .map((t) => ({
+    id: t.id,
+    axis: t.axis,
+    note: t.note,
+    a: t.a.slug,
+    b: t.b.slug,
+    aPole: t.a.pole,
+    bPole: t.b.pole,
+  }));
+
+const payload = JSON.stringify({ orgs: options, tensions: tensionIndex });
 ---
 
 <Base
@@ -70,7 +83,7 @@ const payload = JSON.stringify(options);
     </div>
   </div>
 
-  <div class="desk-root" id="desk-root" data-orgs={payload}>
+  <div class="desk-root" id="desk-root" data-payload={payload}>
     <div class="desk-picker no-print compare-selects">
       <label>
         Card A
@@ -106,8 +119,11 @@ const payload = JSON.stringify(options);
 <script>
   const root = document.getElementById("desk-root");
   if (!root) throw new Error("desk root missing");
+  const data = JSON.parse(root.dataset.payload || "{}");
   /** @type {any[]} */
-  const orgs = JSON.parse(root.dataset.orgs || "[]");
+  const orgs = data.orgs || [];
+  /** @type {any[]} */
+  const tensionList = data.tensions || [];
   const bySlug = Object.fromEntries(orgs.map((o) => [o.slug, o]));
 
   const selA = /** @type {HTMLSelectElement} */ (document.getElementById("desk-a"));
@@ -145,7 +161,15 @@ const payload = JSON.stringify(options);
       .replace(/"/g, "&quot;");
   }
 
-  function cardHtml(o) {
+  function findTension(aSlug, bSlug) {
+    if (!aSlug || !bSlug) return null;
+    return tensionList.find(
+      (t) =>
+        (t.a === aSlug && t.b === bSlug) || (t.a === bSlug && t.b === aSlug)
+    );
+  }
+
+  function cardHtml(o, pole) {
     const ownership = (o.ownership || [])
       .map((b) => `<li>${escapeHtml(b)}</li>`)
       .join("");
@@ -154,6 +178,7 @@ const payload = JSON.stringify(options);
       .join("");
     return `
       <article class="desk-card">
+        ${pole ? `<p class="desk-card__pole">${escapeHtml(pole)}</p>` : ""}
         <p class="desk-card__meta">${escapeHtml(o.stage)}${
           o.guest ? ` · ${escapeHtml(o.guest)}` : ""
         }</p>
@@ -194,8 +219,29 @@ const payload = JSON.stringify(options);
       sheet.innerHTML = `<p class="empty">Pick at least one org.</p>`;
       return;
     }
-    sheet.innerHTML = `<div class="desk-grid desk-grid--${cards.length}">${cards
-      .map(cardHtml)
+
+    const t = findTension(selA.value, selB.value);
+    let header = "";
+    let poleBySlug = {};
+    if (t && !selC.value) {
+      poleBySlug[t.a] = t.aPole;
+      poleBySlug[t.b] = t.bPole;
+      header = `
+        <header class="desk-axis">
+          <p class="section-label">Tension</p>
+          <h2>${escapeHtml(t.axis)}</h2>
+          <p>${escapeHtml(t.note)}</p>
+          <p class="desk-axis__steal">
+            Steal from <strong>${escapeHtml(bySlug[t.a]?.name || t.a)}</strong>
+            (“${escapeHtml(t.aPole)}”), then argue with
+            <strong>${escapeHtml(bySlug[t.b]?.name || t.b)}</strong>.
+          </p>
+        </header>
+      `;
+    }
+
+    sheet.innerHTML = `${header}<div class="desk-grid desk-grid--${cards.length}">${cards
+      .map((c) => cardHtml(c, poleBySlug[c.slug]))
       .join("")}</div>`;
     syncUrl();
   }

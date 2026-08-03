@@ -87,10 +87,10 @@ const freshTensions = [...tensions]
       in English.
     </p>
     <p class="hero-actions">
-      <a class="text-link" href="/tensions">Enter via tensions →</a>
-      <a class="text-link" href="/steal?go=1">Steal a random bet</a>
-      <a class="text-link" href="#map">Browse the map</a>
-      <a class="text-link" href="/compare">Compare</a>
+      <a class="hero-cta" href="/steal?go=1">Steal a bet →</a>
+      <a class="text-link" href="/tensions">Browse tensions</a>
+      <a class="text-link" href="/pole">Which pole are you?</a>
+      <a class="text-link" href="#map">Map</a>
     </p>
     <p class="hero-meta">
       {atlas.company_count} orgs · {tensions.length} tensions ·{" "}
@@ -102,8 +102,10 @@ const freshTensions = [...tensions]
   {
     spotlightTension ? (
       <section class="tension-spotlight tension-spotlight--hero">
-        <p class="section-label">Start here</p>
-        <h2 class="tension-spotlight__axis">{spotlightTension.axis}</h2>
+        <p class="section-label">Start here · stealable argument</p>
+        <h2 class="tension-spotlight__axis">
+          <a href={`/tensions/${spotlightTension.id}`}>{spotlightTension.axis}</a>
+        </h2>
         <p class="tension-spotlight__note">{spotlightTension.note}</p>
         <div class="tension__duel">
           <a class="tension__pole" href={`/companies/${spotlightTension.a.slug}`}>
@@ -134,15 +136,17 @@ const freshTensions = [...tensions]
           </a>
         </div>
         <p class="hero-actions" style="margin-top: 1rem;">
+          <a class="hero-cta" href={`/tensions/${spotlightTension.id}`}>
+            Steal this bet →
+          </a>
           <a class="text-link" href="/pole">Which pole are you?</a>
-          <a class="text-link" href="/tensions">All tensions →</a>
-          <a class="text-link" href="/gaps">See the gaps</a>
           <a
             class="text-link"
             href={`/compare?a=${spotlightTension.a.slug}&b=${spotlightTension.b.slug}`}
           >
-            Open this pair in compare
+            Compare the pair
           </a>
+          <a class="text-link" href="/tensions">All tensions</a>
         </p>
       </section>
     ) : null

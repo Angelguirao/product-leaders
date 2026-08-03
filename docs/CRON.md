@@ -9,10 +9,10 @@ The atlas stays current via GitHub Actions:
 ## Pipeline
 
 ```
-catalog → process (pending YouTube only) → index (incl. OG SVGs) → commit → push
+catalog → process (pending YouTube only) → index (incl. OG PNGs) → commit → push
 ```
 
-Vercel deploys production from `main` after the push.
+Vercel deploys production from `main` after the push. `npm run index` emits PNG Open Graph images (1200×630) from the SVG templates so Slack / X / LinkedIn previews work.
 
 Default cap: **8 new briefs per day** (`PL_PROCESS_LIMIT`). Raise via workflow input or repo variable.
 
