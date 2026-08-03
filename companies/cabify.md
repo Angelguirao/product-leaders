@@ -31,3 +31,32 @@
 - *The main need is to move from point A to point B, and many times the user doesn't care which application it is, as long as the price is acceptable and the pickup time is reasonable.*
 
 [Source](../episodes/como-hacer-producto-en-un-marketplace-eloi-pardo-head-of-product-en-ca-6Kp7vOnuG9s.md)
+
+## Ramón Andrío
+
+### Operating loop
+
+```mermaid
+flowchart TD
+    A[Sales Input & Client Needs] --> B{Identify B2B Opportunities};
+    B --> C[Develop Core Service Offering];
+    C --> D[Adapt for Specific Company Requirements];
+    D --> E[Integrate with Client's Expense Systems];
+    E --> F[Provide Consolidated Invoicing & Reporting];
+    F --> G[Refine Based on Usage Data & Feedback];
+```
+
+### Ownership
+
+- **Discovery:** Primarily driven by sales teams who are closest to client needs and market opportunities. Product teams collaborate with sales to understand these needs and translate them into service offerings.
+- **Prioritization:** Influenced by sales input regarding revenue potential and ease of sale, alongside product team analysis of market trends and technological feasibility.
+- **Shipping:** Involves adapting the core service for specific client requirements and ensuring seamless integration with their systems.
+- **Sales Input:** Crucial for identifying opportunities and shaping the product roadmap.
+- **Design:** Focuses on creating a user-friendly platform for businesses, including features for expense control and reporting.
+
+### Evidence
+
+- *Cabify's configuration for businesses generates a full invoice for the entire trip, whereas Uber's configuration invoices only its commission.*
+- *The company aims to provide predictable pricing and comprehensive reporting, which is a significant advantage for businesses managing expenses.*
+
+[Source](../episodes/las-claves-para-ser-product-manager-con-ramon-andrio-head-of-product-d-CnxPjb9Ha-k.md)

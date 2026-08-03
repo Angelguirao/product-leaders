@@ -10,12 +10,13 @@ company: "Bonilista"
 company_slug: "bonilista"
 stage: "growth"
 practices: ["ai_product", "discovery", "delivery", "growth"]
-status: weak
+status: published
 processed_at: 2026-08-03T17:58:10.550Z
 ---
 
 ## Thesis
-Bonilista treats an email list as insufficient for community — product is belonging and participation, not broadcast. Held weak: media/community thesis, not a product-org operating system.
+Bonilista treats an email list as insufficient for community — product is belonging and participation, not broadcast reach.
+
 
 ## Context — David Bonilla is a product leader and entrepreneur who has founded multiple companies and created a prominent tech newsletter, La Bonilista. His ventures span recruitment, creator community tools, and M&A advisory, all stemming from his deep understanding of community building and product development.
 

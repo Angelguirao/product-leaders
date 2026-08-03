@@ -10,12 +10,13 @@ company: "GuruWalk"
 company_slug: "guruwalk"
 stage: "growth"
 practices: ["discovery", "delivery", "growth", "founder"]
-status: weak
+status: published
 processed_at: 2026-08-03T18:01:31.151Z
 ---
 
 ## Thesis
-GuruWalk’s radical autonomy culture let a crisis swarm ship Anem (Valencia flood car-sharing) without hierarchy gates — mission over monetization. Held weak: one-off crisis product, not a steady org card.
+GuruWalk’s org bet is radical autonomy — a crisis swarm shipped Anem (Valencia flood car-sharing) without hierarchy gates, treating mission speed as the operating system.
+
 
 ## Context — GuruWalk is a global platform for free tours, connecting travelers with local guides. The company operates with a unique culture prioritizing employee motivation and commitment, which facilitated the swift creation of a new product, Anem, to address immediate mobility issues in Valencia following severe flooding.
 

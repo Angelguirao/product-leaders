@@ -4,8 +4,8 @@ youtube_id: "MDwT_3SAhDk"
 url: "https://www.youtube.com/watch?v=MDwT_3SAhDk"
 audio_url: "https://anchor.fm/s/ddca5200/podcast/play/111139507/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2025-10-13%2F412441117-44100-2-7c59bd0d8f67b.mp3"
 pub_date: "2025-11-13T18:26:02.000Z"
-guest: "Founder"
-role: null
+guest: "Alfonso Gómez-Jordana"
+role: "Co-founder"
 company: "Crossmint"
 company_slug: "crossmint"
 stage: "early"
@@ -19,7 +19,7 @@ Crossmint bets on programmable money primitives as APIs — wallets, payments, t
 
 
 ## Context
-Crossmin provides developer tools and APIs for companies looking to integrate "programmatic economy" tools, which include elements like stablecoins and NFTs. The company aims to simplify the use of these emerging technologies for businesses.
+Crossmint provides developer tools and APIs for companies looking to integrate "programmatic economy" tools, which include elements like stablecoins and NFTs. The company aims to simplify the use of these emerging technologies for businesses.
 
 ## Operating loop
 ```mermaid
@@ -45,7 +45,7 @@ flowchart TD
 ## Gaps
 *   The specific regulatory hurdles and compliance strategies for each vertical are not detailed.
 *   The long-term vision for AI agent integration beyond current low-risk use cases remains abstract.
-*   The exact process for how Crossmin's APIs interact with traditional financial systems or fiat currency conversion is not fully elaborated.
+*   The exact process for how Crossmint's APIs interact with traditional financial systems or fiat currency conversion is not fully elaborated.
 
 ## Listen
 

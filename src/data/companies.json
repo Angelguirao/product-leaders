@@ -173,6 +173,45 @@
     "episode_count": 1
   },
   {
+    "slug": "bonilista",
+    "name": "Bonilista",
+    "stage": "growth",
+    "practices": [
+      "ai_product",
+      "discovery",
+      "delivery",
+      "growth"
+    ],
+    "guests": [
+      {
+        "name": "David Bonilla",
+        "role": "Creator",
+        "episode_slug": "una-lista-de-correos-no-es-una-comunidad-con-david-bonilla-creador-la--4E1OvRrQzcQ"
+      }
+    ],
+    "episodes": [
+      {
+        "slug": "una-lista-de-correos-no-es-una-comunidad-con-david-bonilla-creador-la--4E1OvRrQzcQ",
+        "title": "\\\"Una Lista de Correos NO es una Comunidad\\\" con David Bonilla, creador \\\"La Bonilista\\\"",
+        "guest": "David Bonilla",
+        "role": "Creator",
+        "pub_date": "2025-01-22T15:00:00.000Z",
+        "url": "https://www.youtube.com/watch?v=4E1OvRrQzcQ",
+        "thesis": "Bonilista treats an email list as insufficient for community — product is belonging and participation, not broadcast reach.",
+        "context": "",
+        "ownership": [],
+        "evidence": [],
+        "gaps": [],
+        "loop_bullets": [],
+        "loop_mermaid": null,
+        "overview": "Bonilista treats an email list as insufficient for community — product is belonging and participation, not broadcast reach.",
+        "workflow_mermaid": null
+      }
+    ],
+    "thesis": "Bonilista treats an email list as insufficient for community — product is belonging and participation, not broadcast reach.",
+    "episode_count": 1
+  },
+  {
     "slug": "cabify",
     "name": "Cabify",
     "stage": "scale",
@@ -187,6 +226,11 @@
         "name": "Eloi Pardo",
         "role": "Head of Product",
         "episode_slug": "como-hacer-producto-en-un-marketplace-eloi-pardo-head-of-product-en-ca-6Kp7vOnuG9s"
+      },
+      {
+        "name": "Ramón Andrío",
+        "role": "Head of Product",
+        "episode_slug": "las-claves-para-ser-product-manager-con-ramon-andrio-head-of-product-d-CnxPjb9Ha-k"
       }
     ],
     "episodes": [
@@ -227,10 +271,48 @@
         "loop_mermaid": null,
         "overview": "Cabify product balances two-sided marketplace liquidity: rider experience and driver supply are one system — local market ops and product ship together.",
         "workflow_mermaid": null
+      },
+      {
+        "slug": "las-claves-para-ser-product-manager-con-ramon-andrio-head-of-product-d-CnxPjb9Ha-k",
+        "title": "Las claves para ser Product Manager con Ramón Andrío, Head of Product de Cabify",
+        "guest": "Ramón Andrío",
+        "role": "Head of Product",
+        "pub_date": "2023-07-13T07:00:00.000Z",
+        "url": "https://www.youtube.com/watch?v=CnxPjb9Ha-k",
+        "thesis": "Cabify’s B2B wedge is predictable corporate pricing plus full-trip invoicing on the same driver network — sales-led discovery shapes product more than consumer marketplace A/B loops.",
+        "context": "Cabify operates in the ride-sharing and mobility sector, serving both individual passengers and businesses. The company has a significant presence in Spain and Latin America, competing with global players like Uber.",
+        "ownership": [
+          "**Discovery:** Primarily driven by sales teams who are closest to client needs and market opportunities. Product teams collaborate with sales to understand these needs and translate them into service offerings.",
+          "**Prioritization:** Influenced by sales input regarding revenue potential and ease of sale, alongside product team analysis of market trends and technological feasibility.",
+          "**Shipping:** Involves adapting the core service for specific client requirements and ensuring seamless integration with their systems.",
+          "**Sales Input:** Crucial for identifying opportunities and shaping the product roadmap.",
+          "**Design:** Focuses on creating a user-friendly platform for businesses, including features for expense control and reporting."
+        ],
+        "evidence": [
+          "*Cabify's configuration for businesses generates a full invoice for the entire trip, whereas Uber's configuration invoices only its commission.*",
+          "*The company aims to provide predictable pricing and comprehensive reporting, which is a significant advantage for businesses managing expenses.*"
+        ],
+        "gaps": [
+          "The interview does not detail the specific metrics used to measure the success of B2B product initiatives beyond general revenue and trip numbers.",
+          "There is limited information on how product teams directly engage with end-users (employees of client companies) versus relying solely on sales feedback.",
+          "The specific technological challenges and solutions for dynamic pricing and fleet management in diverse regulatory environments are not deeply explored."
+        ],
+        "loop_bullets": [
+          "flowchart TD",
+          "A[Sales Input & Client Needs] --> B{Identify B2B Opportunities};",
+          "B --> C[Develop Core Service Offering];",
+          "C --> D[Adapt for Specific Company Requirements];",
+          "D --> E[Integrate with Client's Expense Systems];",
+          "E --> F[Provide Consolidated Invoicing & Reporting];",
+          "F --> G[Refine Based on Usage Data & Feedback];"
+        ],
+        "loop_mermaid": "flowchart TD\n    A[Sales Input & Client Needs] --> B{Identify B2B Opportunities};\n    B --> C[Develop Core Service Offering];\n    C --> D[Adapt for Specific Company Requirements];\n    D --> E[Integrate with Client's Expense Systems];\n    E --> F[Provide Consolidated Invoicing & Reporting];\n    F --> G[Refine Based on Usage Data & Feedback];",
+        "overview": "Cabify’s B2B wedge is predictable corporate pricing plus full-trip invoicing on the same driver network — sales-led discovery shapes product more than consumer marketplace A/B loops.",
+        "workflow_mermaid": "flowchart TD\n    A[Sales Input & Client Needs] --> B{Identify B2B Opportunities};\n    B --> C[Develop Core Service Offering];\n    C --> D[Adapt for Specific Company Requirements];\n    D --> E[Integrate with Client's Expense Systems];\n    E --> F[Provide Consolidated Invoicing & Reporting];\n    F --> G[Refine Based on Usage Data & Feedback];"
       }
     ],
     "thesis": "Cabify product balances two-sided marketplace liquidity: rider experience and driver supply are one system — local market ops and product ship together.",
-    "episode_count": 1
+    "episode_count": 2
   },
   {
     "slug": "capably",
@@ -539,8 +621,8 @@
     ],
     "guests": [
       {
-        "name": "Founder",
-        "role": null,
+        "name": "Alfonso Gómez-Jordana",
+        "role": "Co-founder",
         "episode_slug": "de-crear-el-no-soy-un-robot-en-google-a-montar-mi-startup-MDwT_3SAhDk"
       }
     ],
@@ -548,12 +630,12 @@
       {
         "slug": "de-crear-el-no-soy-un-robot-en-google-a-montar-mi-startup-MDwT_3SAhDk",
         "title": "De Crear el \\\"No soy un Robot\\\" en Google a Montar mi Startup",
-        "guest": "Founder",
-        "role": null,
+        "guest": "Alfonso Gómez-Jordana",
+        "role": "Co-founder",
         "pub_date": "2025-11-13T18:26:02.000Z",
         "url": "https://www.youtube.com/watch?v=MDwT_3SAhDk",
         "thesis": "Crossmint bets on programmable money primitives as APIs — wallets, payments, tokens — so product teams ship crypto rails without becoming protocol experts.",
-        "context": "Crossmin provides developer tools and APIs for companies looking to integrate \"programmatic economy\" tools, which include elements like stablecoins and NFTs. The company aims to simplify the use of these emerging technologies for businesses.",
+        "context": "Crossmint provides developer tools and APIs for companies looking to integrate \"programmatic economy\" tools, which include elements like stablecoins and NFTs. The company aims to simplify the use of these emerging technologies for businesses.",
         "ownership": [
           "**Discovery:** Market trends, client needs, and emerging use cases drive product development.",
           "**Prioritization:** Focus on creating generalizable and durable API primitives while adapting go-to-market strategies to current market demands.",
@@ -568,7 +650,7 @@
         "gaps": [
           "The specific regulatory hurdles and compliance strategies for each vertical are not detailed.",
           "The long-term vision for AI agent integration beyond current low-risk use cases remains abstract.",
-          "The exact process for how Crossmin's APIs interact with traditional financial systems or fiat currency conversion is not fully elaborated."
+          "The exact process for how Crossmint's APIs interact with traditional financial systems or fiat currency conversion is not fully elaborated."
         ],
         "loop_bullets": [
           "flowchart TD",
@@ -1270,6 +1352,45 @@
       }
     ],
     "thesis": "GuruSup runs support as an agent OS that takes actions end-to-end — not a reply-suggestion layer on top of human queues.",
+    "episode_count": 1
+  },
+  {
+    "slug": "guruwalk",
+    "name": "GuruWalk",
+    "stage": "growth",
+    "practices": [
+      "discovery",
+      "delivery",
+      "growth",
+      "founder"
+    ],
+    "guests": [
+      {
+        "name": "Juan Castillo",
+        "role": "Founder",
+        "episode_slug": "anem-compartir-coche-en-valencia-por-la-dana-juan-castillo-founder-gur-Y2_1WVGUKjw"
+      }
+    ],
+    "episodes": [
+      {
+        "slug": "anem-compartir-coche-en-valencia-por-la-dana-juan-castillo-founder-gur-Y2_1WVGUKjw",
+        "title": "Anem! : Compartir Coche en Valencia por la DANA | Juan Castillo, Founder GuruWalk",
+        "guest": "Juan Castillo",
+        "role": "Founder",
+        "pub_date": "2024-11-06T15:00:00.000Z",
+        "url": "https://www.youtube.com/watch?v=Y2_1WVGUKjw",
+        "thesis": "GuruWalk’s org bet is radical autonomy — a crisis swarm shipped Anem (Valencia flood car-sharing) without hierarchy gates, treating mission speed as the operating system.",
+        "context": "",
+        "ownership": [],
+        "evidence": [],
+        "gaps": [],
+        "loop_bullets": [],
+        "loop_mermaid": null,
+        "overview": "GuruWalk’s org bet is radical autonomy — a crisis swarm shipped Anem (Valencia flood car-sharing) without hierarchy gates, treating mission speed as the operating system.",
+        "workflow_mermaid": null
+      }
+    ],
+    "thesis": "GuruWalk’s org bet is radical autonomy — a crisis swarm shipped Anem (Valencia flood car-sharing) without hierarchy gates, treating mission speed as the operating system.",
     "episode_count": 1
   },
   {
@@ -2100,6 +2221,66 @@
       }
     ],
     "thesis": "Nova Talent builds a premium B2C professional community on top of B2B headhunting — curated horizontal connections are the product bet, not just placements.",
+    "episode_count": 1
+  },
+  {
+    "slug": "nvidia",
+    "name": "NVIDIA",
+    "stage": "enterprise",
+    "practices": [
+      "enterprise",
+      "ai_product",
+      "discovery",
+      "delivery"
+    ],
+    "guests": [
+      {
+        "name": "Toni Franquès",
+        "role": "Senior Architect",
+        "episode_slug": "los-chips-mas-valorados-del-mundo-toni-franques-senior-architect-en-nv-nim2eLTlRwQ"
+      }
+    ],
+    "episodes": [
+      {
+        "slug": "los-chips-mas-valorados-del-mundo-toni-franques-senior-architect-en-nv-nim2eLTlRwQ",
+        "title": "Los CHIPS más valorados del MUNDO | Toni Franquès, Senior Architect en NVIDIA",
+        "guest": "Toni Franquès",
+        "role": "Senior Architect",
+        "pub_date": "2024-07-03T14:00:00.000Z",
+        "url": "https://www.youtube.com/watch?v=nim2eLTlRwQ",
+        "thesis": "NVIDIA’s product bet is CUDA + GPU as a locked-in AI platform — software compounds the silicon, and data-center mix now dominates over gaming cards.",
+        "context": "NVIDIA designs and manufactures GPUs, initially for gaming and graphics, but has expanded significantly into AI and data center computing. The company's business model is primarily B2B, selling to other businesses that integrate NVIDIA's technology into their products and services.",
+        "ownership": [
+          "**Discovery:** Primarily driven by architectural research and development, informed by market trends in AI and computing.",
+          "**Prioritization:** Guided by the demand for AI/HPC solutions and the need to support evolving AI models and algorithms.",
+          "**Shipping:** Managed through a cadence of new chip releases, often annually or bi-annually, enabled by advancements from manufacturing partners like TSMC and ASML.",
+          "**Sales Input:** Heavily influenced by enterprise demand for data center GPUs and AI-specific hardware.",
+          "**Design:** Led by NVIDIA's internal architecture teams, with significant input from software developers and AI researchers."
+        ],
+        "evidence": [
+          "*The proportion of chips sold for data centers has exploded compared to graphics cards.*",
+          "*The more you buy, the more you save, because every year new chips come out.*"
+        ],
+        "gaps": [
+          "The specific internal team structures and reporting lines beyond a few levels of management are not detailed.",
+          "The exact R&D investment breakdown between GPU architecture, CUDA development, and AI-specific hardware is not specified.",
+          "Details on how NVIDIA manages its supply chain beyond mentioning TSMC and ASML are limited."
+        ],
+        "loop_bullets": [
+          "The core operating loop involves:",
+          "1.  **Architectural Design:** Designing new GPU architectures and chip functionalities.",
+          "2.  **Simulation & Modeling:** Using C++ simulators and RTL to model and test chip performance and energy consumption before physical fabrication.",
+          "3.  **Fabrication:** Sending designs to foundries like TSMC for manufacturing.",
+          "4.  **Software Development (CUDA):** Creating and refining CUDA to enable efficient programming of GPUs for parallel processing tasks, particularly for AI and scientific computing.",
+          "5.  **AI Model Integration:** Adapting hardware and software to support the demands of evolving AI models, such as large language models.",
+          "6.  **Market Feedback & Iteration:** Incorporating feedback on performance, energy efficiency, and new AI requirements to inform the next generation of chip designs."
+        ],
+        "loop_mermaid": null,
+        "overview": "NVIDIA’s product bet is CUDA + GPU as a locked-in AI platform — software compounds the silicon, and data-center mix now dominates over gaming cards.",
+        "workflow_mermaid": null
+      }
+    ],
+    "thesis": "NVIDIA’s product bet is CUDA + GPU as a locked-in AI platform — software compounds the silicon, and data-center mix now dominates over gaming cards.",
     "episode_count": 1
   },
   {

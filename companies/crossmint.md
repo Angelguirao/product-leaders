@@ -5,7 +5,7 @@
 - Stage: early
 - Practices: ai_product, discovery, delivery, roles
 
-## Founder
+## Alfonso Gómez-Jordana
 
 ### Operating loop
 

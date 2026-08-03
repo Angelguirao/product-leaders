@@ -1,12 +1,12 @@
 {
-  "built_at": "2026-08-03T19:07:54.509Z",
-  "episode_count": 71,
-  "company_count": 53,
-  "published_count": 54,
-  "weak_count": 16,
+  "built_at": "2026-08-03T19:13:12.798Z",
+  "episode_count": 73,
+  "company_count": 56,
+  "published_count": 58,
+  "weak_count": 14,
   "stub_count": 0,
-  "briefed_count": 54,
-  "diagrammed_count": 28,
+  "briefed_count": 58,
+  "diagrammed_count": 29,
   "episodes": [
     {
       "slug": "por-que-crear-producto-para-enterprise-es-tan-dificil-eric-llonch-pm-d-lwm0eQP_nDs",
@@ -64,8 +64,8 @@
       "url": "https://www.youtube.com/watch?v=MDwT_3SAhDk",
       "audio_url": "https://anchor.fm/s/ddca5200/podcast/play/111139507/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2025-10-13%2F412441117-44100-2-7c59bd0d8f67b.mp3",
       "pub_date": "2025-11-13T18:26:02.000Z",
-      "guest": "Founder",
-      "role": null,
+      "guest": "Alfonso Gómez-Jordana",
+      "role": "Co-founder",
       "company": "Crossmint",
       "company_slug": "crossmint",
       "stage": "early",
@@ -78,7 +78,7 @@
       "status": "published",
       "processed_at": "2026-08-03T17:53:09.684Z",
       "thesis": "Crossmint bets on programmable money primitives as APIs — wallets, payments, tokens — so product teams ship crypto rails without becoming protocol experts.",
-      "context": "Crossmin provides developer tools and APIs for companies looking to integrate \"programmatic economy\" tools, which include elements like stablecoins and NFTs. The company aims to simplify the use of these emerging technologies for businesses.",
+      "context": "Crossmint provides developer tools and APIs for companies looking to integrate \"programmatic economy\" tools, which include elements like stablecoins and NFTs. The company aims to simplify the use of these emerging technologies for businesses.",
       "ownership": [
         "**Discovery:** Market trends, client needs, and emerging use cases drive product development.",
         "**Prioritization:** Focus on creating generalizable and durable API primitives while adapting go-to-market strategies to current market demands.",
@@ -93,7 +93,7 @@
       "gaps": [
         "The specific regulatory hurdles and compliance strategies for each vertical are not detailed.",
         "The long-term vision for AI agent integration beyond current low-risk use cases remains abstract.",
-        "The exact process for how Crossmin's APIs interact with traditional financial systems or fiat currency conversion is not fully elaborated."
+        "The exact process for how Crossmint's APIs interact with traditional financial systems or fiat currency conversion is not fully elaborated."
       ],
       "loop_bullets": [
         "flowchart TD",
@@ -852,16 +852,16 @@
         "delivery",
         "growth"
       ],
-      "status": "weak",
+      "status": "published",
       "processed_at": "2026-08-03T17:58:10.550Z",
-      "thesis": "Bonilista treats an email list as insufficient for community — product is belonging and participation, not broadcast. Held weak: media/community thesis, not a product-org operating system.",
+      "thesis": "Bonilista treats an email list as insufficient for community — product is belonging and participation, not broadcast reach.",
       "context": "",
       "ownership": [],
       "evidence": [],
       "gaps": [],
       "loop_bullets": [],
       "loop_mermaid": null,
-      "overview": "Bonilista treats an email list as insufficient for community — product is belonging and participation, not broadcast. Held weak: media/community thesis, not a product-org operating system.",
+      "overview": "Bonilista treats an email list as insufficient for community — product is belonging and participation, not broadcast reach.",
       "workflow_mermaid": null
     },
     {
@@ -1042,16 +1042,16 @@
         "growth",
         "founder"
       ],
-      "status": "weak",
+      "status": "published",
       "processed_at": "2026-08-03T18:01:31.151Z",
-      "thesis": "GuruWalk’s radical autonomy culture let a crisis swarm ship Anem (Valencia flood car-sharing) without hierarchy gates — mission over monetization. Held weak: one-off crisis product, not a steady org card.",
+      "thesis": "GuruWalk’s org bet is radical autonomy — a crisis swarm shipped Anem (Valencia flood car-sharing) without hierarchy gates, treating mission speed as the operating system.",
       "context": "",
       "ownership": [],
       "evidence": [],
       "gaps": [],
       "loop_bullets": [],
       "loop_mermaid": null,
-      "overview": "GuruWalk’s radical autonomy culture let a crisis swarm ship Anem (Valencia flood car-sharing) without hierarchy gates — mission over monetization. Held weak: one-off crisis product, not a steady org card.",
+      "overview": "GuruWalk’s org bet is radical autonomy — a crisis swarm shipped Anem (Valencia flood car-sharing) without hierarchy gates, treating mission speed as the operating system.",
       "workflow_mermaid": null
     },
     {
@@ -1489,6 +1489,57 @@
       ],
       "loop_mermaid": null,
       "overview": "Cabify product balances two-sided marketplace liquidity: rider experience and driver supply are one system — local market ops and product ship together.",
+      "workflow_mermaid": null
+    },
+    {
+      "slug": "los-chips-mas-valorados-del-mundo-toni-franques-senior-architect-en-nv-nim2eLTlRwQ",
+      "title": "Los CHIPS más valorados del MUNDO | Toni Franquès, Senior Architect en NVIDIA",
+      "youtube_id": "nim2eLTlRwQ",
+      "url": "https://www.youtube.com/watch?v=nim2eLTlRwQ",
+      "audio_url": "https://anchor.fm/s/ddca5200/podcast/play/88732385/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2024-6-2%2F382221530-44100-2-1efa4ede38e6.mp3",
+      "pub_date": "2024-07-03T14:00:00.000Z",
+      "guest": "Toni Franquès",
+      "role": "Senior Architect",
+      "company": "NVIDIA",
+      "company_slug": "nvidia",
+      "stage": "enterprise",
+      "practices": [
+        "enterprise",
+        "ai_product",
+        "discovery",
+        "delivery"
+      ],
+      "status": "published",
+      "processed_at": "2026-08-03T19:12:57.954Z",
+      "thesis": "NVIDIA’s product bet is CUDA + GPU as a locked-in AI platform — software compounds the silicon, and data-center mix now dominates over gaming cards.",
+      "context": "NVIDIA designs and manufactures GPUs, initially for gaming and graphics, but has expanded significantly into AI and data center computing. The company's business model is primarily B2B, selling to other businesses that integrate NVIDIA's technology into their products and services.",
+      "ownership": [
+        "**Discovery:** Primarily driven by architectural research and development, informed by market trends in AI and computing.",
+        "**Prioritization:** Guided by the demand for AI/HPC solutions and the need to support evolving AI models and algorithms.",
+        "**Shipping:** Managed through a cadence of new chip releases, often annually or bi-annually, enabled by advancements from manufacturing partners like TSMC and ASML.",
+        "**Sales Input:** Heavily influenced by enterprise demand for data center GPUs and AI-specific hardware.",
+        "**Design:** Led by NVIDIA's internal architecture teams, with significant input from software developers and AI researchers."
+      ],
+      "evidence": [
+        "*The proportion of chips sold for data centers has exploded compared to graphics cards.*",
+        "*The more you buy, the more you save, because every year new chips come out.*"
+      ],
+      "gaps": [
+        "The specific internal team structures and reporting lines beyond a few levels of management are not detailed.",
+        "The exact R&D investment breakdown between GPU architecture, CUDA development, and AI-specific hardware is not specified.",
+        "Details on how NVIDIA manages its supply chain beyond mentioning TSMC and ASML are limited."
+      ],
+      "loop_bullets": [
+        "The core operating loop involves:",
+        "1.  **Architectural Design:** Designing new GPU architectures and chip functionalities.",
+        "2.  **Simulation & Modeling:** Using C++ simulators and RTL to model and test chip performance and energy consumption before physical fabrication.",
+        "3.  **Fabrication:** Sending designs to foundries like TSMC for manufacturing.",
+        "4.  **Software Development (CUDA):** Creating and refining CUDA to enable efficient programming of GPUs for parallel processing tasks, particularly for AI and scientific computing.",
+        "5.  **AI Model Integration:** Adapting hardware and software to support the demands of evolving AI models, such as large language models.",
+        "6.  **Market Feedback & Iteration:** Incorporating feedback on performance, energy efficiency, and new AI requirements to inform the next generation of chip designs."
+      ],
+      "loop_mermaid": null,
+      "overview": "NVIDIA’s product bet is CUDA + GPU as a locked-in AI platform — software compounds the silicon, and data-center mix now dominates over gaming cards.",
       "workflow_mermaid": null
     },
     {
@@ -2987,6 +3038,57 @@
       "workflow_mermaid": "flowchart TD\n    A[Team collaborates on presentation] --> B{Presentation shared via link};\n    B --> C[Recipient views presentation];\n    C --> D[Analytics track engagement per slide];\n    D --> E[Insights inform presentation improvements];\n    E --> A;"
     },
     {
+      "slug": "las-claves-para-ser-product-manager-con-ramon-andrio-head-of-product-d-CnxPjb9Ha-k",
+      "title": "Las claves para ser Product Manager con Ramón Andrío, Head of Product de Cabify",
+      "youtube_id": "CnxPjb9Ha-k",
+      "url": "https://www.youtube.com/watch?v=CnxPjb9Ha-k",
+      "audio_url": "https://anchor.fm/s/ddca5200/podcast/play/73326189/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2023-6-12%2F339023734-44100-2-415a3eb12cea6.mp3",
+      "pub_date": "2023-07-13T07:00:00.000Z",
+      "guest": "Ramón Andrío",
+      "role": "Head of Product",
+      "company": "Cabify",
+      "company_slug": "cabify",
+      "stage": "scale",
+      "practices": [
+        "enterprise",
+        "discovery",
+        "delivery",
+        "roles"
+      ],
+      "status": "published",
+      "processed_at": "2026-08-03T19:12:45.916Z",
+      "thesis": "Cabify’s B2B wedge is predictable corporate pricing plus full-trip invoicing on the same driver network — sales-led discovery shapes product more than consumer marketplace A/B loops.",
+      "context": "Cabify operates in the ride-sharing and mobility sector, serving both individual passengers and businesses. The company has a significant presence in Spain and Latin America, competing with global players like Uber.",
+      "ownership": [
+        "**Discovery:** Primarily driven by sales teams who are closest to client needs and market opportunities. Product teams collaborate with sales to understand these needs and translate them into service offerings.",
+        "**Prioritization:** Influenced by sales input regarding revenue potential and ease of sale, alongside product team analysis of market trends and technological feasibility.",
+        "**Shipping:** Involves adapting the core service for specific client requirements and ensuring seamless integration with their systems.",
+        "**Sales Input:** Crucial for identifying opportunities and shaping the product roadmap.",
+        "**Design:** Focuses on creating a user-friendly platform for businesses, including features for expense control and reporting."
+      ],
+      "evidence": [
+        "*Cabify's configuration for businesses generates a full invoice for the entire trip, whereas Uber's configuration invoices only its commission.*",
+        "*The company aims to provide predictable pricing and comprehensive reporting, which is a significant advantage for businesses managing expenses.*"
+      ],
+      "gaps": [
+        "The interview does not detail the specific metrics used to measure the success of B2B product initiatives beyond general revenue and trip numbers.",
+        "There is limited information on how product teams directly engage with end-users (employees of client companies) versus relying solely on sales feedback.",
+        "The specific technological challenges and solutions for dynamic pricing and fleet management in diverse regulatory environments are not deeply explored."
+      ],
+      "loop_bullets": [
+        "flowchart TD",
+        "A[Sales Input & Client Needs] --> B{Identify B2B Opportunities};",
+        "B --> C[Develop Core Service Offering];",
+        "C --> D[Adapt for Specific Company Requirements];",
+        "D --> E[Integrate with Client's Expense Systems];",
+        "E --> F[Provide Consolidated Invoicing & Reporting];",
+        "F --> G[Refine Based on Usage Data & Feedback];"
+      ],
+      "loop_mermaid": "flowchart TD\n    A[Sales Input & Client Needs] --> B{Identify B2B Opportunities};\n    B --> C[Develop Core Service Offering];\n    C --> D[Adapt for Specific Company Requirements];\n    D --> E[Integrate with Client's Expense Systems];\n    E --> F[Provide Consolidated Invoicing & Reporting];\n    F --> G[Refine Based on Usage Data & Feedback];",
+      "overview": "Cabify’s B2B wedge is predictable corporate pricing plus full-trip invoicing on the same driver network — sales-led discovery shapes product more than consumer marketplace A/B loops.",
+      "workflow_mermaid": "flowchart TD\n    A[Sales Input & Client Needs] --> B{Identify B2B Opportunities};\n    B --> C[Develop Core Service Offering];\n    C --> D[Adapt for Specific Company Requirements];\n    D --> E[Integrate with Client's Expense Systems];\n    E --> F[Provide Consolidated Invoicing & Reporting];\n    F --> G[Refine Based on Usage Data & Feedback];"
+    },
+    {
       "slug": "el-rol-de-product-marketing-con-isabel-garate-vp-de-producto-en-landbo-JVJMex7UJAY",
       "title": "El rol de Product Marketing con Isabel Gárate, VP de Producto en Landbot",
       "youtube_id": "JVJMex7UJAY",
@@ -3536,6 +3638,45 @@
       "episode_count": 1
     },
     {
+      "slug": "bonilista",
+      "name": "Bonilista",
+      "stage": "growth",
+      "practices": [
+        "ai_product",
+        "discovery",
+        "delivery",
+        "growth"
+      ],
+      "guests": [
+        {
+          "name": "David Bonilla",
+          "role": "Creator",
+          "episode_slug": "una-lista-de-correos-no-es-una-comunidad-con-david-bonilla-creador-la--4E1OvRrQzcQ"
+        }
+      ],
+      "episodes": [
+        {
+          "slug": "una-lista-de-correos-no-es-una-comunidad-con-david-bonilla-creador-la--4E1OvRrQzcQ",
+          "title": "\\\"Una Lista de Correos NO es una Comunidad\\\" con David Bonilla, creador \\\"La Bonilista\\\"",
+          "guest": "David Bonilla",
+          "role": "Creator",
+          "pub_date": "2025-01-22T15:00:00.000Z",
+          "url": "https://www.youtube.com/watch?v=4E1OvRrQzcQ",
+          "thesis": "Bonilista treats an email list as insufficient for community — product is belonging and participation, not broadcast reach.",
+          "context": "",
+          "ownership": [],
+          "evidence": [],
+          "gaps": [],
+          "loop_bullets": [],
+          "loop_mermaid": null,
+          "overview": "Bonilista treats an email list as insufficient for community — product is belonging and participation, not broadcast reach.",
+          "workflow_mermaid": null
+        }
+      ],
+      "thesis": "Bonilista treats an email list as insufficient for community — product is belonging and participation, not broadcast reach.",
+      "episode_count": 1
+    },
+    {
       "slug": "cabify",
       "name": "Cabify",
       "stage": "scale",
@@ -3550,6 +3691,11 @@
           "name": "Eloi Pardo",
           "role": "Head of Product",
           "episode_slug": "como-hacer-producto-en-un-marketplace-eloi-pardo-head-of-product-en-ca-6Kp7vOnuG9s"
+        },
+        {
+          "name": "Ramón Andrío",
+          "role": "Head of Product",
+          "episode_slug": "las-claves-para-ser-product-manager-con-ramon-andrio-head-of-product-d-CnxPjb9Ha-k"
         }
       ],
       "episodes": [
@@ -3590,10 +3736,48 @@
           "loop_mermaid": null,
           "overview": "Cabify product balances two-sided marketplace liquidity: rider experience and driver supply are one system — local market ops and product ship together.",
           "workflow_mermaid": null
+        },
+        {
+          "slug": "las-claves-para-ser-product-manager-con-ramon-andrio-head-of-product-d-CnxPjb9Ha-k",
+          "title": "Las claves para ser Product Manager con Ramón Andrío, Head of Product de Cabify",
+          "guest": "Ramón Andrío",
+          "role": "Head of Product",
+          "pub_date": "2023-07-13T07:00:00.000Z",
+          "url": "https://www.youtube.com/watch?v=CnxPjb9Ha-k",
+          "thesis": "Cabify’s B2B wedge is predictable corporate pricing plus full-trip invoicing on the same driver network — sales-led discovery shapes product more than consumer marketplace A/B loops.",
+          "context": "Cabify operates in the ride-sharing and mobility sector, serving both individual passengers and businesses. The company has a significant presence in Spain and Latin America, competing with global players like Uber.",
+          "ownership": [
+            "**Discovery:** Primarily driven by sales teams who are closest to client needs and market opportunities. Product teams collaborate with sales to understand these needs and translate them into service offerings.",
+            "**Prioritization:** Influenced by sales input regarding revenue potential and ease of sale, alongside product team analysis of market trends and technological feasibility.",
+            "**Shipping:** Involves adapting the core service for specific client requirements and ensuring seamless integration with their systems.",
+            "**Sales Input:** Crucial for identifying opportunities and shaping the product roadmap.",
+            "**Design:** Focuses on creating a user-friendly platform for businesses, including features for expense control and reporting."
+          ],
+          "evidence": [
+            "*Cabify's configuration for businesses generates a full invoice for the entire trip, whereas Uber's configuration invoices only its commission.*",
+            "*The company aims to provide predictable pricing and comprehensive reporting, which is a significant advantage for businesses managing expenses.*"
+          ],
+          "gaps": [
+            "The interview does not detail the specific metrics used to measure the success of B2B product initiatives beyond general revenue and trip numbers.",
+            "There is limited information on how product teams directly engage with end-users (employees of client companies) versus relying solely on sales feedback.",
+            "The specific technological challenges and solutions for dynamic pricing and fleet management in diverse regulatory environments are not deeply explored."
+          ],
+          "loop_bullets": [
+            "flowchart TD",
+            "A[Sales Input & Client Needs] --> B{Identify B2B Opportunities};",
+            "B --> C[Develop Core Service Offering];",
+            "C --> D[Adapt for Specific Company Requirements];",
+            "D --> E[Integrate with Client's Expense Systems];",
+            "E --> F[Provide Consolidated Invoicing & Reporting];",
+            "F --> G[Refine Based on Usage Data & Feedback];"
+          ],
+          "loop_mermaid": "flowchart TD\n    A[Sales Input & Client Needs] --> B{Identify B2B Opportunities};\n    B --> C[Develop Core Service Offering];\n    C --> D[Adapt for Specific Company Requirements];\n    D --> E[Integrate with Client's Expense Systems];\n    E --> F[Provide Consolidated Invoicing & Reporting];\n    F --> G[Refine Based on Usage Data & Feedback];",
+          "overview": "Cabify’s B2B wedge is predictable corporate pricing plus full-trip invoicing on the same driver network — sales-led discovery shapes product more than consumer marketplace A/B loops.",
+          "workflow_mermaid": "flowchart TD\n    A[Sales Input & Client Needs] --> B{Identify B2B Opportunities};\n    B --> C[Develop Core Service Offering];\n    C --> D[Adapt for Specific Company Requirements];\n    D --> E[Integrate with Client's Expense Systems];\n    E --> F[Provide Consolidated Invoicing & Reporting];\n    F --> G[Refine Based on Usage Data & Feedback];"
         }
       ],
       "thesis": "Cabify product balances two-sided marketplace liquidity: rider experience and driver supply are one system — local market ops and product ship together.",
-      "episode_count": 1
+      "episode_count": 2
     },
     {
       "slug": "capably",
@@ -3902,8 +4086,8 @@
       ],
       "guests": [
         {
-          "name": "Founder",
-          "role": null,
+          "name": "Alfonso Gómez-Jordana",
+          "role": "Co-founder",
           "episode_slug": "de-crear-el-no-soy-un-robot-en-google-a-montar-mi-startup-MDwT_3SAhDk"
         }
       ],
@@ -3911,12 +4095,12 @@
         {
           "slug": "de-crear-el-no-soy-un-robot-en-google-a-montar-mi-startup-MDwT_3SAhDk",
           "title": "De Crear el \\\"No soy un Robot\\\" en Google a Montar mi Startup",
-          "guest": "Founder",
-          "role": null,
+          "guest": "Alfonso Gómez-Jordana",
+          "role": "Co-founder",
           "pub_date": "2025-11-13T18:26:02.000Z",
           "url": "https://www.youtube.com/watch?v=MDwT_3SAhDk",
           "thesis": "Crossmint bets on programmable money primitives as APIs — wallets, payments, tokens — so product teams ship crypto rails without becoming protocol experts.",
-          "context": "Crossmin provides developer tools and APIs for companies looking to integrate \"programmatic economy\" tools, which include elements like stablecoins and NFTs. The company aims to simplify the use of these emerging technologies for businesses.",
+          "context": "Crossmint provides developer tools and APIs for companies looking to integrate \"programmatic economy\" tools, which include elements like stablecoins and NFTs. The company aims to simplify the use of these emerging technologies for businesses.",
           "ownership": [
             "**Discovery:** Market trends, client needs, and emerging use cases drive product development.",
             "**Prioritization:** Focus on creating generalizable and durable API primitives while adapting go-to-market strategies to current market demands.",
@@ -3931,7 +4115,7 @@
           "gaps": [
             "The specific regulatory hurdles and compliance strategies for each vertical are not detailed.",
             "The long-term vision for AI agent integration beyond current low-risk use cases remains abstract.",
-            "The exact process for how Crossmin's APIs interact with traditional financial systems or fiat currency conversion is not fully elaborated."
+            "The exact process for how Crossmint's APIs interact with traditional financial systems or fiat currency conversion is not fully elaborated."
           ],
           "loop_bullets": [
             "flowchart TD",
@@ -4633,6 +4817,45 @@
         }
       ],
       "thesis": "GuruSup runs support as an agent OS that takes actions end-to-end — not a reply-suggestion layer on top of human queues.",
+      "episode_count": 1
+    },
+    {
+      "slug": "guruwalk",
+      "name": "GuruWalk",
+      "stage": "growth",
+      "practices": [
+        "discovery",
+        "delivery",
+        "growth",
+        "founder"
+      ],
+      "guests": [
+        {
+          "name": "Juan Castillo",
+          "role": "Founder",
+          "episode_slug": "anem-compartir-coche-en-valencia-por-la-dana-juan-castillo-founder-gur-Y2_1WVGUKjw"
+        }
+      ],
+      "episodes": [
+        {
+          "slug": "anem-compartir-coche-en-valencia-por-la-dana-juan-castillo-founder-gur-Y2_1WVGUKjw",
+          "title": "Anem! : Compartir Coche en Valencia por la DANA | Juan Castillo, Founder GuruWalk",
+          "guest": "Juan Castillo",
+          "role": "Founder",
+          "pub_date": "2024-11-06T15:00:00.000Z",
+          "url": "https://www.youtube.com/watch?v=Y2_1WVGUKjw",
+          "thesis": "GuruWalk’s org bet is radical autonomy — a crisis swarm shipped Anem (Valencia flood car-sharing) without hierarchy gates, treating mission speed as the operating system.",
+          "context": "",
+          "ownership": [],
+          "evidence": [],
+          "gaps": [],
+          "loop_bullets": [],
+          "loop_mermaid": null,
+          "overview": "GuruWalk’s org bet is radical autonomy — a crisis swarm shipped Anem (Valencia flood car-sharing) without hierarchy gates, treating mission speed as the operating system.",
+          "workflow_mermaid": null
+        }
+      ],
+      "thesis": "GuruWalk’s org bet is radical autonomy — a crisis swarm shipped Anem (Valencia flood car-sharing) without hierarchy gates, treating mission speed as the operating system.",
       "episode_count": 1
     },
     {
@@ -5463,6 +5686,66 @@
         }
       ],
       "thesis": "Nova Talent builds a premium B2C professional community on top of B2B headhunting — curated horizontal connections are the product bet, not just placements.",
+      "episode_count": 1
+    },
+    {
+      "slug": "nvidia",
+      "name": "NVIDIA",
+      "stage": "enterprise",
+      "practices": [
+        "enterprise",
+        "ai_product",
+        "discovery",
+        "delivery"
+      ],
+      "guests": [
+        {
+          "name": "Toni Franquès",
+          "role": "Senior Architect",
+          "episode_slug": "los-chips-mas-valorados-del-mundo-toni-franques-senior-architect-en-nv-nim2eLTlRwQ"
+        }
+      ],
+      "episodes": [
+        {
+          "slug": "los-chips-mas-valorados-del-mundo-toni-franques-senior-architect-en-nv-nim2eLTlRwQ",
+          "title": "Los CHIPS más valorados del MUNDO | Toni Franquès, Senior Architect en NVIDIA",
+          "guest": "Toni Franquès",
+          "role": "Senior Architect",
+          "pub_date": "2024-07-03T14:00:00.000Z",
+          "url": "https://www.youtube.com/watch?v=nim2eLTlRwQ",
+          "thesis": "NVIDIA’s product bet is CUDA + GPU as a locked-in AI platform — software compounds the silicon, and data-center mix now dominates over gaming cards.",
+          "context": "NVIDIA designs and manufactures GPUs, initially for gaming and graphics, but has expanded significantly into AI and data center computing. The company's business model is primarily B2B, selling to other businesses that integrate NVIDIA's technology into their products and services.",
+          "ownership": [
+            "**Discovery:** Primarily driven by architectural research and development, informed by market trends in AI and computing.",
+            "**Prioritization:** Guided by the demand for AI/HPC solutions and the need to support evolving AI models and algorithms.",
+            "**Shipping:** Managed through a cadence of new chip releases, often annually or bi-annually, enabled by advancements from manufacturing partners like TSMC and ASML.",
+            "**Sales Input:** Heavily influenced by enterprise demand for data center GPUs and AI-specific hardware.",
+            "**Design:** Led by NVIDIA's internal architecture teams, with significant input from software developers and AI researchers."
+          ],
+          "evidence": [
+            "*The proportion of chips sold for data centers has exploded compared to graphics cards.*",
+            "*The more you buy, the more you save, because every year new chips come out.*"
+          ],
+          "gaps": [
+            "The specific internal team structures and reporting lines beyond a few levels of management are not detailed.",
+            "The exact R&D investment breakdown between GPU architecture, CUDA development, and AI-specific hardware is not specified.",
+            "Details on how NVIDIA manages its supply chain beyond mentioning TSMC and ASML are limited."
+          ],
+          "loop_bullets": [
+            "The core operating loop involves:",
+            "1.  **Architectural Design:** Designing new GPU architectures and chip functionalities.",
+            "2.  **Simulation & Modeling:** Using C++ simulators and RTL to model and test chip performance and energy consumption before physical fabrication.",
+            "3.  **Fabrication:** Sending designs to foundries like TSMC for manufacturing.",
+            "4.  **Software Development (CUDA):** Creating and refining CUDA to enable efficient programming of GPUs for parallel processing tasks, particularly for AI and scientific computing.",
+            "5.  **AI Model Integration:** Adapting hardware and software to support the demands of evolving AI models, such as large language models.",
+            "6.  **Market Feedback & Iteration:** Incorporating feedback on performance, energy efficiency, and new AI requirements to inform the next generation of chip designs."
+          ],
+          "loop_mermaid": null,
+          "overview": "NVIDIA’s product bet is CUDA + GPU as a locked-in AI platform — software compounds the silicon, and data-center mix now dominates over gaming cards.",
+          "workflow_mermaid": null
+        }
+      ],
+      "thesis": "NVIDIA’s product bet is CUDA + GPU as a locked-in AI platform — software compounds the silicon, and data-center mix now dominates over gaming cards.",
       "episode_count": 1
     },
     {
@@ -6449,6 +6732,11 @@
           "thesis": "At Automattic (Jetpack), product designers often own discovery and prioritization themselves — design absorbs classic PM duties under high autonomy."
         },
         {
+          "slug": "bonilista",
+          "name": "Bonilista",
+          "thesis": "Bonilista treats an email list as insufficient for community — product is belonging and participation, not broadcast reach."
+        },
+        {
           "slug": "cabify",
           "name": "Cabify",
           "thesis": "Cabify product balances two-sided marketplace liquidity: rider experience and driver supply are one system — local market ops and product ship together."
@@ -6539,6 +6827,11 @@
           "thesis": "GuruSup runs support as an agent OS that takes actions end-to-end — not a reply-suggestion layer on top of human queues."
         },
         {
+          "slug": "guruwalk",
+          "name": "GuruWalk",
+          "thesis": "GuruWalk’s org bet is radical autonomy — a crisis swarm shipped Anem (Valencia flood car-sharing) without hierarchy gates, treating mission speed as the operating system."
+        },
+        {
           "slug": "hello-app",
           "name": "hello.app",
           "thesis": "hello.app monetizes idle device storage into a decentralized network — users earn by contributing unused capacity instead of renting centralized cloud."
@@ -6607,6 +6900,11 @@
           "slug": "nova-talent",
           "name": "Nova Talent",
           "thesis": "Nova Talent builds a premium B2C professional community on top of B2B headhunting — curated horizontal connections are the product bet, not just placements."
+        },
+        {
+          "slug": "nvidia",
+          "name": "NVIDIA",
+          "thesis": "NVIDIA’s product bet is CUDA + GPU as a locked-in AI platform — software compounds the silicon, and data-center mix now dominates over gaming cards."
         },
         {
           "slug": "ontrack",
@@ -6803,6 +7101,13 @@
           "thesis": "At IskayPet, product methods bend to a traditional retail P&L — digital ships only when stores, supply, and category economics can absorb the change."
         },
         {
+          "slug": "una-lista-de-correos-no-es-una-comunidad-con-david-bonilla-creador-la--4E1OvRrQzcQ",
+          "title": "\\\"Una Lista de Correos NO es una Comunidad\\\" con David Bonilla, creador \\\"La Bonilista\\\"",
+          "company": "Bonilista",
+          "company_slug": "bonilista",
+          "thesis": "Bonilista treats an email list as insufficient for community — product is belonging and participation, not broadcast reach."
+        },
+        {
           "slug": "eliminamos-al-equipo-de-producto-para-ser-todos-producto-javi-santana--qMEVsemCo5c",
           "title": "Eliminamos al equipo de Producto para ser todos Producto | Javi Santana, Co Founder de Tinybird",
           "company": "Tinybird",
@@ -6815,6 +7120,13 @@
           "company": "Mercado Libre",
           "company_slug": "mercado-libre",
           "thesis": "Mercado Libre ships product as an ecosystem of connected surfaces — each bet is judged by how it compounds the platform, not by a single app KPI."
+        },
+        {
+          "slug": "anem-compartir-coche-en-valencia-por-la-dana-juan-castillo-founder-gur-Y2_1WVGUKjw",
+          "title": "Anem! : Compartir Coche en Valencia por la DANA | Juan Castillo, Founder GuruWalk",
+          "company": "GuruWalk",
+          "company_slug": "guruwalk",
+          "thesis": "GuruWalk’s org bet is radical autonomy — a crisis swarm shipped Anem (Valencia flood car-sharing) without hierarchy gates, treating mission speed as the operating system."
         },
         {
           "slug": "funde-un-chatbot-con-ia-para-adolescentes-en-2016-cristina-santamarina-nEizg2iJMNQ",
@@ -6850,6 +7162,13 @@
           "company": "Cabify",
           "company_slug": "cabify",
           "thesis": "Cabify product balances two-sided marketplace liquidity: rider experience and driver supply are one system — local market ops and product ship together."
+        },
+        {
+          "slug": "los-chips-mas-valorados-del-mundo-toni-franques-senior-architect-en-nv-nim2eLTlRwQ",
+          "title": "Los CHIPS más valorados del MUNDO | Toni Franquès, Senior Architect en NVIDIA",
+          "company": "NVIDIA",
+          "company_slug": "nvidia",
+          "thesis": "NVIDIA’s product bet is CUDA + GPU as a locked-in AI platform — software compounds the silicon, and data-center mix now dominates over gaming cards."
         },
         {
           "slug": "el-banco-sin-sucursales-ni-cajeros-guido-lonetti-head-of-product-de-n2-WlKdOOMA1AY",
@@ -7027,6 +7346,13 @@
           "thesis": "Pitch competes on collaborative decks with design-system consistency — pricing and product assume presentations are team work, not solo PowerPoint files."
         },
         {
+          "slug": "las-claves-para-ser-product-manager-con-ramon-andrio-head-of-product-d-CnxPjb9Ha-k",
+          "title": "Las claves para ser Product Manager con Ramón Andrío, Head of Product de Cabify",
+          "company": "Cabify",
+          "company_slug": "cabify",
+          "thesis": "Cabify’s B2B wedge is predictable corporate pricing plus full-trip invoicing on the same driver network — sales-led discovery shapes product more than consumer marketplace A/B loops."
+        },
+        {
           "slug": "el-rol-de-product-marketing-con-isabel-garate-vp-de-producto-en-landbo-JVJMex7UJAY",
           "title": "El rol de Product Marketing con Isabel Gárate, VP de Producto en Landbot",
           "company": "Landbot",
@@ -7074,6 +7400,11 @@
           "slug": "automattic",
           "name": "Automattic",
           "thesis": "At Automattic (Jetpack), product designers often own discovery and prioritization themselves — design absorbs classic PM duties under high autonomy."
+        },
+        {
+          "slug": "bonilista",
+          "name": "Bonilista",
+          "thesis": "Bonilista treats an email list as insufficient for community — product is belonging and participation, not broadcast reach."
         },
         {
           "slug": "cabify",
@@ -7166,6 +7497,11 @@
           "thesis": "GuruSup runs support as an agent OS that takes actions end-to-end — not a reply-suggestion layer on top of human queues."
         },
         {
+          "slug": "guruwalk",
+          "name": "GuruWalk",
+          "thesis": "GuruWalk’s org bet is radical autonomy — a crisis swarm shipped Anem (Valencia flood car-sharing) without hierarchy gates, treating mission speed as the operating system."
+        },
+        {
           "slug": "hello-app",
           "name": "hello.app",
           "thesis": "hello.app monetizes idle device storage into a decentralized network — users earn by contributing unused capacity instead of renting centralized cloud."
@@ -7234,6 +7570,11 @@
           "slug": "nova-talent",
           "name": "Nova Talent",
           "thesis": "Nova Talent builds a premium B2C professional community on top of B2B headhunting — curated horizontal connections are the product bet, not just placements."
+        },
+        {
+          "slug": "nvidia",
+          "name": "NVIDIA",
+          "thesis": "NVIDIA’s product bet is CUDA + GPU as a locked-in AI platform — software compounds the silicon, and data-center mix now dominates over gaming cards."
         },
         {
           "slug": "ontrack",
@@ -7420,6 +7761,13 @@
           "thesis": "At IskayPet, product methods bend to a traditional retail P&L — digital ships only when stores, supply, and category economics can absorb the change."
         },
         {
+          "slug": "una-lista-de-correos-no-es-una-comunidad-con-david-bonilla-creador-la--4E1OvRrQzcQ",
+          "title": "\\\"Una Lista de Correos NO es una Comunidad\\\" con David Bonilla, creador \\\"La Bonilista\\\"",
+          "company": "Bonilista",
+          "company_slug": "bonilista",
+          "thesis": "Bonilista treats an email list as insufficient for community — product is belonging and participation, not broadcast reach."
+        },
+        {
           "slug": "eliminamos-al-equipo-de-producto-para-ser-todos-producto-javi-santana--qMEVsemCo5c",
           "title": "Eliminamos al equipo de Producto para ser todos Producto | Javi Santana, Co Founder de Tinybird",
           "company": "Tinybird",
@@ -7432,6 +7780,13 @@
           "company": "Mercado Libre",
           "company_slug": "mercado-libre",
           "thesis": "Mercado Libre ships product as an ecosystem of connected surfaces — each bet is judged by how it compounds the platform, not by a single app KPI."
+        },
+        {
+          "slug": "anem-compartir-coche-en-valencia-por-la-dana-juan-castillo-founder-gur-Y2_1WVGUKjw",
+          "title": "Anem! : Compartir Coche en Valencia por la DANA | Juan Castillo, Founder GuruWalk",
+          "company": "GuruWalk",
+          "company_slug": "guruwalk",
+          "thesis": "GuruWalk’s org bet is radical autonomy — a crisis swarm shipped Anem (Valencia flood car-sharing) without hierarchy gates, treating mission speed as the operating system."
         },
         {
           "slug": "funde-un-chatbot-con-ia-para-adolescentes-en-2016-cristina-santamarina-nEizg2iJMNQ",
@@ -7460,6 +7815,13 @@
           "company": "Cabify",
           "company_slug": "cabify",
           "thesis": "Cabify product balances two-sided marketplace liquidity: rider experience and driver supply are one system — local market ops and product ship together."
+        },
+        {
+          "slug": "los-chips-mas-valorados-del-mundo-toni-franques-senior-architect-en-nv-nim2eLTlRwQ",
+          "title": "Los CHIPS más valorados del MUNDO | Toni Franquès, Senior Architect en NVIDIA",
+          "company": "NVIDIA",
+          "company_slug": "nvidia",
+          "thesis": "NVIDIA’s product bet is CUDA + GPU as a locked-in AI platform — software compounds the silicon, and data-center mix now dominates over gaming cards."
         },
         {
           "slug": "el-banco-sin-sucursales-ni-cajeros-guido-lonetti-head-of-product-de-n2-WlKdOOMA1AY",
@@ -7628,6 +7990,13 @@
           "company": "Pitch",
           "company_slug": "pitch",
           "thesis": "Pitch competes on collaborative decks with design-system consistency — pricing and product assume presentations are team work, not solo PowerPoint files."
+        },
+        {
+          "slug": "las-claves-para-ser-product-manager-con-ramon-andrio-head-of-product-d-CnxPjb9Ha-k",
+          "title": "Las claves para ser Product Manager con Ramón Andrío, Head of Product de Cabify",
+          "company": "Cabify",
+          "company_slug": "cabify",
+          "thesis": "Cabify’s B2B wedge is predictable corporate pricing plus full-trip invoicing on the same driver network — sales-led discovery shapes product more than consumer marketplace A/B loops."
         },
         {
           "slug": "el-rol-de-product-marketing-con-isabel-garate-vp-de-producto-en-landbo-JVJMex7UJAY",
@@ -8155,6 +8524,13 @@
           "thesis": "Pitch competes on collaborative decks with design-system consistency — pricing and product assume presentations are team work, not solo PowerPoint files."
         },
         {
+          "slug": "las-claves-para-ser-product-manager-con-ramon-andrio-head-of-product-d-CnxPjb9Ha-k",
+          "title": "Las claves para ser Product Manager con Ramón Andrío, Head of Product de Cabify",
+          "company": "Cabify",
+          "company_slug": "cabify",
+          "thesis": "Cabify’s B2B wedge is predictable corporate pricing plus full-trip invoicing on the same driver network — sales-led discovery shapes product more than consumer marketplace A/B loops."
+        },
+        {
           "slug": "el-rol-de-product-marketing-con-isabel-garate-vp-de-producto-en-landbo-JVJMex7UJAY",
           "title": "El rol de Product Marketing con Isabel Gárate, VP de Producto en Landbot",
           "company": "Landbot",
@@ -8245,6 +8621,11 @@
           "thesis": "Atrápalo stayed a multi-vertical leisure marketplace — tickets, travel, restaurants — by chasing demand signals instead of locking into one niche (they literally started selling tickets by fax)."
         },
         {
+          "slug": "bonilista",
+          "name": "Bonilista",
+          "thesis": "Bonilista treats an email list as insufficient for community — product is belonging and participation, not broadcast reach."
+        },
+        {
           "slug": "capably",
           "name": "Capably",
           "thesis": "Capably sells enterprise AI adoption as data prep + governance + ops integration — the product delegates working hours to AI once the company data is ready."
@@ -8313,6 +8694,11 @@
           "slug": "nova-talent",
           "name": "Nova Talent",
           "thesis": "Nova Talent builds a premium B2C professional community on top of B2B headhunting — curated horizontal connections are the product bet, not just placements."
+        },
+        {
+          "slug": "nvidia",
+          "name": "NVIDIA",
+          "thesis": "NVIDIA’s product bet is CUDA + GPU as a locked-in AI platform — software compounds the silicon, and data-center mix now dominates over gaming cards."
         },
         {
           "slug": "piper",
@@ -8427,6 +8813,13 @@
           "thesis": "At IskayPet, product methods bend to a traditional retail P&L — digital ships only when stores, supply, and category economics can absorb the change."
         },
         {
+          "slug": "una-lista-de-correos-no-es-una-comunidad-con-david-bonilla-creador-la--4E1OvRrQzcQ",
+          "title": "\\\"Una Lista de Correos NO es una Comunidad\\\" con David Bonilla, creador \\\"La Bonilista\\\"",
+          "company": "Bonilista",
+          "company_slug": "bonilista",
+          "thesis": "Bonilista treats an email list as insufficient for community — product is belonging and participation, not broadcast reach."
+        },
+        {
           "slug": "de-3-000-a-50-000-empleados-en-9-anos-patricio-navajas-head-of-product-JF8vk2M3EUw",
           "title": "\\\"De 3.000 a 50.000 empleados en 9 años\\\" | Patricio Navajas, Head of Product de Mercado Libre",
           "company": "Mercado Libre",
@@ -8453,6 +8846,13 @@
           "company": "Ting",
           "company_slug": "ting",
           "thesis": "Ting sells sales automation that recovers the hours reps waste outside calling — product value is measurable talk-time and pipeline hygiene, not another CRM dashboard."
+        },
+        {
+          "slug": "los-chips-mas-valorados-del-mundo-toni-franques-senior-architect-en-nv-nim2eLTlRwQ",
+          "title": "Los CHIPS más valorados del MUNDO | Toni Franquès, Senior Architect en NVIDIA",
+          "company": "NVIDIA",
+          "company_slug": "nvidia",
+          "thesis": "NVIDIA’s product bet is CUDA + GPU as a locked-in AI platform — software compounds the silicon, and data-center mix now dominates over gaming cards."
         },
         {
           "slug": "empezamos-vendiendo-entradas-por-fax-manuel-roca-ceo-y-cofounder-de-at-svhwRR8y1zA",
@@ -8574,6 +8974,11 @@
           "thesis": "Nova Talent builds a premium B2C professional community on top of B2B headhunting — curated horizontal connections are the product bet, not just placements."
         },
         {
+          "slug": "nvidia",
+          "name": "NVIDIA",
+          "thesis": "NVIDIA’s product bet is CUDA + GPU as a locked-in AI platform — software compounds the silicon, and data-center mix now dominates over gaming cards."
+        },
+        {
           "slug": "suntropy",
           "name": "Suntropy",
           "thesis": "Suntropy abandoned PLG self-serve when conversion collapsed with the market — product acquisition flipped to sales-led because the funnel stopped working alone."
@@ -8678,6 +9083,13 @@
           "thesis": "Cabify product balances two-sided marketplace liquidity: rider experience and driver supply are one system — local market ops and product ship together."
         },
         {
+          "slug": "los-chips-mas-valorados-del-mundo-toni-franques-senior-architect-en-nv-nim2eLTlRwQ",
+          "title": "Los CHIPS más valorados del MUNDO | Toni Franquès, Senior Architect en NVIDIA",
+          "company": "NVIDIA",
+          "company_slug": "nvidia",
+          "thesis": "NVIDIA’s product bet is CUDA + GPU as a locked-in AI platform — software compounds the silicon, and data-center mix now dominates over gaming cards."
+        },
+        {
           "slug": "queremos-crear-la-siguiente-gran-comunidad-profesional-cristian-garcia-BMnaqvHPO-E",
           "title": "\\\"Queremos CREAR la siguiente gran COMUNIDAD profesional\\\" | Cristian García, CPO de Nova Talent",
           "company": "Nova Talent",
@@ -8699,6 +9111,13 @@
           "thesis": "Suntropy abandoned PLG self-serve when conversion collapsed with the market — product acquisition flipped to sales-led because the funnel stopped working alone."
         },
         {
+          "slug": "las-claves-para-ser-product-manager-con-ramon-andrio-head-of-product-d-CnxPjb9Ha-k",
+          "title": "Las claves para ser Product Manager con Ramón Andrío, Head of Product de Cabify",
+          "company": "Cabify",
+          "company_slug": "cabify",
+          "thesis": "Cabify’s B2B wedge is predictable corporate pricing plus full-trip invoicing on the same driver network — sales-led discovery shapes product more than consumer marketplace A/B loops."
+        },
+        {
           "slug": "product-leaders-5-producto-en-negocios-b2b2c-con-virginia-diego-head-o-cEH9WEn-Z9o",
           "title": "Product Leaders #5 - Producto en Negocios B2B2C con Virginia Diego, Head of Product de Cobee",
           "company": "Cobee",
@@ -8715,6 +9134,11 @@
           "slug": "atrapalo",
           "name": "Atrápalo",
           "thesis": "Atrápalo stayed a multi-vertical leisure marketplace — tickets, travel, restaurants — by chasing demand signals instead of locking into one niche (they literally started selling tickets by fax)."
+        },
+        {
+          "slug": "bonilista",
+          "name": "Bonilista",
+          "thesis": "Bonilista treats an email list as insufficient for community — product is belonging and participation, not broadcast reach."
         },
         {
           "slug": "clevergy",
@@ -8745,6 +9169,11 @@
           "slug": "getinvoice",
           "name": "GetInvoice",
           "thesis": "GetInvoice is a solo-founder AI maker loop: automate invoice pain for SMBs with AI tooling instead of hiring a classic product org."
+        },
+        {
+          "slug": "guruwalk",
+          "name": "GuruWalk",
+          "thesis": "GuruWalk’s org bet is radical autonomy — a crisis swarm shipped Anem (Valencia flood car-sharing) without hierarchy gates, treating mission speed as the operating system."
         },
         {
           "slug": "hubspot",
@@ -8798,6 +9227,20 @@
           "company": "Devengo",
           "company_slug": "devengo",
           "thesis": "Devengo killed an undifferentiated salary-advance product and rebuilt as account-to-account payments infrastructure — the wedge was rails, not consumer UX."
+        },
+        {
+          "slug": "una-lista-de-correos-no-es-una-comunidad-con-david-bonilla-creador-la--4E1OvRrQzcQ",
+          "title": "\\\"Una Lista de Correos NO es una Comunidad\\\" con David Bonilla, creador \\\"La Bonilista\\\"",
+          "company": "Bonilista",
+          "company_slug": "bonilista",
+          "thesis": "Bonilista treats an email list as insufficient for community — product is belonging and participation, not broadcast reach."
+        },
+        {
+          "slug": "anem-compartir-coche-en-valencia-por-la-dana-juan-castillo-founder-gur-Y2_1WVGUKjw",
+          "title": "Anem! : Compartir Coche en Valencia por la DANA | Juan Castillo, Founder GuruWalk",
+          "company": "GuruWalk",
+          "company_slug": "guruwalk",
+          "thesis": "GuruWalk’s org bet is radical autonomy — a crisis swarm shipped Anem (Valencia flood car-sharing) without hierarchy gates, treating mission speed as the operating system."
         },
         {
           "slug": "los-comerciales-solo-llaman-2-horas-al-dia-marta-cavestany-ceo-founder-v8QuIhRXGIw",
@@ -8943,6 +9386,11 @@
           "thesis": "GuruSup runs support as an agent OS that takes actions end-to-end — not a reply-suggestion layer on top of human queues."
         },
         {
+          "slug": "guruwalk",
+          "name": "GuruWalk",
+          "thesis": "GuruWalk’s org bet is radical autonomy — a crisis swarm shipped Anem (Valencia flood car-sharing) without hierarchy gates, treating mission speed as the operating system."
+        },
+        {
           "slug": "innovamat",
           "name": "Innovamat",
           "thesis": "Innovamat replaces math textbooks with problem-first classroom discovery plus adaptive digital practice — schools buy a curriculum OS, not another workbook."
@@ -8977,6 +9425,13 @@
           "company": "GuruSup",
           "company_slug": "gurusup",
           "thesis": "GuruSup runs support as an agent OS that takes actions end-to-end — not a reply-suggestion layer on top of human queues."
+        },
+        {
+          "slug": "anem-compartir-coche-en-valencia-por-la-dana-juan-castillo-founder-gur-Y2_1WVGUKjw",
+          "title": "Anem! : Compartir Coche en Valencia por la DANA | Juan Castillo, Founder GuruWalk",
+          "company": "GuruWalk",
+          "company_slug": "guruwalk",
+          "thesis": "GuruWalk’s org bet is radical autonomy — a crisis swarm shipped Anem (Valencia flood car-sharing) without hierarchy gates, treating mission speed as the operating system."
         },
         {
           "slug": "trabajar-producto-sin-frameworks-arnau-romero-director-de-producto-de--hfVtB1w0xjc",
@@ -9096,5 +9551,5 @@
       ]
     }
   },
-  "map_mermaid": "flowchart LR\n  classDef company fill:#faf7f1,stroke:#2a2318,color:#2a2318\n  classDef practice fill:#e8c4b0,stroke:#b85c38,color:#2a2318\n  C_apolokids[\"ApoloKids\"]:::company\n  click C_apolokids \"/companies/apolokids\" \"Open ApoloKids\"\n  C_apolokids --- P_enterprise\n  C_apolokids --- P_discovery\n  C_apolokids --- P_delivery\n  C_apolokids --- P_roles\n  C_atrapalo[\"Atrápalo\"]:::company\n  click C_atrapalo \"/companies/atrapalo\" \"Open Atrápalo\"\n  C_atrapalo --- P_ai_product\n  C_atrapalo --- P_discovery\n  C_atrapalo --- P_delivery\n  C_atrapalo --- P_growth\n  C_automattic[\"Automattic\"]:::company\n  click C_automattic \"/companies/automattic\" \"Open Automattic\"\n  C_automattic --- P_discovery\n  C_automattic --- P_delivery\n  C_automattic --- P_org_shape\n  C_automattic --- P_roles\n  C_cabify[\"Cabify\"]:::company\n  click C_cabify \"/companies/cabify\" \"Open Cabify\"\n  C_cabify --- P_enterprise\n  C_cabify --- P_discovery\n  C_cabify --- P_delivery\n  C_cabify --- P_roles\n  C_capably[\"Capably\"]:::company\n  click C_capably \"/companies/capably\" \"Open Capably\"\n  C_capably --- P_enterprise\n  C_capably --- P_ai_product\n  C_capably --- P_discovery\n  C_capably --- P_delivery\n  C_capchase[\"Capchase\"]:::company\n  click C_capchase \"/companies/capchase\" \"Open Capchase\"\n  C_capchase --- P_discovery\n  C_capchase --- P_delivery\n  C_capchase --- P_org_shape\n  C_capchase --- P_roles\n  C_citibox[\"Citibox\"]:::company\n  click C_citibox \"/companies/citibox\" \"Open Citibox\"\n  C_citibox --- P_enterprise\n  C_citibox --- P_ai_product\n  C_citibox --- P_discovery\n  C_citibox --- P_delivery\n  C_clevergy[\"Clevergy\"]:::company\n  click C_clevergy \"/companies/clevergy\" \"Open Clevergy\"\n  C_clevergy --- P_discovery\n  C_clevergy --- P_delivery\n  C_clevergy --- P_roles\n  C_clevergy --- P_growth\n  C_cobee[\"Cobee\"]:::company\n  click C_cobee \"/companies/cobee\" \"Open Cobee\"\n  C_cobee --- P_growth\n  C_cobee --- P_enterprise\n  C_cobee --- P_leadership\n  C_cobee --- P_roles\n  C_crossmint[\"Crossmint\"]:::company\n  click C_crossmint \"/companies/crossmint\" \"Open Crossmint\"\n  C_crossmint --- P_ai_product\n  C_crossmint --- P_discovery\n  C_crossmint --- P_delivery\n  C_crossmint --- P_roles\n  C_dcycle[\"Dcycle\"]:::company\n  click C_dcycle \"/companies/dcycle\" \"Open Dcycle\"\n  C_dcycle --- P_enterprise\n  C_dcycle --- P_discovery\n  C_dcycle --- P_delivery\n  C_dcycle --- P_roles\n  C_dealcar[\"Dealcar\"]:::company\n  click C_dealcar \"/companies/dealcar\" \"Open Dealcar\"\n  C_dealcar --- P_discovery\n  C_dealcar --- P_delivery\n  C_dealcar --- P_roles\n  C_dealcar --- P_founder\n  C_decathlon[\"Decathlon\"]:::company\n  click C_decathlon \"/companies/decathlon\" \"Open Decathlon\"\n  C_decathlon --- P_discovery\n  C_decathlon --- P_delivery\n  C_decathlon --- P_org_shape\n  C_decathlon --- P_roles\n  C_devengo[\"Devengo\"]:::company\n  click C_devengo \"/companies/devengo\" \"Open Devengo\"\n  C_devengo --- P_enterprise\n  C_devengo --- P_discovery\n  C_devengo --- P_delivery\n  C_devengo --- P_growth\n  C_dogfy_diet[\"Dogfy Diet\"]:::company\n  click C_dogfy_diet \"/companies/dogfy-diet\" \"Open Dogfy Diet\"\n  C_dogfy_diet --- P_discovery\n  C_dogfy_diet --- P_delivery\n  C_dogfy_diet --- P_org_shape\n  C_dogfy_diet --- P_growth\n  C_eva[\"Eva\"]:::company\n  click C_eva \"/companies/eva\" \"Open Eva\"\n  C_eva --- P_ai_product\n  C_eva --- P_discovery\n  C_eva --- P_delivery\n  C_factorial[\"Factorial\"]:::company\n  click C_factorial \"/companies/factorial\" \"Open Factorial\"\n  C_factorial --- P_discovery\n  C_factorial --- P_delivery\n  C_factorial --- P_growth\n  C_factorial --- P_founder\n  C_filmin[\"Filmin\"]:::company\n  click C_filmin \"/companies/filmin\" \"Open Filmin\"\n  C_filmin --- P_discovery\n  C_filmin --- P_delivery\n  C_filmin --- P_roles\n  C_filmin --- P_ai_product\n  C_freshly_cosmetics[\"Freshly Cosmetics\"]:::company\n  click C_freshly_cosmetics \"/companies/freshly-cosmetics\" \"Open Freshly Cosmetics\"\n  C_freshly_cosmetics --- P_discovery\n  C_freshly_cosmetics --- P_delivery\n  C_freshly_cosmetics --- P_org_shape\n  C_freshly_cosmetics --- P_platform\n  C_getinvoice[\"GetInvoice\"]:::company\n  click C_getinvoice \"/companies/getinvoice\" \"Open GetInvoice\"\n  C_getinvoice --- P_ai_product\n  C_getinvoice --- P_discovery\n  C_getinvoice --- P_delivery\n  C_getinvoice --- P_growth\n  C_graphext[\"Graphext\"]:::company\n  click C_graphext \"/companies/graphext\" \"Open Graphext\"\n  C_graphext --- P_enterprise\n  C_graphext --- P_ai_product\n  C_graphext --- P_discovery\n  C_graphext --- P_delivery\n  C_gurusup[\"GuruSup\"]:::company\n  click C_gurusup \"/companies/gurusup\" \"Open GuruSup\"\n  C_gurusup --- P_ai_product\n  C_gurusup --- P_discovery\n  C_gurusup --- P_delivery\n  C_gurusup --- P_founder\n  C_hello_app[\"hello.app\"]:::company\n  click C_hello_app \"/companies/hello-app\" \"Open hello.app\"\n  C_hello_app --- P_discovery\n  C_hello_app --- P_delivery\n  C_hello_app --- P_org_shape\n  C_hello_app --- P_roles\n  C_hellotickets[\"Hellotickets\"]:::company\n  click C_hellotickets \"/companies/hellotickets\" \"Open Hellotickets\"\n  C_hellotickets --- P_discovery\n  C_hellotickets --- P_delivery\n  C_hellotickets --- P_org_shape\n  C_hellotickets --- P_roles\n  C_hubspot[\"HubSpot\"]:::company\n  click C_hubspot \"/companies/hubspot\" \"Open HubSpot\"\n  C_hubspot --- P_discovery\n  C_hubspot --- P_delivery\n  C_hubspot --- P_org_shape\n  C_hubspot --- P_roles\n  C_hubspot --- P_metrics\n  C_hubspot --- P_growth\n  C_hubspot --- P_platform\n  C_ikualo[\"Ikualo\"]:::company\n  click C_ikualo \"/companies/ikualo\" \"Open Ikualo\"\n  C_ikualo --- P_ai_product\n  C_ikualo --- P_discovery\n  C_ikualo --- P_delivery\n  C_ikualo --- P_org_shape\n  C_innovamat[\"Innovamat\"]:::company\n  click C_innovamat \"/companies/innovamat\" \"Open Innovamat\"\n  C_innovamat --- P_discovery\n  C_innovamat --- P_delivery\n  C_innovamat --- P_roles\n  C_innovamat --- P_founder\n  C_inology[\"Inology\"]:::company\n  click C_inology \"/companies/inology\" \"Open Inology\"\n  C_inology --- P_enterprise\n  C_inology --- P_discovery\n  C_inology --- P_delivery\n  C_inology --- P_roles\n  C_iskaypet[\"IskayPet\"]:::company\n  click C_iskaypet \"/companies/iskaypet\" \"Open IskayPet\"\n  C_iskaypet --- P_ai_product\n  C_iskaypet --- P_discovery\n  C_iskaypet --- P_delivery\n  C_iskaypet --- P_org_shape\n  C_landbot[\"Landbot\"]:::company\n  click C_landbot \"/companies/landbot\" \"Open Landbot\"\n  C_landbot --- P_ai_product\n  C_landbot --- P_discovery\n  C_landbot --- P_delivery\n  C_landbot --- P_roles\n  C_mercado_libre[\"Mercado Libre\"]:::company\n  click C_mercado_libre \"/companies/mercado-libre\" \"Open Mercado Libre\"\n  C_mercado_libre --- P_ai_product\n  C_mercado_libre --- P_discovery\n  C_mercado_libre --- P_delivery\n  C_mercado_libre --- P_roles\n  C_mercadona_tech[\"Mercadona Tech\"]:::company\n  click C_mercadona_tech \"/companies/mercadona-tech\" \"Open Mercadona Tech\"\n  C_mercadona_tech --- P_discovery\n  C_mercadona_tech --- P_delivery\n  C_mercadona_tech --- P_roles\n  C_mercadona_tech --- P_platform\n  C_mercadona_tech --- P_design\n  C_mercadona_tech --- P_leadership\n  C_meta[\"Meta\"]:::company\n  click C_meta \"/companies/meta\" \"Open Meta\"\n  C_meta --- P_discovery\n  C_meta --- P_delivery\n  C_meta --- P_roles\n  C_meta --- P_growth\n  C_n26[\"N26\"]:::company\n  click C_n26 \"/companies/n26\" \"Open N26\"\n  C_n26 --- P_discovery\n  C_n26 --- P_delivery\n  C_n26 --- P_org_shape\n  C_n26 --- P_roles\n  C_nominis[\"Nominis\"]:::company\n  click C_nominis \"/companies/nominis\" \"Open Nominis\"\n  C_nominis --- P_ai_product\n  C_nominis --- P_discovery\n  C_nominis --- P_delivery\n  C_nominis --- P_metrics\n  C_nova_talent[\"Nova Talent\"]:::company\n  click C_nova_talent \"/companies/nova-talent\" \"Open Nova Talent\"\n  C_nova_talent --- P_enterprise\n  C_nova_talent --- P_ai_product\n  C_nova_talent --- P_discovery\n  C_nova_talent --- P_delivery\n  C_ontrack[\"OnTrack\"]:::company\n  click C_ontrack \"/companies/ontrack\" \"Open OnTrack\"\n  C_ontrack --- P_discovery\n  C_ontrack --- P_delivery\n  C_ontrack --- P_founder\n  C_piper[\"Piper\"]:::company\n  click C_piper \"/companies/piper\" \"Open Piper\"\n  C_piper --- P_ai_product\n  C_piper --- P_growth\n  C_piper --- P_platform\n  C_pitch[\"Pitch\"]:::company\n  click C_pitch \"/companies/pitch\" \"Open Pitch\"\n  C_pitch --- P_discovery\n  C_pitch --- P_delivery\n  C_pitch --- P_roles\n  C_pitch --- P_founder\n  C_saferlayer[\"SaferLayer\"]:::company\n  click C_saferlayer \"/companies/saferlayer\" \"Open SaferLayer\"\n  C_saferlayer --- P_discovery\n  C_saferlayer --- P_delivery\n  C_saferlayer --- P_org_shape\n  C_saferlayer --- P_platform\n  C_shakers[\"Shakers\"]:::company\n  click C_shakers \"/companies/shakers\" \"Open Shakers\"\n  C_shakers --- P_ai_product\n  C_shakers --- P_discovery\n  C_shakers --- P_delivery\n  C_shakers --- P_org_shape\n  C_shopify[\"Shopify\"]:::company\n  click C_shopify \"/companies/shopify\" \"Open Shopify\"\n  C_shopify --- P_ai_product\n  C_shopify --- P_discovery\n  C_shopify --- P_delivery\n  C_shopify --- P_roles\n  C_spotify[\"Spotify\"]:::company\n  click C_spotify \"/companies/spotify\" \"Open Spotify\"\n  C_spotify --- P_ai_product\n  C_spotify --- P_discovery\n  C_spotify --- P_delivery\n  C_spotify --- P_org_shape\n  C_suntropy[\"Suntropy\"]:::company\n  click C_suntropy \"/companies/suntropy\" \"Open Suntropy\"\n  C_suntropy --- P_discovery\n  C_suntropy --- P_growth\n  C_suntropy --- P_platform\n  C_suntropy --- P_enterprise\n  C_taxdown[\"Taxdown\"]:::company\n  click C_taxdown \"/companies/taxdown\" \"Open Taxdown\"\n  C_taxdown --- P_enterprise\n  C_taxdown --- P_ai_product\n  C_taxdown --- P_discovery\n  C_taxdown --- P_delivery\n  C_ting[\"Ting\"]:::company\n  click C_ting \"/companies/ting\" \"Open Ting\"\n  C_ting --- P_discovery\n  C_ting --- P_ai_product\n  C_ting --- P_growth\n  C_ting --- P_enterprise\n  C_tinybird[\"Tinybird\"]:::company\n  click C_tinybird \"/companies/tinybird\" \"Open Tinybird\"\n  C_tinybird --- P_enterprise\n  C_tinybird --- P_discovery\n  C_tinybird --- P_delivery\n  C_tinybird --- P_org_shape\n  C_trucksters[\"Trucksters\"]:::company\n  click C_trucksters \"/companies/trucksters\" \"Open Trucksters\"\n  C_trucksters --- P_discovery\n  C_trucksters --- P_delivery\n  C_trucksters --- P_roles\n  C_tuio[\"Tuio\"]:::company\n  click C_tuio \"/companies/tuio\" \"Open Tuio\"\n  C_tuio --- P_discovery\n  C_tuio --- P_delivery\n  C_tuio --- P_roles\n  C_tuio --- P_growth\n  C_typeform[\"Typeform\"]:::company\n  click C_typeform \"/companies/typeform\" \"Open Typeform\"\n  C_typeform --- P_discovery\n  C_typeform --- P_delivery\n  C_typeform --- P_metrics\n  C_typeform --- P_founder\n  C_ucademy[\"Ucademy\"]:::company\n  click C_ucademy \"/companies/ucademy\" \"Open Ucademy\"\n  C_ucademy --- P_ai_product\n  C_ucademy --- P_discovery\n  C_ucademy --- P_delivery\n  C_ucademy --- P_roles\n  C_waynabox[\"Waynabox\"]:::company\n  click C_waynabox \"/companies/waynabox\" \"Open Waynabox\"\n  C_waynabox --- P_enterprise\n  C_waynabox --- P_ai_product\n  C_waynabox --- P_discovery\n  C_waynabox --- P_delivery\n  C_webel[\"Webel\"]:::company\n  click C_webel \"/companies/webel\" \"Open Webel\"\n  C_webel --- P_discovery\n  C_webel --- P_delivery\n  C_webel --- P_org_shape\n  C_webel --- P_roles\n  P_enterprise([\"Enterprise\"]):::practice\n  click P_enterprise \"/practices/enterprise\" \"Browse Enterprise\"\n  P_discovery([\"Continuous\"]):::practice\n  click P_discovery \"/practices/discovery\" \"Browse Continuous\"\n  P_delivery([\"Delivery\"]):::practice\n  click P_delivery \"/practices/delivery\" \"Browse Delivery\"\n  P_roles([\"Role boundaries (PM\"]):::practice\n  click P_roles \"/practices/roles\" \"Browse Role boundaries (PM\"\n  P_ai_product([\"AI in the product or workflo\"]):::practice\n  click P_ai_product \"/practices/ai_product\" \"Browse AI in the product or workflo\"\n  P_growth([\"Growth, PMF, GTM\"]):::practice\n  click P_growth \"/practices/growth\" \"Browse Growth, PMF, GTM\"\n  P_org_shape([\"Org design\"]):::practice\n  click P_org_shape \"/practices/org_shape\" \"Browse Org design\"\n  P_leadership([\"Product leadership\"]):::practice\n  click P_leadership \"/practices/leadership\" \"Browse Product leadership\"\n  P_founder([\"Founder\"]):::practice\n  click P_founder \"/practices/founder\" \"Browse Founder\"\n  P_platform([\"Platform\"]):::practice\n  click P_platform \"/practices/platform\" \"Browse Platform\"\n  P_metrics([\"Metrics, rituals, operating \"]):::practice\n  click P_metrics \"/practices/metrics\" \"Browse Metrics, rituals, operating \"\n  P_design([\"Design systems\"]):::practice\n  click P_design \"/practices/design\" \"Browse Design systems\""
+  "map_mermaid": "flowchart LR\n  classDef company fill:#faf7f1,stroke:#2a2318,color:#2a2318\n  classDef practice fill:#e8c4b0,stroke:#b85c38,color:#2a2318\n  C_apolokids[\"ApoloKids\"]:::company\n  click C_apolokids \"/companies/apolokids\" \"Open ApoloKids\"\n  C_apolokids --- P_enterprise\n  C_apolokids --- P_discovery\n  C_apolokids --- P_delivery\n  C_apolokids --- P_roles\n  C_atrapalo[\"Atrápalo\"]:::company\n  click C_atrapalo \"/companies/atrapalo\" \"Open Atrápalo\"\n  C_atrapalo --- P_ai_product\n  C_atrapalo --- P_discovery\n  C_atrapalo --- P_delivery\n  C_atrapalo --- P_growth\n  C_automattic[\"Automattic\"]:::company\n  click C_automattic \"/companies/automattic\" \"Open Automattic\"\n  C_automattic --- P_discovery\n  C_automattic --- P_delivery\n  C_automattic --- P_org_shape\n  C_automattic --- P_roles\n  C_bonilista[\"Bonilista\"]:::company\n  click C_bonilista \"/companies/bonilista\" \"Open Bonilista\"\n  C_bonilista --- P_ai_product\n  C_bonilista --- P_discovery\n  C_bonilista --- P_delivery\n  C_bonilista --- P_growth\n  C_cabify[\"Cabify\"]:::company\n  click C_cabify \"/companies/cabify\" \"Open Cabify\"\n  C_cabify --- P_enterprise\n  C_cabify --- P_discovery\n  C_cabify --- P_delivery\n  C_cabify --- P_roles\n  C_capably[\"Capably\"]:::company\n  click C_capably \"/companies/capably\" \"Open Capably\"\n  C_capably --- P_enterprise\n  C_capably --- P_ai_product\n  C_capably --- P_discovery\n  C_capably --- P_delivery\n  C_capchase[\"Capchase\"]:::company\n  click C_capchase \"/companies/capchase\" \"Open Capchase\"\n  C_capchase --- P_discovery\n  C_capchase --- P_delivery\n  C_capchase --- P_org_shape\n  C_capchase --- P_roles\n  C_citibox[\"Citibox\"]:::company\n  click C_citibox \"/companies/citibox\" \"Open Citibox\"\n  C_citibox --- P_enterprise\n  C_citibox --- P_ai_product\n  C_citibox --- P_discovery\n  C_citibox --- P_delivery\n  C_clevergy[\"Clevergy\"]:::company\n  click C_clevergy \"/companies/clevergy\" \"Open Clevergy\"\n  C_clevergy --- P_discovery\n  C_clevergy --- P_delivery\n  C_clevergy --- P_roles\n  C_clevergy --- P_growth\n  C_cobee[\"Cobee\"]:::company\n  click C_cobee \"/companies/cobee\" \"Open Cobee\"\n  C_cobee --- P_growth\n  C_cobee --- P_enterprise\n  C_cobee --- P_leadership\n  C_cobee --- P_roles\n  C_crossmint[\"Crossmint\"]:::company\n  click C_crossmint \"/companies/crossmint\" \"Open Crossmint\"\n  C_crossmint --- P_ai_product\n  C_crossmint --- P_discovery\n  C_crossmint --- P_delivery\n  C_crossmint --- P_roles\n  C_dcycle[\"Dcycle\"]:::company\n  click C_dcycle \"/companies/dcycle\" \"Open Dcycle\"\n  C_dcycle --- P_enterprise\n  C_dcycle --- P_discovery\n  C_dcycle --- P_delivery\n  C_dcycle --- P_roles\n  C_dealcar[\"Dealcar\"]:::company\n  click C_dealcar \"/companies/dealcar\" \"Open Dealcar\"\n  C_dealcar --- P_discovery\n  C_dealcar --- P_delivery\n  C_dealcar --- P_roles\n  C_dealcar --- P_founder\n  C_decathlon[\"Decathlon\"]:::company\n  click C_decathlon \"/companies/decathlon\" \"Open Decathlon\"\n  C_decathlon --- P_discovery\n  C_decathlon --- P_delivery\n  C_decathlon --- P_org_shape\n  C_decathlon --- P_roles\n  C_devengo[\"Devengo\"]:::company\n  click C_devengo \"/companies/devengo\" \"Open Devengo\"\n  C_devengo --- P_enterprise\n  C_devengo --- P_discovery\n  C_devengo --- P_delivery\n  C_devengo --- P_growth\n  C_dogfy_diet[\"Dogfy Diet\"]:::company\n  click C_dogfy_diet \"/companies/dogfy-diet\" \"Open Dogfy Diet\"\n  C_dogfy_diet --- P_discovery\n  C_dogfy_diet --- P_delivery\n  C_dogfy_diet --- P_org_shape\n  C_dogfy_diet --- P_growth\n  C_eva[\"Eva\"]:::company\n  click C_eva \"/companies/eva\" \"Open Eva\"\n  C_eva --- P_ai_product\n  C_eva --- P_discovery\n  C_eva --- P_delivery\n  C_factorial[\"Factorial\"]:::company\n  click C_factorial \"/companies/factorial\" \"Open Factorial\"\n  C_factorial --- P_discovery\n  C_factorial --- P_delivery\n  C_factorial --- P_growth\n  C_factorial --- P_founder\n  C_filmin[\"Filmin\"]:::company\n  click C_filmin \"/companies/filmin\" \"Open Filmin\"\n  C_filmin --- P_discovery\n  C_filmin --- P_delivery\n  C_filmin --- P_roles\n  C_filmin --- P_ai_product\n  C_freshly_cosmetics[\"Freshly Cosmetics\"]:::company\n  click C_freshly_cosmetics \"/companies/freshly-cosmetics\" \"Open Freshly Cosmetics\"\n  C_freshly_cosmetics --- P_discovery\n  C_freshly_cosmetics --- P_delivery\n  C_freshly_cosmetics --- P_org_shape\n  C_freshly_cosmetics --- P_platform\n  C_getinvoice[\"GetInvoice\"]:::company\n  click C_getinvoice \"/companies/getinvoice\" \"Open GetInvoice\"\n  C_getinvoice --- P_ai_product\n  C_getinvoice --- P_discovery\n  C_getinvoice --- P_delivery\n  C_getinvoice --- P_growth\n  C_graphext[\"Graphext\"]:::company\n  click C_graphext \"/companies/graphext\" \"Open Graphext\"\n  C_graphext --- P_enterprise\n  C_graphext --- P_ai_product\n  C_graphext --- P_discovery\n  C_graphext --- P_delivery\n  C_gurusup[\"GuruSup\"]:::company\n  click C_gurusup \"/companies/gurusup\" \"Open GuruSup\"\n  C_gurusup --- P_ai_product\n  C_gurusup --- P_discovery\n  C_gurusup --- P_delivery\n  C_gurusup --- P_founder\n  C_guruwalk[\"GuruWalk\"]:::company\n  click C_guruwalk \"/companies/guruwalk\" \"Open GuruWalk\"\n  C_guruwalk --- P_discovery\n  C_guruwalk --- P_delivery\n  C_guruwalk --- P_growth\n  C_guruwalk --- P_founder\n  C_hello_app[\"hello.app\"]:::company\n  click C_hello_app \"/companies/hello-app\" \"Open hello.app\"\n  C_hello_app --- P_discovery\n  C_hello_app --- P_delivery\n  C_hello_app --- P_org_shape\n  C_hello_app --- P_roles\n  C_hellotickets[\"Hellotickets\"]:::company\n  click C_hellotickets \"/companies/hellotickets\" \"Open Hellotickets\"\n  C_hellotickets --- P_discovery\n  C_hellotickets --- P_delivery\n  C_hellotickets --- P_org_shape\n  C_hellotickets --- P_roles\n  C_hubspot[\"HubSpot\"]:::company\n  click C_hubspot \"/companies/hubspot\" \"Open HubSpot\"\n  C_hubspot --- P_discovery\n  C_hubspot --- P_delivery\n  C_hubspot --- P_org_shape\n  C_hubspot --- P_roles\n  C_hubspot --- P_metrics\n  C_hubspot --- P_growth\n  C_hubspot --- P_platform\n  C_ikualo[\"Ikualo\"]:::company\n  click C_ikualo \"/companies/ikualo\" \"Open Ikualo\"\n  C_ikualo --- P_ai_product\n  C_ikualo --- P_discovery\n  C_ikualo --- P_delivery\n  C_ikualo --- P_org_shape\n  C_innovamat[\"Innovamat\"]:::company\n  click C_innovamat \"/companies/innovamat\" \"Open Innovamat\"\n  C_innovamat --- P_discovery\n  C_innovamat --- P_delivery\n  C_innovamat --- P_roles\n  C_innovamat --- P_founder\n  C_inology[\"Inology\"]:::company\n  click C_inology \"/companies/inology\" \"Open Inology\"\n  C_inology --- P_enterprise\n  C_inology --- P_discovery\n  C_inology --- P_delivery\n  C_inology --- P_roles\n  C_iskaypet[\"IskayPet\"]:::company\n  click C_iskaypet \"/companies/iskaypet\" \"Open IskayPet\"\n  C_iskaypet --- P_ai_product\n  C_iskaypet --- P_discovery\n  C_iskaypet --- P_delivery\n  C_iskaypet --- P_org_shape\n  C_landbot[\"Landbot\"]:::company\n  click C_landbot \"/companies/landbot\" \"Open Landbot\"\n  C_landbot --- P_ai_product\n  C_landbot --- P_discovery\n  C_landbot --- P_delivery\n  C_landbot --- P_roles\n  C_mercado_libre[\"Mercado Libre\"]:::company\n  click C_mercado_libre \"/companies/mercado-libre\" \"Open Mercado Libre\"\n  C_mercado_libre --- P_ai_product\n  C_mercado_libre --- P_discovery\n  C_mercado_libre --- P_delivery\n  C_mercado_libre --- P_roles\n  C_mercadona_tech[\"Mercadona Tech\"]:::company\n  click C_mercadona_tech \"/companies/mercadona-tech\" \"Open Mercadona Tech\"\n  C_mercadona_tech --- P_discovery\n  C_mercadona_tech --- P_delivery\n  C_mercadona_tech --- P_roles\n  C_mercadona_tech --- P_platform\n  C_mercadona_tech --- P_design\n  C_mercadona_tech --- P_leadership\n  C_meta[\"Meta\"]:::company\n  click C_meta \"/companies/meta\" \"Open Meta\"\n  C_meta --- P_discovery\n  C_meta --- P_delivery\n  C_meta --- P_roles\n  C_meta --- P_growth\n  C_n26[\"N26\"]:::company\n  click C_n26 \"/companies/n26\" \"Open N26\"\n  C_n26 --- P_discovery\n  C_n26 --- P_delivery\n  C_n26 --- P_org_shape\n  C_n26 --- P_roles\n  C_nominis[\"Nominis\"]:::company\n  click C_nominis \"/companies/nominis\" \"Open Nominis\"\n  C_nominis --- P_ai_product\n  C_nominis --- P_discovery\n  C_nominis --- P_delivery\n  C_nominis --- P_metrics\n  C_nova_talent[\"Nova Talent\"]:::company\n  click C_nova_talent \"/companies/nova-talent\" \"Open Nova Talent\"\n  C_nova_talent --- P_enterprise\n  C_nova_talent --- P_ai_product\n  C_nova_talent --- P_discovery\n  C_nova_talent --- P_delivery\n  C_nvidia[\"NVIDIA\"]:::company\n  click C_nvidia \"/companies/nvidia\" \"Open NVIDIA\"\n  C_nvidia --- P_enterprise\n  C_nvidia --- P_ai_product\n  C_nvidia --- P_discovery\n  C_nvidia --- P_delivery\n  C_ontrack[\"OnTrack\"]:::company\n  click C_ontrack \"/companies/ontrack\" \"Open OnTrack\"\n  C_ontrack --- P_discovery\n  C_ontrack --- P_delivery\n  C_ontrack --- P_founder\n  C_piper[\"Piper\"]:::company\n  click C_piper \"/companies/piper\" \"Open Piper\"\n  C_piper --- P_ai_product\n  C_piper --- P_growth\n  C_piper --- P_platform\n  C_pitch[\"Pitch\"]:::company\n  click C_pitch \"/companies/pitch\" \"Open Pitch\"\n  C_pitch --- P_discovery\n  C_pitch --- P_delivery\n  C_pitch --- P_roles\n  C_pitch --- P_founder\n  C_saferlayer[\"SaferLayer\"]:::company\n  click C_saferlayer \"/companies/saferlayer\" \"Open SaferLayer\"\n  C_saferlayer --- P_discovery\n  C_saferlayer --- P_delivery\n  C_saferlayer --- P_org_shape\n  C_saferlayer --- P_platform\n  C_shakers[\"Shakers\"]:::company\n  click C_shakers \"/companies/shakers\" \"Open Shakers\"\n  C_shakers --- P_ai_product\n  C_shakers --- P_discovery\n  C_shakers --- P_delivery\n  C_shakers --- P_org_shape\n  C_shopify[\"Shopify\"]:::company\n  click C_shopify \"/companies/shopify\" \"Open Shopify\"\n  C_shopify --- P_ai_product\n  C_shopify --- P_discovery\n  C_shopify --- P_delivery\n  C_shopify --- P_roles\n  C_spotify[\"Spotify\"]:::company\n  click C_spotify \"/companies/spotify\" \"Open Spotify\"\n  C_spotify --- P_ai_product\n  C_spotify --- P_discovery\n  C_spotify --- P_delivery\n  C_spotify --- P_org_shape\n  C_suntropy[\"Suntropy\"]:::company\n  click C_suntropy \"/companies/suntropy\" \"Open Suntropy\"\n  C_suntropy --- P_discovery\n  C_suntropy --- P_growth\n  C_suntropy --- P_platform\n  C_suntropy --- P_enterprise\n  C_taxdown[\"Taxdown\"]:::company\n  click C_taxdown \"/companies/taxdown\" \"Open Taxdown\"\n  C_taxdown --- P_enterprise\n  C_taxdown --- P_ai_product\n  C_taxdown --- P_discovery\n  C_taxdown --- P_delivery\n  C_ting[\"Ting\"]:::company\n  click C_ting \"/companies/ting\" \"Open Ting\"\n  C_ting --- P_discovery\n  C_ting --- P_ai_product\n  C_ting --- P_growth\n  C_ting --- P_enterprise\n  C_tinybird[\"Tinybird\"]:::company\n  click C_tinybird \"/companies/tinybird\" \"Open Tinybird\"\n  C_tinybird --- P_enterprise\n  C_tinybird --- P_discovery\n  C_tinybird --- P_delivery\n  C_tinybird --- P_org_shape\n  C_trucksters[\"Trucksters\"]:::company\n  click C_trucksters \"/companies/trucksters\" \"Open Trucksters\"\n  C_trucksters --- P_discovery\n  C_trucksters --- P_delivery\n  C_trucksters --- P_roles\n  C_tuio[\"Tuio\"]:::company\n  click C_tuio \"/companies/tuio\" \"Open Tuio\"\n  C_tuio --- P_discovery\n  C_tuio --- P_delivery\n  C_tuio --- P_roles\n  C_tuio --- P_growth\n  C_typeform[\"Typeform\"]:::company\n  click C_typeform \"/companies/typeform\" \"Open Typeform\"\n  C_typeform --- P_discovery\n  C_typeform --- P_delivery\n  C_typeform --- P_metrics\n  C_typeform --- P_founder\n  C_ucademy[\"Ucademy\"]:::company\n  click C_ucademy \"/companies/ucademy\" \"Open Ucademy\"\n  C_ucademy --- P_ai_product\n  C_ucademy --- P_discovery\n  C_ucademy --- P_delivery\n  C_ucademy --- P_roles\n  C_waynabox[\"Waynabox\"]:::company\n  click C_waynabox \"/companies/waynabox\" \"Open Waynabox\"\n  C_waynabox --- P_enterprise\n  C_waynabox --- P_ai_product\n  C_waynabox --- P_discovery\n  C_waynabox --- P_delivery\n  C_webel[\"Webel\"]:::company\n  click C_webel \"/companies/webel\" \"Open Webel\"\n  C_webel --- P_discovery\n  C_webel --- P_delivery\n  C_webel --- P_org_shape\n  C_webel --- P_roles\n  P_enterprise([\"Enterprise\"]):::practice\n  click P_enterprise \"/practices/enterprise\" \"Browse Enterprise\"\n  P_discovery([\"Continuous\"]):::practice\n  click P_discovery \"/practices/discovery\" \"Browse Continuous\"\n  P_delivery([\"Delivery\"]):::practice\n  click P_delivery \"/practices/delivery\" \"Browse Delivery\"\n  P_roles([\"Role boundaries (PM\"]):::practice\n  click P_roles \"/practices/roles\" \"Browse Role boundaries (PM\"\n  P_ai_product([\"AI in the product or workflo\"]):::practice\n  click P_ai_product \"/practices/ai_product\" \"Browse AI in the product or workflo\"\n  P_growth([\"Growth, PMF, GTM\"]):::practice\n  click P_growth \"/practices/growth\" \"Browse Growth, PMF, GTM\"\n  P_org_shape([\"Org design\"]):::practice\n  click P_org_shape \"/practices/org_shape\" \"Browse Org design\"\n  P_leadership([\"Product leadership\"]):::practice\n  click P_leadership \"/practices/leadership\" \"Browse Product leadership\"\n  P_founder([\"Founder\"]):::practice\n  click P_founder \"/practices/founder\" \"Browse Founder\"\n  P_platform([\"Platform\"]):::practice\n  click P_platform \"/practices/platform\" \"Browse Platform\"\n  P_metrics([\"Metrics, rituals, operating \"]):::practice\n  click P_metrics \"/practices/metrics\" \"Browse Metrics, rituals, operating \"\n  P_design([\"Design systems\"]):::practice\n  click P_design \"/practices/design\" \"Browse Design systems\""
 }

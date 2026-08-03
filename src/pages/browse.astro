@@ -21,10 +21,21 @@ const counts = Object.fromEntries(
   </div>
 
   <div class="browse-filters" id="browse-filters">
-    <p class="section-label">Status</p>
+    <p class="section-label">Filter cards</p>
     <div class="filter-row">
+      <label class="filter-search">
+        Search
+        <input
+          id="browse-q"
+          type="search"
+          name="q"
+          placeholder="Company, guest, thesis…"
+          autocomplete="off"
+          spellcheck="false"
+        />
+      </label>
       <label>
-        Show
+        Status
         <select id="browse-status">
           <option value="published">Published ({counts.published || 0})</option>
           <option value="weak">Weak ({counts.weak || 0})</option>
@@ -32,43 +43,112 @@ const counts = Object.fromEntries(
           <option value="all">All ({episodes.length})</option>
         </select>
       </label>
+      <button type="button" id="browse-reset" class="filter-reset">
+        Reset
+      </button>
     </div>
+    <p class="filter-count" id="browse-count" hidden></p>
   </div>
 
   {
     episodes.length === 0 ? (
       <p class="empty">No episodes processed yet.</p>
     ) : (
-      <ul class="episode-list" style="margin-top: 1.5rem;" id="browse-list">
-        {episodes.map((e) => (
-          <li data-status={e.status || "unknown"}>
-            <a href={`/episodes/${e.slug}`}>
-              <div class="meta">
-                {[e.company, e.guest, e.role, e.status]
-                  .filter(Boolean)
-                  .join(" · ") || "—"}
-              </div>
-              <h3>{e.thesis || e.overview || e.company || "Untitled card"}</h3>
-              {e.title ? <p class="source-title">Source: {e.title}</p> : null}
-            </a>
-          </li>
-        ))}
-      </ul>
+      <div id="browse-wrap">
+        <p class="empty filter-empty" id="browse-empty" hidden>
+          No cards match.{" "}
+          <button type="button" class="text-link" id="browse-empty-reset">
+            Reset filters
+          </button>
+          .
+        </p>
+        <ul class="episode-list" style="margin-top: 1.5rem;" id="browse-list">
+          {episodes.map((e) => (
+            <li
+              data-status={e.status || "unknown"}
+              data-search={[
+                e.company,
+                e.guest,
+                e.role,
+                e.thesis,
+                e.overview,
+                e.title,
+                e.slug,
+              ]
+                .filter(Boolean)
+                .join(" ")
+                .toLowerCase()}
+            >
+              <a href={`/episodes/${e.slug}`}>
+                <div class="meta">
+                  {[e.company, e.guest, e.role, e.status]
+                    .filter(Boolean)
+                    .join(" · ") || "—"}
+                </div>
+                <h3>{e.thesis || e.overview || e.company || "Untitled card"}</h3>
+                {e.title ? <p class="source-title">Source: {e.title}</p> : null}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
     )
   }
 </Base>
 
 <script>
+  function resetBrowse() {
+    const q = /** @type {HTMLInputElement} */ (
+      document.getElementById("browse-q")
+    );
+    const s = /** @type {HTMLSelectElement} */ (
+      document.getElementById("browse-status")
+    );
+    if (q) q.value = "";
+    if (s) s.value = "published";
+    apply();
+  }
+
   function apply() {
     const status =
       /** @type {HTMLSelectElement} */ (document.getElementById("browse-status"))
         ?.value || "published";
-    document.querySelectorAll("#browse-list > li").forEach((li) => {
+    const q = (
+      /** @type {HTMLInputElement} */ (document.getElementById("browse-q"))
+        ?.value || ""
+    )
+      .trim()
+      .toLowerCase();
+    const items = document.querySelectorAll("#browse-list > li");
+    let visible = 0;
+    items.forEach((li) => {
       const s = li.getAttribute("data-status") || "";
-      const show = status === "all" || s === status;
+      const okStatus = status === "all" || s === status;
+      const hay = li.getAttribute("data-search") || "";
+      const okQ = !q || hay.includes(q);
+      const show = okStatus && okQ;
       li.toggleAttribute("hidden", !show);
+      if (show) visible++;
     });
+    const filtering = Boolean(q) || status !== "published";
+    const count = document.getElementById("browse-count");
+    if (count) {
+      count.hidden = !filtering && status === "published";
+      // always show count when searching or not on default published-only with all matching
+      count.hidden = !(q || status !== "published");
+      count.textContent =
+        q || status !== "published"
+          ? `Showing ${visible} of ${items.length} cards`
+          : "";
+    }
+    const empty = document.getElementById("browse-empty");
+    if (empty) empty.hidden = visible !== 0;
   }
   document.getElementById("browse-status")?.addEventListener("change", apply);
+  document.getElementById("browse-q")?.addEventListener("input", apply);
+  document.getElementById("browse-reset")?.addEventListener("click", resetBrowse);
+  document
+    .getElementById("browse-empty-reset")
+    ?.addEventListener("click", resetBrowse);
   apply();
 </script>
