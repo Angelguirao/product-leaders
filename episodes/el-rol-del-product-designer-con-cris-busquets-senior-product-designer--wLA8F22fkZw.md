@@ -8,7 +8,7 @@ guest: "Cris Busquets"
 role: "Senior Product Designer"
 company: "Automattic"
 company_slug: "automattic"
-stage: null
+stage: "scale"
 practices: ["discovery", "delivery", "org_shape", "roles"]
 status: published
 processed_at: 2026-08-03T18:01:12.487Z

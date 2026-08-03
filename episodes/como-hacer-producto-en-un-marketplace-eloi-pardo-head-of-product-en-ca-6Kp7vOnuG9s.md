@@ -8,7 +8,7 @@ guest: "Eloi Pardo"
 role: "Head of Product"
 company: "Cabify"
 company_slug: "cabify"
-stage: null
+stage: "scale"
 practices: ["enterprise", "discovery", "delivery", "roles"]
 status: published
 processed_at: 2026-08-03T17:59:09.845Z

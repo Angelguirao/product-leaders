@@ -65,10 +65,10 @@ const ogImageAbs = new URL(ogImage, Astro.site).href;
         <a href="/browse">Cards</a>
         <a class="nav-hide-sm" href="/practices">Practices</a>
         <a class="nav-hide-sm" href="/docs/how-to-read">Guide</a>
+        <a class="nav-hide-sm" href="/docs/about">About</a>
         <pagefind-modal-trigger instance="pl" class="nav-search"
           >Search</pagefind-modal-trigger
         >
-        <a class="nav-hide-sm" href="/docs/legal">Legal</a>
       </nav>
     </header>
     <main id="main" data-pagefind-body>
@@ -80,10 +80,18 @@ const ogImageAbs = new URL(ogImage, Astro.site).href;
         <a href="https://podcasters.spotify.com/pod/show/danidiestre"
           >Entrevistas a Product Leaders</a
         >
-        (Dani Diestre). Not affiliated. Cards are original synthesis —
-        <a href="/docs/how-to-read">how to read a card</a>
+        (Dani Diestre). Not affiliated.
+      </p>
+      <p class="site-footer__links">
+        <a href="/docs/about">About</a>
         ·
-        <a href="/docs/legal">legal notes</a>.
+        <a href="/docs/how-to-read">How to read</a>
+        ·
+        <a href="/compare">Compare</a>
+        ·
+        <a href="/docs/legal">Legal</a>
+        ·
+        <a href="https://github.com/Angelguirao/product-leaders">GitHub</a>
       </p>
     </footer>
     <pagefind-modal instance="pl" reset-on-close="true"></pagefind-modal>

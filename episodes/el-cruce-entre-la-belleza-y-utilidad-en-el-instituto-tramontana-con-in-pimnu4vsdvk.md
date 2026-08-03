@@ -6,11 +6,11 @@ audio_url: "https://anchor.fm/s/ddca5200/podcast/play/92460265/https%3A%2F%2Fd3c
 pub_date: "2024-10-02T14:00:00.000Z"
 guest: null
 role: null
-company: null
-company_slug: null
+company: "Instituto Tramontana"
+company_slug: "instituto-tramontana"
 stage: null
 practices: ["discovery", "delivery"]
-status: published
+status: weak
 processed_at: 2026-08-03T18:56:22.542Z
 ---
 

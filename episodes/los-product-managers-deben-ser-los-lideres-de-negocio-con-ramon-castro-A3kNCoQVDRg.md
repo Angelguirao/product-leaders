@@ -8,7 +8,7 @@ guest: "Ramón Castro"
 role: "CPO"
 company: "Trucksters"
 company_slug: "trucksters"
-stage: null
+stage: "growth"
 practices: ["discovery", "delivery", "roles"]
 status: published
 processed_at: 2026-08-03T18:09:29.946Z

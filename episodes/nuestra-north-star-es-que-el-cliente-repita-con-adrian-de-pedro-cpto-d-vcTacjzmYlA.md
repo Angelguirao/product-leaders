@@ -8,7 +8,7 @@ guest: "Adrián de Pedro"
 role: "CPTO"
 company: "Shakers"
 company_slug: "shakers"
-stage: null
+stage: "growth"
 practices: ["ai_product", "discovery", "delivery", "org_shape"]
 status: published
 processed_at: 2026-08-03T18:09:12.186Z

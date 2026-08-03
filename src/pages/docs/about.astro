@@ -1,0 +1,75 @@
+---
+import Base from "../../layouts/Base.astro";
+import atlas from "../../data/atlas.json";
+---
+
+<Base
+  title="About this atlas"
+  description="What Product Leaders Atlas is, how to share it, and how cards are made."
+>
+  <article class="prose">
+    <h1>About this atlas</h1>
+    <p class="lede">
+      A public English map of how product orgs actually operate — one sharp
+      thesis per company, comparable across stage and practice.
+    </p>
+
+    <h2>Why it exists</h2>
+    <p>
+      Most interview notes die in notebooks. This project turns Product Leaders
+      conversations into sparse company cards you can scan in twenty seconds and
+      stack against peers. The goal is contrast, not coverage theater.
+    </p>
+
+    <h2>What’s on the map</h2>
+    <ul>
+      <li>
+        <strong>{atlas.company_count}</strong> published orgs on the
+        <a href="/">map</a>
+      </li>
+      <li>
+        <strong>{atlas.weak_count || 0}</strong> held as weak (soft thesis,
+        theory, or unstable org signal)
+      </li>
+      <li>
+        Compare any two or three on <a href="/compare">/compare</a>
+      </li>
+    </ul>
+
+    <h2>Share</h2>
+    <p>
+      Link the map, a company card, or a compare URL. Cards are original
+      English synthesis — not transcripts. Source episode titles stay in
+      Spanish as muted labels.
+    </p>
+    <ul>
+      <li>
+        Map: <a href="https://product-leaders-self.vercel.app/"
+          >product-leaders-self.vercel.app</a
+        >
+      </li>
+      <li>
+        Repo:
+        <a href="https://github.com/Angelguirao/product-leaders"
+          >github.com/Angelguirao/product-leaders</a
+        >
+      </li>
+    </ul>
+
+    <h2>How cards are made</h2>
+    <p>
+      Catalog → extract → LLM brief → quality gate → index. Only
+      <strong>published</strong> cards appear on the map. Read
+      <a href="/docs/how-to-read">how to read a card</a> and
+      <a href="/docs/legal">legal notes</a>.
+    </p>
+
+    <h2>Source</h2>
+    <p>
+      Seeded from Dani Diestre’s
+      <a href="https://podcasters.spotify.com/pod/show/danidiestre"
+        >Entrevistas a Product Leaders</a
+      >. Unofficial. Not affiliated.
+    </p>
+  </article>
+</Base>

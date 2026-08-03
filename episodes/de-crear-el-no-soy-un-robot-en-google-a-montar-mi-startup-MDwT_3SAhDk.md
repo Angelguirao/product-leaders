@@ -4,18 +4,19 @@ youtube_id: "MDwT_3SAhDk"
 url: "https://www.youtube.com/watch?v=MDwT_3SAhDk"
 audio_url: "https://anchor.fm/s/ddca5200/podcast/play/111139507/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2025-10-13%2F412441117-44100-2-7c59bd0d8f67b.mp3"
 pub_date: "2025-11-13T18:26:02.000Z"
-guest: null
+guest: "Founder"
 role: null
-company: null
-company_slug: null
-stage: null
+company: "Crossmint"
+company_slug: "crossmint"
+stage: "early"
 practices: ["ai_product", "discovery", "delivery", "roles"]
 status: published
 processed_at: 2026-08-03T17:53:09.684Z
 ---
 
 ## Thesis
-Crossmin focuses on building programmable economic primitives through APIs, abstracting the complexity of blockchain technology to enable businesses to transition to a new digital economy.
+Crossmint bets on programmable money primitives as APIs — wallets, payments, tokens — so product teams ship crypto rails without becoming protocol experts.
+
 
 ## Context
 Crossmin provides developer tools and APIs for companies looking to integrate "programmatic economy" tools, which include elements like stablecoins and NFTs. The company aims to simplify the use of these emerging technologies for businesses.

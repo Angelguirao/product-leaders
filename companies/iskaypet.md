@@ -2,7 +2,7 @@
 
 > At IskayPet, product methods bend to a traditional retail P&L — digital ships only when stores, supply, and category economics can absorb the change.
 
-- Stage: unknown
+- Stage: growth
 - Practices: ai_product, discovery, delivery, org_shape
 
 ## Daniel Lovazzano

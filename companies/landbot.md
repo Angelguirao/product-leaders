@@ -2,7 +2,7 @@
 
 > Landbot democratizes conversational automation so non-engineers ship chatbots — product + PMM sell time saved on repetitive customer work.
 
-- Stage: unknown
+- Stage: growth
 - Practices: ai_product, discovery, delivery, roles
 
 ## Isabel Gárate

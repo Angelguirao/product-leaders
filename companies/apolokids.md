@@ -2,7 +2,7 @@
 
 > ApoloKids treats inclusion as a core product constraint for kids’ learning games — accessibility shapes scope, not a late compliance checklist.
 
-- Stage: unknown
+- Stage: early
 - Practices: enterprise, discovery, delivery, roles
 
 ## Andrea López Castillo

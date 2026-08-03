@@ -2,7 +2,7 @@
 
 > Mercadona Tech runs product with the 3x model — explore, expand, extract — so teams pick methods by lifecycle phase instead of one-size-fits-all agile.
 
-- Stage: scale
+- Stage: enterprise
 - Practices: discovery, delivery, roles, platform, design, leadership
 
 ## José Ramón Pérez

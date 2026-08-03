@@ -8,7 +8,7 @@ guest: "Cristian García"
 role: "CPO"
 company: "Nova Talent"
 company_slug: "nova-talent"
-stage: null
+stage: "growth"
 practices: ["enterprise", "ai_product", "discovery", "delivery"]
 status: published
 processed_at: 2026-08-03T18:10:21.664Z

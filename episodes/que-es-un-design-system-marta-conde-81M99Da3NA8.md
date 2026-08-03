@@ -10,7 +10,7 @@ company: null
 company_slug: null
 stage: "growth"
 practices: ["ai_product", "discovery", "delivery", "growth"]
-status: published
+status: weak
 processed_at: 2026-08-03T17:53:35.232Z
 ---
 

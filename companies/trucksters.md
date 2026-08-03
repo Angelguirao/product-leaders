@@ -2,7 +2,7 @@
 
 > At Trucksters, each PM owns one business unit metric end-to-end — product managers are business leaders, not backlog administrators.
 
-- Stage: unknown
+- Stage: growth
 - Practices: discovery, delivery, roles
 
 ## Ramón Castro

@@ -4,18 +4,19 @@ youtube_id: "pEj3I-sZhs4"
 url: "https://www.youtube.com/watch?v=pEj3I-sZhs4"
 audio_url: "https://anchor.fm/s/ddca5200/podcast/play/101960180/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2025-3-29%2F399314531-44100-2-515826d88411f.mp3"
 pub_date: "2025-04-30T14:00:00.000Z"
-guest: "Product Demo de GuruSup con Victor Mollá"
-role: null
-company: null
-company_slug: null
-stage: null
+guest: "Victor Mollá"
+role: "Founder"
+company: "GuruSup"
+company_slug: "gurusup"
+stage: "growth"
 practices: ["ai_product", "discovery", "delivery", "founder"]
 status: published
 processed_at: 2026-08-03T17:53:45.282Z
 ---
 
 ## Thesis
-Gurusup differentiates itself by building an AI agent system capable of performing actions and end-to-end customer support, rather than just suggesting responses based on historical data.
+GuruSup runs support as an agent OS that takes actions end-to-end — not a reply-suggestion layer on top of human queues.
+
 
 ## Context
 Gurusup is a Spanish company developing an AI-powered customer support platform. The company, founded by Victor Mollá, aims to automate customer service by enabling AI agents to interact with systems like CRMs and dashboards, and perform actions directly.

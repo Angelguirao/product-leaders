@@ -120,6 +120,12 @@ main {
   color: var(--accent);
 }
 
+.site-footer__links {
+  margin: 0.75rem 0 0;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+
 .hero {
   max-width: 38rem;
   margin-bottom: 2.5rem;
@@ -520,6 +526,13 @@ main {
   display: none !important;
 }
 
+button.text-link {
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
 .text-link {
   font-family: var(--font-mono);
   font-size: 0.85rem;
@@ -556,7 +569,8 @@ main {
   color: var(--muted);
 }
 
-.filter-row select {
+.filter-row select,
+.filter-row input[type="search"] {
   font-family: var(--font-body);
   font-size: 0.95rem;
   text-transform: none;
@@ -567,6 +581,15 @@ main {
   border-radius: var(--radius-control);
   padding: 0.45rem 0.65rem;
   min-width: 10rem;
+}
+
+.filter-search {
+  flex: 1 1 14rem;
+}
+
+.filter-search input[type="search"] {
+  width: 100%;
+  min-width: 0;
 }
 
 .filter-reset {

@@ -8,7 +8,7 @@ guest: "Daniel Lovazzano"
 role: "Product Director"
 company: "IskayPet"
 company_slug: "iskaypet"
-stage: null
+stage: "growth"
 practices: ["ai_product", "discovery", "delivery", "org_shape"]
 status: published
 processed_at: 2026-08-03T17:56:12.115Z

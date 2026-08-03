@@ -8,7 +8,7 @@ guest: "Carlota Güell"
 role: "PMM"
 company: "Decathlon"
 company_slug: "decathlon"
-stage: null
+stage: "enterprise"
 practices: ["discovery", "delivery", "org_shape", "roles"]
 status: published
 processed_at: 2026-08-03T18:09:57.429Z

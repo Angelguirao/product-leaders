@@ -2,7 +2,7 @@
 
 > Decathlon Outdoor uses the app to reposition from selling gear to enabling outdoor experiences — product marketing owns lifestyle, not only SKU pages.
 
-- Stage: unknown
+- Stage: enterprise
 - Practices: discovery, delivery, org_shape, roles
 
 ## Carlota Güell

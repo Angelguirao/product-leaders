@@ -8,7 +8,7 @@ guest: "Andrea López Castillo"
 role: "Senior PM"
 company: "ApoloKids"
 company_slug: "apolokids"
-stage: null
+stage: "early"
 practices: ["enterprise", "discovery", "delivery", "roles"]
 status: published
 processed_at: 2026-08-03T17:57:56.058Z

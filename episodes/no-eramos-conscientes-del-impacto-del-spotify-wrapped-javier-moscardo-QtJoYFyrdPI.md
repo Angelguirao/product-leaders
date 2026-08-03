@@ -6,16 +6,17 @@ audio_url: "https://anchor.fm/s/ddca5200/podcast/play/100728359/https%3A%2F%2Fd3
 pub_date: "2025-04-02T15:00:00.000Z"
 guest: "Javier Moscardó"
 role: null
-company: null
-company_slug: null
-stage: null
+company: "Spotify"
+company_slug: "spotify"
+stage: "scale"
 practices: ["ai_product", "discovery", "delivery", "org_shape"]
 status: published
 processed_at: 2026-08-03T17:50:29.534Z
 ---
 
 ## Thesis
-Spotify's product strategy has evolved from a focus on autonomous, small "squads" to a more centralized model around the VP level to balance innovation speed with a cohesive user experience, particularly as the company integrates diverse content types and generative AI.
+Spotify re-centered product strategy at VP level after squad autonomy — cohesion and AI/content breadth beat pure team independence at scale.
+
 
 ## Context
 Spotify is a global music and podcast streaming service that has grown significantly since its inception. The company operates at a scale where organizational structure is critical for managing diverse content offerings and technological advancements like AI.

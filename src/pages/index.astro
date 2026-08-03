@@ -68,6 +68,7 @@ const companiesJson = JSON.stringify(
     <p class="hero-actions">
       <a class="text-link" href="/compare">Compare two or three orgs →</a>
       <a class="text-link" href="/docs/how-to-read">How to read a card</a>
+      <a class="text-link" href="/docs/about">About & share</a>
     </p>
   </section>
 
@@ -100,6 +101,17 @@ const companiesJson = JSON.stringify(
   <section class="map-filters" id="map-filters" data-companies={companiesJson}>
     <p class="section-label">Filter the map</p>
     <div class="filter-row">
+      <label class="filter-search">
+        Search
+        <input
+          id="filter-q"
+          type="search"
+          name="q"
+          placeholder="Company, guest, thesis…"
+          autocomplete="off"
+          spellcheck="false"
+        />
+      </label>
       <label>
         Stage
         <select id="filter-stage" name="stage">
@@ -133,6 +145,13 @@ const companiesJson = JSON.stringify(
       </p>
     ) : (
       <div id="company-map">
+        <p class="empty filter-empty" id="filter-empty" hidden>
+          No orgs match. Clear search or{" "}
+          <button type="button" class="text-link" id="filter-empty-reset">
+            reset filters
+          </button>
+          .
+        </p>
         {stageOrder
           .filter((s) => byStage[s]?.length)
           .map((stage) => (
@@ -146,6 +165,16 @@ const companiesJson = JSON.stringify(
                     data-slug={c.slug}
                     data-stage={c.stage || "other"}
                     data-practices={(c.practices || []).join(" ")}
+                    data-search={[
+                      c.name,
+                      c.slug,
+                      c.thesis,
+                      ...(c.guests || []).flatMap((g) => [g.name, g.role]),
+                      ...(c.practices || []),
+                    ]
+                      .filter(Boolean)
+                      .join(" ")
+                      .toLowerCase()}
                   >
                     <h2>{c.name}</h2>
                     <div class="meta">
@@ -187,6 +216,22 @@ const companiesJson = JSON.stringify(
 </Base>
 
 <script>
+  function resetFilters() {
+    const q = /** @type {HTMLInputElement} */ (
+      document.getElementById("filter-q")
+    );
+    const s = /** @type {HTMLSelectElement} */ (
+      document.getElementById("filter-stage")
+    );
+    const p = /** @type {HTMLSelectElement} */ (
+      document.getElementById("filter-practice")
+    );
+    if (q) q.value = "";
+    if (s) s.value = "";
+    if (p) p.value = "";
+    applyFilters();
+  }
+
   function applyFilters() {
     const stage = /** @type {HTMLSelectElement} */ (
       document.getElementById("filter-stage")
@@ -194,13 +239,21 @@ const companiesJson = JSON.stringify(
     const practice = /** @type {HTMLSelectElement} */ (
       document.getElementById("filter-practice")
     )?.value;
+    const q = (
+      /** @type {HTMLInputElement} */ (document.getElementById("filter-q"))
+        ?.value || ""
+    )
+      .trim()
+      .toLowerCase();
     const cells = document.querySelectorAll(".company-cell");
     let visible = 0;
     cells.forEach((cell) => {
       const okStage = !stage || cell.getAttribute("data-stage") === stage;
       const practices = (cell.getAttribute("data-practices") || "").split(/\s+/);
       const okPractice = !practice || practices.includes(practice);
-      const show = okStage && okPractice;
+      const hay = cell.getAttribute("data-search") || "";
+      const okQ = !q || hay.includes(q);
+      const show = okStage && okPractice && okQ;
       cell.toggleAttribute("hidden", !show);
       if (show) visible++;
     });
@@ -208,29 +261,25 @@ const companiesJson = JSON.stringify(
       const any = block.querySelector(".company-cell:not([hidden])");
       block.toggleAttribute("hidden", !any);
     });
+    const filtering = Boolean(stage || practice || q);
     const count = document.getElementById("filter-count");
     if (count) {
-      const filtering = Boolean(stage || practice);
       count.hidden = !filtering;
       count.textContent = filtering
         ? `Showing ${visible} of ${cells.length} orgs`
         : "";
     }
+    const empty = document.getElementById("filter-empty");
+    if (empty) empty.hidden = !(filtering && visible === 0);
   }
 
   document.getElementById("filter-stage")?.addEventListener("change", applyFilters);
   document
     .getElementById("filter-practice")
     ?.addEventListener("change", applyFilters);
-  document.getElementById("filter-reset")?.addEventListener("click", () => {
-    const s = /** @type {HTMLSelectElement} */ (
-      document.getElementById("filter-stage")
-    );
-    const p = /** @type {HTMLSelectElement} */ (
-      document.getElementById("filter-practice")
-    );
-    if (s) s.value = "";
-    if (p) p.value = "";
-    applyFilters();
-  });
+  document.getElementById("filter-q")?.addEventListener("input", applyFilters);
+  document.getElementById("filter-reset")?.addEventListener("click", resetFilters);
+  document
+    .getElementById("filter-empty-reset")
+    ?.addEventListener("click", resetFilters);
 </script>

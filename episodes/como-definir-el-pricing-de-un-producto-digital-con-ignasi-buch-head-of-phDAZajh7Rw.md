@@ -8,7 +8,7 @@ guest: "Ignasi Buch"
 role: "Head of Product"
 company: "Pitch"
 company_slug: "pitch"
-stage: null
+stage: "growth"
 practices: ["discovery", "delivery", "roles", "founder"]
 status: published
 processed_at: 2026-08-03T18:13:16.236Z

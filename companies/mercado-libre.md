@@ -2,7 +2,7 @@
 
 > Mercado Libre ships product as an ecosystem of connected surfaces — each bet is judged by how it compounds the platform, not by a single app KPI.
 
-- Stage: unknown
+- Stage: scale
 - Practices: ai_product, discovery, delivery, roles
 
 ## Patricio Navajas

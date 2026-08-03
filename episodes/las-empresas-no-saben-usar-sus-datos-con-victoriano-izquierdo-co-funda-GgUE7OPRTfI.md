@@ -4,18 +4,19 @@ youtube_id: "GgUE7OPRTfI"
 url: "https://www.youtube.com/watch?v=GgUE7OPRTfI"
 audio_url: "https://anchor.fm/s/ddca5200/podcast/play/103712706/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2025-5-5%2F401639756-44100-2-7a78929ddc50f.mp3"
 pub_date: "2025-06-05T16:14:58.000Z"
-guest: null
-role: null
-company: null
-company_slug: null
-stage: "enterprise"
+guest: "Victoriano Izquierdo"
+role: "Co-founder"
+company: "Graphext"
+company_slug: "graphext"
+stage: "growth"
 practices: ["enterprise", "ai_product", "discovery", "delivery"]
 status: published
 processed_at: 2026-08-03T17:53:20.573Z
 ---
 
 ## Thesis
-Graphext enables non-technical users to explore and derive insights from complex data through an intuitive, no-code interface, bridging the gap between raw data and actionable business strategies.
+Graphext’s bet is that companies drown in unused data — exploration should be usable without a data-science gatekeeper.
+
 
 ## Context
 Graphext is a SaaS product that helps companies understand and leverage their data. Founded by Victoriano Izquierdo and his long-time partner, the company has been operating for nearly eight years, focusing on making data exploration accessible to a broader audience beyond data scientists.

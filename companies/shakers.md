@@ -2,7 +2,7 @@
 
 > Shakers’ north star is repeat clients, not one-off freelance matches — product pushes collaborative squads so companies come back for the next project.
 
-- Stage: unknown
+- Stage: growth
 - Practices: ai_product, discovery, delivery, org_shape
 
 ## Adrián de Pedro

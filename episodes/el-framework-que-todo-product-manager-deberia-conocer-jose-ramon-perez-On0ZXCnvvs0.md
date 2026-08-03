@@ -8,7 +8,7 @@ guest: "José Ramón Pérez"
 role: "CTO Mercadona Tech"
 company: "Mercadona Tech"
 company_slug: "mercadona-tech"
-stage: null
+stage: "enterprise"
 practices: ["discovery", "delivery", "roles", "platform"]
 status: published
 processed_at: 2026-08-03T18:18:22.435Z

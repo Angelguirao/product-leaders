@@ -8,7 +8,7 @@ guest: "Patricio Navajas"
 role: "Head of Product"
 company: "Mercado Libre"
 company_slug: "mercado-libre"
-stage: null
+stage: "scale"
 practices: ["ai_product", "discovery", "delivery", "roles"]
 status: published
 processed_at: 2026-08-03T17:51:41.843Z

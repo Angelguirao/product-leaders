@@ -55,11 +55,11 @@
     "url": "https://www.youtube.com/watch?v=MDwT_3SAhDk",
     "audio_url": "https://anchor.fm/s/ddca5200/podcast/play/111139507/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2025-10-13%2F412441117-44100-2-7c59bd0d8f67b.mp3",
     "pub_date": "2025-11-13T18:26:02.000Z",
-    "guest": null,
+    "guest": "Founder",
     "role": null,
-    "company": null,
-    "company_slug": null,
-    "stage": null,
+    "company": "Crossmint",
+    "company_slug": "crossmint",
+    "stage": "early",
     "practices": [
       "ai_product",
       "discovery",
@@ -68,7 +68,7 @@
     ],
     "status": "published",
     "processed_at": "2026-08-03T17:53:09.684Z",
-    "thesis": "Crossmin focuses on building programmable economic primitives through APIs, abstracting the complexity of blockchain technology to enable businesses to transition to a new digital economy.",
+    "thesis": "Crossmint bets on programmable money primitives as APIs — wallets, payments, tokens — so product teams ship crypto rails without becoming protocol experts.",
     "context": "Crossmin provides developer tools and APIs for companies looking to integrate \"programmatic economy\" tools, which include elements like stablecoins and NFTs. The company aims to simplify the use of these emerging technologies for businesses.",
     "ownership": [
       "**Discovery:** Market trends, client needs, and emerging use cases drive product development.",
@@ -95,7 +95,7 @@
       "E --> F[Adapt Go-to-Market Strategy to Emerging Use Cases];"
     ],
     "loop_mermaid": "flowchart TD\n    A[Identify Market Need for Programmable Economy] --> B[Develop Core API Primitives (Wallets, Payments, Tokens)];\n    B --> C[Create Packaged Solutions (e.g., Bank-in-a-Box, AI Agent Tools)];\n    C --> D[Onboard Businesses (Fintech, AI Agents, Loyalty Programs)];\n    D --> E[Iterate on APIs based on Client Feedback and Market Trends];\n    E --> F[Adapt Go-to-Market Strategy to Emerging Use Cases];",
-    "overview": "Crossmin focuses on building programmable economic primitives through APIs, abstracting the complexity of blockchain technology to enable businesses to transition to a new digital economy.",
+    "overview": "Crossmint bets on programmable money primitives as APIs — wallets, payments, tokens — so product teams ship crypto rails without becoming protocol experts.",
     "workflow_mermaid": "flowchart TD\n    A[Identify Market Need for Programmable Economy] --> B[Develop Core API Primitives (Wallets, Payments, Tokens)];\n    B --> C[Create Packaged Solutions (e.g., Bank-in-a-Box, AI Agent Tools)];\n    C --> D[Onboard Businesses (Fintech, AI Agents, Loyalty Programs)];\n    D --> E[Iterate on APIs based on Client Feedback and Market Trends];\n    E --> F[Adapt Go-to-Market Strategy to Emerging Use Cases];"
   },
   {
@@ -199,11 +199,11 @@
     "url": "https://www.youtube.com/watch?v=GgUE7OPRTfI",
     "audio_url": "https://anchor.fm/s/ddca5200/podcast/play/103712706/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2025-5-5%2F401639756-44100-2-7a78929ddc50f.mp3",
     "pub_date": "2025-06-05T16:14:58.000Z",
-    "guest": null,
-    "role": null,
-    "company": null,
-    "company_slug": null,
-    "stage": "enterprise",
+    "guest": "Victoriano Izquierdo",
+    "role": "Co-founder",
+    "company": "Graphext",
+    "company_slug": "graphext",
+    "stage": "growth",
     "practices": [
       "enterprise",
       "ai_product",
@@ -212,7 +212,7 @@
     ],
     "status": "published",
     "processed_at": "2026-08-03T17:53:20.573Z",
-    "thesis": "Graphext enables non-technical users to explore and derive insights from complex data through an intuitive, no-code interface, bridging the gap between raw data and actionable business strategies.",
+    "thesis": "Graphext’s bet is that companies drown in unused data — exploration should be usable without a data-science gatekeeper.",
     "context": "Graphext is a SaaS product that helps companies understand and leverage their data. Founded by Victoriano Izquierdo and his long-time partner, the company has been operating for nearly eight years, focusing on making data exploration accessible to a broader audience beyond data scientists.",
     "ownership": [
       "**Discovery**: Primarily driven by user interaction with the platform and their own domain expertise, guided by Graphext's exploratory features.",
@@ -239,7 +239,7 @@
       "5.  **Actionable Outputs**: The insights derived can lead to concrete actions, such as optimizing marketing campaigns or understanding customer churn."
     ],
     "loop_mermaid": null,
-    "overview": "Graphext enables non-technical users to explore and derive insights from complex data through an intuitive, no-code interface, bridging the gap between raw data and actionable business strategies.",
+    "overview": "Graphext’s bet is that companies drown in unused data — exploration should be usable without a data-science gatekeeper.",
     "workflow_mermaid": null
   },
   {
@@ -353,7 +353,7 @@
       "delivery",
       "growth"
     ],
-    "status": "published",
+    "status": "weak",
     "processed_at": "2026-08-03T17:53:35.232Z",
     "thesis": "A design system's effectiveness hinges on its integration with development and its ability to adapt to a product's evolving needs, rather than being a static set of components.",
     "context": "Marta Conde discusses the practicalities and evolution of design systems, particularly in the context of digital product development. The conversation touches upon the challenges and benefits of implementing design systems, the impact of AI on design roles, and the broader landscape of the design community in Spain.",
@@ -392,11 +392,11 @@
     "url": "https://www.youtube.com/watch?v=3BurkAX8YnQ",
     "audio_url": "https://anchor.fm/s/ddca5200/podcast/play/102287498/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2025-4-6%2F399750754-44100-2-972ab49309265.mp3",
     "pub_date": "2025-05-07T14:00:00.000Z",
-    "guest": "Saferlayer de Carlos Sánchez",
+    "guest": "Carlos Sánchez",
     "role": null,
-    "company": null,
-    "company_slug": null,
-    "stage": null,
+    "company": "SaferLayer",
+    "company_slug": "saferlayer",
+    "stage": "early",
     "practices": [
       "discovery",
       "delivery",
@@ -405,7 +405,7 @@
     ],
     "status": "published",
     "processed_at": "2026-08-03T17:53:39.817Z",
-    "thesis": "The Real Madrid digital product team focuses on evolving from a sports club into an entertainment company by delivering value through content, commerce, and enhancing physical experiences, while balancing the needs of its diverse fan base and its owner-members.",
+    "thesis": "SaferLayer rode a viral document-processing wedge — product proof was throughput of real docs, not pitch decks.",
     "context": "Carlos Sánchez, Head of Digital Product at Real Madrid, discusses the unique challenges and opportunities of developing digital products for a global sports and entertainment brand with a massive, passionate audience. The club aims to compete for user attention not just with other sports entities but also with entertainment giants like Netflix.",
     "ownership": [
       "**Discovery**: Primarily driven by fan and member data, with input from various business areas.",
@@ -431,7 +431,7 @@
       "D --> A;"
     ],
     "loop_mermaid": "flowchart TD\n    A[Fan & Member Data Analysis] --> B{Identify Value Opportunities};\n    B --> C[Develop Digital Products (Content, Commerce, Physical Experience Enhancement)];\n    C --> D[Launch & Iterate Products];\n    D --> A;",
-    "overview": "The Real Madrid digital product team focuses on evolving from a sports club into an entertainment company by delivering value through content, commerce, and enhancing physical experiences, while balancing the needs of its diverse fan base and its owner-members.",
+    "overview": "SaferLayer rode a viral document-processing wedge — product proof was throughput of real docs, not pitch decks.",
     "workflow_mermaid": "flowchart TD\n    A[Fan & Member Data Analysis] --> B{Identify Value Opportunities};\n    B --> C[Develop Digital Products (Content, Commerce, Physical Experience Enhancement)];\n    C --> D[Launch & Iterate Products];\n    D --> A;"
   },
   {
@@ -441,11 +441,11 @@
     "url": "https://www.youtube.com/watch?v=pEj3I-sZhs4",
     "audio_url": "https://anchor.fm/s/ddca5200/podcast/play/101960180/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2025-3-29%2F399314531-44100-2-515826d88411f.mp3",
     "pub_date": "2025-04-30T14:00:00.000Z",
-    "guest": "Product Demo de GuruSup con Victor Mollá",
-    "role": null,
-    "company": null,
-    "company_slug": null,
-    "stage": null,
+    "guest": "Victor Mollá",
+    "role": "Founder",
+    "company": "GuruSup",
+    "company_slug": "gurusup",
+    "stage": "growth",
     "practices": [
       "ai_product",
       "discovery",
@@ -454,7 +454,7 @@
     ],
     "status": "published",
     "processed_at": "2026-08-03T17:53:45.282Z",
-    "thesis": "Gurusup differentiates itself by building an AI agent system capable of performing actions and end-to-end customer support, rather than just suggesting responses based on historical data.",
+    "thesis": "GuruSup runs support as an agent OS that takes actions end-to-end — not a reply-suggestion layer on top of human queues.",
     "context": "Gurusup is a Spanish company developing an AI-powered customer support platform. The company, founded by Victor Mollá, aims to automate customer service by enabling AI agents to interact with systems like CRMs and dashboards, and perform actions directly.",
     "ownership": [
       "**Discovery:** Primarily driven by internal problems faced by the company and its founder's extensive experience with AI and customer support challenges.",
@@ -481,7 +481,7 @@
       "E --> F[Customer Response];"
     ],
     "loop_mermaid": "flowchart TD\n    A[Customer Inquiry] --> B{Triaje Agent};\n    B --> C{Specialist Agent};\n    C --> D{Action: API Call / Browser Use / Internal Logic};\n    D --> E{Response Generation};\n    E --> F[Customer Response];",
-    "overview": "Gurusup differentiates itself by building an AI agent system capable of performing actions and end-to-end customer support, rather than just suggesting responses based on historical data.",
+    "overview": "GuruSup runs support as an agent OS that takes actions end-to-end — not a reply-suggestion layer on top of human queues.",
     "workflow_mermaid": "flowchart TD\n    A[Customer Inquiry] --> B{Triaje Agent};\n    B --> C{Specialist Agent};\n    C --> D{Action: API Call / Browser Use / Internal Logic};\n    D --> E{Response Generation};\n    E --> F[Customer Response];"
   },
   {
@@ -493,9 +493,9 @@
     "pub_date": "2025-04-02T15:00:00.000Z",
     "guest": "Javier Moscardó",
     "role": null,
-    "company": null,
-    "company_slug": null,
-    "stage": null,
+    "company": "Spotify",
+    "company_slug": "spotify",
+    "stage": "scale",
     "practices": [
       "ai_product",
       "discovery",
@@ -504,7 +504,7 @@
     ],
     "status": "published",
     "processed_at": "2026-08-03T17:50:29.534Z",
-    "thesis": "Spotify's product strategy has evolved from a focus on autonomous, small \"squads\" to a more centralized model around the VP level to balance innovation speed with a cohesive user experience, particularly as the company integrates diverse content types and generative AI.",
+    "thesis": "Spotify re-centered product strategy at VP level after squad autonomy — cohesion and AI/content breadth beat pure team independence at scale.",
     "context": "Spotify is a global music and podcast streaming service that has grown significantly since its inception. The company operates at a scale where organizational structure is critical for managing diverse content offerings and technological advancements like AI.",
     "ownership": [
       "**Discovery:** Primarily owned by VPs and their teams, with a focus on understanding user needs and market shifts.",
@@ -531,7 +531,7 @@
       "E --> A;"
     ],
     "loop_mermaid": "flowchart TD\n    A[User Feedback & Market Trends] --> B{Hypothesis Generation};\n    B --> C{Strategy Definition (VP Level)};\n    C --> D{Product Development & Experimentation};\n    D --> E{Data Analysis & Iteration};\n    E --> A;",
-    "overview": "Spotify's product strategy has evolved from a focus on autonomous, small \"squads\" to a more centralized model around the VP level to balance innovation speed with a cohesive user experience, particularly as the company integrates diverse content types and generative AI.",
+    "overview": "Spotify re-centered product strategy at VP level after squad autonomy — cohesion and AI/content breadth beat pure team independence at scale.",
     "workflow_mermaid": "flowchart TD\n    A[User Feedback & Market Trends] --> B{Hypothesis Generation};\n    B --> C{Strategy Definition (VP Level)};\n    C --> D{Product Development & Experimentation};\n    D --> E{Data Analysis & Iteration};\n    E --> A;"
   },
   {
@@ -787,7 +787,7 @@
     "role": "Product Director",
     "company": "IskayPet",
     "company_slug": "iskaypet",
-    "stage": null,
+    "stage": "growth",
     "practices": [
       "ai_product",
       "discovery",
@@ -976,7 +976,7 @@
     "role": "Head of Product",
     "company": "Mercado Libre",
     "company_slug": "mercado-libre",
-    "stage": null,
+    "stage": "scale",
     "practices": [
       "ai_product",
       "discovery",
@@ -1151,15 +1151,15 @@
     "pub_date": "2024-10-16T14:00:00.000Z",
     "guest": "Corti CMO & COO de Product Hackers",
     "role": null,
-    "company": null,
-    "company_slug": null,
+    "company": "Product Hackers",
+    "company_slug": "product-hackers",
     "stage": "growth",
     "practices": [
       "discovery",
       "delivery",
       "growth"
     ],
-    "status": "published",
+    "status": "weak",
     "processed_at": "2026-08-03T18:56:04.139Z",
     "thesis": "Corti's team prioritizes product discovery and validation through a structured, continuous process to inform their delivery cycle.",
     "context": "Product Hackers offers educational content and community for product professionals. The company appears to be in a growth or scale stage, serving a market focused on product management and growth strategies.",
@@ -1247,14 +1247,14 @@
     "pub_date": "2024-10-02T14:00:00.000Z",
     "guest": null,
     "role": null,
-    "company": null,
-    "company_slug": null,
+    "company": "Instituto Tramontana",
+    "company_slug": "instituto-tramontana",
     "stage": null,
     "practices": [
       "discovery",
       "delivery"
     ],
-    "status": "published",
+    "status": "weak",
     "processed_at": "2026-08-03T18:56:22.542Z",
     "thesis": "Tramontana Institute operates with a product team structured around distinct disciplines, emphasizing deep expertise within each area.",
     "context": "Tramontana Institute is an educational institution offering courses in beauty and personal care. The interview focuses on their product development approach within this context.",
@@ -1346,7 +1346,7 @@
     "role": "Senior PM",
     "company": "ApoloKids",
     "company_slug": "apolokids",
-    "stage": null,
+    "stage": "early",
     "practices": [
       "enterprise",
       "discovery",
@@ -1442,7 +1442,7 @@
     "role": "Head of Product",
     "company": "Cabify",
     "company_slug": "cabify",
-    "stage": null,
+    "stage": "scale",
     "practices": [
       "enterprise",
       "discovery",
@@ -1594,7 +1594,7 @@
     "role": "Senior Product Designer",
     "company": "Automattic",
     "company_slug": "automattic",
-    "stage": null,
+    "stage": "scale",
     "practices": [
       "discovery",
       "delivery",
@@ -1695,7 +1695,7 @@
     "role": "CTO Mercadona Tech",
     "company": "Mercadona Tech",
     "company_slug": "mercadona-tech",
-    "stage": null,
+    "stage": "enterprise",
     "practices": [
       "discovery",
       "delivery",
@@ -1845,7 +1845,7 @@
     "role": "CPO",
     "company": "Nova Talent",
     "company_slug": "nova-talent",
-    "stage": null,
+    "stage": "growth",
     "practices": [
       "enterprise",
       "ai_product",
@@ -1945,7 +1945,7 @@
     "role": "PMM",
     "company": "Decathlon",
     "company_slug": "decathlon",
-    "stage": null,
+    "stage": "enterprise",
     "practices": [
       "discovery",
       "delivery",
@@ -2445,7 +2445,7 @@
     "role": "CPTO",
     "company": "Shakers",
     "company_slug": "shakers",
-    "stage": null,
+    "stage": "growth",
     "practices": [
       "ai_product",
       "discovery",
@@ -2496,7 +2496,7 @@
     "role": "CPO",
     "company": "Trucksters",
     "company_slug": "trucksters",
-    "stage": null,
+    "stage": "growth",
     "practices": [
       "discovery",
       "delivery",
@@ -2938,7 +2938,7 @@
     "role": "Head of Product",
     "company": "Pitch",
     "company_slug": "pitch",
-    "stage": null,
+    "stage": "growth",
     "practices": [
       "discovery",
       "delivery",
@@ -2988,7 +2988,7 @@
     "role": "VP",
     "company": "Landbot",
     "company_slug": "landbot",
-    "stage": null,
+    "stage": "growth",
     "practices": [
       "ai_product",
       "discovery",

@@ -2,7 +2,7 @@
 
 > Cabify product balances two-sided marketplace liquidity: rider experience and driver supply are one system — local market ops and product ship together.
 
-- Stage: unknown
+- Stage: scale
 - Practices: enterprise, discovery, delivery, roles
 
 ## Eloi Pardo

@@ -2,7 +2,7 @@
 
 > At Automattic (Jetpack), product designers often own discovery and prioritization themselves — design absorbs classic PM duties under high autonomy.
 
-- Stage: unknown
+- Stage: scale
 - Practices: discovery, delivery, org_shape, roles
 
 ## Cris Busquets

@@ -6,11 +6,11 @@ audio_url: "https://anchor.fm/s/ddca5200/podcast/play/93077672/https%3A%2F%2Fd3c
 pub_date: "2024-10-16T14:00:00.000Z"
 guest: "Corti CMO & COO de Product Hackers"
 role: null
-company: null
-company_slug: null
+company: "Product Hackers"
+company_slug: "product-hackers"
 stage: "growth"
 practices: ["discovery", "delivery", "growth"]
-status: published
+status: weak
 processed_at: 2026-08-03T18:56:04.139Z
 ---
 

@@ -4,18 +4,19 @@ youtube_id: "3BurkAX8YnQ"
 url: "https://www.youtube.com/watch?v=3BurkAX8YnQ"
 audio_url: "https://anchor.fm/s/ddca5200/podcast/play/102287498/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2025-4-6%2F399750754-44100-2-972ab49309265.mp3"
 pub_date: "2025-05-07T14:00:00.000Z"
-guest: "Saferlayer de Carlos Sánchez"
+guest: "Carlos Sánchez"
 role: null
-company: null
-company_slug: null
-stage: null
+company: "SaferLayer"
+company_slug: "saferlayer"
+stage: "early"
 practices: ["discovery", "delivery", "org_shape", "platform"]
 status: published
 processed_at: 2026-08-03T17:53:39.817Z
 ---
 
 ## Thesis
-The Real Madrid digital product team focuses on evolving from a sports club into an entertainment company by delivering value through content, commerce, and enhancing physical experiences, while balancing the needs of its diverse fan base and its owner-members.
+SaferLayer rode a viral document-processing wedge — product proof was throughput of real docs, not pitch decks.
+
 
 ## Context
 Carlos Sánchez, Head of Digital Product at Real Madrid, discusses the unique challenges and opportunities of developing digital products for a global sports and entertainment brand with a massive, passionate audience. The club aims to compete for user attention not just with other sports entities but also with entertainment giants like Netflix.

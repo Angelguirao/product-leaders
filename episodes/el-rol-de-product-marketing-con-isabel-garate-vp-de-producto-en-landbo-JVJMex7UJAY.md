@@ -8,7 +8,7 @@ guest: "Isabel Gárate"
 role: "VP"
 company: "Landbot"
 company_slug: "landbot"
-stage: null
+stage: "growth"
 practices: ["ai_product", "discovery", "delivery", "roles"]
 status: published
 processed_at: 2026-08-03T18:10:58.417Z

@@ -2,7 +2,7 @@
 
 > Nova Talent builds a premium B2C professional community on top of B2B headhunting — curated horizontal connections are the product bet, not just placements.
 
-- Stage: unknown
+- Stage: growth
 - Practices: enterprise, ai_product, discovery, delivery
 
 ## Cristian García

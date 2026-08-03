@@ -2,7 +2,7 @@
 
 > Pitch competes on collaborative decks with design-system consistency — pricing and product assume presentations are team work, not solo PowerPoint files.
 
-- Stage: unknown
+- Stage: growth
 - Practices: discovery, delivery, roles, founder
 
 ## Ignasi Buch
