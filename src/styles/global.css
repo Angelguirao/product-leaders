@@ -451,6 +451,68 @@ main {
 
 .hero-actions {
   margin: 1.25rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+}
+
+.company-os__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.35rem;
+  margin: 1.25rem 0 0;
+}
+
+.peer-strip {
+  margin: 2rem 0 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--map-rule);
+}
+
+.peer-strip__row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 1px;
+  background: var(--map-rule);
+  border: 1px solid var(--map-rule);
+}
+
+.peer-chip {
+  display: block;
+  background: color-mix(in srgb, var(--surface) 92%, var(--background));
+  padding: 1rem 1.1rem;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.2s ease;
+}
+
+.peer-chip:hover {
+  background: var(--surface);
+}
+
+.peer-chip strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 0.35rem;
+}
+
+.peer-chip span {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.browse-filters {
+  margin: 1.75rem 0 0;
+}
+
+#browse-list > li[hidden] {
+  display: none !important;
 }
 
 .text-link {

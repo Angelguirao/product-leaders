@@ -1,6 +1,11 @@
 ---
 import Base from "../layouts/Base.astro";
 import episodes from "../data/episodes.json";
+
+const statuses = ["published", "weak", "stub"];
+const counts = Object.fromEntries(
+  statuses.map((s) => [s, episodes.filter((e) => e.status === s).length])
+);
 ---
 
 <Base
@@ -15,16 +20,31 @@ import episodes from "../data/episodes.json";
     </p>
   </div>
 
+  <div class="browse-filters" id="browse-filters">
+    <p class="section-label">Status</p>
+    <div class="filter-row">
+      <label>
+        Show
+        <select id="browse-status">
+          <option value="published">Published ({counts.published || 0})</option>
+          <option value="weak">Weak ({counts.weak || 0})</option>
+          <option value="stub">Stub ({counts.stub || 0})</option>
+          <option value="all">All ({episodes.length})</option>
+        </select>
+      </label>
+    </div>
+  </div>
+
   {
     episodes.length === 0 ? (
       <p class="empty">No episodes processed yet.</p>
     ) : (
-      <ul class="episode-list" style="margin-top: 2rem;">
+      <ul class="episode-list" style="margin-top: 1.5rem;" id="browse-list">
         {episodes.map((e) => (
-          <li>
+          <li data-status={e.status || "unknown"}>
             <a href={`/episodes/${e.slug}`}>
               <div class="meta">
-                {[e.company, e.guest, e.role, e.status !== "published" ? e.status : null]
+                {[e.company, e.guest, e.role, e.status]
                   .filter(Boolean)
                   .join(" · ") || "—"}
               </div>
@@ -37,3 +57,18 @@ import episodes from "../data/episodes.json";
     )
   }
 </Base>
+
+<script>
+  function apply() {
+    const status =
+      /** @type {HTMLSelectElement} */ (document.getElementById("browse-status"))
+        ?.value || "published";
+    document.querySelectorAll("#browse-list > li").forEach((li) => {
+      const s = li.getAttribute("data-status") || "";
+      const show = status === "all" || s === status;
+      li.toggleAttribute("hidden", !show);
+    });
+  }
+  document.getElementById("browse-status")?.addEventListener("change", apply);
+  apply();
+</script>

@@ -37,8 +37,9 @@ npm run dev
 |------|------|
 | `/` | Org map by stage + practice graph (filters + clickable nodes) |
 | `/compare` | Side-by-side thesis / loop / ownership for 2–3 orgs |
-| `/companies/:slug` | Thesis-first company card |
+| `/companies/:slug` | Thesis-first company card + peer suggestions |
 | `/practices` | Cross-company practice browse |
-| `/browse` | All episode cards (incl. weak) |
+| `/browse` | All episode cards (filter by published / weak / stub) |
+| `/docs/how-to-read` | How to read a card |
 
 Live: [product-leaders-self.vercel.app](https://product-leaders-self.vercel.app)

@@ -12,17 +12,38 @@ export function getStaticPaths() {
 
 const { company } = Astro.props;
 const primary = company.episodes?.[0];
+const thesis = company.thesis || primary?.thesis || "";
+
+function peerScore(a, b) {
+  const ap = new Set(a.practices || []);
+  const shared = (b.practices || []).filter((p) => ap.has(p)).length;
+  const sameStage = (a.stage || "") === (b.stage || "") ? 1 : 0;
+  return shared * 2 + sameStage;
+}
+
+const peers = companies
+  .filter((c) => c.slug !== company.slug)
+  .map((c) => ({ c, score: peerScore(company, c) }))
+  .filter((x) => x.score > 0)
+  .sort((a, b) => b.score - a.score || a.c.name.localeCompare(b.c.name))
+  .slice(0, 3)
+  .map((x) => x.c);
+
+const compareHref =
+  peers.length >= 1
+    ? `/compare?a=${company.slug}&b=${peers[0].slug}${peers[1] ? `&c=${peers[1].slug}` : ""}`
+    : `/compare?a=${company.slug}`;
 ---
 
 <Base
   title={company.name}
-  description={company.thesis || `How ${company.name} runs product.`}
+  description={thesis || `How ${company.name} runs product.`}
 >
   <article class="company-os">
     <header class="company-os__head">
       <p class="section-label">Product org</p>
       <h1>{company.name}</h1>
-      <p class="company-os__thesis">{company.thesis || primary?.thesis}</p>
+      <p class="company-os__thesis">{thesis}</p>
       <p class="lede">
         {company.stage || "stage unknown"}
         {
@@ -42,7 +63,27 @@ const primary = company.episodes?.[0];
           </div>
         ) : null
       }
+      <p class="company-os__actions">
+        <a class="text-link" href={compareHref}>Compare with peers →</a>
+        <a class="text-link" href="/docs/how-to-read">How to read</a>
+      </p>
     </header>
+
+    {
+      peers.length ? (
+        <section class="peer-strip">
+          <p class="section-label">Nearby on the map</p>
+          <div class="peer-strip__row">
+            {peers.map((p) => (
+              <a class="peer-chip" href={`/companies/${p.slug}`}>
+                <strong>{p.name}</strong>
+                <span>{p.thesis}</span>
+              </a>
+            ))}
+          </div>
+        </section>
+      ) : null
+    }
 
     {
       company.episodes.map((e) => (
@@ -57,6 +98,9 @@ const primary = company.episodes?.[0];
                 <li>{b}</li>
               ))}
             </ul>
+          ) : null}
+          {!e.loop_mermaid && !e.loop_bullets?.length ? (
+            <p class="empty">No operating loop captured yet.</p>
           ) : null}
 
           {e.ownership?.length ? (

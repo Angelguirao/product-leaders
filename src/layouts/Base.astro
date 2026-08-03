@@ -5,15 +5,18 @@ import PagefindConfig from "astro-pagefind/components/PagefindConfig.astro";
 interface Props {
   title?: string;
   description?: string;
+  ogImage?: string;
 }
 
 const {
   title = "Product Leaders Atlas",
   description = "A living map of how product teams operate — thesis, loop, and ownership from Entrevistas a Product Leaders.",
+  ogImage = "/og.svg",
 } = Astro.props;
 const pageTitle =
   title === "Product Leaders Atlas" ? title : `${title} · Product Leaders Atlas`;
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const ogImageAbs = new URL(ogImage, Astro.site).href;
 ---
 
 <!doctype html>
@@ -30,6 +33,11 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content={ogImageAbs} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageAbs} />
     <title>{pageTitle}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -56,6 +64,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
         <a href="/compare">Compare</a>
         <a href="/browse">Cards</a>
         <a class="nav-hide-sm" href="/practices">Practices</a>
+        <a class="nav-hide-sm" href="/docs/how-to-read">Guide</a>
         <pagefind-modal-trigger instance="pl" class="nav-search"
           >Search</pagefind-modal-trigger
         >
@@ -72,6 +81,8 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
           >Entrevistas a Product Leaders</a
         >
         (Dani Diestre). Not affiliated. Cards are original synthesis —
+        <a href="/docs/how-to-read">how to read a card</a>
+        ·
         <a href="/docs/legal">legal notes</a>.
       </p>
     </footer>

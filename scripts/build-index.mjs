@@ -9,6 +9,7 @@ import {
   mkdirSync,
   writeFileSync,
   existsSync,
+  unlinkSync,
 } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -279,6 +280,11 @@ writeFileSync(join(outDir, "companies.json"), JSON.stringify(companies, null, 2)
 
 const companiesDir = join(root, "companies");
 mkdirSync(companiesDir, { recursive: true });
+const publishedSlugs = new Set(companies.map((c) => c.slug));
+for (const file of readdirSync(companiesDir).filter((f) => f.endsWith(".md"))) {
+  const slug = file.replace(/\.md$/, "");
+  if (!publishedSlugs.has(slug)) unlinkSync(join(companiesDir, file));
+}
 for (const c of companies) {
   const lines = [
     `# ${c.name}`,
