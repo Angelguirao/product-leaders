@@ -1,6 +1,7 @@
 ---
 import Base from "../../layouts/Base.astro";
 import companies from "../../data/companies.json";
+import tensions from "../../data/tensions.json";
 import Mermaid from "../../components/Mermaid.astro";
 
 export function getStaticPaths() {
@@ -13,6 +14,7 @@ export function getStaticPaths() {
 const { company } = Astro.props;
 const primary = company.episodes?.[0];
 const thesis = company.thesis || primary?.thesis || "";
+const bySlug = Object.fromEntries(companies.map((c) => [c.slug, c]));
 
 function peerScore(a, b) {
   const ap = new Set(a.practices || []);
@@ -28,6 +30,20 @@ const peers = companies
   .sort((a, b) => b.score - a.score || a.c.name.localeCompare(b.c.name))
   .slice(0, 3)
   .map((x) => x.c);
+
+const relatedTensions = tensions
+  .filter((t) => t.a.slug === company.slug || t.b.slug === company.slug)
+  .map((t) => {
+    const selfIsA = t.a.slug === company.slug;
+    const otherSlug = selfIsA ? t.b.slug : t.a.slug;
+    const other = bySlug[otherSlug];
+    const selfPole = selfIsA ? t.a.pole : t.b.pole;
+    const otherPole = selfIsA ? t.b.pole : t.a.pole;
+    return other
+      ? { id: t.id, axis: t.axis, selfPole, otherPole, other }
+      : null;
+  })
+  .filter(Boolean);
 
 const compareHref =
   peers.length >= 1
@@ -66,12 +82,44 @@ const compareHref =
       }
       <p class="company-os__actions">
         <a class="text-link" href={compareHref}>Compare with peers →</a>
+        {
+          relatedTensions.length ? (
+            <a class="text-link" href="/tensions">
+              In {relatedTensions.length} tension
+              {relatedTensions.length === 1 ? "" : "s"}
+            </a>
+          ) : (
+            <a class="text-link" href="/tensions">
+              Browse tensions
+            </a>
+          )
+        }
         <button type="button" class="text-link" id="copy-page-link" data-copied="Copied link">
           Copy link
         </button>
         <a class="text-link" href="/docs/how-to-read">How to read</a>
       </p>
     </header>
+
+    {
+      relatedTensions.length ? (
+        <section class="company-tensions">
+          <p class="section-label">Argues with</p>
+          <ul class="company-tensions__list">
+            {relatedTensions.map((t) => (
+              <li>
+                <a href={`/tensions#${t.id}`}>{t.axis}</a>
+                <span class="company-tensions__vs">
+                  {t.selfPole} vs {t.otherPole}
+                </span>
+                —{" "}
+                <a href={`/companies/${t.other.slug}`}>{t.other.name}</a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null
+    }
 
     {
       peers.length ? (

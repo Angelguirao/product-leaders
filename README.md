@@ -36,6 +36,7 @@ npm run dev
 | Path | What |
 |------|------|
 | `/` | Org map by stage + practice graph (filters + clickable nodes) |
+| `/tensions` | Curated opposing bets — the atlas as argument |
 | `/compare` | Side-by-side thesis / loop / ownership for 2–3 orgs |
 | `/companies/:slug` | Thesis-first company card + peer suggestions |
 | `/practices` | Cross-company practice browse |

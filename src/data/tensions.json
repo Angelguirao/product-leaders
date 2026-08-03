@@ -1,0 +1,132 @@
+[
+  {
+    "id": "who-owns-discovery",
+    "axis": "Who owns discovery?",
+    "a": {
+      "slug": "automattic",
+      "pole": "Design absorbs PM"
+    },
+    "b": {
+      "slug": "tinybird",
+      "pole": "No PM layer"
+    },
+    "note": "Same question, opposite org answers — designers as product owners vs technical leads for a developer audience."
+  },
+  {
+    "id": "autonomy-vs-cohesion",
+    "axis": "Autonomy vs cohesion at scale",
+    "a": {
+      "slug": "guruwalk",
+      "pole": "Mission swarms"
+    },
+    "b": {
+      "slug": "spotify",
+      "pole": "VP-centered strategy"
+    },
+    "note": "Radical autonomy ships a crisis product; Spotify pulled strategy up after squad freedom frayed the experience."
+  },
+  {
+    "id": "buyer-vs-user",
+    "axis": "Who is the real customer?",
+    "a": {
+      "slug": "citibox",
+      "pole": "B2B economics first"
+    },
+    "b": {
+      "slug": "cobee",
+      "pole": "Employee pull"
+    },
+    "note": "Both B2B2C — Citibox prioritizes carrier/building ROI; Cobee wins when employees demand the benefit."
+  },
+  {
+    "id": "pm-deleted-vs-pm-as-p-and-l",
+    "axis": "What is a PM for?",
+    "a": {
+      "slug": "tinybird",
+      "pole": "Delete the role"
+    },
+    "b": {
+      "slug": "trucksters",
+      "pole": "Own a P&L metric"
+    },
+    "note": "Tinybird removes the layer; Trucksters makes each PM a business-unit owner end-to-end."
+  },
+  {
+    "id": "liquidity-vs-retention",
+    "axis": "Marketplace north star",
+    "a": {
+      "slug": "cabify",
+      "pole": "Two-sided liquidity"
+    },
+    "b": {
+      "slug": "webel",
+      "pole": "Retention over acquisition"
+    },
+    "note": "Cabify balances rider and driver as one system; Webel treats retention as the product problem, not paid growth."
+  },
+  {
+    "id": "experiment-vs-sales",
+    "axis": "How do you find the market?",
+    "a": {
+      "slug": "factorial",
+      "pole": "Ship imperfect tests"
+    },
+    "b": {
+      "slug": "suntropy",
+      "pole": "Sales-led after PLG dies"
+    },
+    "note": "Factorial’s growth loop is acquire→activate experiments; Suntropy abandoned self-serve when conversion collapsed."
+  },
+  {
+    "id": "one-version-vs-vertical-os",
+    "axis": "Configure or verticalize?",
+    "a": {
+      "slug": "inology",
+      "pole": "One parameterized SaaS"
+    },
+    "b": {
+      "slug": "dealcar",
+      "pole": "Full vertical stack"
+    },
+    "note": "Inology refuses enterprise forks; Dealcar absorbs the whole dealer workflow into one OS."
+  },
+  {
+    "id": "platform-vs-abstraction",
+    "axis": "Lock-in or hide the rails?",
+    "a": {
+      "slug": "nvidia",
+      "pole": "CUDA compounds silicon"
+    },
+    "b": {
+      "slug": "crossmint",
+      "pole": "Crypto as APIs"
+    },
+    "note": "NVIDIA’s bet is platform lock-in through software; Crossmint hides protocol complexity so product teams never touch it."
+  },
+  {
+    "id": "taste-vs-engineering",
+    "axis": "What leads the product?",
+    "a": {
+      "slug": "filmin",
+      "pole": "Curation house first"
+    },
+    "b": {
+      "slug": "hellotickets",
+      "pole": "Engineers own debate"
+    },
+    "note": "Filmin leads with catalog taste; Hellotickets puts strategy fights in engineering grooming."
+  },
+  {
+    "id": "permission-vs-process",
+    "axis": "How fast can you ship?",
+    "a": {
+      "slug": "dcycle",
+      "pole": "Skip CEO/sales gates"
+    },
+    "b": {
+      "slug": "mercadona-tech",
+      "pole": "3× lifecycle methods"
+    },
+    "note": "Dcycle bets on autonomy as the operating system; Mercadona Tech picks explore/expand/extract by lifecycle stage."
+  }
+]

@@ -789,3 +789,270 @@ button.text-link {
   }
 }
 
+/* —— Tensions —— */
+.tensions-hero {
+  max-width: 36rem;
+  margin-bottom: 2.5rem;
+  animation: rise 0.7s ease-out both;
+}
+
+.tensions-hero h1 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(2.4rem, 6vw, 3.6rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin: 0 0 0.75rem;
+}
+
+.tensions-hero .lede {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--muted);
+}
+
+.heresy-strip {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--map-rule);
+}
+
+.heresy-strip__hint {
+  margin: 0 0 1rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.heresy-strip__row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  gap: 1px;
+  background: var(--map-rule);
+  border: 1px solid var(--map-rule);
+}
+
+.heresy-chip {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0.9rem 1rem;
+  background: var(--surface);
+  color: var(--foreground);
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.heresy-chip:hover {
+  background: color-mix(in srgb, var(--accent-soft) 40%, var(--surface));
+}
+
+.heresy-chip__label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.heresy-chip strong {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.05rem;
+  letter-spacing: -0.015em;
+}
+
+.tension-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.tension {
+  padding: 2.5rem 0;
+  border-top: 1px solid var(--map-rule);
+  animation: rise 0.55s ease-out both;
+  animation-delay: calc(var(--i, 0) * 0.04s);
+}
+
+.tension__axis {
+  display: flex;
+  align-items: baseline;
+  gap: 0.85rem;
+  margin-bottom: 1.25rem;
+}
+
+.tension__index {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.tension__axis h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(1.35rem, 3vw, 1.75rem);
+  letter-spacing: -0.02em;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.tension__duel {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 0;
+  align-items: stretch;
+  border: 1px solid var(--map-rule);
+  background: var(--map-rule);
+}
+
+.tension__pole {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.25rem 1.35rem 1.4rem;
+  background: var(--surface);
+  color: var(--foreground);
+  text-decoration: none;
+  min-width: 0;
+  transition: background 0.2s ease;
+}
+
+.tension__pole:hover {
+  background: color-mix(in srgb, var(--accent-soft) 28%, var(--surface));
+}
+
+.tension__pole--b {
+  text-align: right;
+}
+
+.tension__pole-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0;
+}
+
+.tension__pole h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.35rem;
+  letter-spacing: -0.02em;
+  margin: 0;
+  line-height: 1.15;
+}
+
+.tension__thesis {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.45;
+  color: var(--foreground);
+  flex: 1;
+}
+
+.tension__stage {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--muted);
+  margin-top: 0.35rem;
+}
+
+.tension__vs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  background: var(--background);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.tension__note {
+  margin: 1rem 0 0;
+  max-width: 42rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.tension__actions {
+  margin: 0.65rem 0 0;
+}
+
+.tensions-foot {
+  margin: 2.5rem 0 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--map-rule);
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.tensions-foot a {
+  color: var(--accent);
+}
+
+.tension-spotlight {
+  margin: 0 0 2.75rem;
+  max-width: 56rem;
+  animation: rise 0.65s ease-out both;
+}
+
+.tension-spotlight__axis {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(1.25rem, 2.5vw, 1.55rem);
+  letter-spacing: -0.02em;
+  margin: 0 0 1rem;
+  line-height: 1.2;
+}
+
+.company-tensions {
+  margin: 2rem 0 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--map-rule);
+}
+
+.company-tensions__list {
+  list-style: none;
+  margin: 0.75rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.company-tensions__list a {
+  color: var(--foreground);
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+}
+
+.company-tensions__list a:hover {
+  color: var(--accent);
+}
+
+.company-tensions__vs {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--muted);
+  margin: 0 0.35rem;
+}
+
+@media (max-width: 720px) {
+  .tension__duel {
+    grid-template-columns: 1fr;
+  }
+
+  .tension__vs {
+    width: 100%;
+    padding: 0.35rem 0;
+  }
+
+  .tension__pole--b {
+    text-align: left;
+  }
+}
+
+

@@ -1,0 +1,128 @@
+---
+import Base from "../layouts/Base.astro";
+import companies from "../data/companies.json";
+import tensions from "../data/tensions.json";
+
+const bySlug = Object.fromEntries(companies.map((c) => [c.slug, c]));
+
+const rows = tensions
+  .map((t) => {
+    const a = bySlug[t.a.slug];
+    const b = bySlug[t.b.slug];
+    if (!a || !b) return null;
+    return { ...t, aOrg: a, bOrg: b };
+  })
+  .filter(Boolean);
+
+const heresies = [
+  {
+    slug: "tinybird",
+    label: "Deleted the PM layer",
+  },
+  {
+    slug: "dcycle",
+    label: "Ship without CEO permission",
+  },
+  {
+    slug: "typeform",
+    label: "No framework worship",
+  },
+  {
+    slug: "guruwalk",
+    label: "Crisis swarm over hierarchy",
+  },
+  {
+    slug: "hellotickets",
+    label: "Engineers own strategy debates",
+  },
+  {
+    slug: "filmin",
+    label: "Cinema taste before software",
+  },
+]
+  .map((h) => {
+    const c = bySlug[h.slug];
+    return c ? { ...h, org: c } : null;
+  })
+  .filter(Boolean);
+---
+
+<Base
+  title="Tensions"
+  description="Paired operating bets that disagree — the atlas as argument, not catalog."
+>
+  <section class="tensions-hero">
+    <p class="section-label">Contrast mode</p>
+    <h1>Tensions</h1>
+    <p class="lede">
+      The map is useful when two theses argue. Each row is one operating question
+      with opposite answers — read both poles in twenty seconds, then open the
+      orgs that interest you.
+    </p>
+  </section>
+
+  {
+    heresies.length ? (
+      <section class="heresy-strip">
+        <p class="section-label">Heresies</p>
+        <p class="heresy-strip__hint">
+          Rare bets that break the default product-org script.
+        </p>
+        <div class="heresy-strip__row">
+          {heresies.map((h) => (
+            <a class="heresy-chip" href={`/companies/${h.slug}`}>
+              <span class="heresy-chip__label">{h.label}</span>
+              <strong>{h.org.name}</strong>
+            </a>
+          ))}
+        </div>
+      </section>
+    ) : null
+  }
+
+  <div class="tension-list">
+    {
+      rows.map((t, i) => (
+        <article class="tension" id={t.id} style={`--i: ${i}`}>
+          <header class="tension__axis">
+            <span class="tension__index">{String(i + 1).padStart(2, "0")}</span>
+            <h2>{t.axis}</h2>
+          </header>
+          <div class="tension__duel">
+            <a class="tension__pole" href={`/companies/${t.a.slug}`}>
+              <p class="tension__pole-label">{t.a.pole}</p>
+              <h3>{t.aOrg.name}</h3>
+              <p class="tension__thesis">{t.aOrg.thesis}</p>
+              <span class="tension__stage">{t.aOrg.stage || "—"}</span>
+            </a>
+            <div class="tension__vs" aria-hidden="true">
+              <span>vs</span>
+            </div>
+            <a class="tension__pole tension__pole--b" href={`/companies/${t.b.slug}`}>
+              <p class="tension__pole-label">{t.b.pole}</p>
+              <h3>{t.bOrg.name}</h3>
+              <p class="tension__thesis">{t.bOrg.thesis}</p>
+              <span class="tension__stage">{t.bOrg.stage || "—"}</span>
+            </a>
+          </div>
+          <p class="tension__note">{t.note}</p>
+          <p class="tension__actions">
+            <a
+              class="text-link"
+              href={`/compare?a=${t.a.slug}&b=${t.b.slug}`}
+            >
+              Open in compare →
+            </a>
+          </p>
+        </article>
+      ))
+    }
+  </div>
+
+  <p class="tensions-foot">
+    Want a different argument?{" "}
+    <a href="/compare">Build your own compare</a>
+    ·
+    <a href="/">Back to the map</a>
+  </p>
+</Base>
