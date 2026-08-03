@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Who is banking for?">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f4efe6"/>
+      <stop offset="100%" stop-color="#efe8dc"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1040" cy="80" r="180" fill="#e8c4b0" opacity="0.45"/>
+  <circle cx="120" cy="540" r="140" fill="#ddd4c4" opacity="0.55"/>
+  <text x="80" y="100" font-family="Georgia, 'Times New Roman', serif" font-size="24" fill="#6b6358" letter-spacing="3">PRODUCT LEADERS · TENSION</text>
+  <text x="80" y="180" font-family="Georgia, 'Times New Roman', serif" font-size="48" fill="#2a2318"><tspan x="80" dy="0">Who is banking for?</tspan></text>
+  <rect x="80" y="300" width="480" height="240" fill="#faf7f2" stroke="#d4cbbd"/>
+  <rect x="640" y="300" width="480" height="240" fill="#faf7f2" stroke="#d4cbbd"/>
+  <text x="110" y="350" font-family="Georgia, 'Times New Roman', serif" font-size="22" fill="#b85c38">App as primary account</text>
+  <text x="110" y="410" font-family="Georgia, 'Times New Roman', serif" font-size="40" fill="#2a2318">N26</text>
+  <text x="670" y="350" font-family="Georgia, 'Times New Roman', serif" font-size="22" fill="#b85c38">Access for the rejected</text>
+  <text x="670" y="410" font-family="Georgia, 'Times New Roman', serif" font-size="40" fill="#2a2318">Ikualo</text>
+  <text x="580" y="430" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-style="italic" fill="#6b6358" text-anchor="middle">vs</text>
+</svg>

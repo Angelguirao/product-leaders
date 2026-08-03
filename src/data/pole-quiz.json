@@ -44,16 +44,16 @@
       }
     },
     {
-      "id": "find-market",
-      "prompt": "How do you find the market?",
+      "id": "build-shape",
+      "prompt": "What should you ship as the product?",
       "a": {
-        "label": "Ship imperfect tests — acquire → activate is the growth loop",
-        "tension": "experiment-vs-sales",
+        "label": "Durable API primitives others compose — hide the protocol complexity",
+        "tension": "primitives-vs-agents",
         "side": "a"
       },
       "b": {
-        "label": "When self-serve dies, go sales-led and stop pretending PLG will save you",
-        "tension": "experiment-vs-sales",
+        "label": "An agent OS that takes the action end-to-end — not a suggestion layer",
+        "tension": "primitives-vs-agents",
         "side": "b"
       }
     },

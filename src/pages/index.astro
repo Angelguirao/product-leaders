@@ -56,6 +56,21 @@ const spotlightTension =
 const distinctivePractice = (p) =>
   !["discovery", "delivery"].includes(p);
 
+const newTensionIds = [
+  "primitives-vs-agents",
+  "liquidity-vs-repeat",
+  "primary-account-vs-access",
+];
+const freshTensions = newTensionIds
+  .map((id) => {
+    const t = tensions.find((x) => x.id === id);
+    if (!t) return null;
+    const a = bySlug[t.a.slug];
+    const b = bySlug[t.b.slug];
+    return a && b ? { ...t, aOrg: a, bOrg: b } : null;
+  })
+  .filter(Boolean);
+
 ---
 
 <Base
@@ -126,6 +141,24 @@ const distinctivePractice = (p) =>
             Open this pair in compare
           </a>
         </p>
+      </section>
+    ) : null
+  }
+
+  {
+    freshTensions.length ? (
+      <section class="fresh-tensions" data-pagefind-ignore>
+        <p class="section-label">New arguments</p>
+        <div class="fresh-tensions__row">
+          {freshTensions.map((t) => (
+            <a class="fresh-tension" href={`/tensions/${t.id}`}>
+              <span class="fresh-tension__axis">{t.axis}</span>
+              <span class="fresh-tension__poles">
+                {t.aOrg.name} vs {t.bOrg.name}
+              </span>
+            </a>
+          ))}
+        </div>
       </section>
     ) : null
   }

@@ -141,5 +141,44 @@
       "pole": "3× lifecycle methods"
     },
     "note": "Dcycle bets on autonomy as the operating system; Mercadona Tech picks explore/expand/extract by lifecycle stage."
+  },
+  {
+    "id": "primitives-vs-agents",
+    "axis": "Ship primitives or ship agents?",
+    "a": {
+      "slug": "crossmint",
+      "pole": "API primitives"
+    },
+    "b": {
+      "slug": "gurusup",
+      "pole": "Agent OS end-to-end"
+    },
+    "note": "Crossmint packages crypto as durable APIs product teams compose; GuruSup replaces the human queue with agents that take the action."
+  },
+  {
+    "id": "liquidity-vs-repeat",
+    "axis": "What is marketplace success?",
+    "a": {
+      "slug": "cabify",
+      "pole": "Two-sided liquidity now"
+    },
+    "b": {
+      "slug": "shakers",
+      "pole": "Repeat clients next"
+    },
+    "note": "Cabify optimizes rider×driver balance as one system; Shakers optimizes for companies that come back with the next project, not one-off matches."
+  },
+  {
+    "id": "primary-account-vs-access",
+    "axis": "Who is banking for?",
+    "a": {
+      "slug": "n26",
+      "pole": "App as primary account"
+    },
+    "b": {
+      "slug": "ikualo",
+      "pole": "Access for the rejected"
+    },
+    "note": "N26 builds a global platform so the app can replace the branch; Ikualo builds fintech around migrants banks refuse — product is access and trust, not glocal features."
   }
 ]

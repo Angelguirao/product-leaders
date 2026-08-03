@@ -71,28 +71,22 @@
   ],
   "tension_seeds": [
     {
-      "axis": "Banking product vs insurtech product",
-      "a": "n26",
-      "b": "tuio",
-      "note": "Both fintech on the map — not yet paired as an operating argument."
+      "axis": "Instrument later vs continuous tax product",
+      "a": "tuio",
+      "b": "taxdown",
+      "note": "Tuio starts with qualitative insight and messy spreadsheets; Taxdown productizes year-round tax relief as a subscription."
     },
     {
-      "axis": "API wedge vs agent wedge",
-      "a": "crossmint",
+      "axis": "Democratize bots vs founder R&D bets",
+      "a": "landbot",
+      "b": "typeform",
+      "note": "Landbot sells non-engineers shipping chatbots; Typeform explores founder-led bets that fold in or spin out."
+    },
+    {
+      "axis": "Viral wedge proof vs agent OS",
+      "a": "saferlayer",
       "b": "gurusup",
-      "note": "Compare already presets this trio with SaferLayer — worth a formal tension."
-    },
-    {
-      "axis": "Marketplace liquidity vs talent marketplace",
-      "a": "cabify",
-      "b": "shakers",
-      "note": "Cabify is in liquidity-vs-retention; Shakers is the freelancers-side cousin."
-    },
-    {
-      "axis": "Retail tech process vs digital-native autonomy",
-      "a": "mercadona-tech",
-      "b": "dcycle",
-      "note": "Permission-vs-process already uses Dcycle; Mercadona Tech could anchor retail-scale process."
+      "note": "Only promote once SaferLayer’s operating thesis is scrubbed — current brief still smells like a wrong-episode loop."
     }
   ]
 }
