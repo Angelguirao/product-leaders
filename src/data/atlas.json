@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-08-03T20:47:39.458Z",
+  "built_at": "2026-08-03T20:53:48.487Z",
   "episode_count": 73,
   "company_count": 57,
   "published_count": 59,
@@ -908,20 +908,19 @@
       "thesis": "Tinybird deleted the PM layer so technical leads own product decisions for a developer audience that rejects classic PM mediation.",
       "context": "Tinybird offers a data platform designed for developers, enabling them to build data products. The company targets businesses with significant data volumes, ranging from those processing 20 million records to trillions daily. They are transitioning from focusing on large enterprise clients to a broader market of smaller customers.",
       "ownership": [
-        "**Discovery:** Team leads within product teams.",
-        "**Prioritization:** Team leads within product teams.",
-        "**Shipping:** Team leads within product teams (with full engineering responsibility).",
-        "**Sales Input:** Unknown.",
-        "**Design:** Unknown."
+        "**Discovery:** Technical team leads — no separate PM layer mediating for a developer audience.",
+        "**Prioritization:** Same leads; product decisions sit with people who ship the data platform.",
+        "**Shipping:** Engineering teams with full product responsibility (“eliminated the product team to be all product”).",
+        "**Sales / GTM:** Enterprise motion exists; how deals reshape the roadmap is not a named owner in the interview.",
+        "**Design:** Not a classic design-org bet — the product is developer-facing APIs and endpoints."
       ],
       "evidence": [
         "*We eliminated the product team to be all product.*",
         "*The interesting part of Tinybird is that it's not a tool to just analyze data; it's a tool where data analysis is productized.*"
       ],
       "gaps": [
-        "The specific process for how sales input influences product decisions is not detailed.",
-        "The interview does not elaborate on the design ownership or process within the teams.",
-        "Details on how customer feedback from larger, long-term clients is integrated into the product roadmap are not fully explained."
+        "How long-term enterprise accounts feed prioritization vs self-serve developer pull is thin.",
+        "Design craft is not described as a separate function."
       ],
       "loop_bullets": [
         "flowchart TD",
@@ -2645,20 +2644,19 @@
       "thesis": "At Trucksters, each PM owns one business unit metric end-to-end — product managers are business leaders, not backlog administrators.",
       "context": "Trucksters is a logistics company specializing in long-distance, full-truckload transportation. They operate in a market estimated at 60 billion euros in Europe, focusing on the time-sensitive segment.",
       "ownership": [
-        "**Discovery:** Product Managers (as business unit leaders)",
-        "**Prioritization:** Product Managers (as business unit leaders)",
-        "**Shipping:** Product Managers (as business unit leaders)",
-        "**Sales Input:** Unknown (likely integrated into business unit leadership)",
-        "**Design:** Unknown (likely integrated into business unit leadership)"
+        "**Discovery:** Product managers as business-unit leaders — each owns one BU metric end-to-end.",
+        "**Prioritization:** Same PMs; backlog is subordinate to the business outcome they own.",
+        "**Shipping:** PM leads engineering and, when needed, operations or adjacent functions.",
+        "**Sales / ops:** Folded into BU leadership — the PM *is* the business leader, not a ticket broker beside sales.",
+        "**Design:** Not called out as a separate owner; craft emphasis is PM-as-P&L, not design systems."
       ],
       "evidence": [
         "*The product manager leads engineering, leads operations, and if necessary, another department too.*",
         "*Our product managers now lead business. What is leading business? They are business units.*"
       ],
       "gaps": [
-        "The specific process for how sales input influences prioritization is not detailed.",
-        "The exact structure and responsibilities of the engineering and operations teams reporting to Product Managers are not fully elaborated.",
-        "Details on how new partners are onboarded and managed beyond the initial acquisition are not provided."
+        "Org chart under each BU PM (eng vs ops spans) is sketched, not diagrammed.",
+        "Partner onboarding beyond the TMS loop is light."
       ],
       "loop_bullets": [
         "Client requests shipment",
@@ -3041,14 +3039,19 @@
       "thesis": "Hellotickets runs product engineering: engineers debate strategy in painful grooming sessions and own product context — not just ticket execution for tours/experiences.",
       "context": "Alvar Montes, Head of Product at Hellotickets, discusses the concept of product engineering, drawing from his extensive experience in various digital product companies. Hellotickets operates in the tours and experiences market, aiming to help users create memorable travel experiences by aggregating events and activities.",
       "ownership": [
-        "The interview touches upon the collaborative nature of product development, where Product Managers (PMs) and Product Designers (PDs) work with engineers. While specific ownership of discovery, prioritization, and shipping isn't detailed, the emphasis is on shared understanding and contribution. Sales input and design ownership are not explicitly covered."
+        "**Discovery:** Shared — PMs and PDs frame the problem; engineers are expected to bring product context, not wait for tickets.",
+        "**Prioritization:** Head of Product with engineers — grooming must hurt; debate before commit.",
+        "**Shipping:** Product engineers own the solution end-to-end once context is shared.",
+        "**Sales / GTM:** Marketing and SEO surface demand; not framed as a sales-driven roadmap.",
+        "**Design:** Product designers partner with PMs and eng in the same collaborative loop."
       ],
       "evidence": [
         "*A product engineer is an engineer who is close to the product and understands it.*",
         "*The grooming sessions have to hurt; there must be debate.*"
       ],
       "gaps": [
-        "The interview does not detail the specific metrics used by Hellotickets, nor does it elaborate on the company's go-to-market strategy or customer acquisition channels beyond mentioning SEO and marketing. The exact structure of their product squads and the specific roles within them are also not fully detailed."
+        "Metrics and squad topology are light — the heresy is ownership posture, not a full OS map.",
+        "How SEO/marketing demand enters prioritization vs eng debate is not spelled out."
       ],
       "loop_bullets": [
         "The discussion highlights a collaborative product development process where engineers are encouraged to engage with product challenges beyond just ticket execution. This involves early drafts, shared context, and constructive debate during grooming sessions to refine solutions and avoid costly mistakes."
@@ -5123,14 +5126,19 @@
           "thesis": "Hellotickets runs product engineering: engineers debate strategy in painful grooming sessions and own product context — not just ticket execution for tours/experiences.",
           "context": "Alvar Montes, Head of Product at Hellotickets, discusses the concept of product engineering, drawing from his extensive experience in various digital product companies. Hellotickets operates in the tours and experiences market, aiming to help users create memorable travel experiences by aggregating events and activities.",
           "ownership": [
-            "The interview touches upon the collaborative nature of product development, where Product Managers (PMs) and Product Designers (PDs) work with engineers. While specific ownership of discovery, prioritization, and shipping isn't detailed, the emphasis is on shared understanding and contribution. Sales input and design ownership are not explicitly covered."
+            "**Discovery:** Shared — PMs and PDs frame the problem; engineers are expected to bring product context, not wait for tickets.",
+            "**Prioritization:** Head of Product with engineers — grooming must hurt; debate before commit.",
+            "**Shipping:** Product engineers own the solution end-to-end once context is shared.",
+            "**Sales / GTM:** Marketing and SEO surface demand; not framed as a sales-driven roadmap.",
+            "**Design:** Product designers partner with PMs and eng in the same collaborative loop."
           ],
           "evidence": [
             "*A product engineer is an engineer who is close to the product and understands it.*",
             "*The grooming sessions have to hurt; there must be debate.*"
           ],
           "gaps": [
-            "The interview does not detail the specific metrics used by Hellotickets, nor does it elaborate on the company's go-to-market strategy or customer acquisition channels beyond mentioning SEO and marketing. The exact structure of their product squads and the specific roles within them are also not fully detailed."
+            "Metrics and squad topology are light — the heresy is ownership posture, not a full OS map.",
+            "How SEO/marketing demand enters prioritization vs eng debate is not spelled out."
           ],
           "loop_bullets": [
             "The discussion highlights a collaborative product development process where engineers are encouraged to engage with product challenges beyond just ticket execution. This involves early drafts, shared context, and constructive debate during grooming sessions to refine solutions and avoid costly mistakes."
@@ -6626,20 +6634,19 @@
           "thesis": "Tinybird deleted the PM layer so technical leads own product decisions for a developer audience that rejects classic PM mediation.",
           "context": "Tinybird offers a data platform designed for developers, enabling them to build data products. The company targets businesses with significant data volumes, ranging from those processing 20 million records to trillions daily. They are transitioning from focusing on large enterprise clients to a broader market of smaller customers.",
           "ownership": [
-            "**Discovery:** Team leads within product teams.",
-            "**Prioritization:** Team leads within product teams.",
-            "**Shipping:** Team leads within product teams (with full engineering responsibility).",
-            "**Sales Input:** Unknown.",
-            "**Design:** Unknown."
+            "**Discovery:** Technical team leads — no separate PM layer mediating for a developer audience.",
+            "**Prioritization:** Same leads; product decisions sit with people who ship the data platform.",
+            "**Shipping:** Engineering teams with full product responsibility (“eliminated the product team to be all product”).",
+            "**Sales / GTM:** Enterprise motion exists; how deals reshape the roadmap is not a named owner in the interview.",
+            "**Design:** Not a classic design-org bet — the product is developer-facing APIs and endpoints."
           ],
           "evidence": [
             "*We eliminated the product team to be all product.*",
             "*The interesting part of Tinybird is that it's not a tool to just analyze data; it's a tool where data analysis is productized.*"
           ],
           "gaps": [
-            "The specific process for how sales input influences product decisions is not detailed.",
-            "The interview does not elaborate on the design ownership or process within the teams.",
-            "Details on how customer feedback from larger, long-term clients is integrated into the product roadmap are not fully explained."
+            "How long-term enterprise accounts feed prioritization vs self-serve developer pull is thin.",
+            "Design craft is not described as a separate function."
           ],
           "loop_bullets": [
             "flowchart TD",
@@ -6685,20 +6692,19 @@
           "thesis": "At Trucksters, each PM owns one business unit metric end-to-end — product managers are business leaders, not backlog administrators.",
           "context": "Trucksters is a logistics company specializing in long-distance, full-truckload transportation. They operate in a market estimated at 60 billion euros in Europe, focusing on the time-sensitive segment.",
           "ownership": [
-            "**Discovery:** Product Managers (as business unit leaders)",
-            "**Prioritization:** Product Managers (as business unit leaders)",
-            "**Shipping:** Product Managers (as business unit leaders)",
-            "**Sales Input:** Unknown (likely integrated into business unit leadership)",
-            "**Design:** Unknown (likely integrated into business unit leadership)"
+            "**Discovery:** Product managers as business-unit leaders — each owns one BU metric end-to-end.",
+            "**Prioritization:** Same PMs; backlog is subordinate to the business outcome they own.",
+            "**Shipping:** PM leads engineering and, when needed, operations or adjacent functions.",
+            "**Sales / ops:** Folded into BU leadership — the PM *is* the business leader, not a ticket broker beside sales.",
+            "**Design:** Not called out as a separate owner; craft emphasis is PM-as-P&L, not design systems."
           ],
           "evidence": [
             "*The product manager leads engineering, leads operations, and if necessary, another department too.*",
             "*Our product managers now lead business. What is leading business? They are business units.*"
           ],
           "gaps": [
-            "The specific process for how sales input influences prioritization is not detailed.",
-            "The exact structure and responsibilities of the engineering and operations teams reporting to Product Managers are not fully elaborated.",
-            "Details on how new partners are onboarded and managed beyond the initial acquisition are not provided."
+            "Org chart under each BU PM (eng vs ops spans) is sketched, not diagrammed.",
+            "Partner onboarding beyond the TMS loop is light."
           ],
           "loop_bullets": [
             "Client requests shipment",

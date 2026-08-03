@@ -78,3 +78,7 @@ console.log(`thin/suspicious published: ${thin.length}`);
 for (const row of thin) console.log(JSON.stringify(row));
 console.log(`near-duplicate theses (>=0.55): ${nearDupes.length}`);
 for (const row of nearDupes) console.log(JSON.stringify(row));
+
+if (thin.length || nearDupes.length) {
+  process.exitCode = 1;
+}

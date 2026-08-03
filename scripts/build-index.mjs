@@ -241,6 +241,7 @@ function buildAtlasMermaid(companies, practiceLabels) {
 
 function escapeXml(s) {
   return String(s || "")
+    .replace(/[\u0000-\u001F\u007F]/g, " ")
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
@@ -339,15 +340,30 @@ function tensionOgSvg(tension, bySlug) {
 `;
 }
 
-function writeOgAssets(companies) {
+async function svgToPng(svg, outPath) {
+  const { default: sharp } = await import("sharp");
+  const clean = String(svg).replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g, "");
+  await sharp(Buffer.from(clean)).png({ compressionLevel: 9 }).toFile(outPath);
+}
+
+async function writeOgAssets(companies) {
   const ogDir = join(root, "public", "og");
   mkdirSync(ogDir, { recursive: true });
-  const keep = new Set(companies.map((c) => `${c.slug}.svg`));
-  for (const file of readdirSync(ogDir).filter((f) => f.endsWith(".svg"))) {
-    if (!keep.has(file)) unlinkSync(join(ogDir, file));
+  const keepSvg = new Set(companies.map((c) => `${c.slug}.svg`));
+  const keepPng = new Set(companies.map((c) => `${c.slug}.png`));
+  for (const file of readdirSync(ogDir).filter((f) => f.endsWith(".svg") || f.endsWith(".png"))) {
+    if (file.endsWith(".svg") && !keepSvg.has(file)) unlinkSync(join(ogDir, file));
+    if (file.endsWith(".png") && !keepPng.has(file)) unlinkSync(join(ogDir, file));
   }
   for (const c of companies) {
-    writeFileSync(join(ogDir, `${c.slug}.svg`), companyOgSvg(c));
+    const svg = companyOgSvg(c);
+    writeFileSync(join(ogDir, `${c.slug}.svg`), svg);
+    await svgToPng(svg, join(ogDir, `${c.slug}.png`));
+  }
+
+  const siteOgSvg = join(root, "public", "og.svg");
+  if (existsSync(siteOgSvg)) {
+    await svgToPng(readFileSync(siteOgSvg, "utf8"), join(root, "public", "og.png"));
   }
 
   const tensionsPath = join(outDir, "tensions.json");
@@ -356,12 +372,16 @@ function writeOgAssets(companies) {
   const bySlug = Object.fromEntries(companies.map((c) => [c.slug, c]));
   const tDir = join(ogDir, "tensions");
   mkdirSync(tDir, { recursive: true });
-  const keepT = new Set(tensions.map((t) => `${t.id}.svg`));
-  for (const file of readdirSync(tDir).filter((f) => f.endsWith(".svg"))) {
-    if (!keepT.has(file)) unlinkSync(join(tDir, file));
+  const keepTSvg = new Set(tensions.map((t) => `${t.id}.svg`));
+  const keepTPng = new Set(tensions.map((t) => `${t.id}.png`));
+  for (const file of readdirSync(tDir).filter((f) => f.endsWith(".svg") || f.endsWith(".png"))) {
+    if (file.endsWith(".svg") && !keepTSvg.has(file)) unlinkSync(join(tDir, file));
+    if (file.endsWith(".png") && !keepTPng.has(file)) unlinkSync(join(tDir, file));
   }
   for (const t of tensions) {
-    writeFileSync(join(tDir, `${t.id}.svg`), tensionOgSvg(t, bySlug));
+    const svg = tensionOgSvg(t, bySlug);
+    writeFileSync(join(tDir, `${t.id}.svg`), svg);
+    await svgToPng(svg, join(tDir, `${t.id}.png`));
   }
 }
 
@@ -388,7 +408,7 @@ writeFileSync(join(outDir, "atlas.json"), JSON.stringify(payload, null, 2));
 writeFileSync(join(outDir, "episodes.json"), JSON.stringify(episodes, null, 2));
 writeFileSync(join(outDir, "companies.json"), JSON.stringify(companies, null, 2));
 
-writeOgAssets(companies);
+await writeOgAssets(companies);
 
 const companiesDir = join(root, "companies");
 mkdirSync(companiesDir, { recursive: true });

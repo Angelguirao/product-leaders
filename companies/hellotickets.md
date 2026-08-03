@@ -13,7 +13,11 @@
 
 ### Ownership
 
-- The interview touches upon the collaborative nature of product development, where Product Managers (PMs) and Product Designers (PDs) work with engineers. While specific ownership of discovery, prioritization, and shipping isn't detailed, the emphasis is on shared understanding and contribution. Sales input and design ownership are not explicitly covered.
+- **Discovery:** Shared — PMs and PDs frame the problem; engineers are expected to bring product context, not wait for tickets.
+- **Prioritization:** Head of Product with engineers — grooming must hurt; debate before commit.
+- **Shipping:** Product engineers own the solution end-to-end once context is shared.
+- **Sales / GTM:** Marketing and SEO surface demand; not framed as a sales-driven roadmap.
+- **Design:** Product designers partner with PMs and eng in the same collaborative loop.
 
 ### Evidence
 

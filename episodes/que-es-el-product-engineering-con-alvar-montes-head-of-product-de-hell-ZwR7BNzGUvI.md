@@ -25,14 +25,19 @@ Alvar Montes, Head of Product at Hellotickets, discusses the concept of product 
 The discussion highlights a collaborative product development process where engineers are encouraged to engage with product challenges beyond just ticket execution. This involves early drafts, shared context, and constructive debate during grooming sessions to refine solutions and avoid costly mistakes.
 
 ## Ownership
-The interview touches upon the collaborative nature of product development, where Product Managers (PMs) and Product Designers (PDs) work with engineers. While specific ownership of discovery, prioritization, and shipping isn't detailed, the emphasis is on shared understanding and contribution. Sales input and design ownership are not explicitly covered.
+*   **Discovery:** Shared — PMs and PDs frame the problem; engineers are expected to bring product context, not wait for tickets.
+*   **Prioritization:** Head of Product with engineers — grooming must hurt; debate before commit.
+*   **Shipping:** Product engineers own the solution end-to-end once context is shared.
+*   **Sales / GTM:** Marketing and SEO surface demand; not framed as a sales-driven roadmap.
+*   **Design:** Product designers partner with PMs and eng in the same collaborative loop.
 
 ## Evidence
 * *A product engineer is an engineer who is close to the product and understands it.*
 * *The grooming sessions have to hurt; there must be debate.*
 
 ## Gaps
-The interview does not detail the specific metrics used by Hellotickets, nor does it elaborate on the company's go-to-market strategy or customer acquisition channels beyond mentioning SEO and marketing. The exact structure of their product squads and the specific roles within them are also not fully detailed.
+*   Metrics and squad topology are light — the heresy is ownership posture, not a full OS map.
+*   How SEO/marketing demand enters prioritization vs eng debate is not spelled out.
 
 ## Listen
 

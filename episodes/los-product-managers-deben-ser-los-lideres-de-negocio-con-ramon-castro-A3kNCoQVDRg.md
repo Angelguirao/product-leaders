@@ -29,20 +29,19 @@ Trucksters is a logistics company specializing in long-distance, full-truckload 
 *   Client receives real-time tracking and delivery confirmation
 
 ## Ownership
-*   **Discovery:** Product Managers (as business unit leaders)
-*   **Prioritization:** Product Managers (as business unit leaders)
-*   **Shipping:** Product Managers (as business unit leaders)
-*   **Sales Input:** Unknown (likely integrated into business unit leadership)
-*   **Design:** Unknown (likely integrated into business unit leadership)
+*   **Discovery:** Product managers as business-unit leaders — each owns one BU metric end-to-end.
+*   **Prioritization:** Same PMs; backlog is subordinate to the business outcome they own.
+*   **Shipping:** PM leads engineering and, when needed, operations or adjacent functions.
+*   **Sales / ops:** Folded into BU leadership — the PM *is* the business leader, not a ticket broker beside sales.
+*   **Design:** Not called out as a separate owner; craft emphasis is PM-as-P&L, not design systems.
 
 ## Evidence
 *   *The product manager leads engineering, leads operations, and if necessary, another department too.*
 *   *Our product managers now lead business. What is leading business? They are business units.*
 
 ## Gaps
-*   The specific process for how sales input influences prioritization is not detailed.
-*   The exact structure and responsibilities of the engineering and operations teams reporting to Product Managers are not fully elaborated.
-*   Details on how new partners are onboarded and managed beyond the initial acquisition are not provided.
+*   Org chart under each BU PM (eng vs ops spans) is sketched, not diagrammed.
+*   Partner onboarding beyond the TMS loop is light.
 
 ## Listen
 

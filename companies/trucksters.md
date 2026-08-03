@@ -17,11 +17,11 @@
 
 ### Ownership
 
-- **Discovery:** Product Managers (as business unit leaders)
-- **Prioritization:** Product Managers (as business unit leaders)
-- **Shipping:** Product Managers (as business unit leaders)
-- **Sales Input:** Unknown (likely integrated into business unit leadership)
-- **Design:** Unknown (likely integrated into business unit leadership)
+- **Discovery:** Product managers as business-unit leaders — each owns one BU metric end-to-end.
+- **Prioritization:** Same PMs; backlog is subordinate to the business outcome they own.
+- **Shipping:** PM leads engineering and, when needed, operations or adjacent functions.
+- **Sales / ops:** Folded into BU leadership — the PM *is* the business leader, not a ticket broker beside sales.
+- **Design:** Not called out as a separate owner; craft emphasis is PM-as-P&L, not design systems.
 
 ### Evidence
 

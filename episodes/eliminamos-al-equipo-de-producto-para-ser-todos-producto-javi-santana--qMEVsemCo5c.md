@@ -33,20 +33,19 @@ flowchart TD
 ```
 
 ## Ownership
-*   **Discovery:** Team leads within product teams.
-*   **Prioritization:** Team leads within product teams.
-*   **Shipping:** Team leads within product teams (with full engineering responsibility).
-*   **Sales Input:** Unknown.
-*   **Design:** Unknown.
+*   **Discovery:** Technical team leads — no separate PM layer mediating for a developer audience.
+*   **Prioritization:** Same leads; product decisions sit with people who ship the data platform.
+*   **Shipping:** Engineering teams with full product responsibility (“eliminated the product team to be all product”).
+*   **Sales / GTM:** Enterprise motion exists; how deals reshape the roadmap is not a named owner in the interview.
+*   **Design:** Not a classic design-org bet — the product is developer-facing APIs and endpoints.
 
 ## Evidence
 *   *We eliminated the product team to be all product.*
 *   *The interesting part of Tinybird is that it's not a tool to just analyze data; it's a tool where data analysis is productized.*
 
 ## Gaps
-*   The specific process for how sales input influences product decisions is not detailed.
-*   The interview does not elaborate on the design ownership or process within the teams.
-*   Details on how customer feedback from larger, long-term clients is integrated into the product roadmap are not fully explained.
+*   How long-term enterprise accounts feed prioritization vs self-serve developer pull is thin.
+*   Design craft is not described as a separate function.
 
 ## Listen
 

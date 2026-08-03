@@ -27,7 +27,7 @@ if (!aOrg || !bOrg) {
 
 const aCraft = craftFor(tension.a.slug);
 const bCraft = craftFor(tension.b.slug);
-const ogImage = `/og/tensions/${tension.id}.svg`;
+const ogImage = `/og/tensions/${tension.id}.png`;
 const description = `${tension.a.pole} (${aOrg.name}) vs ${tension.b.pole} (${bOrg.name}). ${tension.note}`;
 
 const themeHits = (themesData.themes || []).filter((th) =>

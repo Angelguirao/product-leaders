@@ -12,6 +12,7 @@
     "pending": "node scripts/pending.mjs",
     "check-keys": "node scripts/check-keys.mjs",
     "index": "node scripts/build-index.mjs",
+    "audit-cards": "node scripts/audit-cards.mjs",
     "predev": "node scripts/build-index.mjs",
     "prebuild": "node scripts/build-index.mjs",
     "dev": "astro dev",
@@ -28,6 +29,7 @@
     "astro-pagefind": "^2.0.1",
     "mermaid": "^11.16.0",
     "pagefind": "^1.5.2",
+    "sharp": "^0.35.3",
     "yaml": "^2.8.0"
   }
 }
