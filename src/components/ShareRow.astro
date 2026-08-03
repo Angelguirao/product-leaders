@@ -1,0 +1,56 @@
+---
+/**
+ * X + LinkedIn share intents. Sets hrefs from the current page URL at runtime.
+ */
+interface Props {
+  text: string;
+  copyId?: string;
+}
+const { text, copyId = "share-copy" } = Astro.props;
+---
+
+<span class="share-row" data-share-text={text}>
+  <button type="button" class="text-link" data-share-copy id={copyId}>
+    Copy link
+  </button>
+  <a class="text-link" data-share-x href="#" target="_blank" rel="noopener noreferrer">
+    Share on X
+  </a>
+  <a
+    class="text-link"
+    data-share-li
+    href="#"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    LinkedIn
+  </a>
+</span>
+
+<script>
+  document.querySelectorAll(".share-row").forEach((row) => {
+    const text = row.getAttribute("data-share-text") || "";
+    const pageUrl = window.location.href;
+    const x = row.querySelector("[data-share-x]");
+    const li = row.querySelector("[data-share-li]");
+    if (x instanceof HTMLAnchorElement) {
+      x.href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(pageUrl)}`;
+    }
+    if (li instanceof HTMLAnchorElement) {
+      li.href = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(pageUrl)}`;
+    }
+    row.querySelector("[data-share-copy]")?.addEventListener("click", async (e) => {
+      const btn = /** @type {HTMLElement} */ (e.currentTarget);
+      try {
+        await navigator.clipboard.writeText(pageUrl);
+        const prev = btn.textContent;
+        btn.textContent = "Copied";
+        setTimeout(() => {
+          btn.textContent = prev;
+        }, 1600);
+      } catch {
+        btn.textContent = "Copy failed";
+      }
+    });
+  });
+</script>

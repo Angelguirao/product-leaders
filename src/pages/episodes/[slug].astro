@@ -3,6 +3,11 @@ import Base from "../../layouts/Base.astro";
 import { readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import Mermaid from "../../components/Mermaid.astro";
+import ShareRow from "../../components/ShareRow.astro";
+import companies from "../../data/companies.json";
+import tensions from "../../data/tensions.json";
+import episodes from "../../data/episodes.json";
+import { parseOwnershipLine, practiceShort } from "../../lib/format.mjs";
 
 export function getStaticPaths() {
   const episodesDir = join(process.cwd(), "episodes");
@@ -57,98 +62,222 @@ function firstMermaid(text) {
   return m ? m[1].trim() : null;
 }
 
-function renderMd(md) {
-  const withoutMermaid = md.replace(/```mermaid[\s\S]*?```/gi, "");
-  return withoutMermaid
-    .replace(/^### (.*)$/gm, "<h3>$1</h3>")
-    .replace(/^## (.*)$/gm, "<h2>$1</h2>")
-    .replace(/^# (.*)$/gm, "<h1>$1</h1>")
-    .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
-    .replace(/\*(.+?)\*/g, "<em>$1</em>")
-    .replace(/^- (.*)$/gm, "<li>$1</li>")
-    .replace(/(<li>.*<\/li>\n?)+/g, (block) => `<ul>${block}</ul>`)
-    .replace(
-      /\[([^\]]+)\]\(([^)]+)\)/g,
-      '<a href="$2" rel="noopener">$1</a>'
-    )
-    .replace(/^(?!<[hul]|$)(.+)$/gm, "<p>$1</p>")
-    .replace(/<p><\/p>/g, "")
-    .replace(/<h2>Product workflow<\/h2>\s*/gi, "")
-    .replace(/<h2>Roles &amp; org<\/h2>\s*/gi, "")
-    .replace(/<h2>Roles & org<\/h2>\s*/gi, "")
-    .replace(/<h2>Practice map<\/h2>\s*/gi, "");
+function bulletLines(text) {
+  return String(text || "")
+    .split(/\n/)
+    .map((l) => l.replace(/^[*+-]\s+/, "").trim())
+    .filter((l) => l && !l.startsWith("_") && !l.startsWith("```"));
 }
 
 const { meta, body } = parseFrontmatter(raw);
+const indexed = episodes.find((e) => e.slug === slug);
 const thesisMatch = body.match(/## Thesis\s*\n+([^\n#]+)/i);
-const thesis = thesisMatch ? thesisMatch[1].trim() : "";
-const workflow = firstMermaid(section(body, "Product workflow"));
-const org = firstMermaid(section(body, "Roles & org"));
-const practice = firstMermaid(section(body, "Practice map"));
-const html = renderMd(body);
+const thesis =
+  indexed?.thesis || (thesisMatch ? thesisMatch[1].trim() : "") || "";
+const companySlug = meta.company_slug || indexed?.company_slug || null;
+const company = companySlug
+  ? companies.find((c) => c.slug === companySlug)
+  : null;
+
+const relatedTension = company
+  ? tensions.find(
+      (t) => t.a.slug === company.slug || t.b.slug === company.slug
+    )
+  : null;
+const you =
+  relatedTension && company
+    ? relatedTension.a.slug === company.slug
+      ? "a"
+      : "b"
+    : null;
+
+const ownershipRaw =
+  indexed?.ownership ||
+  bulletLines(section(body, "Ownership")) ||
+  [];
+const ownership = (Array.isArray(ownershipRaw) ? ownershipRaw : []).map(
+  parseOwnershipLine
+);
+const loopMermaid =
+  indexed?.loop_mermaid ||
+  firstMermaid(section(body, "Operating loop")) ||
+  firstMermaid(section(body, "Product workflow"));
+const loopBullets = indexed?.loop_bullets || [];
+const evidence = indexed?.evidence || bulletLines(section(body, "Evidence"));
+const gaps = indexed?.gaps || bulletLines(section(body, "Gaps"));
+const context = indexed?.context || section(body, "Context");
+const status = meta.status || indexed?.status || "unknown";
+const practices = meta.practices || indexed?.practices || [];
+
+const compareHref = relatedTension
+  ? `/compare?a=${relatedTension.a.slug}&b=${relatedTension.b.slug}`
+  : company
+    ? `/compare?a=${company.slug}`
+    : "/compare";
+
+const title = company?.name || meta.company || thesis || slug;
+const shareText = thesis
+  ? `${title}: ${thesis}`
+  : `Product Leaders card — ${title}`;
 ---
 
 <Base
-  title={meta.company || thesis || slug}
+  title={title}
   description={thesis || (meta.company
     ? `Operating-model map for ${meta.company}.`
     : "Episode operating-model map.")}
+  ogImage={company ? `/og/${company.slug}.png` : "/og.png"}
 >
   <article class="company-os">
-    <p class="section-label">Episode card</p>
-    {
-      meta.company_slug ? (
-        <p class="lede">
-          <a href={`/companies/${meta.company_slug}`}>{meta.company}</a>
-          {meta.guest ? ` · ${meta.guest}` : ""}
-          {meta.role ? ` · ${meta.role}` : ""}
-          {meta.status && meta.status !== "published" ? ` · ${meta.status}` : ""}
-        </p>
-      ) : null
-    }
-    <h1>{thesis || meta.company || "Product card"}</h1>
-    {
-      meta.title ? (
-        <p class="company-os__source">Source episode: {meta.title}</p>
-      ) : null
-    }
-    {
-      meta.practices?.length ? (
-        <div class="tags" style="margin: 1rem 0;">
-          {meta.practices.map((p) => (
-            <a class="tag" href={`/practices/${p}`}>
-              {p}
+    <header class="company-os__head">
+      <p class="section-label">
+        Episode card
+        {status !== "published" ? ` · ${status}` : ""}
+      </p>
+      <h1>{thesis || title}</h1>
+      <p class="lede">
+        {
+          company ? (
+            <a href={`/companies/${company.slug}`}>{company.name}</a>
+          ) : meta.company ? (
+            meta.company
+          ) : null
+        }
+        {meta.guest ? ` · ${meta.guest}` : ""}
+        {meta.role ? ` · ${meta.role}` : ""}
+        {company?.stage || meta.stage ? ` · ${company?.stage || meta.stage}` : ""}
+      </p>
+      {
+        meta.title ? (
+          <p class="company-os__source">Source episode: {meta.title}</p>
+        ) : null
+      }
+      {
+        practices.length ? (
+          <div class="tags" style="margin: 1rem 0 0;">
+            {practices.map((p) => (
+              <a class="tag" href={`/practices/${p}`} title={p}>
+                {practiceShort(p)}
+              </a>
+            ))}
+          </div>
+        ) : null
+      }
+      <p class="company-os__actions hero-actions">
+        {
+          relatedTension && you ? (
+            <a
+              class="hero-cta"
+              href={`/tensions/${relatedTension.id}?you=${you}`}
+            >
+              Steal this bet →
             </a>
+          ) : (
+            <a class="hero-cta" href="/steal?go=1">Steal a bet →</a>
+          )
+        }
+        {
+          company ? (
+            <a class="text-link" href={`/companies/${company.slug}`}>
+              Company card
+            </a>
+          ) : null
+        }
+        <a class="text-link" href={compareHref}>Compare</a>
+        {
+          company ? (
+            <a class="text-link" href={`/desk?a=${company.slug}`}>Desk</a>
+          ) : null
+        }
+        <ShareRow text={shareText} copyId="episode-copy" />
+      </p>
+    </header>
+
+    {
+      context ? (
+        <>
+          <h2>Context</h2>
+          <p>{context}</p>
+        </>
+      ) : null
+    }
+
+    <h2>Operating loop</h2>
+    {loopMermaid ? <Mermaid code={loopMermaid} /> : null}
+    {
+      !loopMermaid && loopBullets.length ? (
+        <ul>
+          {loopBullets.map((b) => (
+            <li>{b}</li>
           ))}
-        </div>
+        </ul>
+      ) : null
+    }
+    {
+      !loopMermaid && !loopBullets.length ? (
+        <p class="empty">No operating loop captured yet.</p>
       ) : null
     }
 
     {
-      workflow ? (
+      ownership.length ? (
         <>
-          <h2>Product workflow</h2>
-          <Mermaid code={workflow} />
-        </>
-      ) : null
-    }
-    {
-      org ? (
-        <>
-          <h2>Roles &amp; org</h2>
-          <Mermaid code={org} />
-        </>
-      ) : null
-    }
-    {
-      practice ? (
-        <>
-          <h2>Practice map</h2>
-          <Mermaid code={practice} />
+          <h2>Ownership</h2>
+          <ul class="ownership-list">
+            {ownership.map((row) =>
+              row.label ? (
+                <li>
+                  <strong>{row.label}</strong> {row.text}
+                </li>
+              ) : (
+                <li>{row.text}</li>
+              )
+            )}
+          </ul>
         </>
       ) : null
     }
 
-    <div class="prose" set:html={html} />
+    {
+      evidence.length ? (
+        <>
+          <h2>Evidence</h2>
+          <ul>
+            {evidence.map((b) => (
+              <li>{b}</li>
+            ))}
+          </ul>
+        </>
+      ) : null
+    }
+
+    {
+      gaps.length ? (
+        <>
+          <h2>Gaps</h2>
+          <ul>
+            {gaps.map((b) => (
+              <li>{b}</li>
+            ))}
+          </ul>
+        </>
+      ) : null
+    }
+
+    <p class="company-os__source">
+      {
+        meta.url || indexed?.url ? (
+          <a href={meta.url || indexed.url} rel="noopener">
+            Watch interview
+          </a>
+        ) : null
+      }
+      {(meta.url || indexed?.url) && company ? " · " : null}
+      {
+        company ? (
+          <a href={`/companies/${company.slug}`}>Open company card</a>
+        ) : null
+      }
+    </p>
   </article>
 </Base>

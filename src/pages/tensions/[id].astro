@@ -5,6 +5,7 @@ import tensions from "../../data/tensions.json";
 import themesData from "../../data/tension-themes.json";
 import { craftFor, craftShort } from "../../lib/craft.mjs";
 import { parseOwnershipLine } from "../../lib/format.mjs";
+import ShareRow from "../../components/ShareRow.astro";
 
 export function getStaticPaths() {
   const bySlug = Object.fromEntries(companies.map((c) => [c.slug, c]));
@@ -189,9 +190,10 @@ const relatedTensions = [...relatedThemeIds]
       </a>
       <a class="text-link" href="/pole">Take the pole quiz</a>
       <a class="text-link" id="steal-again" href="/steal?go=1">Steal another bet</a>
-      <button type="button" class="text-link" id="tension-copy">
-        Copy link
-      </button>
+      <ShareRow
+        text={`${tension.axis} — ${aOrg.name} vs ${bOrg.name}`}
+        copyId="tension-copy"
+      />
     </p>
   </article>
 
@@ -277,17 +279,4 @@ const relatedTensions = [...relatedThemeIds]
         : "Draw another bet";
     }
   }
-
-  document.getElementById("tension-copy")?.addEventListener("click", async (e) => {
-    const btn = /** @type {HTMLElement} */ (e.currentTarget);
-    try {
-      await navigator.clipboard.writeText(window.location.href);
-      btn.textContent = "Copied";
-      setTimeout(() => {
-        btn.textContent = "Copy link";
-      }, 1600);
-    } catch {
-      btn.textContent = "Copy failed";
-    }
-  });
 </script>
