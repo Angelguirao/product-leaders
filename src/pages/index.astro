@@ -20,6 +20,12 @@ for (const c of companies) {
   byStage[s].push(c);
 }
 const stageOrder = ["early", "growth", "scale", "enterprise", "agency", "other"];
+
+const featured = [...companies]
+  .filter((c) => (c.thesis || "").length > 80)
+  .sort((a, b) => (b.thesis?.length || 0) - (a.thesis?.length || 0))
+  .slice(0, 6);
+
 const companiesJson = JSON.stringify(
   companies.map((c) => ({
     slug: c.slug,
@@ -64,6 +70,22 @@ const companiesJson = JSON.stringify(
       <a class="text-link" href="/docs/how-to-read">How to read a card</a>
     </p>
   </section>
+
+  {
+    featured.length ? (
+      <section class="featured-strip">
+        <p class="section-label">Sharp theses</p>
+        <div class="featured-strip__row">
+          {featured.map((c) => (
+            <a class="peer-chip" href={`/companies/${c.slug}`}>
+              <strong>{c.name}</strong>
+              <span>{c.thesis}</span>
+            </a>
+          ))}
+        </div>
+      </section>
+    ) : null
+  }
 
   {
     atlas.map_mermaid && companies.length ? (

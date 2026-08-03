@@ -1062,9 +1062,9 @@
       "discovery",
       "delivery"
     ],
-    "status": "weak",
+    "status": "published",
     "processed_at": "2026-08-03T18:21:03.221Z",
-    "thesis": "Eva shipped an adolescent-health chatbot in Uruguay in days on Dialogflow — public-health problem first; early conversational AI as distribution for teens.",
+    "thesis": "Eva shipped adolescent sexual-health chat in Uruguay as a days-long Dialogflow MVP — public-health problem first, conversational AI as the distribution channel for teens.",
     "context": "Cristina Santamarina is an experienced product leader with a background in AI and digital product development. She founded an AI chatbot named Eva in 2016 to address adolescent pregnancies in Uruguay, which reached over 10,000 users and was presented to the Uruguayan Ministry of Health.",
     "ownership": [
       "**Discovery:** User conversations and identified public health problems.",
@@ -1091,7 +1091,7 @@
       "**Monetization Attempt:** Explored business models for Eva but focused on learning and user engagement."
     ],
     "loop_mermaid": null,
-    "overview": "Eva shipped an adolescent-health chatbot in Uruguay in days on Dialogflow — public-health problem first; early conversational AI as distribution for teens.",
+    "overview": "Eva shipped adolescent sexual-health chat in Uruguay as a days-long Dialogflow MVP — public-health problem first, conversational AI as the distribution channel for teens.",
     "workflow_mermaid": null
   },
   {
@@ -1186,9 +1186,9 @@
       "D --> E[Shipping & Monitoring];",
       "E --> A;"
     ],
-    "loop_mermaid": "flowchart TD\n    A[Customer Feedback & Market Research] --> B(Hypothesis Generation);\n    B --> C{Validation & Prioritization};\n    C -- Validated --> D[Development & Iteration];\n    D --> E[Shipping & Monitoring];\n    E --> A;",
+    "loop_mermaid": "flowchart TD\r\n    A[Customer Feedback & Market Research] --> B(Hypothesis Generation);\r\n    B --> C{Validation & Prioritization};\r\n    C -- Validated --> D[Development & Iteration];\r\n    D --> E[Shipping & Monitoring];\r\n    E --> A;",
     "overview": "Corti's team prioritizes product discovery and validation through a structured, continuous process to inform their delivery cycle.",
-    "workflow_mermaid": "flowchart TD\n    A[Customer Feedback & Market Research] --> B(Hypothesis Generation);\n    B --> C{Validation & Prioritization};\n    C -- Validated --> D[Development & Iteration];\n    D --> E[Shipping & Monitoring];\n    E --> A;"
+    "workflow_mermaid": "flowchart TD\r\n    A[Customer Feedback & Market Research] --> B(Hypothesis Generation);\r\n    B --> C{Validation & Prioritization};\r\n    C -- Validated --> D[Development & Iteration];\r\n    D --> E[Shipping & Monitoring];\r\n    E --> A;"
   },
   {
     "slug": "la-product-fest-desde-dentro-7-entrevistas-a-speakers-sponsors-y-staff-3RDIOPMh9sk",
@@ -1234,9 +1234,9 @@
       "D --> E[Shipping & Monitoring]",
       "E --> A"
     ],
-    "loop_mermaid": "flowchart TD\n    A[User Feedback & Data Analysis] --> B(Structured Discovery & Hypothesis Generation)\n    B --> C{Prioritization Framework}\n    C --> D[Development & Iteration]\n    D --> E[Shipping & Monitoring]\n    E --> A",
+    "loop_mermaid": "flowchart TD\r\n    A[User Feedback & Data Analysis] --> B(Structured Discovery & Hypothesis Generation)\r\n    B --> C{Prioritization Framework}\r\n    C --> D[Development & Iteration]\r\n    D --> E[Shipping & Monitoring]\r\n    E --> A",
     "overview": "",
-    "workflow_mermaid": "flowchart TD\n    A[User Feedback & Data Analysis] --> B(Structured Discovery & Hypothesis Generation)\n    B --> C{Prioritization Framework}\n    C --> D[Development & Iteration]\n    D --> E[Shipping & Monitoring]\n    E --> A"
+    "workflow_mermaid": "flowchart TD\r\n    A[User Feedback & Data Analysis] --> B(Structured Discovery & Hypothesis Generation)\r\n    B --> C{Prioritization Framework}\r\n    C --> D[Development & Iteration]\r\n    D --> E[Shipping & Monitoring]\r\n    E --> A"
   },
   {
     "slug": "el-cruce-entre-la-belleza-y-utilidad-en-el-instituto-tramontana-con-in-pimnu4vsdvk",
@@ -2201,9 +2201,9 @@
       "roles",
       "growth"
     ],
-    "status": "weak",
+    "status": "published",
     "processed_at": "2026-08-03T18:21:40.941Z",
-    "thesis": "Product marketing managers at Meta focus on deeply understanding customer needs and portfolio performance to drive product strategy and market success.",
+    "thesis": "At Meta, PMMs sit inside product strategy — portfolio narrative and launch packaging are owned with product, not bolted on after the roadmap ships.",
     "context": "Meta operates in the advertising technology space, offering sophisticated advertising platforms that aim to make ads relevant to users and maximize return for advertisers. The company is a large-scale, established player in the digital advertising market.",
     "ownership": [
       "**Discovery:** Product Marketing Managers (PMMs) and Product Managers (PMs) are heavily involved, with PMMs often leading direct customer interaction and insight gathering.",
@@ -2231,7 +2231,7 @@
       "Communicating product value and strategy to stakeholders"
     ],
     "loop_mermaid": null,
-    "overview": "Product marketing managers at Meta focus on deeply understanding customer needs and portfolio performance to drive product strategy and market success.",
+    "overview": "At Meta, PMMs sit inside product strategy — portfolio narrative and launch packaging are owned with product, not bolted on after the roadmap ships.",
     "workflow_mermaid": null
   },
   {
@@ -2382,6 +2382,57 @@
     "loop_mermaid": "flowchart TD\n    A[Client Needs Analysis] --> B{Develop Micro-frontend Modules};\n    B --> C[Integrate with Client's Platform];\n    C --> D[Deploy White-label Solution];\n    D --> E[Gather User Feedback];\n    E --> A;",
     "overview": "Clevergy sells white-label energy SaaS to utilities and solar installers — product deepens their customer relationships instead of competing for end users.",
     "workflow_mermaid": "flowchart TD\n    A[Client Needs Analysis] --> B{Develop Micro-frontend Modules};\n    B --> C[Integrate with Client's Platform];\n    C --> D[Deploy White-label Solution];\n    D --> E[Gather User Feedback];\n    E --> A;"
+  },
+  {
+    "slug": "entre-sin-saber-nada-y-acabe-montando-todo-el-ecommerce-con-marc-rodri-xsjrSrOPKHI",
+    "title": "\\\"Entré sin saber nada y acabé montando todo el Ecommerce\\\" con Marc Rodríguez",
+    "youtube_id": "xsjrSrOPKHI",
+    "url": "https://www.youtube.com/watch?v=xsjrSrOPKHI",
+    "audio_url": "https://anchor.fm/s/ddca5200/podcast/play/81355690/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2024-0-16%2F363682505-44100-2-1027cb7424e5f.mp3",
+    "pub_date": "2024-01-17T08:00:00.000Z",
+    "guest": "Marc Rodríguez",
+    "role": "Ecommerce lead",
+    "company": "Freshly Cosmetics",
+    "company_slug": "freshly-cosmetics",
+    "stage": "growth",
+    "practices": [
+      "discovery",
+      "delivery",
+      "org_shape",
+      "platform"
+    ],
+    "status": "published",
+    "processed_at": "2026-08-03T18:55:22.116Z",
+    "thesis": "Freshly Cosmetics runs vertical integration end-to-end — lab, factory, pack, and DTC — so ecommerce can change formulation and channel without waiting on suppliers.",
+    "context": "Freshly Cosmetics is a digital-native e-commerce company founded in 2016, specializing in natural and sustainable cosmetic products. Initially operating solely online, the company has expanded to include 18 physical stores across Spain and has ventured into wholesale and marketplace sales.",
+    "ownership": [
+      "**Discovery:** Product team, with input from e-commerce and customer feedback.",
+      "**Prioritization:** Product team, in collaboration with business needs.",
+      "**Shipping:** Managed internally, with a focus on optimizing logistics and delivery.",
+      "**Sales Input:** Integrated through physical store performance and online customer data.",
+      "**Design:** Primarily handled by the product team, with a focus on maintaining brand consistency across channels."
+    ],
+    "evidence": [
+      "*We control the entire process from start to finish.*",
+      "*We have a very high repeat customer rate, over 80% in some segments.*"
+    ],
+    "gaps": [
+      "The specific metrics used to measure the success of physical stores in relation to online performance are not detailed.",
+      "The long-term strategy for managing the dual platform development (PrestaShop and Shopify) during the migration phase is not fully elaborated.",
+      "Details on how customer acquisition costs are attributed across online and offline channels are not provided."
+    ],
+    "loop_bullets": [
+      "The company's operating loop involves:",
+      "Product formulation and testing in their own laboratory.",
+      "Manufacturing and packaging at their factory.",
+      "Direct sales through their e-commerce platform and physical stores.",
+      "Marketing and customer acquisition via social media and influencer collaborations.",
+      "Continuous platform migration and optimization, currently moving from PrestaShop to Shopify Plus.",
+      "Customer feedback integration for product and process improvements."
+    ],
+    "loop_mermaid": null,
+    "overview": "Freshly Cosmetics runs vertical integration end-to-end — lab, factory, pack, and DTC — so ecommerce can change formulation and channel without waiting on suppliers.",
+    "workflow_mermaid": null
   },
   {
     "slug": "nuestra-north-star-es-que-el-cliente-repita-con-adrian-de-pedro-cpto-d-vcTacjzmYlA",
@@ -3296,8 +3347,8 @@
       "E --> F(Focus on Narrative & Sensory Experience);",
       "F --> G(Brand Tangibility & Physical Presence);"
     ],
-    "loop_mermaid": "flowchart TD\n    A[Historical Tech Shifts] --> B(AI's Impact on Interaction);\n    B --> C(Shift from UI to Conversational/Voice);\n    C --> D(Loss of Designer Control);\n    D --> E(New Design Roles: Director/Orchestrator);\n    E --> F(Focus on Narrative & Sensory Experience);\n    F --> G(Brand Tangibility & Physical Presence);",
+    "loop_mermaid": "flowchart TD\r\n    A[Historical Tech Shifts] --> B(AI's Impact on Interaction);\r\n    B --> C(Shift from UI to Conversational/Voice);\r\n    C --> D(Loss of Designer Control);\r\n    D --> E(New Design Roles: Director/Orchestrator);\r\n    E --> F(Focus on Narrative & Sensory Experience);\r\n    F --> G(Brand Tangibility & Physical Presence);",
     "overview": "The future of product design will shift from optimizing user interfaces to embracing narrative, sensory experiences, and a deeper understanding of human psychology, especially as AI transforms interaction paradigms.",
-    "workflow_mermaid": "flowchart TD\n    A[Historical Tech Shifts] --> B(AI's Impact on Interaction);\n    B --> C(Shift from UI to Conversational/Voice);\n    C --> D(Loss of Designer Control);\n    D --> E(New Design Roles: Director/Orchestrator);\n    E --> F(Focus on Narrative & Sensory Experience);\n    F --> G(Brand Tangibility & Physical Presence);"
+    "workflow_mermaid": "flowchart TD\r\n    A[Historical Tech Shifts] --> B(AI's Impact on Interaction);\r\n    B --> C(Shift from UI to Conversational/Voice);\r\n    C --> D(Loss of Designer Control);\r\n    D --> E(New Design Roles: Director/Orchestrator);\r\n    E --> F(Focus on Narrative & Sensory Experience);\r\n    F --> G(Brand Tangibility & Physical Presence);"
   }
 ]

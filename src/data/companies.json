@@ -814,6 +814,64 @@
     "episode_count": 1
   },
   {
+    "slug": "eva",
+    "name": "Eva",
+    "stage": "early",
+    "practices": [
+      "ai_product",
+      "discovery",
+      "delivery"
+    ],
+    "guests": [
+      {
+        "name": "Cristina Santamarina",
+        "role": "Founder",
+        "episode_slug": "funde-un-chatbot-con-ia-para-adolescentes-en-2016-cristina-santamarina-nEizg2iJMNQ"
+      }
+    ],
+    "episodes": [
+      {
+        "slug": "funde-un-chatbot-con-ia-para-adolescentes-en-2016-cristina-santamarina-nEizg2iJMNQ",
+        "title": "\\\"Fundé un Chatbot con IA para Adolescentes en 2016\\\" | Cristina Santamarina",
+        "guest": "Cristina Santamarina",
+        "role": "Founder",
+        "pub_date": "2024-10-30T15:00:00.000Z",
+        "url": "https://www.youtube.com/watch?v=nEizg2iJMNQ",
+        "thesis": "Eva shipped adolescent sexual-health chat in Uruguay as a days-long Dialogflow MVP — public-health problem first, conversational AI as the distribution channel for teens.",
+        "context": "Cristina Santamarina is an experienced product leader with a background in AI and digital product development. She founded an AI chatbot named Eva in 2016 to address adolescent pregnancies in Uruguay, which reached over 10,000 users and was presented to the Uruguayan Ministry of Health.",
+        "ownership": [
+          "**Discovery:** User conversations and identified public health problems.",
+          "**Prioritization:** User-driven, adding content like endometriosis information based on repeated queries.",
+          "**Shipping:** Manual content creation and chatbot training.",
+          "**Sales-input:** Direct presentation to the Ministry of Health.",
+          "**Design:** Eva's persona and conversational flow."
+        ],
+        "evidence": [
+          "*I mounted a chatbot in three days and tried to launch it there.*",
+          "*Eva never had a business model because everything I tried to do, I couldn't validate.*"
+        ],
+        "gaps": [
+          "The specific technical implementation details of Dialogflow integration are not fully elaborated.",
+          "The exact process of user data collection and privacy measures for Eva is not detailed.",
+          "The long-term impact and evolution of Eva beyond the scope of the interview are not discussed."
+        ],
+        "loop_bullets": [
+          "**Problem Identification:** Noticed high rates of unintended adolescent pregnancies in Uruguay.",
+          "**Prototyping:** Developed an AI chatbot (Eva) in three days using no-code tools and Dialogflow.",
+          "**User Engagement:** Launched Eva to provide information on contraceptives and detect user location for nearby pharmacy recommendations.",
+          "**Iterative Improvement:** Expanded Eva's capabilities to include information on periods and endometriosis based on user queries.",
+          "**Exploration:** Introduced \"mood bits\" to track user feelings and correlate them with activities, though lacked technical capacity for full model development.",
+          "**Monetization Attempt:** Explored business models for Eva but focused on learning and user engagement."
+        ],
+        "loop_mermaid": null,
+        "overview": "Eva shipped adolescent sexual-health chat in Uruguay as a days-long Dialogflow MVP — public-health problem first, conversational AI as the distribution channel for teens.",
+        "workflow_mermaid": null
+      }
+    ],
+    "thesis": "Eva shipped adolescent sexual-health chat in Uruguay as a days-long Dialogflow MVP — public-health problem first, conversational AI as the distribution channel for teens.",
+    "episode_count": 1
+  },
+  {
     "slug": "factorial",
     "name": "Factorial",
     "stage": "growth",
@@ -923,6 +981,66 @@
       }
     ],
     "thesis": "Filmin runs product as a cinema curation house first — catalog taste and creator relationships lead; software is the black box that serves that editorial bet, not the other way around.",
+    "episode_count": 1
+  },
+  {
+    "slug": "freshly-cosmetics",
+    "name": "Freshly Cosmetics",
+    "stage": "growth",
+    "practices": [
+      "discovery",
+      "delivery",
+      "org_shape",
+      "platform"
+    ],
+    "guests": [
+      {
+        "name": "Marc Rodríguez",
+        "role": "Ecommerce lead",
+        "episode_slug": "entre-sin-saber-nada-y-acabe-montando-todo-el-ecommerce-con-marc-rodri-xsjrSrOPKHI"
+      }
+    ],
+    "episodes": [
+      {
+        "slug": "entre-sin-saber-nada-y-acabe-montando-todo-el-ecommerce-con-marc-rodri-xsjrSrOPKHI",
+        "title": "\\\"Entré sin saber nada y acabé montando todo el Ecommerce\\\" con Marc Rodríguez",
+        "guest": "Marc Rodríguez",
+        "role": "Ecommerce lead",
+        "pub_date": "2024-01-17T08:00:00.000Z",
+        "url": "https://www.youtube.com/watch?v=xsjrSrOPKHI",
+        "thesis": "Freshly Cosmetics runs vertical integration end-to-end — lab, factory, pack, and DTC — so ecommerce can change formulation and channel without waiting on suppliers.",
+        "context": "Freshly Cosmetics is a digital-native e-commerce company founded in 2016, specializing in natural and sustainable cosmetic products. Initially operating solely online, the company has expanded to include 18 physical stores across Spain and has ventured into wholesale and marketplace sales.",
+        "ownership": [
+          "**Discovery:** Product team, with input from e-commerce and customer feedback.",
+          "**Prioritization:** Product team, in collaboration with business needs.",
+          "**Shipping:** Managed internally, with a focus on optimizing logistics and delivery.",
+          "**Sales Input:** Integrated through physical store performance and online customer data.",
+          "**Design:** Primarily handled by the product team, with a focus on maintaining brand consistency across channels."
+        ],
+        "evidence": [
+          "*We control the entire process from start to finish.*",
+          "*We have a very high repeat customer rate, over 80% in some segments.*"
+        ],
+        "gaps": [
+          "The specific metrics used to measure the success of physical stores in relation to online performance are not detailed.",
+          "The long-term strategy for managing the dual platform development (PrestaShop and Shopify) during the migration phase is not fully elaborated.",
+          "Details on how customer acquisition costs are attributed across online and offline channels are not provided."
+        ],
+        "loop_bullets": [
+          "The company's operating loop involves:",
+          "Product formulation and testing in their own laboratory.",
+          "Manufacturing and packaging at their factory.",
+          "Direct sales through their e-commerce platform and physical stores.",
+          "Marketing and customer acquisition via social media and influencer collaborations.",
+          "Continuous platform migration and optimization, currently moving from PrestaShop to Shopify Plus.",
+          "Customer feedback integration for product and process improvements."
+        ],
+        "loop_mermaid": null,
+        "overview": "Freshly Cosmetics runs vertical integration end-to-end — lab, factory, pack, and DTC — so ecommerce can change formulation and channel without waiting on suppliers.",
+        "workflow_mermaid": null
+      }
+    ],
+    "thesis": "Freshly Cosmetics runs vertical integration end-to-end — lab, factory, pack, and DTC — so ecommerce can change formulation and channel without waiting on suppliers.",
     "episode_count": 1
   },
   {
@@ -1574,6 +1692,66 @@
     ],
     "thesis": "Mercadona Tech runs product with the 3x model — explore, expand, extract — so teams pick methods by lifecycle phase instead of one-size-fits-all agile.",
     "episode_count": 2
+  },
+  {
+    "slug": "meta",
+    "name": "Meta",
+    "stage": "growth",
+    "practices": [
+      "discovery",
+      "delivery",
+      "roles",
+      "growth"
+    ],
+    "guests": [
+      {
+        "name": "Daniel Núñez",
+        "role": "PMM",
+        "episode_slug": "el-rol-del-product-marketing-manager-en-meta-con-daniel-nunez-pmm-en-m-6q3tAO14j80"
+      }
+    ],
+    "episodes": [
+      {
+        "slug": "el-rol-del-product-marketing-manager-en-meta-con-daniel-nunez-pmm-en-m-6q3tAO14j80",
+        "title": "El rol del Product Marketing Manager en Meta con Daniel Núñez, PMM en Meta",
+        "guest": "Daniel Núñez",
+        "role": "PMM",
+        "pub_date": "2024-02-14T08:15:00.000Z",
+        "url": "https://www.youtube.com/watch?v=6q3tAO14j80",
+        "thesis": "At Meta, PMMs sit inside product strategy — portfolio narrative and launch packaging are owned with product, not bolted on after the roadmap ships.",
+        "context": "Meta operates in the advertising technology space, offering sophisticated advertising platforms that aim to make ads relevant to users and maximize return for advertisers. The company is a large-scale, established player in the digital advertising market.",
+        "ownership": [
+          "**Discovery:** Product Marketing Managers (PMMs) and Product Managers (PMs) are heavily involved, with PMMs often leading direct customer interaction and insight gathering.",
+          "**Prioritization:** Primarily owned by Product Managers, informed by PMM insights and market analysis.",
+          "**Shipping:** A collaborative effort involving Product, Engineering, and Design teams.",
+          "**Sales Input:** PMMs work closely with sales teams to gather insights and support deal closures.",
+          "**Design:** While not explicitly detailed, the involvement of creative and design teams is mentioned in the context of developing user experiences and advertising formats."
+        ],
+        "evidence": [
+          "*A PMM has to deeply know their portfolio, know who their top clients are, top churners, top decliners, top growers, know them by heart.*",
+          "*For me, it's the platform with the most sophisticated advertising technology in the world.*"
+        ],
+        "gaps": [
+          "The specific metrics used to measure PMM success are not detailed.",
+          "The exact collaboration model between PMMs and Product Managers regarding backlog prioritization is not fully elaborated.",
+          "Details on the internal processes for managing product strategy across Meta's diverse portfolio are not provided."
+        ],
+        "loop_bullets": [
+          "The discussion highlights a continuous loop involving:",
+          "Deep customer and portfolio understanding",
+          "Identifying customer needs, pain points, and gaps",
+          "Translating insights into product value propositions and features",
+          "Developing and launching products",
+          "Gathering ongoing feedback for iteration and growth",
+          "Communicating product value and strategy to stakeholders"
+        ],
+        "loop_mermaid": null,
+        "overview": "At Meta, PMMs sit inside product strategy — portfolio narrative and launch packaging are owned with product, not bolted on after the roadmap ships.",
+        "workflow_mermaid": null
+      }
+    ],
+    "thesis": "At Meta, PMMs sit inside product strategy — portfolio narrative and launch packaging are owned with product, not bolted on after the roadmap ships.",
+    "episode_count": 1
   },
   {
     "slug": "n26",

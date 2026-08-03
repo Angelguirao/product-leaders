@@ -10,12 +10,12 @@ company: "Eva"
 company_slug: "eva"
 stage: "early"
 practices: ["ai_product", "discovery", "delivery"]
-status: weak
+status: published
 processed_at: 2026-08-03T18:21:03.221Z
 ---
 
 ## Thesis
-Eva shipped an adolescent-health chatbot in Uruguay in days on Dialogflow — public-health problem first; early conversational AI as distribution for teens.
+Eva shipped adolescent sexual-health chat in Uruguay as a days-long Dialogflow MVP — public-health problem first, conversational AI as the distribution channel for teens.
 
 
 ## Context

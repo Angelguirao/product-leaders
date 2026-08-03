@@ -69,6 +69,11 @@ const payload = JSON.stringify(options);
         </select>
       </label>
     </div>
+    <p class="hero-actions" style="margin-top: 0.75rem;">
+      <button type="button" class="filter-reset" id="cmp-surprise">
+        Surprise me
+      </button>
+    </p>
     <div class="compare-grid" id="compare-grid" aria-live="polite"></div>
   </div>
 </Base>
@@ -171,6 +176,16 @@ const payload = JSON.stringify(options);
     selA?.addEventListener("change", render);
     selB?.addEventListener("change", render);
     selC?.addEventListener("change", render);
+
+    document.getElementById("cmp-surprise")?.addEventListener("click", () => {
+      if (orgs.length < 2) return;
+      const pool = [...orgs].sort(() => Math.random() - 0.5);
+      if (selA) selA.value = pool[0].slug;
+      if (selB) selB.value = pool[1].slug;
+      if (selC) selC.value = pool[2]?.slug || "";
+      render();
+    });
+
     render();
   }
 </script>

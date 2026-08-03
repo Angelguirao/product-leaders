@@ -449,11 +449,16 @@ main {
   }
 }
 
-.hero-actions {
-  margin: 1.25rem 0 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem 1.5rem;
+.featured-strip {
+  margin: 0 0 2.5rem;
+}
+
+.featured-strip__row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1px;
+  background: var(--map-rule);
+  border: 1px solid var(--map-rule);
 }
 
 .company-os__actions {

@@ -10,12 +10,13 @@ company: "Meta"
 company_slug: "meta"
 stage: "growth"
 practices: ["discovery", "delivery", "roles", "growth"]
-status: weak
+status: published
 processed_at: 2026-08-03T18:21:40.941Z
 ---
 
 ## Thesis
-Product marketing managers at Meta focus on deeply understanding customer needs and portfolio performance to drive product strategy and market success.
+At Meta, PMMs sit inside product strategy — portfolio narrative and launch packaging are owned with product, not bolted on after the roadmap ships.
+
 
 ## Context
 Meta operates in the advertising technology space, offering sophisticated advertising platforms that aim to make ads relevant to users and maximize return for advertisers. The company is a large-scale, established player in the digital advertising market.
