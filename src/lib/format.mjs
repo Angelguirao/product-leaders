@@ -39,6 +39,30 @@ export function parseOwnershipLine(line) {
   return { label: null, text: String(line || "") };
 }
 
+/**
+ * Prefer Discovery / Prioritization / Shipping for steal teasers.
+ * @param {string[] | undefined} ownership
+ * @param {number} [limit]
+ */
+export function stealBullets(ownership, limit = 2) {
+  const own = Array.isArray(ownership) ? ownership : [];
+  if (!own.length) return [];
+  const preferred = ["Discovery", "Prioritization", "Shipping"];
+  const picked = [];
+  for (const key of preferred) {
+    const hit = own.find((b) => {
+      const { label } = parseOwnershipLine(b);
+      return label === key || String(b).includes(`**${key}`);
+    });
+    if (hit && !picked.includes(hit)) picked.push(hit);
+  }
+  for (const b of own) {
+    if (picked.length >= limit) break;
+    if (!picked.includes(b)) picked.push(b);
+  }
+  return picked.slice(0, limit).map(parseOwnershipLine);
+}
+
 /** @param {string} key */
 export function practiceLabel(key) {
   return PRACTICE_LABELS[key] || key;

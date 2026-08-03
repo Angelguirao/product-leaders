@@ -5,6 +5,7 @@ import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
   site: "https://product-leaders-self.vercel.app",
+  trailingSlash: "never",
   integrations: [
     sitemap(),
     pagefind({

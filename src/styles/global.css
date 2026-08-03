@@ -1135,6 +1135,51 @@ button.text-link {
   font-weight: 600;
 }
 
+.tension__heresy {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid color-mix(in srgb, var(--accent) 40%, var(--map-rule));
+  border-radius: var(--radius-control);
+  padding: 0.15rem 0.4rem;
+  width: fit-content;
+}
+
+.tension__axis h2 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.tension__axis h2 a:hover {
+  color: var(--accent);
+}
+
+.loop-details {
+  margin: 0 0 1rem;
+  border: 1px solid var(--map-rule);
+  padding: 0.65rem 0.85rem;
+  background: color-mix(in srgb, var(--surface) 85%, transparent);
+}
+
+.loop-details > summary {
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.03em;
+  color: var(--muted);
+}
+
+.loop-details[open] > summary {
+  margin-bottom: 0.75rem;
+}
+
+.loop-bullets-aside {
+  margin: 0.75rem 0 0;
+}
+
 .tension-steal-line {
   margin: 1.25rem 0 0;
   max-width: 42rem;

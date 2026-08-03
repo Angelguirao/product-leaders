@@ -3,15 +3,38 @@ import Base from "../layouts/Base.astro";
 import companies from "../data/companies.json";
 import tensions from "../data/tensions.json";
 import themesData from "../data/tension-themes.json";
+import { stealBullets } from "../lib/format.mjs";
 
 const bySlug = Object.fromEntries(companies.map((c) => [c.slug, c]));
+
+const heresyMeta = [
+  { slug: "tinybird", label: "Deleted the PM layer" },
+  { slug: "hellotickets", label: "Product engineering owns strategy" },
+  { slug: "ontrack", label: "Telegram MVP before process" },
+  { slug: "dcycle", label: "Skip CEO and sales gates" },
+  { slug: "real-madrid", label: "Never monetize socios" },
+  { slug: "ikualo", label: "Bank the rejected" },
+  { slug: "getinvoice", label: "Solo founder, no product org" },
+  { slug: "eva", label: "Public-health chat in days" },
+  { slug: "trucksters", label: "PM as P&L owner" },
+  { slug: "piper", label: "Forecast from conversation data" },
+];
+const heresyBySlug = Object.fromEntries(heresyMeta.map((h) => [h.slug, h.label]));
 
 const rows = tensions
   .map((t) => {
     const a = bySlug[t.a.slug];
     const b = bySlug[t.b.slug];
     if (!a || !b) return null;
-    return { ...t, aOrg: a, bOrg: b };
+    return {
+      ...t,
+      aOrg: a,
+      bOrg: b,
+      aOwn: stealBullets(a.episodes?.[0]?.ownership, 1),
+      bOwn: stealBullets(b.episodes?.[0]?.ownership, 1),
+      aHeresy: heresyBySlug[t.a.slug] || null,
+      bHeresy: heresyBySlug[t.b.slug] || null,
+    };
   })
   .filter(Boolean);
 
@@ -23,40 +46,7 @@ for (const theme of themesData.themes || []) {
   }
 }
 
-const heresies = [
-  {
-    slug: "tinybird",
-    label: "Deleted the PM layer",
-  },
-  {
-    slug: "hellotickets",
-    label: "Product engineering owns strategy",
-  },
-  {
-    slug: "ontrack",
-    label: "Telegram MVP before process",
-  },
-  {
-    slug: "dcycle",
-    label: "Skip CEO and sales gates",
-  },
-  {
-    slug: "real-madrid",
-    label: "Never monetize socios",
-  },
-  {
-    slug: "ikualo",
-    label: "Bank the rejected",
-  },
-  {
-    slug: "getinvoice",
-    label: "Solo founder, no product org",
-  },
-  {
-    slug: "eva",
-    label: "Public-health chat in days",
-  },
-]
+const heresies = heresyMeta
   .map((h) => {
     const c = bySlug[h.slug];
     return c ? { ...h, org: c } : null;
@@ -77,11 +67,11 @@ const themesPayload = JSON.stringify(
     <h1>Tensions</h1>
     <p class="lede">
       {rows.length} opposing bets. Each row is one operating question with
-      opposite answers — read both poles in twenty seconds, then open the orgs
-      that interest you.
+      opposite answers — read both poles in twenty seconds, then steal the bet
+      that fits.
     </p>
     <p class="hero-actions">
-      <a class="text-link" href="/steal?go=1">Steal a random bet</a>
+      <a class="hero-cta" href="/steal?go=1">Steal a random bet →</a>
       <a class="text-link" href="/pole">Which pole are you?</a>
       <a class="text-link" href="/compare">Compare</a>
     </p>
@@ -142,13 +132,35 @@ const themesPayload = JSON.stringify(
         >
           <header class="tension__axis">
             <span class="tension__index">{String(i + 1).padStart(2, "0")}</span>
-            <h2>{t.axis}</h2>
+            <h2>
+              <a href={`/tensions/${t.id}`}>{t.axis}</a>
+            </h2>
           </header>
           <div class="tension__duel">
             <a class="tension__pole" href={`/companies/${t.a.slug}`}>
               <p class="tension__pole-label">{t.a.pole}</p>
               <h3>{t.aOrg.name}</h3>
+              {
+                t.aHeresy ? (
+                  <span class="tension__heresy">{t.aHeresy}</span>
+                ) : null
+              }
               <p class="tension__thesis">{t.aOrg.thesis}</p>
+              {
+                t.aOwn.length ? (
+                  <ul class="tension__own">
+                    {t.aOwn.map((row) =>
+                      row.label ? (
+                        <li>
+                          <strong>{row.label}</strong> {row.text}
+                        </li>
+                      ) : (
+                        <li>{row.text}</li>
+                      )
+                    )}
+                  </ul>
+                ) : null
+              }
               <span class="tension__stage">{t.aOrg.stage || "—"}</span>
             </a>
             <div class="tension__vs" aria-hidden="true">
@@ -157,23 +169,43 @@ const themesPayload = JSON.stringify(
             <a class="tension__pole tension__pole--b" href={`/companies/${t.b.slug}`}>
               <p class="tension__pole-label">{t.b.pole}</p>
               <h3>{t.bOrg.name}</h3>
+              {
+                t.bHeresy ? (
+                  <span class="tension__heresy">{t.bHeresy}</span>
+                ) : null
+              }
               <p class="tension__thesis">{t.bOrg.thesis}</p>
+              {
+                t.bOwn.length ? (
+                  <ul class="tension__own">
+                    {t.bOwn.map((row) =>
+                      row.label ? (
+                        <li>
+                          <strong>{row.label}</strong> {row.text}
+                        </li>
+                      ) : (
+                        <li>{row.text}</li>
+                      )
+                    )}
+                  </ul>
+                ) : null
+              }
               <span class="tension__stage">{t.bOrg.stage || "—"}</span>
             </a>
           </div>
           <p class="tension__note">{t.note}</p>
-          <p class="tension__actions">
-            <a class="text-link" href={`/tensions/${t.id}`}>
-              Share this tension →
+          <p class="tension__actions hero-actions">
+            <a class="hero-cta" href={`/tensions/${t.id}`}>
+              Steal this bet →
             </a>
             <a
               class="text-link"
               href={`/compare?a=${t.a.slug}&b=${t.b.slug}`}
             >
-              Open in compare
+              Compare
             </a>
             <a class="text-link" href={`/desk?a=${t.a.slug}&b=${t.b.slug}`}>
-              Desk cards
+              Desk
             </a>
           </p>
         </article>

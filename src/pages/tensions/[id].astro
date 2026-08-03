@@ -4,7 +4,7 @@ import companies from "../../data/companies.json";
 import tensions from "../../data/tensions.json";
 import themesData from "../../data/tension-themes.json";
 import { craftFor, craftShort } from "../../lib/craft.mjs";
-import { parseOwnershipLine } from "../../lib/format.mjs";
+import { stealBullets } from "../../lib/format.mjs";
 import ShareRow from "../../components/ShareRow.astro";
 
 export function getStaticPaths() {
@@ -12,25 +12,6 @@ export function getStaticPaths() {
   return tensions
     .filter((t) => bySlug[t.a.slug] && bySlug[t.b.slug])
     .map((t) => ({ params: { id: t.id } }));
-}
-
-function stealBullets(org, limit = 3) {
-  const own = org?.episodes?.[0]?.ownership || [];
-  if (!own.length) return [];
-  const preferred = ["Discovery", "Prioritization", "Shipping"];
-  const picked = [];
-  for (const key of preferred) {
-    const hit = own.find((b) => {
-      const { label } = parseOwnershipLine(b);
-      return label === key || String(b).includes(`**${key}`);
-    });
-    if (hit && !picked.includes(hit)) picked.push(hit);
-  }
-  for (const b of own) {
-    if (picked.length >= limit) break;
-    if (!picked.includes(b)) picked.push(b);
-  }
-  return picked.slice(0, limit).map(parseOwnershipLine);
 }
 
 const bySlug = Object.fromEntries(companies.map((c) => [c.slug, c]));
@@ -48,8 +29,8 @@ if (!aOrg || !bOrg) {
 
 const aCraft = craftFor(tension.a.slug);
 const bCraft = craftFor(tension.b.slug);
-const aOwn = stealBullets(aOrg);
-const bOwn = stealBullets(bOrg);
+const aOwn = stealBullets(aOrg.episodes?.[0]?.ownership, 3);
+const bOwn = stealBullets(bOrg.episodes?.[0]?.ownership, 3);
 const ogImage = `/og/tensions/${tension.id}.png`;
 const description = `${tension.a.pole} (${aOrg.name}) vs ${tension.b.pole} (${bOrg.name}). ${tension.note}`;
 

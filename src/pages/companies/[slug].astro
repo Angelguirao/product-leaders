@@ -219,9 +219,23 @@ const compareHref =
           {e.context ? <p class="company-os__snapshot">{e.context}</p> : null}
 
           <h2>Operating loop</h2>
-          {e.loop_mermaid ? <Mermaid code={e.loop_mermaid} /> : null}
+          {
+            e.loop_mermaid ? (
+              <details class="loop-details">
+                <summary>Show operating loop diagram</summary>
+                <Mermaid code={e.loop_mermaid} />
+              </details>
+            ) : null
+          }
           {!e.loop_mermaid && e.loop_bullets?.length ? (
             <ul>
+              {e.loop_bullets.map((b) => (
+                <li>{b}</li>
+              ))}
+            </ul>
+          ) : null}
+          {e.loop_mermaid && e.loop_bullets?.length ? (
+            <ul class="loop-bullets-aside">
               {e.loop_bullets.map((b) => (
                 <li>{b}</li>
               ))}
