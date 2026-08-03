@@ -1,0 +1,75 @@
+{
+  "intro": "Five forced choices. You land on one operating tension — and the orgs that already live that bet.",
+  "questions": [
+    {
+      "id": "craft-owner",
+      "prompt": "Who should own the product craft day to day?",
+      "a": {
+        "label": "Engineers own problem, priority, and ship — strategy fights live in grooming",
+        "tension": "product-engineering-vs-pm",
+        "side": "a"
+      },
+      "b": {
+        "label": "A PM owns the product surface; engineering delivers against that bet",
+        "tension": "product-engineering-vs-pm",
+        "side": "b"
+      }
+    },
+    {
+      "id": "pm-purpose",
+      "prompt": "What is a PM for in your org?",
+      "a": {
+        "label": "Delete the role if it doesn’t create unique value — technical leads hold the loop",
+        "tension": "pm-deleted-vs-pm-as-p-and-l",
+        "side": "a"
+      },
+      "b": {
+        "label": "Each PM owns a P&L metric end-to-end, like a mini business unit",
+        "tension": "pm-deleted-vs-pm-as-p-and-l",
+        "side": "b"
+      }
+    },
+    {
+      "id": "scale-coherence",
+      "prompt": "At scale, how do you keep the product coherent?",
+      "a": {
+        "label": "Mission swarms and radical autonomy — hierarchy is the bottleneck",
+        "tension": "autonomy-vs-cohesion",
+        "side": "a"
+      },
+      "b": {
+        "label": "Pull strategy up — VP-centered bets beat squad freedom that frays the experience",
+        "tension": "autonomy-vs-cohesion",
+        "side": "b"
+      }
+    },
+    {
+      "id": "find-market",
+      "prompt": "How do you find the market?",
+      "a": {
+        "label": "Ship imperfect tests — acquire → activate is the growth loop",
+        "tension": "experiment-vs-sales",
+        "side": "a"
+      },
+      "b": {
+        "label": "When self-serve dies, go sales-led and stop pretending PLG will save you",
+        "tension": "experiment-vs-sales",
+        "side": "b"
+      }
+    },
+    {
+      "id": "ship-gates",
+      "prompt": "How gated should shipping be?",
+      "a": {
+        "label": "Skip CEO and sales gates — autonomy is the operating system",
+        "tension": "permission-vs-process",
+        "side": "a"
+      },
+      "b": {
+        "label": "Pick explore / expand / extract methods by lifecycle stage — process matches maturity",
+        "tension": "permission-vs-process",
+        "side": "b"
+      }
+    }
+  ]
+}

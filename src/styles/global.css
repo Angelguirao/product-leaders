@@ -1161,4 +1161,180 @@ button.text-link {
   }
 }
 
+.pole-hero,
+.tension--solo {
+  max-width: 56rem;
+  margin: 0 0 2rem;
+  animation: rise 0.55s ease-out both;
+}
+
+.tension-solo__lede {
+  margin: 0 0 1.5rem;
+}
+
+.tension__axis h1 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  letter-spacing: -0.02em;
+  margin: 0;
+  line-height: 1.15;
+}
+
+.pole-quiz {
+  max-width: 42rem;
+  margin: 0 0 3rem;
+}
+
+.pole-progress {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 1rem;
+}
+
+.pole-q {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(1.25rem, 2.5vw, 1.55rem);
+  letter-spacing: -0.02em;
+  margin: 0 0 1.25rem;
+  line-height: 1.25;
+}
+
+.pole-choices {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.pole-choice {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.4rem;
+  text-align: left;
+  padding: 1.1rem 1.2rem;
+  border: 1px solid var(--map-rule);
+  background: var(--surface);
+  color: var(--foreground);
+  font: inherit;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.pole-choice:hover,
+.pole-choice:focus-visible {
+  background: color-mix(in srgb, var(--accent-soft) 30%, var(--surface));
+  border-color: color-mix(in srgb, var(--accent) 40%, var(--map-rule));
+  outline: none;
+}
+
+.pole-choice__tag {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.pole-choice__label {
+  font-size: 1.02rem;
+  line-height: 1.45;
+}
+
+.pole-back {
+  margin-top: 1.25rem;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
+.pole-result__axis {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(1.35rem, 3vw, 1.75rem);
+  letter-spacing: -0.02em;
+  margin: 0 0 0.75rem;
+  line-height: 1.2;
+}
+
+.pole-result__note {
+  margin: 0 0 1.25rem;
+  max-width: 40rem;
+  color: var(--muted);
+}
+
+.pole-result__duel {
+  margin-bottom: 1.25rem;
+}
+
+.pole-result__you {
+  box-shadow: inset 0 0 0 2px color-mix(in srgb, var(--accent) 55%, transparent);
+}
+
+.pole-result__steal {
+  margin: 0 0 1rem;
+  max-width: 40rem;
+  font-size: 1.02rem;
+}
+
+.pole-result__steal a {
+  color: var(--accent);
+}
+
+.pole-result__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem 1.25rem;
+  margin: 0 0 2rem;
+}
+
+.pole-result__actions .text-link {
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
+.pole-peers,
+.pole-alts {
+  margin: 0 0 1.75rem;
+}
+
+.pole-alts__list {
+  margin: 0.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pole-alts__list a {
+  color: var(--accent);
+}
+
+.pole-restart {
+  margin: 1.5rem 0 0;
+}
+
+.tension__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+}
+
+.tension__actions .text-link {
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
 

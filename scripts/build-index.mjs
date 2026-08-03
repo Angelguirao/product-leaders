@@ -320,6 +320,42 @@ function companyOgSvg(company) {
 `;
 }
 
+function tensionOgSvg(tension, bySlug) {
+  const axisLines = wrapWords(tension.axis || "Tension", 36, 2);
+  const axisTspans = axisLines
+    .map(
+      (line, i) =>
+        `<tspan x="80" dy="${i === 0 ? 0 : 40}">${escapeXml(line)}</tspan>`
+    )
+    .join("");
+  const aName = escapeXml(bySlug[tension.a.slug]?.name || tension.a.slug);
+  const bName = escapeXml(bySlug[tension.b.slug]?.name || tension.b.slug);
+  const aPole = escapeXml(tension.a.pole || "");
+  const bPole = escapeXml(tension.b.pole || "");
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="${escapeXml(tension.axis)}">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f4efe6"/>
+      <stop offset="100%" stop-color="#efe8dc"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1040" cy="80" r="180" fill="#e8c4b0" opacity="0.45"/>
+  <circle cx="120" cy="540" r="140" fill="#ddd4c4" opacity="0.55"/>
+  <text x="80" y="100" font-family="Georgia, 'Times New Roman', serif" font-size="24" fill="#6b6358" letter-spacing="3">PRODUCT LEADERS · TENSION</text>
+  <text x="80" y="180" font-family="Georgia, 'Times New Roman', serif" font-size="48" fill="#2a2318">${axisTspans}</text>
+  <rect x="80" y="300" width="480" height="240" fill="#faf7f2" stroke="#d4cbbd"/>
+  <rect x="640" y="300" width="480" height="240" fill="#faf7f2" stroke="#d4cbbd"/>
+  <text x="110" y="350" font-family="Georgia, 'Times New Roman', serif" font-size="22" fill="#b85c38">${aPole}</text>
+  <text x="110" y="410" font-family="Georgia, 'Times New Roman', serif" font-size="40" fill="#2a2318">${aName}</text>
+  <text x="670" y="350" font-family="Georgia, 'Times New Roman', serif" font-size="22" fill="#b85c38">${bPole}</text>
+  <text x="670" y="410" font-family="Georgia, 'Times New Roman', serif" font-size="40" fill="#2a2318">${bName}</text>
+  <text x="580" y="430" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-style="italic" fill="#6b6358" text-anchor="middle">vs</text>
+</svg>
+`;
+}
+
 function writeOgAssets(companies) {
   const ogDir = join(root, "public", "og");
   mkdirSync(ogDir, { recursive: true });
@@ -329,6 +365,20 @@ function writeOgAssets(companies) {
   }
   for (const c of companies) {
     writeFileSync(join(ogDir, `${c.slug}.svg`), companyOgSvg(c));
+  }
+
+  const tensionsPath = join(outDir, "tensions.json");
+  if (!existsSync(tensionsPath)) return;
+  const tensions = JSON.parse(readFileSync(tensionsPath, "utf8"));
+  const bySlug = Object.fromEntries(companies.map((c) => [c.slug, c]));
+  const tDir = join(ogDir, "tensions");
+  mkdirSync(tDir, { recursive: true });
+  const keepT = new Set(tensions.map((t) => `${t.id}.svg`));
+  for (const file of readdirSync(tDir).filter((f) => f.endsWith(".svg"))) {
+    if (!keepT.has(file)) unlinkSync(join(tDir, file));
+  }
+  for (const t of tensions) {
+    writeFileSync(join(tDir, `${t.id}.svg`), tensionOgSvg(t, bySlug));
   }
 }
 
