@@ -1,6 +1,17 @@
 ---
 import Base from "../../layouts/Base.astro";
 import atlas from "../../data/atlas.json";
+import tensions from "../../data/tensions.json";
+import craft from "../../data/craft-lean.json";
+import companies from "../../data/companies.json";
+
+const craftTagged = Object.keys(craft.leans || {}).length;
+const tensionCount = tensions.length;
+const inTension = new Set();
+for (const t of tensions) {
+  inTension.add(t.a.slug);
+  inTension.add(t.b.slug);
+}
 ---
 
 <Base
@@ -29,6 +40,17 @@ import atlas from "../../data/atlas.json";
         <a href="/">map</a>
       </li>
       <li>
+        <strong>{tensionCount}</strong> curated tensions covering{" "}
+        <strong>{inTension.size}</strong> of those orgs — start on{" "}
+        <a href="/tensions">/tensions</a> or{" "}
+        <a href="/steal">steal a random bet</a>
+      </li>
+      <li>
+        <strong>{craftTagged}</strong> of {companies.length} orgs carry a craft
+        lean (eng / PM / design / founder). The rest stay unset on purpose —
+        see <a href="/gaps#craft">/gaps</a>
+      </li>
+      <li>
         <strong>{atlas.weak_count || 0}</strong> held as weak (soft thesis,
         theory, or unstable org signal)
       </li>
@@ -36,15 +58,8 @@ import atlas from "../../data/atlas.json";
         Compare any two or three on <a href="/compare">/compare</a>
       </li>
       <li>
-        Or start from curated arguments on <a href="/tensions">/tensions</a>
-      </li>
-      <li>
         Five forced choices on <a href="/pole">/pole</a> — land on a tension
         that fits how you already operate
-      </li>
-      <li>
-        What’s deliberately missing on <a href="/gaps">/gaps</a> — weak holds,
-        unset craft, tension seeds
       </li>
       <li>
         Print opposing bets as <a href="/desk">desk cards</a>
@@ -53,9 +68,9 @@ import atlas from "../../data/atlas.json";
 
     <h2>Share</h2>
     <p>
-      Link the map, a company card, or a compare URL. Cards are original
-      English synthesis — not transcripts. Source episode titles stay in
-      Spanish as muted labels.
+      Link the map, a company card, a tension, or a compare URL. Cards are
+      original English synthesis — not transcripts. Source episode titles stay
+      in Spanish as muted labels.
     </p>
     <p class="share-blurb">
       Product Leaders Atlas — how real product orgs operate, one thesis per
@@ -65,6 +80,12 @@ import atlas from "../../data/atlas.json";
       <li>
         Map: <a href="https://product-leaders-self.vercel.app/"
           >product-leaders-self.vercel.app</a
+        >
+      </li>
+      <li>
+        Surprise:{" "}
+        <a href="https://product-leaders-self.vercel.app/steal?go=1"
+          >Steal a random bet</a
         >
       </li>
       <li>

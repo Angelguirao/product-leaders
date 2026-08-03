@@ -1,0 +1,56 @@
+---
+import Base from "../layouts/Base.astro";
+import tensions from "../data/tensions.json";
+import companies from "../data/companies.json";
+
+const bySlug = Object.fromEntries(companies.map((c) => [c.slug, c]));
+const ids = tensions
+  .filter((t) => bySlug[t.a.slug] && bySlug[t.b.slug])
+  .map((t) => t.id);
+const payload = JSON.stringify(ids);
+---
+
+<Base
+  title="Steal a bet"
+  description="Land on a random opposing product-org bet — then decide what to steal."
+  ogImage="/og.svg"
+>
+  <section class="steal-hero">
+    <p class="section-label">Surprise mode</p>
+    <h1>Steal a bet</h1>
+    <p class="lede">
+      One random tension from the atlas. Read both poles in twenty seconds —
+      then open the org you’d actually copy.
+    </p>
+    <p class="hero-actions">
+      <button type="button" class="filter-reset" id="steal-go">
+        Draw a tension
+      </button>
+      <a class="text-link" href="/tensions">Browse all</a>
+      <a class="text-link" href="/pole">Or take the pole quiz</a>
+    </p>
+  </section>
+
+  <p class="steal-hint" id="steal-hint" hidden>
+    Redirecting…
+  </p>
+</Base>
+
+<script define:vars={{ payload }}>
+  const ids = JSON.parse(payload);
+  function draw() {
+    if (!ids.length) return;
+    const id = ids[Math.floor(Math.random() * ids.length)];
+    const hint = document.getElementById("steal-hint");
+    if (hint) {
+      hint.hidden = false;
+      hint.textContent = `Opening /tensions/${id}…`;
+    }
+    window.location.href = `/tensions/${id}`;
+  }
+  document.getElementById("steal-go")?.addEventListener("click", draw);
+  // Auto-draw when arriving with ?go=1 (shareable surprise link)
+  if (new URLSearchParams(window.location.search).get("go") === "1") {
+    draw();
+  }
+</script>

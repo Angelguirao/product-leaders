@@ -69,18 +69,5 @@
       "why": "Mostly Factorial philosophy via Itnig — Factorial already published."
     }
   ],
-  "tension_seeds": [
-    {
-      "axis": "Ugly MVP vs polished travel design",
-      "a": "ontrack",
-      "b": "waynabox",
-      "note": "OnTrack keeps tools ugly until the market answers; Waynabox starts from the travel job even when AI makes mediocre UI cheap."
-    },
-    {
-      "axis": "Curriculum OS vs kids’ inclusion constraint",
-      "a": "innovamat",
-      "b": "apolokids",
-      "note": "Innovamat sells a math curriculum OS to schools; ApoloKids treats inclusion as a hard product constraint for kids’ games."
-    }
-  ]
+  "tension_seeds": []
 }

@@ -245,5 +245,31 @@
       "pole": "Ship the curriculum base"
     },
     "note": "Bonilista says an email list isn’t community — product is participation; Ucademy iterates education as business-driven value to the existing base before worshipping PM frameworks."
+  },
+  {
+    "id": "ugly-mvp-vs-travel-job",
+    "axis": "Polish now or prove the problem?",
+    "a": {
+      "slug": "ontrack",
+      "pole": "Ugly tools until the market answers"
+    },
+    "b": {
+      "slug": "waynabox",
+      "pole": "Design from the travel job"
+    },
+    "note": "OnTrack validated empty-truck logistics with a Telegram MVP and keeps process ugly until demand is real; Waynabox starts from the travel constraint even when AI makes mediocre interfaces cheap."
+  },
+  {
+    "id": "curriculum-os-vs-inclusion",
+    "axis": "What constrains the learning product?",
+    "a": {
+      "slug": "innovamat",
+      "pole": "Curriculum OS for schools"
+    },
+    "b": {
+      "slug": "apolokids",
+      "pole": "Inclusion as scope law"
+    },
+    "note": "Innovamat replaces textbooks with a problem-first curriculum OS schools buy wholesale; ApoloKids treats accessibility as a core constraint that shapes kids’ game scope from day one."
   }
 ]

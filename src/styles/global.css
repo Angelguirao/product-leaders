@@ -1460,6 +1460,18 @@ button.text-link {
   }
 }
 
+.steal-hero {
+  max-width: 40rem;
+  margin: 0 0 2rem;
+  animation: rise 0.55s ease-out both;
+}
+
+.steal-hint {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
 .pole-hero,
 .tension--solo {
   max-width: 56rem;

@@ -139,45 +139,67 @@ const craftTagged = companies.filter((c) => craftFor(c.slug)).length;
     <p class="section-label">Not yet argued</p>
     <h2>Tension seeds</h2>
     <p class="gaps-section__lede">
-      Candidate opposing bets — open them in compare, then promote to
-      <a href="/tensions">/tensions</a> when the argument is sharp enough.
-    </p>
-    <div class="tension-list">
       {
-        seeds.map((s, i) => (
-          <article class="tension" style={`--i: ${i}`}>
-            <header class="tension__axis">
-              <span class="tension__index">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <h3>{s.axis}</h3>
-            </header>
-            <div class="tension__duel">
-              <a class="tension__pole" href={`/companies/${s.a}`}>
-                <h3>{s.aOrg.name}</h3>
-                <p class="tension__thesis">{s.aOrg.thesis}</p>
-              </a>
-              <div class="tension__vs" aria-hidden="true">
-                <span>vs</span>
-              </div>
-              <a class="tension__pole tension__pole--b" href={`/companies/${s.b}`}>
-                <h3>{s.bOrg.name}</h3>
-                <p class="tension__thesis">{s.bOrg.thesis}</p>
-              </a>
-            </div>
-            <p class="tension__note">{s.note}</p>
-            <p class="tension__actions">
-              <a class="text-link" href={`/compare?a=${s.a}&b=${s.b}`}>
-                Open in compare →
-              </a>
-              <a class="text-link" href={`/desk?a=${s.a}&b=${s.b}`}>
-                Print desk cards
-              </a>
-            </p>
-          </article>
-        ))
+        seeds.length
+          ? "Candidate opposing bets — open them in compare, then promote to "
+          : "No pending seeds — last candidates were promoted to "
       }
-    </div>
+      <a href="/tensions">/tensions</a>
+      {
+        seeds.length
+          ? " when the argument is sharp enough."
+          : ". Steal a random bet or browse orgs not yet in a tension below."
+      }
+      {
+        !seeds.length && (
+          <>
+            {" "}
+            <a href="/steal?go=1">Steal a random bet →</a>
+          </>
+        )
+      }
+    </p>
+    {
+      seeds.length > 0 && (
+        <div class="tension-list">
+          {seeds.map((s, i) => (
+            <article class="tension" style={`--i: ${i}`}>
+              <header class="tension__axis">
+                <span class="tension__index">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h3>{s.axis}</h3>
+              </header>
+              <div class="tension__duel">
+                <a class="tension__pole" href={`/companies/${s.a}`}>
+                  <h3>{s.aOrg.name}</h3>
+                  <p class="tension__thesis">{s.aOrg.thesis}</p>
+                </a>
+                <div class="tension__vs" aria-hidden="true">
+                  <span>vs</span>
+                </div>
+                <a
+                  class="tension__pole tension__pole--b"
+                  href={`/companies/${s.b}`}
+                >
+                  <h3>{s.bOrg.name}</h3>
+                  <p class="tension__thesis">{s.bOrg.thesis}</p>
+                </a>
+              </div>
+              <p class="tension__note">{s.note}</p>
+              <p class="tension__actions">
+                <a class="text-link" href={`/compare?a=${s.a}&b=${s.b}`}>
+                  Open in compare →
+                </a>
+                <a class="text-link" href={`/desk?a=${s.a}&b=${s.b}`}>
+                  Print desk cards
+                </a>
+              </p>
+            </article>
+          ))}
+        </div>
+      )
+    }
 
     <details class="gaps-details">
       <summary>
@@ -197,6 +219,8 @@ const craftTagged = companies.filter((c) => craftFor(c.slug)).length;
   </section>
 
   <p class="tensions-foot">
+    <a href="/steal">Steal a bet</a>
+    ·
     <a href="/pole">Which pole are you?</a>
     ·
     <a href="/tensions">Tensions</a>
