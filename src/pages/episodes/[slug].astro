@@ -1,0 +1,146 @@
+---
+import Base from "../../layouts/Base.astro";
+import { readdirSync, readFileSync } from "node:fs";
+import { join } from "node:path";
+import Mermaid from "../../components/Mermaid.astro";
+
+export function getStaticPaths() {
+  const episodesDir = join(process.cwd(), "episodes");
+  const files = readdirSync(episodesDir).filter((f) => f.endsWith(".md"));
+  return files.map((file) => {
+    const slug = file.replace(/\.md$/, "");
+    const raw = readFileSync(join(episodesDir, file), "utf8");
+    return { params: { slug }, props: { raw, slug } };
+  });
+}
+
+const { raw, slug } = Astro.props;
+
+function parseFrontmatter(text) {
+  if (!text.startsWith("---")) return { meta: {}, body: text };
+  const end = text.indexOf("\n---", 4);
+  if (end < 0) return { meta: {}, body: text };
+  const fm = text.slice(4, end).trim();
+  const body = text.slice(end + 4).replace(/^\r?\n/, "");
+  const meta = {};
+  for (const line of fm.split(/\r?\n/)) {
+    const m = line.match(/^([a-zA-Z0-9_]+):\s*(.*)$/);
+    if (!m) continue;
+    let val = m[2].trim();
+    if (val.startsWith("[") && val.endsWith("]")) {
+      meta[m[1]] = [...val.matchAll(/"((?:\\.|[^"])*)"/g)].map((x) => x[1]);
+    } else if (
+      (val.startsWith('"') && val.endsWith('"')) ||
+      (val.startsWith("'") && val.endsWith("'"))
+    ) {
+      meta[m[1]] = val.slice(1, -1);
+    } else if (val === "null") {
+      meta[m[1]] = null;
+    } else {
+      meta[m[1]] = val;
+    }
+  }
+  return { meta, body };
+}
+
+function section(body, heading) {
+  const re = new RegExp(
+    `## ${heading}\\s*\\n([\\s\\S]*?)(?=\\n## |$)`,
+    "i"
+  );
+  const m = body.match(re);
+  return m ? m[1].trim() : "";
+}
+
+function firstMermaid(text) {
+  const m = String(text || "").match(/```mermaid\s*([\s\S]*?)```/i);
+  return m ? m[1].trim() : null;
+}
+
+function renderMd(md) {
+  const withoutMermaid = md.replace(/```mermaid[\s\S]*?```/gi, "");
+  return withoutMermaid
+    .replace(/^### (.*)$/gm, "<h3>$1</h3>")
+    .replace(/^## (.*)$/gm, "<h2>$1</h2>")
+    .replace(/^# (.*)$/gm, "<h1>$1</h1>")
+    .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+    .replace(/\*(.+?)\*/g, "<em>$1</em>")
+    .replace(/^- (.*)$/gm, "<li>$1</li>")
+    .replace(/(<li>.*<\/li>\n?)+/g, (block) => `<ul>${block}</ul>`)
+    .replace(
+      /\[([^\]]+)\]\(([^)]+)\)/g,
+      '<a href="$2" rel="noopener">$1</a>'
+    )
+    .replace(/^(?!<[hul]|$)(.+)$/gm, "<p>$1</p>")
+    .replace(/<p><\/p>/g, "")
+    .replace(/<h2>Product workflow<\/h2>\s*/gi, "")
+    .replace(/<h2>Roles &amp; org<\/h2>\s*/gi, "")
+    .replace(/<h2>Roles & org<\/h2>\s*/gi, "")
+    .replace(/<h2>Practice map<\/h2>\s*/gi, "");
+}
+
+const { meta, body } = parseFrontmatter(raw);
+const workflow = firstMermaid(section(body, "Product workflow"));
+const org = firstMermaid(section(body, "Roles & org"));
+const practice = firstMermaid(section(body, "Practice map"));
+const html = renderMd(body);
+---
+
+<Base
+  title={meta.title || slug}
+  description={meta.company
+    ? `Operating-model map for ${meta.company}.`
+    : "Episode operating-model map."}
+>
+  <article class="company-os">
+    <p class="section-label">Episode map</p>
+    {
+      meta.company_slug ? (
+        <p class="lede">
+          <a href={`/companies/${meta.company_slug}`}>{meta.company}</a>
+          {meta.guest ? ` · ${meta.guest}` : ""}
+          {meta.role ? ` · ${meta.role}` : ""}
+        </p>
+      ) : null
+    }
+    <h1>{meta.title || slug}</h1>
+    {
+      meta.practices?.length ? (
+        <div class="tags" style="margin: 1rem 0;">
+          {meta.practices.map((p) => (
+            <a class="tag" href={`/practices/${p}`}>
+              {p}
+            </a>
+          ))}
+        </div>
+      ) : null
+    }
+
+    {
+      workflow ? (
+        <>
+          <h2>Product workflow</h2>
+          <Mermaid code={workflow} />
+        </>
+      ) : null
+    }
+    {
+      org ? (
+        <>
+          <h2>Roles &amp; org</h2>
+          <Mermaid code={org} />
+        </>
+      ) : null
+    }
+    {
+      practice ? (
+        <>
+          <h2>Practice map</h2>
+          <Mermaid code={practice} />
+        </>
+      ) : null
+    }
+
+    <div class="prose" set:html={html} />
+  </article>
+</Base>

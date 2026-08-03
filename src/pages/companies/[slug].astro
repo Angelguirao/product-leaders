@@ -1,0 +1,108 @@
+---
+import Base from "../../layouts/Base.astro";
+import companies from "../../data/companies.json";
+import Mermaid from "../../components/Mermaid.astro";
+
+export function getStaticPaths() {
+  return companies.map((c) => ({
+    params: { slug: c.slug },
+    props: { company: c },
+  }));
+}
+
+const { company } = Astro.props;
+const primary = company.episodes?.[0];
+---
+
+<Base
+  title={company.name}
+  description={company.thesis || `How ${company.name} runs product.`}
+>
+  <article class="company-os">
+    <header class="company-os__head">
+      <p class="section-label">Spanish product org</p>
+      <h1>{company.name}</h1>
+      <p class="company-os__thesis">{company.thesis || primary?.thesis}</p>
+      <p class="lede">
+        {company.stage || "stage unknown"}
+        {
+          primary?.guest
+            ? ` · ${primary.guest}${primary.role ? `, ${primary.role}` : ""}`
+            : ""
+        }
+      </p>
+      {
+        company.practices?.length ? (
+          <div class="tags" style="margin-top: 1rem;">
+            {company.practices.map((p) => (
+              <a class="tag" href={`/practices/${p}`}>
+                {p}
+              </a>
+            ))}
+          </div>
+        ) : null
+      }
+    </header>
+
+    {
+      company.episodes.map((e) => (
+        <section class="company-os__block">
+          {e.context ? <p class="company-os__snapshot">{e.context}</p> : null}
+
+          <h2>Operating loop</h2>
+          {e.loop_mermaid ? <Mermaid code={e.loop_mermaid} /> : null}
+          {!e.loop_mermaid && e.loop_bullets?.length ? (
+            <ul>
+              {e.loop_bullets.map((b) => (
+                <li>{b}</li>
+              ))}
+            </ul>
+          ) : null}
+
+          {e.ownership?.length ? (
+            <>
+              <h2>Ownership</h2>
+              <ul>
+                {e.ownership.map((b) => (
+                  <li>{b}</li>
+                ))}
+              </ul>
+            </>
+          ) : null}
+
+          {e.evidence?.length ? (
+            <>
+              <h2>Evidence</h2>
+              <ul>
+                {e.evidence.map((b) => (
+                  <li>{b}</li>
+                ))}
+              </ul>
+            </>
+          ) : null}
+
+          {e.gaps?.length ? (
+            <>
+              <h2>Gaps</h2>
+              <ul>
+                {e.gaps.map((b) => (
+                  <li>{b}</li>
+                ))}
+              </ul>
+            </>
+          ) : null}
+
+          <p class="company-os__source">
+            {e.url ? (
+              <a href={e.url} rel="noopener">
+                Watch interview
+              </a>
+            ) : null}
+            {e.url ? " · " : null}
+            <a href={`/episodes/${e.slug}`}>Full card</a>
+          </p>
+        </section>
+      ))
+    }
+  </article>
+</Base>

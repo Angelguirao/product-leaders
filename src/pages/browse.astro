@@ -1,0 +1,34 @@
+---
+import Base from "../layouts/Base.astro";
+import episodes from "../data/episodes.json";
+---
+
+<Base title="Episodes" description="All briefed Product Leaders episodes.">
+  <div class="prose">
+    <h1>Episodes</h1>
+    <p class="lede">
+      Each card extracts how the guest’s company runs product — not a full transcript.
+    </p>
+  </div>
+
+  {
+    episodes.length === 0 ? (
+      <p class="empty">No episodes processed yet.</p>
+    ) : (
+      <ul class="episode-list" style="margin-top: 2rem;">
+        {episodes.map((e) => (
+          <li>
+            <a href={`/episodes/${e.slug}`}>
+              <div class="meta">
+                {[e.company, e.guest, e.role].filter(Boolean).join(" · ") || "—"}
+                {e.status === "stub" ? " · stub" : ""}
+              </div>
+              <h3>{e.title}</h3>
+              {e.overview ? <p>{e.overview}</p> : null}
+            </a>
+          </li>
+        ))}
+      </ul>
+    )
+  }
+</Base>

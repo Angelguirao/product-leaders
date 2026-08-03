@@ -1,0 +1,16 @@
+node_modules/
+dist/
+.astro/
+.env
+.env.local
+.env*
+raw/**
+!raw/.gitkeep
+*.mp3
+*.mp4
+*.wav
+*.webm
+.DS_Store
+Thumbs.db
+catalog/.cache/
+.vercel

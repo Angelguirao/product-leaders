@@ -1,0 +1,90 @@
+---
+import "../styles/global.css";
+import PagefindConfig from "astro-pagefind/components/PagefindConfig.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Product Leaders Atlas",
+  description = "A living map of how product teams operate — workflows, roles, and practices from Entrevistas a Product Leaders.",
+} = Astro.props;
+const pageTitle =
+  title === "Product Leaders Atlas" ? title : `${title} · Product Leaders Atlas`;
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Product Leaders Atlas" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <title>{pageTitle}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap"
+      rel="stylesheet"
+    />
+    <PagefindConfig
+      instance="pl"
+      options={{
+        showImages: false,
+        resetStyles: false,
+        translations: { placeholder: "Search companies & practices…" },
+      }}
+    />
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="/">Product <span>orgs</span></a>
+      <nav>
+        <a href="/">Map</a>
+        <a href="/browse">Cards</a>
+        <a class="nav-hide-sm" href="/practices">Practices</a>
+        <pagefind-modal-trigger instance="pl" class="nav-search">Search</pagefind-modal-trigger>
+        <a class="nav-hide-sm" href="/docs/legal">Legal</a>
+      </nav>
+    </header>
+    <main id="main" data-pagefind-body>
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <p>
+        Unofficial map of Spanish product orgs, seeded from
+        <a href="https://podcasters.spotify.com/pod/show/danidiestre"
+          >Entrevistas a Product Leaders</a
+        >
+        (Dani Diestre). Not affiliated. Cards are original synthesis —
+        <a href="/docs/legal">legal notes</a>.
+      </p>
+    </footer>
+    <pagefind-modal instance="pl" reset-on-close="true"></pagefind-modal>
+  </body>
+</html>
+
+<style is:global>
+  pagefind-modal-trigger.nav-search {
+    background: none;
+    border: 0;
+    padding: 0;
+    font: inherit;
+    color: var(--muted);
+    cursor: pointer;
+  }
+  pagefind-modal-trigger.nav-search:hover {
+    color: var(--accent);
+  }
+</style>

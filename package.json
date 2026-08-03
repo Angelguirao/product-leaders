@@ -1,0 +1,31 @@
+{
+  "name": "product-leaders",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Living atlas of how product teams operate — seeded from Entrevistas a Product Leaders (Dani Diestre)",
+  "type": "module",
+  "scripts": {
+    "catalog": "node scripts/catalog.mjs",
+    "process": "node scripts/process.mjs",
+    "rebrief": "node scripts/process.mjs --from-raw",
+    "check-keys": "node scripts/check-keys.mjs",
+    "index": "node scripts/build-index.mjs",
+    "predev": "node scripts/build-index.mjs",
+    "prebuild": "node scripts/build-index.mjs",
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@angelguirao/personal-tokens": "file:./packages/personal-tokens",
+    "@astrojs/sitemap": "^3.7.3",
+    "astro": "^5.13.0",
+    "astro-pagefind": "^2.0.1",
+    "mermaid": "^11.16.0",
+    "pagefind": "^1.5.2",
+    "yaml": "^2.8.0"
+  }
+}

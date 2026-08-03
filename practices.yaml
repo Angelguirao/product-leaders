@@ -1,0 +1,84 @@
+# Practice tags for the product-org atlas.
+# Used when briefing episodes and for cross-company browse.
+
+labels:
+  discovery: Continuous / structured discovery
+  delivery: Delivery & shipping model
+  org_shape: Org design & team topology
+  roles: Role boundaries (PM / design / eng)
+  metrics: Metrics, rituals, operating cadence
+  ai_product: AI in the product or workflow
+  enterprise: Enterprise / B2B sales-led product
+  growth: Growth, PMF, GTM
+  design: Design systems & craft
+  leadership: Product leadership & culture
+  founder: Founder / early-stage product
+  platform: Platform / infra product
+
+keywords:
+  discovery:
+    - discovery
+    - research
+    - entrevistas
+    - mom test
+    - hypothesis
+    - validación
+  delivery:
+    - roadmap
+    - sprint
+    - ship
+    - delivery
+    - ciclo
+    - priorización
+  org_shape:
+    - squad
+    - tribu
+    - org
+    - equipo
+    - topology
+  roles:
+    - product manager
+    - product designer
+    - product engineer
+    - head of product
+    - cpo
+  metrics:
+    - métrica
+    - okrs
+    - kpi
+    - north star
+    - ritual
+  ai_product:
+    - ia
+    - ai
+    - agente
+    - llm
+    - prototipar
+  enterprise:
+    - enterprise
+    - b2b
+    - ventas
+    - legacy
+  growth:
+    - growth
+    - pmf
+    - product market fit
+    - retención
+  design:
+    - diseño
+    - design system
+    - ux
+  leadership:
+    - cultura
+    - liderazgo
+    - coaching
+  founder:
+    - founder
+    - fundador
+    - early
+    - startup
+  platform:
+    - platform
+    - plataforma
+    - infra
+    - api

@@ -1,0 +1,105 @@
+---
+import Base from "../layouts/Base.astro";
+import Mermaid from "../components/Mermaid.astro";
+import atlas from "../data/atlas.json";
+
+const companies = atlas.companies || [];
+const practices = Object.values(atlas.practices || {}).filter(
+  (p) => p.companies?.length
+);
+const byStage = {};
+for (const c of companies) {
+  const s = c.stage || "other";
+  if (!byStage[s]) byStage[s] = [];
+  byStage[s].push(c);
+}
+const stageOrder = ["early", "growth", "scale", "enterprise", "agency", "other"];
+---
+
+<Base
+  title="Product Leaders Atlas"
+  description="A public map of how Spanish product orgs operate — thesis, loop, ownership."
+>
+  <section class="hero">
+    <h1>Spanish product-org map</h1>
+    <p>
+      How real product teams operate — one thesis per company, seeded from Dani
+      Diestre’s Product Leaders interviews. Compare ownership, loops, and stage.
+    </p>
+    <div class="stats">
+      <div>
+        <strong>{atlas.company_count}</strong>
+        orgs mapped
+      </div>
+      <div>
+        <strong>{atlas.published_count ?? atlas.briefed_count}</strong>
+        published cards
+      </div>
+      <div>
+        <strong>{atlas.weak_count || 0}</strong>
+        held as weak
+      </div>
+    </div>
+  </section>
+
+  {
+    atlas.map_mermaid && companies.length ? (
+      <section class="atlas-map">
+        <p class="section-label">Orgs × practices</p>
+        <Mermaid code={atlas.map_mermaid} />
+      </section>
+    ) : null
+  }
+
+  {
+    companies.length === 0 ? (
+      <p class="empty">
+        No published cards yet. Rebrief with the thesis-first schema, then{" "}
+        <code>npm run index</code>.
+      </p>
+    ) : (
+      stageOrder
+        .filter((s) => byStage[s]?.length)
+        .map((stage) => (
+          <section style="margin-bottom: 2.5rem;">
+            <p class="section-label">{stage}</p>
+            <div class="company-grid">
+              {byStage[stage].map((c) => (
+                <a class="company-cell" href={`/companies/${c.slug}`}>
+                  <h2>{c.name}</h2>
+                  <div class="meta">
+                    {c.guests?.[0]
+                      ? `${c.guests[0].name}${c.guests[0].role ? ` · ${c.guests[0].role}` : ""}`
+                      : "—"}
+                  </div>
+                  {c.thesis ? <p>{c.thesis}</p> : null}
+                  {c.practices?.length ? (
+                    <div class="tags">
+                      {c.practices.slice(0, 4).map((p) => (
+                        <span class="tag">{p}</span>
+                      ))}
+                    </div>
+                  ) : null}
+                </a>
+              ))}
+            </div>
+          </section>
+        ))
+    )
+  }
+
+  {
+    practices.length ? (
+      <section style="margin-top: 1rem;">
+        <p class="section-label">By practice</p>
+        <div class="tags" style="gap: 0.75rem;">
+          {practices.map((p) => (
+            <a class="tag" href={`/practices/${p.key}`}>
+              {p.label} ({p.companies.length})
+            </a>
+          ))}
+        </div>
+      </section>
+    ) : null
+  }
+</Base>

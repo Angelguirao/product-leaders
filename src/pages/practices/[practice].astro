@@ -1,0 +1,60 @@
+---
+import Base from "../../layouts/Base.astro";
+import atlas from "../../data/atlas.json";
+
+export function getStaticPaths() {
+  return Object.values(atlas.practices || {}).map((p) => ({
+    params: { practice: p.key },
+    props: { practice: p },
+  }));
+}
+
+const { practice } = Astro.props;
+---
+
+<Base
+  title={practice.label}
+  description={`Companies and episodes tagged ${practice.label}.`}
+>
+  <article class="prose">
+    <p class="section-label">Practice</p>
+    <h1>{practice.label}</h1>
+    <p class="lede">
+      {practice.companies?.length || 0} companies · {practice.episodes?.length || 0}{" "}
+      episodes
+    </p>
+
+    <h2>Companies</h2>
+    {
+      practice.companies?.length ? (
+        <ul>
+          {practice.companies.map((c) => (
+            <li>
+              <a href={`/companies/${c.slug}`}>{c.name}</a>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p class="empty">No companies tagged yet.</p>
+      )
+    }
+
+    <h2>Episodes</h2>
+    {
+      practice.episodes?.length ? (
+        <ul class="episode-list">
+          {practice.episodes.map((e) => (
+            <li>
+              <a href={`/episodes/${e.slug}`}>
+                <div class="meta">{e.company || "—"}</div>
+                <h3>{e.title}</h3>
+              </a>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p class="empty">No episodes tagged yet.</p>
+      )
+    }
+  </article>
+</Base>

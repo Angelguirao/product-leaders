@@ -1,0 +1,43 @@
+---
+/**
+ * Client-rendered Mermaid block. Pass diagram source (no fences).
+ */
+interface Props {
+  code: string;
+  caption?: string;
+}
+
+const { code, caption } = Astro.props;
+const cleaned = String(code || "")
+  .replace(/^```mermaid\s*/i, "")
+  .replace(/```$/i, "")
+  .trim();
+---
+
+<figure class="diagram" data-mermaid-figure>
+  <pre class="mermaid">{cleaned}</pre>
+  {caption ? <figcaption>{caption}</figcaption> : null}
+</figure>
+
+<script>
+  import mermaid from "mermaid";
+
+  let booted = false;
+
+  async function renderAll() {
+    if (!booted) {
+      mermaid.initialize({
+        startOnLoad: false,
+        securityLevel: "strict",
+        theme: "neutral",
+        fontFamily: "Source Serif 4, Georgia, serif",
+        flowchart: { curve: "basis", htmlLabels: true },
+      });
+      booted = true;
+    }
+    await mermaid.run({ querySelector: ".mermaid" });
+  }
+
+  renderAll();
+  document.addEventListener("astro:page-load", renderAll);
+</script>

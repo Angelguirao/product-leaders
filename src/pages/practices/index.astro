@@ -1,0 +1,29 @@
+---
+import Base from "../../layouts/Base.astro";
+import atlas from "../../data/atlas.json";
+
+const practices = Object.values(atlas.practices || {}).sort((a, b) =>
+  (b.companies?.length || 0) - (a.companies?.length || 0)
+);
+---
+
+<Base title="Practices" description="Cross-company practice tags from the atlas.">
+  <div class="prose">
+    <h1>Practices</h1>
+    <p class="lede">Compare how different teams handle the same product work.</p>
+  </div>
+  <ul class="episode-list" style="margin-top: 2rem;">
+    {
+      practices.map((p) => (
+        <li>
+          <a href={`/practices/${p.key}`}>
+            <div class="meta">
+              {p.companies?.length || 0} companies · {p.episodes?.length || 0} episodes
+            </div>
+            <h3>{p.label}</h3>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</Base>

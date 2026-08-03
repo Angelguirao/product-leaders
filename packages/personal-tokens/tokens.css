@@ -1,0 +1,34 @@
+/**
+ * Personal cream tokens — SSOT for tbd · PersonalOS · footnotes alignment.
+ * Holzen Nox is separate (@holzen/design-tokens).
+ *
+ * @see docs/PERSONAL-SURFACE-TOKENS.md
+ */
+:root {
+  /* Color */
+  --background: #f4efe6;
+  --background-breathe: #efe8dc;
+  --foreground: #2a2318;
+  --muted: #6b6358;
+  --accent: #b85c38;
+  --accent-soft: #e8c4b0;
+  --surface: #faf7f1;
+  --border: #ddd4c4;
+  --glow: rgba(184, 92, 56, 0.15);
+
+  /* Shape */
+  --radius-panel: 1.5rem;
+  --radius-card: 1rem;
+  --radius-control: 0.75rem;
+
+  /* Depth (flat cream — soft only) */
+  --shadow-panel: 0 1px 0 rgba(255, 255, 255, 0.4),
+    0 16px 40px -28px rgba(42, 35, 24, 0.14);
+  --shadow-sheet: 0 24px 64px -20px rgba(42, 35, 24, 0.28);
+
+  /* Type roles (fonts wired per-app via next/font) */
+  --text-eyebrow: 0.625rem;
+  --tracking-eyebrow: 0.22em;
+
+  /* Fonts are wired per-app via next/font → --font-cormorant / --font-source-serif */
+}

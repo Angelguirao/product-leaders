@@ -1,0 +1,10 @@
+{
+  "name": "@angelguirao/personal-tokens",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Shared cream tokens + primitives for personal surfaces (tbd, PersonalOS, handbooks, aie-sessions — not Holzen Nox)",
+  "exports": {
+    "./tokens.css": "./tokens.css",
+    "./primitives.css": "./primitives.css"
+  }
+}
