@@ -212,7 +212,7 @@ const freshTensions = [...tensions]
         Argument
         <select id="filter-tension" name="tension">
           <option value="">All orgs</option>
-          <option value="in">In a tension</option>
+          <option value="single">In 1 tension only</option>
           <option value="multi">In 2+ tensions</option>
         </select>
       </label>
@@ -408,7 +408,13 @@ const freshTensions = [...tensions]
       const tCount = Number(cell.getAttribute("data-tensions") || "0");
       const okTension =
         !tension ||
-        (tension === "in" ? tCount >= 1 : tension === "multi" ? tCount >= 2 : true);
+        (tension === "single"
+          ? tCount === 1
+          : tension === "multi"
+            ? tCount >= 2
+            : tension === "in"
+              ? tCount >= 1
+              : true);
       const hay = cell.getAttribute("data-search") || "";
       const okQ = !q || hay.includes(q);
       const show = okStage && okCraft && okTension && okQ;

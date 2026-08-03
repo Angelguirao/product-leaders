@@ -140,6 +140,31 @@ const rows = episodes.map((e) => {
 </Base>
 
 <script>
+  function syncUrl() {
+    const status =
+      /** @type {HTMLSelectElement} */ (document.getElementById("browse-status"))
+        ?.value || "published";
+    const craft =
+      /** @type {HTMLSelectElement} */ (document.getElementById("browse-craft"))
+        ?.value || "all";
+    const q = (
+      /** @type {HTMLInputElement} */ (document.getElementById("browse-q"))
+        ?.value || ""
+    ).trim();
+    const url = new URL(window.location.href);
+    if (status && status !== "published") url.searchParams.set("status", status);
+    else url.searchParams.delete("status");
+    if (craft && craft !== "all") url.searchParams.set("craft", craft);
+    else url.searchParams.delete("craft");
+    if (q) url.searchParams.set("q", q);
+    else url.searchParams.delete("q");
+    const next =
+      url.pathname +
+      (url.searchParams.toString() ? `?${url.searchParams}` : "") +
+      url.hash;
+    history.replaceState({}, "", next);
+  }
+
   function resetBrowse() {
     const q = /** @type {HTMLInputElement} */ (
       document.getElementById("browse-q")
@@ -194,6 +219,7 @@ const rows = episodes.map((e) => {
     }
     const empty = document.getElementById("browse-empty");
     if (empty) empty.hidden = visible !== 0;
+    syncUrl();
   }
   document.getElementById("browse-status")?.addEventListener("change", apply);
   document.getElementById("browse-craft")?.addEventListener("change", apply);
@@ -206,11 +232,15 @@ const rows = episodes.map((e) => {
   const params = new URLSearchParams(window.location.search);
   const statusParam = params.get("status");
   const craftParam = params.get("craft");
+  const qParam = params.get("q");
   const statusSel = /** @type {HTMLSelectElement} */ (
     document.getElementById("browse-status")
   );
   const craftSel = /** @type {HTMLSelectElement} */ (
     document.getElementById("browse-craft")
+  );
+  const qSel = /** @type {HTMLInputElement} */ (
+    document.getElementById("browse-q")
   );
   if (
     statusSel &&
@@ -219,6 +249,11 @@ const rows = episodes.map((e) => {
   ) {
     statusSel.value = statusParam;
   }
-  if (craftSel && craftParam) craftSel.value = craftParam;
+  if (craftSel && craftParam) {
+    if ([...craftSel.options].some((o) => o.value === craftParam)) {
+      craftSel.value = craftParam;
+    }
+  }
+  if (qSel && qParam) qSel.value = qParam;
   apply();
 </script>
