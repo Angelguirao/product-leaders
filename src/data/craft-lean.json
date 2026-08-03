@@ -76,6 +76,38 @@
     "cobee": {
       "lean": "pm_craft",
       "note": "Product prioritizes employee pull so HR buys the platform."
+    },
+    "landbot": {
+      "lean": "pm_craft",
+      "note": "Product + PMM sell time saved so non-engineers ship conversational automation."
+    },
+    "tuio": {
+      "lean": "pm_craft",
+      "note": "CPO-led data craft — qualitative + spreadsheet now, instrument later."
+    },
+    "waynabox": {
+      "lean": "design_led",
+      "note": "Design starts from the travel constraint and user job, not UI trends."
+    },
+    "guruwalk": {
+      "lean": "founder_led",
+      "note": "Founder culture of radical autonomy — mission swarms over hierarchy."
+    },
+    "ontrack": {
+      "lean": "founder_led",
+      "note": "Founders validated the empty-truck problem with a Telegram MVP before process."
+    },
+    "clevergy": {
+      "lean": "founder_led",
+      "note": "Co-founders (product, CTO, sales) own the white-label energy roadmap together."
+    },
+    "bonilista": {
+      "lean": "founder_led",
+      "note": "Founder-built community product — belonging over list broadcast."
+    },
+    "ucademy": {
+      "lean": "founder_led",
+      "note": "Business-driven education iteration before PM framework worship."
     }
   }
 }

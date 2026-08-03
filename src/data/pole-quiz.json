@@ -44,16 +44,16 @@
       }
     },
     {
-      "id": "build-shape",
-      "prompt": "What should you ship as the product?",
+      "id": "data-readiness",
+      "prompt": "When does product data need to be perfect?",
       "a": {
-        "label": "Durable API primitives others compose — hide the protocol complexity",
-        "tension": "primitives-vs-agents",
+        "label": "Qualitative insight + whatever spreadsheet exists — instrument later",
+        "tension": "instrument-later-vs-year-round",
         "side": "a"
       },
       "b": {
-        "label": "An agent OS that takes the action end-to-end — not a suggestion layer",
-        "tension": "primitives-vs-agents",
+        "label": "Build a year-round data product so the loop never waits on filing season",
+        "tension": "instrument-later-vs-year-round",
         "side": "b"
       }
     },

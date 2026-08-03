@@ -71,16 +71,16 @@
   ],
   "tension_seeds": [
     {
-      "axis": "Retail P&L vs white-label energy SaaS",
-      "a": "iskaypet",
-      "b": "clevergy",
-      "note": "IskayPet bends product to store economics; Clevergy sells white-label energy tools to utilities — different buyers, same ‘not pure tech’ constraint."
+      "axis": "Ugly MVP vs polished travel design",
+      "a": "ontrack",
+      "b": "waynabox",
+      "note": "OnTrack keeps tools ugly until the market answers; Waynabox starts from the travel job even when AI makes mediocre UI cheap."
     },
     {
-      "axis": "Content community vs education product",
-      "a": "bonilista",
-      "b": "ucademy",
-      "note": "Bonilista says a list isn’t community; Ucademy runs education as rapid business-driven iteration."
+      "axis": "Curriculum OS vs kids’ inclusion constraint",
+      "a": "innovamat",
+      "b": "apolokids",
+      "note": "Innovamat sells a math curriculum OS to schools; ApoloKids treats inclusion as a hard product constraint for kids’ games."
     }
   ]
 }

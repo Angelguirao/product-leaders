@@ -219,5 +219,31 @@
       "pole": "Founder-led R&D bets"
     },
     "note": "Landbot + PMM sell time saved so non-engineers launch conversational automation; Typeform explores founder-led bets that fold into the form product or spin out as separate brands."
+  },
+  {
+    "id": "retail-pnl-vs-white-label",
+    "axis": "How does digital serve a non-tech core?",
+    "a": {
+      "slug": "iskaypet",
+      "pole": "Bend to retail P&L"
+    },
+    "b": {
+      "slug": "clevergy",
+      "pole": "White-label the incumbents"
+    },
+    "note": "IskayPet ships digital only when stores and category economics can absorb it; Clevergy sells white-label energy SaaS so utilities deepen customer relationships instead of fighting for end users."
+  },
+  {
+    "id": "belonging-vs-curriculum-os",
+    "axis": "What is the content product?",
+    "a": {
+      "slug": "bonilista",
+      "pole": "Belonging over broadcast"
+    },
+    "b": {
+      "slug": "ucademy",
+      "pole": "Ship the curriculum base"
+    },
+    "note": "Bonilista says an email list isn’t community — product is participation; Ucademy iterates education as business-driven value to the existing base before worshipping PM frameworks."
   }
 ]
