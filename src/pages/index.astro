@@ -56,6 +56,12 @@ const spotlightTension =
 const distinctivePractice = (p) =>
   !["discovery", "delivery"].includes(p);
 
+const tensionCountBySlug = {};
+for (const t of tensions) {
+  tensionCountBySlug[t.a.slug] = (tensionCountBySlug[t.a.slug] || 0) + 1;
+  tensionCountBySlug[t.b.slug] = (tensionCountBySlug[t.b.slug] || 0) + 1;
+}
+
 const newTensionIds = [
   "talk-time-vs-forecast-models",
   "demand-signals-vs-travel-job",
@@ -205,6 +211,14 @@ const freshTensions = newTensionIds
           <option value="unset">Unset only</option>
         </select>
       </label>
+      <label>
+        Argument
+        <select id="filter-tension" name="tension">
+          <option value="">All orgs</option>
+          <option value="in">In a tension</option>
+          <option value="multi">In 2+ tensions</option>
+        </select>
+      </label>
       <button type="button" id="filter-reset" class="filter-reset">
         Reset
       </button>
@@ -236,6 +250,7 @@ const freshTensions = newTensionIds
                 {byStage[stage].map((c) => {
                   const craft = craftFor(c.slug);
                   const tags = (c.practices || []).filter(distinctivePractice).slice(0, 3);
+                  const tCount = tensionCountBySlug[c.slug] || 0;
                   return (
                     <a
                       class="company-cell"
@@ -243,6 +258,7 @@ const freshTensions = newTensionIds
                       data-slug={c.slug}
                       data-stage={c.stage || "other"}
                       data-craft={craft?.lean || "unset"}
+                      data-tensions={String(tCount)}
                       data-search={[
                         c.name,
                         c.slug,
@@ -258,11 +274,18 @@ const freshTensions = newTensionIds
                     >
                       <div class="company-cell__top">
                         <h2>{c.name}</h2>
-                        {craft ? (
-                          <span class={`craft-pill craft-pill--${craft.lean}`}>
-                            {craftShort(craft.lean)}
-                          </span>
-                        ) : null}
+                        <div class="company-cell__badges">
+                          {tCount ? (
+                            <span class="tension-count" title={`In ${tCount} tension${tCount === 1 ? "" : "s"}`}>
+                              {tCount}×
+                            </span>
+                          ) : null}
+                          {craft ? (
+                            <span class={`craft-pill craft-pill--${craft.lean}`}>
+                              {craftShort(craft.lean)}
+                            </span>
+                          ) : null}
+                        </div>
                       </div>
                       <div class="meta">
                         {c.guests?.[0]
@@ -324,9 +347,13 @@ const freshTensions = newTensionIds
     const c = /** @type {HTMLSelectElement} */ (
       document.getElementById("filter-craft")
     );
+    const t = /** @type {HTMLSelectElement} */ (
+      document.getElementById("filter-tension")
+    );
     if (q) q.value = "";
     if (s) s.value = "";
     if (c) c.value = "";
+    if (t) t.value = "";
     applyFilters();
   }
 
@@ -336,6 +363,9 @@ const freshTensions = newTensionIds
     )?.value;
     const craft = /** @type {HTMLSelectElement} */ (
       document.getElementById("filter-craft")
+    )?.value;
+    const tension = /** @type {HTMLSelectElement} */ (
+      document.getElementById("filter-tension")
     )?.value;
     const q = (
       /** @type {HTMLInputElement} */ (document.getElementById("filter-q"))
@@ -351,9 +381,13 @@ const freshTensions = newTensionIds
       const okCraft =
         !craft ||
         (craft === "unset" ? cellCraft === "unset" : cellCraft === craft);
+      const tCount = Number(cell.getAttribute("data-tensions") || "0");
+      const okTension =
+        !tension ||
+        (tension === "in" ? tCount >= 1 : tension === "multi" ? tCount >= 2 : true);
       const hay = cell.getAttribute("data-search") || "";
       const okQ = !q || hay.includes(q);
-      const show = okStage && okCraft && okQ;
+      const show = okStage && okCraft && okTension && okQ;
       cell.toggleAttribute("hidden", !show);
       if (show) visible++;
     });
@@ -361,7 +395,7 @@ const freshTensions = newTensionIds
       const any = block.querySelector(".company-cell:not([hidden])");
       block.toggleAttribute("hidden", !any);
     });
-    const filtering = Boolean(stage || craft || q);
+    const filtering = Boolean(stage || craft || tension || q);
     const count = document.getElementById("filter-count");
     if (count) {
       count.hidden = !filtering;
@@ -375,6 +409,7 @@ const freshTensions = newTensionIds
 
   document.getElementById("filter-stage")?.addEventListener("change", applyFilters);
   document.getElementById("filter-craft")?.addEventListener("change", applyFilters);
+  document.getElementById("filter-tension")?.addEventListener("change", applyFilters);
   document.getElementById("filter-q")?.addEventListener("input", applyFilters);
   document.getElementById("filter-reset")?.addEventListener("click", resetFilters);
   document

@@ -1101,6 +1101,25 @@ button.text-link {
   margin-bottom: 0.35rem;
 }
 
+.company-cell__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  justify-content: flex-end;
+  flex-shrink: 0;
+}
+
+.tension-count {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.04em;
+  padding: 0.2rem 0.4rem;
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, var(--map-rule));
+  color: var(--accent);
+  border-radius: var(--radius-control);
+  white-space: nowrap;
+}
+
 .company-cell__top h2 {
   margin: 0;
 }
@@ -1570,6 +1589,18 @@ button.text-link {
   font-family: var(--font-mono);
   font-size: 0.78rem;
   color: var(--muted);
+}
+
+.steal-lenses {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 0 1.25rem;
+}
+
+.steal-lenses .filter-chip:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
 }
 
 .pole-hero,

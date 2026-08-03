@@ -37,7 +37,7 @@ npm run dev
 |------|------|
 | `/` | Org map by stage + practice graph (filters + clickable nodes) |
 | `/tensions` | Curated opposing bets — filter by craft, marketplace, GTM, data, content, industry |
-| `/steal` | Random tension (`?go=1` auto-draws) |
+| `/steal` | Random tension; optional `?theme=` lens + `?go=1` auto-draw |
 | `/pole` | Five forced choices → your operating pole |
 | `/gaps` | Held weak, unset craft, tension seeds |
 | `/desk` | Printable 1–3 org cards for a desk debate |

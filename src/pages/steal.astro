@@ -2,12 +2,23 @@
 import Base from "../layouts/Base.astro";
 import tensions from "../data/tensions.json";
 import companies from "../data/companies.json";
+import themesData from "../data/tension-themes.json";
 
 const bySlug = Object.fromEntries(companies.map((c) => [c.slug, c]));
-const ids = tensions
+const allIds = tensions
   .filter((t) => bySlug[t.a.slug] && bySlug[t.b.slug])
   .map((t) => t.id);
-const payload = JSON.stringify(ids);
+
+const themes = (themesData.themes || []).map((th) => ({
+  id: th.id,
+  label: th.label,
+  ids: th.ids.filter((id) => allIds.includes(id)),
+}));
+
+const payload = JSON.stringify({
+  all: allIds,
+  themes: Object.fromEntries(themes.map((t) => [t.id, t.ids])),
+});
 ---
 
 <Base
@@ -19,9 +30,28 @@ const payload = JSON.stringify(ids);
     <p class="section-label">Surprise mode</p>
     <h1>Steal a bet</h1>
     <p class="lede">
-      One random tension from the atlas. Read both poles in twenty seconds —
-      then open the org you’d actually copy.
+      One random tension from the atlas. Optionally narrow the lens, then read
+      both poles in twenty seconds — and open the org you’d actually copy.
     </p>
+    <div class="steal-lenses" id="steal-lenses" role="group" aria-label="Steal lens">
+      <button type="button" class="filter-chip is-active" data-lens="all" aria-pressed="true">
+        All ({allIds.length})
+      </button>
+      {
+        themes.map((th) => (
+          <button
+            type="button"
+            class="filter-chip"
+            data-lens={th.id}
+            aria-pressed="false"
+            disabled={!th.ids.length}
+          >
+            {th.label}
+            <span class="filter-chip__count">{th.ids.length}</span>
+          </button>
+        ))
+      }
+    </div>
     <p class="hero-actions">
       <button type="button" class="filter-reset" id="steal-go">
         Draw a tension
@@ -37,8 +67,31 @@ const payload = JSON.stringify(ids);
 </Base>
 
 <script define:vars={{ payload }}>
-  const ids = JSON.parse(payload);
+  const data = JSON.parse(payload);
+  let lens = "all";
+
+  function pool() {
+    if (lens === "all") return data.all || [];
+    return data.themes?.[lens] || [];
+  }
+
+  function setLens(next) {
+    lens = next;
+    const chips = document.querySelectorAll("#steal-lenses [data-lens]");
+    chips.forEach((chip) => {
+      const on = chip.dataset.lens === lens;
+      chip.classList.toggle("is-active", on);
+      chip.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+    const url = new URL(window.location.href);
+    if (lens === "all") url.searchParams.delete("theme");
+    else url.searchParams.set("theme", lens);
+    // keep go param only when auto-drawing
+    history.replaceState({}, "", url.pathname + url.search);
+  }
+
   function draw() {
+    const ids = pool();
     if (!ids.length) return;
     const id = ids[Math.floor(Math.random() * ids.length)];
     const hint = document.getElementById("steal-hint");
@@ -48,9 +101,16 @@ const payload = JSON.stringify(ids);
     }
     window.location.href = `/tensions/${id}`;
   }
+
+  document.getElementById("steal-lenses")?.addEventListener("click", (e) => {
+    const btn = e.target.closest("[data-lens]");
+    if (!btn || btn.disabled) return;
+    setLens(btn.dataset.lens);
+  });
   document.getElementById("steal-go")?.addEventListener("click", draw);
-  // Auto-draw when arriving with ?go=1 (shareable surprise link)
-  if (new URLSearchParams(window.location.search).get("go") === "1") {
-    draw();
-  }
+
+  const params = new URLSearchParams(window.location.search);
+  const theme = params.get("theme");
+  if (theme && data.themes?.[theme]?.length) setLens(theme);
+  if (params.get("go") === "1") draw();
 </script>
