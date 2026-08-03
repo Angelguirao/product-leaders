@@ -13,6 +13,19 @@
     "note": "Same question, opposite org answers — designers as product owners vs technical leads for a developer audience."
   },
   {
+    "id": "product-engineering-vs-pm",
+    "axis": "Product engineering vs PM craft",
+    "a": {
+      "slug": "hellotickets",
+      "pole": "Eng owns the loop"
+    },
+    "b": {
+      "slug": "shopify",
+      "pole": "PM owns the surface"
+    },
+    "note": "Product engineering collapses problem, priority, and ship into one eng craft (strategy fights live in grooming). The opposite keeps a PM owning the product surface while engineering delivers — Shopify’s Shop app is explicitly PM-led on checkout and post-purchase."
+  },
+  {
     "id": "autonomy-vs-cohesion",
     "axis": "Autonomy vs cohesion at scale",
     "a": {
