@@ -180,5 +180,18 @@
       "pole": "Access for the rejected"
     },
     "note": "N26 builds a global platform so the app can replace the branch; Ikualo builds fintech around migrants banks refuse — product is access and trust, not glocal features."
+  },
+  {
+    "id": "club-entertainment-vs-curation",
+    "axis": "How do you win attention?",
+    "a": {
+      "slug": "real-madrid",
+      "pole": "Club as entertainment company"
+    },
+    "b": {
+      "slug": "filmin",
+      "pole": "Curation house first"
+    },
+    "note": "Real Madrid uses digital to compete with Netflix for fan attention while never monetizing socios; Filmin leads with catalog taste as a cinema curation house."
   }
 ]

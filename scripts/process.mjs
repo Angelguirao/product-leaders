@@ -81,6 +81,7 @@ if (args.id) {
     if (!byYt.has(key)) byYt.set(key, e);
   }
   queue = [...byYt.values()];
+  if (args.fromRaw) args.force = true;
 } else if (args.fromRaw) {
   queue = queue.filter((e) => {
     const idKey = e.youtube_id || stableId(e.id);
@@ -438,6 +439,8 @@ function buildOperatingModelPrompt(episode, practicesYaml, extract) {
 Goal: a stranger must distinguish THIS company from two peers in 20 seconds.
 Source: Entrevistas a Product Leaders (Dani Diestre). Write ALL sections in English only — never Spanish. Do not invent facts.
 If extract guest/company disagree with the RSS title guess, trust the extract.
+RSS titles are often wrong or clickbait — never invent a company from the title alone.
+If the extract clearly names an employer (e.g. Real Madrid) and the title names a different brand, use the extract's employer.
 
 Practice taxonomy (pick 2-4 that truly fit):
 \`\`\`yaml
