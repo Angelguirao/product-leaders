@@ -143,6 +143,7 @@ const relatedTensions = [...relatedThemeIds]
     </div>
 
     <p class="tension-you-banner" id="tension-you-banner" hidden></p>
+    <p class="tension-you-banner" id="tension-steal-banner" hidden></p>
 
     <p class="tension-steal-line" id="tension-steal-line">
       Steal from <strong>{aOrg.name}</strong> (“{tension.a.pole}”), then argue
@@ -212,6 +213,15 @@ const relatedTensions = [...relatedThemeIds]
   const you = params.get("you");
   const theme = params.get("theme");
   const fromSteal = params.get("from") === "steal";
+
+  if (fromSteal) {
+    const stealBanner = document.getElementById("tension-steal-banner");
+    if (stealBanner) {
+      stealBanner.hidden = false;
+      stealBanner.textContent =
+        "Drawn from Steal a bet — pick a pole to open, then draw again when you’re ready.";
+    }
+  }
 
   if (you === "a" || you === "b") {
     document.querySelectorAll("#tension-duel [data-side]").forEach((el) => {

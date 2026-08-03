@@ -1,15 +1,25 @@
 ---
 /**
- * X + LinkedIn share intents. Sets hrefs from the current page URL at runtime.
+ * Copy + X + LinkedIn share intents. Uses native share when available.
+ * Shares the canonical path (drops tracking params like from=steal).
  */
 interface Props {
   text: string;
   copyId?: string;
+  /** Keep ?you= / compare picks in the shared URL */
+  keepSearch?: boolean;
 }
-const { text, copyId = "share-copy" } = Astro.props;
+const { text, copyId = "share-copy", keepSearch = false } = Astro.props;
 ---
 
-<span class="share-row" data-share-text={text}>
+<span
+  class="share-row"
+  data-share-text={text}
+  data-keep-search={keepSearch ? "true" : "false"}
+>
+  <button type="button" class="text-link" data-share-native hidden>
+    Share…
+  </button>
   <button type="button" class="text-link" data-share-copy id={copyId}>
     Copy link
   </button>
@@ -28,17 +38,52 @@ const { text, copyId = "share-copy" } = Astro.props;
 </span>
 
 <script>
+  function shareUrl(row) {
+    const keep = row.getAttribute("data-keep-search") === "true";
+    const u = new URL(window.location.href);
+    if (!keep) {
+      // Preserve pole/side context; drop steal/draw noise
+      const you = u.searchParams.get("you");
+      const a = u.searchParams.get("a");
+      const b = u.searchParams.get("b");
+      const c = u.searchParams.get("c");
+      u.search = "";
+      if (you) u.searchParams.set("you", you);
+      if (a) u.searchParams.set("a", a);
+      if (b) u.searchParams.set("b", b);
+      if (c) u.searchParams.set("c", c);
+    }
+    return u.toString();
+  }
+
   document.querySelectorAll(".share-row").forEach((row) => {
     const text = row.getAttribute("data-share-text") || "";
-    const pageUrl = window.location.href;
+    const pageUrl = shareUrl(row);
     const x = row.querySelector("[data-share-x]");
     const li = row.querySelector("[data-share-li]");
+    const nativeBtn = row.querySelector("[data-share-native]");
+
     if (x instanceof HTMLAnchorElement) {
       x.href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(pageUrl)}`;
     }
     if (li instanceof HTMLAnchorElement) {
       li.href = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(pageUrl)}`;
     }
+
+    if (
+      nativeBtn instanceof HTMLButtonElement &&
+      typeof navigator.share === "function"
+    ) {
+      nativeBtn.hidden = false;
+      nativeBtn.addEventListener("click", async () => {
+        try {
+          await navigator.share({ title: document.title, text, url: pageUrl });
+        } catch {
+          /* user cancelled */
+        }
+      });
+    }
+
     row.querySelector("[data-share-copy]")?.addEventListener("click", async (e) => {
       const btn = /** @type {HTMLElement} */ (e.currentTarget);
       try {

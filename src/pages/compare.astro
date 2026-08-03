@@ -3,17 +3,25 @@ import Base from "../layouts/Base.astro";
 import companies from "../data/companies.json";
 import tensions from "../data/tensions.json";
 import { craftFor, craftShort } from "../lib/craft.mjs";
+import { practiceShort, stealBullets } from "../lib/format.mjs";
 
 const options = companies
   .map((c) => {
     const craft = craftFor(c.slug);
+    const ownRaw = c.episodes?.[0]?.ownership || [];
+    const ownParsed = stealBullets(ownRaw, 4).map((row) =>
+      row.label ? `**${row.label}** ${row.text}` : row.text
+    );
     return {
       slug: c.slug,
       name: c.name,
       stage: c.stage || "other",
       thesis: c.thesis || "",
-      practices: c.practices || [],
-      ownership: c.episodes?.[0]?.ownership || [],
+      practices: (c.practices || []).map((p) => ({
+        key: p,
+        label: practiceShort(p),
+      })),
+      ownership: ownParsed.length ? ownParsed : ownRaw.slice(0, 4),
       loop_bullets: c.episodes?.[0]?.loop_bullets || [],
       loop_mermaid: Boolean(c.episodes?.[0]?.loop_mermaid),
       context: c.episodes?.[0]?.context || "",
@@ -139,6 +147,13 @@ const payload = JSON.stringify({ orgs: options, tensions: tensionIndex });
       <button type="button" class="filter-reset" id="cmp-copy" data-copied="Copied">
         Copy compare link
       </button>
+      <a class="text-link" id="cmp-share-x" href="#" target="_blank" rel="noopener noreferrer"
+        >Share on X</a
+      >
+      <a class="text-link" id="cmp-share-li" href="#" target="_blank" rel="noopener noreferrer"
+        >LinkedIn</a
+      >
+      <a class="text-link" href="/steal?go=1">Steal a bet</a>
     </p>
     <div class="compare-match" id="compare-match" hidden></div>
     <div class="compare-grid" id="compare-grid" aria-live="polite"></div>
@@ -240,7 +255,11 @@ const payload = JSON.stringify({ orgs: options, tensions: tensionIndex });
         <h3>Ownership</h3>
         ${ownership ? `<ul>${ownership}</ul>` : `<p class="compare-card__note">No ownership notes.</p>`}
         <div class="tags">${(o.practices || [])
-          .map((p) => `<a class="tag" href="/practices/${esc(p)}">${esc(p)}</a>`)
+          .map((p) => {
+            const key = typeof p === "string" ? p : p.key;
+            const label = typeof p === "string" ? p : p.label || p.key;
+            return `<a class="tag" href="/practices/${esc(key)}">${esc(label)}</a>`;
+          })
           .join("")}</div>
       </article>`;
     }
@@ -266,6 +285,25 @@ const payload = JSON.stringify({ orgs: options, tensions: tensionIndex });
       `;
     }
 
+    function updateShare() {
+      const names = [selA, selB, selC]
+        .map((s) => bySlug[s?.value || ""]?.name)
+        .filter(Boolean);
+      const text =
+        names.length >= 2
+          ? `Comparing ${names.join(" vs ")} on Product Leaders Atlas`
+          : "Compare product orgs on Product Leaders Atlas";
+      const pageUrl = location.href;
+      const x = document.getElementById("cmp-share-x");
+      const li = document.getElementById("cmp-share-li");
+      if (x instanceof HTMLAnchorElement) {
+        x.href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(pageUrl)}`;
+      }
+      if (li instanceof HTMLAnchorElement) {
+        li.href = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(pageUrl)}`;
+      }
+    }
+
     function render() {
       const a = bySlug[selA?.value || ""];
       const b = bySlug[selB?.value || ""];
@@ -281,6 +319,7 @@ const payload = JSON.stringify({ orgs: options, tensions: tensionIndex });
       if (selB?.value) q.set("b", selB.value);
       if (selC?.value) q.set("c", selC.value);
       history.replaceState(null, "", `?${q.toString()}`);
+      updateShare();
     }
 
     selA?.addEventListener("change", render);

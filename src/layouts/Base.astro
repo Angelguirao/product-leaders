@@ -17,6 +17,21 @@ const pageTitle =
   title === "Product Leaders Atlas" ? title : `${title} · Product Leaders Atlas`;
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const ogImageAbs = new URL(ogImage, Astro.site).href;
+const path = Astro.url.pathname.replace(/\/$/, "") || "/";
+
+function navCurrent(href) {
+  if (href === "/") return path === "/";
+  return path === href || path.startsWith(`${href}/`);
+}
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Product Leaders Atlas",
+  url: Astro.site?.href || "https://product-leaders-self.vercel.app/",
+  description,
+  inLanguage: "en",
+};
 ---
 
 <!doctype html>
@@ -42,6 +57,7 @@ const ogImageAbs = new URL(ogImage, Astro.site).href;
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageAbs} />
     <title>{pageTitle}</title>
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -63,17 +79,47 @@ const ogImageAbs = new URL(ogImage, Astro.site).href;
     <header class="site-header">
       <a class="brand" href="/">Product <span>orgs</span></a>
       <nav>
-        <a href="/">Map</a>
-        <a href="/tensions">Tensions</a>
-        <a href="/steal">Steal</a>
-        <a href="/pole">Pole</a>
-        <a href="/compare">Compare</a>
-        <a class="nav-hide-sm" href="/desk">Desk</a>
-        <a class="nav-hide-sm" href="/gaps">Gaps</a>
-        <a href="/browse">Cards</a>
-        <a class="nav-hide-sm" href="/practices">Practices</a>
-        <a class="nav-hide-sm" href="/docs/how-to-read">Guide</a>
-        <a class="nav-hide-sm" href="/docs/about">About</a>
+        <a href="/" aria-current={navCurrent("/") ? "page" : undefined}>Map</a>
+        <a href="/tensions" aria-current={navCurrent("/tensions") ? "page" : undefined}
+          >Tensions</a
+        >
+        <a href="/steal" aria-current={navCurrent("/steal") ? "page" : undefined}
+          >Steal</a
+        >
+        <a href="/pole" aria-current={navCurrent("/pole") ? "page" : undefined}>Pole</a>
+        <a href="/compare" aria-current={navCurrent("/compare") ? "page" : undefined}
+          >Compare</a
+        >
+        <a
+          class="nav-hide-sm"
+          href="/desk"
+          aria-current={navCurrent("/desk") ? "page" : undefined}>Desk</a
+        >
+        <a
+          class="nav-hide-sm"
+          href="/gaps"
+          aria-current={navCurrent("/gaps") ? "page" : undefined}>Gaps</a
+        >
+        <a href="/browse" aria-current={navCurrent("/browse") ? "page" : undefined}
+          >Cards</a
+        >
+        <a
+          class="nav-hide-sm"
+          href="/practices"
+          aria-current={navCurrent("/practices") ? "page" : undefined}
+          >Practices</a
+        >
+        <a
+          class="nav-hide-sm"
+          href="/docs/how-to-read"
+          aria-current={navCurrent("/docs/how-to-read") ? "page" : undefined}
+          >Guide</a
+        >
+        <a
+          class="nav-hide-sm"
+          href="/docs/about"
+          aria-current={navCurrent("/docs/about") ? "page" : undefined}>About</a
+        >
         <pagefind-modal-trigger instance="pl" class="nav-search"
           >Search</pagefind-modal-trigger
         >
