@@ -453,6 +453,26 @@ main {
   .site-header nav .nav-hide-sm {
     display: none;
   }
+
+  .company-cell__top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+
+  .company-cell__badges {
+    justify-content: flex-start;
+  }
+
+  .filter-chip {
+    font-size: 0.78rem;
+    padding: 0.55rem 0.85rem;
+    min-height: 2.5rem;
+  }
+
+  .steal-lenses {
+    gap: 0.55rem;
+  }
 }
 
 .featured-strip {
@@ -1719,6 +1739,15 @@ button.text-link {
 
 .pole-result__you {
   box-shadow: inset 0 0 0 2px color-mix(in srgb, var(--accent) 55%, transparent);
+}
+
+.tension-you-banner {
+  margin: 0 0 1.25rem;
+  max-width: 40rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  color: var(--accent);
 }
 
 .pole-result__steal {

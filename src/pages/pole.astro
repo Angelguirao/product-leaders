@@ -184,6 +184,8 @@ const payload = JSON.stringify({
       .filter(Boolean);
 
     const sharePath = `/pole?tension=${encodeURIComponent(tensionId)}&side=${side}`;
+    const tensionPath = `/tensions/${tensionId}?you=${side}`;
+    history.replaceState({}, "", sharePath);
 
     resultEl.innerHTML = `
       <p class="section-label">You lean toward</p>
@@ -212,7 +214,7 @@ const payload = JSON.stringify({
       </p>
 
       <p class="hero-actions pole-result__actions">
-        <a class="text-link" href="/tensions/${tensionId}">Open this tension →</a>
+        <a class="text-link" href="${tensionPath}">Open this tension →</a>
         <a class="text-link" href="/compare?a=${t.a.slug}&amp;b=${t.b.slug}">Compare the pair</a>
         <button type="button" class="text-link" id="pole-copy" data-url="${escapeHtml(sharePath)}">Copy result link</button>
       </p>

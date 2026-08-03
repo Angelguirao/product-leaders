@@ -95,11 +95,14 @@ const payload = JSON.stringify({
     if (!ids.length) return;
     const id = ids[Math.floor(Math.random() * ids.length)];
     const hint = document.getElementById("steal-hint");
+    const dest = new URL(`/tensions/${id}`, window.location.origin);
+    dest.searchParams.set("from", "steal");
+    if (lens !== "all") dest.searchParams.set("theme", lens);
     if (hint) {
       hint.hidden = false;
-      hint.textContent = `Opening /tensions/${id}…`;
+      hint.textContent = `Opening ${dest.pathname}${dest.search}…`;
     }
-    window.location.href = `/tensions/${id}`;
+    window.location.href = dest.pathname + dest.search;
   }
 
   document.getElementById("steal-lenses")?.addEventListener("click", (e) => {

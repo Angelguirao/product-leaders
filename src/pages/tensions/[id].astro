@@ -72,9 +72,9 @@ const relatedTensions = [...relatedThemeIds]
     </header>
     <p class="lede tension-solo__lede">{tension.note}</p>
 
-    <div class="tension__duel">
-      <a class="tension__pole" href={`/companies/${tension.a.slug}`}>
-        <p class="tension__pole-label">{tension.a.pole}</p>
+    <div class="tension__duel" id="tension-duel">
+      <a class="tension__pole" data-side="a" href={`/companies/${tension.a.slug}`}>
+        <p class="tension__pole-label" data-pole-label="a">{tension.a.pole}</p>
         <h2>{aOrg.name}</h2>
         {
           aCraft ? (
@@ -89,8 +89,8 @@ const relatedTensions = [...relatedThemeIds]
       <div class="tension__vs" aria-hidden="true">
         <span>vs</span>
       </div>
-      <a class="tension__pole tension__pole--b" href={`/companies/${tension.b.slug}`}>
-        <p class="tension__pole-label">{tension.b.pole}</p>
+      <a class="tension__pole tension__pole--b" data-side="b" href={`/companies/${tension.b.slug}`}>
+        <p class="tension__pole-label" data-pole-label="b">{tension.b.pole}</p>
         <h2>{bOrg.name}</h2>
         {
           bCraft ? (
@@ -103,6 +103,8 @@ const relatedTensions = [...relatedThemeIds]
         <span class="tension__stage">{bOrg.stage || "—"}</span>
       </a>
     </div>
+
+    <p class="tension-you-banner" id="tension-you-banner" hidden></p>
 
     <p class="tension__actions hero-actions">
       <a
@@ -118,7 +120,7 @@ const relatedTensions = [...relatedThemeIds]
         Print desk cards
       </a>
       <a class="text-link" href="/pole">Take the pole quiz</a>
-      <a class="text-link" href="/steal?go=1">Steal another bet</a>
+      <a class="text-link" id="steal-again" href="/steal?go=1">Steal another bet</a>
       <button type="button" class="text-link" id="tension-copy">
         Copy link
       </button>
@@ -155,6 +157,41 @@ const relatedTensions = [...relatedThemeIds]
 </Base>
 
 <script>
+  const params = new URLSearchParams(window.location.search);
+  const you = params.get("you");
+  const theme = params.get("theme");
+  const fromSteal = params.get("from") === "steal";
+
+  if (you === "a" || you === "b") {
+    document.querySelectorAll("#tension-duel [data-side]").forEach((el) => {
+      const on = el.getAttribute("data-side") === you;
+      el.classList.toggle("pole-result__you", on);
+      const label = el.querySelector("[data-pole-label]");
+      if (on && label && !label.textContent?.startsWith("Your pole")) {
+        label.textContent = `Your pole · ${label.textContent}`;
+      }
+    });
+    const banner = document.getElementById("tension-you-banner");
+    if (banner) {
+      banner.hidden = false;
+      banner.textContent =
+        "From the pole quiz — the highlighted side is your lean. Argue with the other before you copy.";
+    }
+  }
+
+  const stealAgain = document.getElementById("steal-again");
+  if (stealAgain) {
+    const stealUrl = new URL("/steal", window.location.origin);
+    stealUrl.searchParams.set("go", "1");
+    if (theme) stealUrl.searchParams.set("theme", theme);
+    stealAgain.setAttribute("href", stealUrl.pathname + stealUrl.search);
+    if (fromSteal || theme) {
+      stealAgain.textContent = theme
+        ? "Draw another in this lens"
+        : "Draw another bet";
+    }
+  }
+
   document.getElementById("tension-copy")?.addEventListener("click", async (e) => {
     const btn = /** @type {HTMLElement} */ (e.currentTarget);
     try {

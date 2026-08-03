@@ -62,17 +62,10 @@ for (const t of tensions) {
   tensionCountBySlug[t.b.slug] = (tensionCountBySlug[t.b.slug] || 0) + 1;
 }
 
-const newTensionIds = [
-  "talk-time-vs-forecast-models",
-  "demand-signals-vs-travel-job",
-  "idle-storage-vs-crypto-primitives",
-  "community-product-vs-halo",
-  "mobile-mvp-vs-pmm-strategy",
-];
-const freshTensions = newTensionIds
-  .map((id) => {
-    const t = tensions.find((x) => x.id === id);
-    if (!t) return null;
+const freshTensions = [...tensions]
+  .reverse()
+  .slice(0, 5)
+  .map((t) => {
     const a = bySlug[t.a.slug];
     const b = bySlug[t.b.slug];
     return a && b ? { ...t, aOrg: a, bOrg: b } : null;
@@ -337,6 +330,33 @@ const freshTensions = newTensionIds
 </Base>
 
 <script>
+  function syncUrl() {
+    const stage = /** @type {HTMLSelectElement} */ (
+      document.getElementById("filter-stage")
+    )?.value;
+    const craft = /** @type {HTMLSelectElement} */ (
+      document.getElementById("filter-craft")
+    )?.value;
+    const tension = /** @type {HTMLSelectElement} */ (
+      document.getElementById("filter-tension")
+    )?.value;
+    const q = (
+      /** @type {HTMLInputElement} */ (document.getElementById("filter-q"))
+        ?.value || ""
+    ).trim();
+    const url = new URL(window.location.href);
+    const setOrDel = (key, val) => {
+      if (val) url.searchParams.set(key, val);
+      else url.searchParams.delete(key);
+    };
+    setOrDel("stage", stage || "");
+    setOrDel("craft", craft || "");
+    setOrDel("tension", tension || "");
+    setOrDel("q", q);
+    const next = url.pathname + (url.searchParams.toString() ? `?${url.searchParams}` : "") + url.hash;
+    history.replaceState({}, "", next);
+  }
+
   function resetFilters() {
     const q = /** @type {HTMLInputElement} */ (
       document.getElementById("filter-q")
@@ -405,7 +425,40 @@ const freshTensions = newTensionIds
     }
     const empty = document.getElementById("filter-empty");
     if (empty) empty.hidden = !(filtering && visible === 0);
+    syncUrl();
   }
+
+  function hydrateFromUrl() {
+    const params = new URLSearchParams(window.location.search);
+    const q = /** @type {HTMLInputElement} */ (
+      document.getElementById("filter-q")
+    );
+    const s = /** @type {HTMLSelectElement} */ (
+      document.getElementById("filter-stage")
+    );
+    const c = /** @type {HTMLSelectElement} */ (
+      document.getElementById("filter-craft")
+    );
+    const t = /** @type {HTMLSelectElement} */ (
+      document.getElementById("filter-tension")
+    );
+    if (q && params.has("q")) q.value = params.get("q") || "";
+    if (s && params.has("stage")) {
+      const v = params.get("stage") || "";
+      if ([...s.options].some((o) => o.value === v)) s.value = v;
+    }
+    if (c && params.has("craft")) {
+      const v = params.get("craft") || "";
+      if ([...c.options].some((o) => o.value === v)) c.value = v;
+    }
+    if (t && params.has("tension")) {
+      const v = params.get("tension") || "";
+      if ([...t.options].some((o) => o.value === v)) t.value = v;
+    }
+  }
+
+  hydrateFromUrl();
+  applyFilters();
 
   document.getElementById("filter-stage")?.addEventListener("change", applyFilters);
   document.getElementById("filter-craft")?.addEventListener("change", applyFilters);
