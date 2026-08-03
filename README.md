@@ -39,12 +39,13 @@ npm run dev
 | `/tensions` | Curated opposing bets — filter by craft, marketplace, GTM, data, content, industry |
 | `/steal` | Random tension; optional `?theme=` lens + `?go=1` auto-draw |
 | `/pole` | Five forced choices → your operating pole |
-| `/gaps` | Held weak, unset craft, tension seeds |
-| `/desk` | Printable 1–3 org cards for a desk debate |
-| `/compare` | Side-by-side thesis / loop / ownership for 2–3 orgs |
-| `/companies/:slug` | Thesis-first company card + peer suggestions |
-| `/practices` | Cross-company practice browse |
-| `/browse` | All episode cards (filter by published / weak / stub) |
+| `/gaps` | Held weak, unset craft, orgs argued only once |
+| `/desk` | Printable debate sheet (tension axis + org cards) |
+| `/compare` | Side-by-side thesis / loop / ownership; matched tensions surface |
+| `/companies/:slug` | Thesis-first company card + opponents |
+| `/tensions/:id` | One argument — ownership to steal, OG preview |
+| `/practices` | Cross-company practice browse (compare prefilled) |
+| `/browse` | All episode cards (shareable `?status=` / `?craft=` / `?q=`) |
 | `/docs/how-to-read` | How to read a card |
 | `/docs/about` | What this is + share links |
 

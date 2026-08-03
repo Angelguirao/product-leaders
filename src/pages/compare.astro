@@ -207,7 +207,13 @@ const payload = JSON.stringify({ orgs: options, tensions: tensionIndex });
       if (!o) return "";
       const ownership = (o.ownership || [])
         .slice(0, 5)
-        .map((b) => `<li>${esc(b)}</li>`)
+        .map((b) => {
+          const m = String(b).match(/^\*\*(.+?)\*\*\s*(.*)$/);
+          if (m) {
+            return `<li><strong>${esc(m[1])}</strong> ${esc(m[2])}</li>`;
+          }
+          return `<li>${esc(b)}</li>`;
+        })
         .join("");
       const loop = (o.loop_bullets || [])
         .slice(0, 5)

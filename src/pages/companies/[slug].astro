@@ -4,6 +4,7 @@ import companies from "../../data/companies.json";
 import tensions from "../../data/tensions.json";
 import Mermaid from "../../components/Mermaid.astro";
 import { craftFor, craftShort } from "../../lib/craft.mjs";
+import { parseOwnershipLine, practiceShort } from "../../lib/format.mjs";
 
 export function getStaticPaths() {
   return companies.map((c) => ({
@@ -115,8 +116,8 @@ const compareHref =
         company.practices?.length ? (
           <div class="tags" style="margin-top: 1rem;">
             {company.practices.map((p) => (
-              <a class="tag" href={`/practices/${p}`}>
-                {p}
+              <a class="tag" href={`/practices/${p}`} title={p}>
+                {practiceShort(p)}
               </a>
             ))}
           </div>
@@ -223,10 +224,17 @@ const compareHref =
           {e.ownership?.length ? (
             <>
               <h2>Ownership</h2>
-              <ul>
-                {e.ownership.map((b) => (
-                  <li>{b}</li>
-                ))}
+              <ul class="ownership-list">
+                {e.ownership.map((b) => {
+                  const { label, text } = parseOwnershipLine(b);
+                  return label ? (
+                    <li>
+                      <strong>{label}</strong> {text}
+                    </li>
+                  ) : (
+                    <li>{text}</li>
+                  );
+                })}
               </ul>
             </>
           ) : null}

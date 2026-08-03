@@ -171,7 +171,13 @@ const payload = JSON.stringify({ orgs: options, tensions: tensionIndex });
 
   function cardHtml(o, pole) {
     const ownership = (o.ownership || [])
-      .map((b) => `<li>${escapeHtml(b)}</li>`)
+      .map((b) => {
+        const m = String(b).match(/^\*\*(.+?)\*\*\s*(.*)$/);
+        if (m) {
+          return `<li><strong>${escapeHtml(m[1])}</strong> ${escapeHtml(m[2])}</li>`;
+        }
+        return `<li>${escapeHtml(b)}</li>`;
+      })
       .join("");
     const loop = (o.loop || [])
       .map((b) => `<li>${escapeHtml(b)}</li>`)

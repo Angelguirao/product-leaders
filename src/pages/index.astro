@@ -3,12 +3,14 @@ import Base from "../layouts/Base.astro";
 import Mermaid from "../components/Mermaid.astro";
 import atlas from "../data/atlas.json";
 import tensions from "../data/tensions.json";
+import themesData from "../data/tension-themes.json";
 import {
   craftFor,
   craftLabels,
   craftBlurb,
   craftShort,
 } from "../lib/craft.mjs";
+import { practiceShort } from "../lib/format.mjs";
 
 const companies = atlas.companies || [];
 const bySlug = Object.fromEntries(companies.map((c) => [c.slug, c]));
@@ -62,15 +64,29 @@ for (const t of tensions) {
   tensionCountBySlug[t.b.slug] = (tensionCountBySlug[t.b.slug] || 0) + 1;
 }
 
-const freshTensions = [...tensions]
-  .reverse()
-  .slice(0, 5)
-  .map((t) => {
+const freshTensions = (() => {
+  const byId = Object.fromEntries(tensions.map((t) => [t.id, t]));
+  const seen = new Set();
+  const picked = [];
+  const add = (id) => {
+    if (picked.length >= 5 || seen.has(id) || id === spotlightTension?.id) return;
+    const t = byId[id];
+    if (!t) return;
     const a = bySlug[t.a.slug];
     const b = bySlug[t.b.slug];
-    return a && b ? { ...t, aOrg: a, bOrg: b } : null;
-  })
-  .filter(Boolean);
+    if (!a || !b) return;
+    seen.add(id);
+    picked.push({ ...t, aOrg: a, bOrg: b });
+  };
+  // One argument per lens, then fill from remaining theme ids
+  for (const th of themesData.themes || []) {
+    if (th.ids?.[0]) add(th.ids[0]);
+  }
+  for (const th of themesData.themes || []) {
+    for (const id of th.ids || []) add(id);
+  }
+  return picked;
+})();
 
 ---
 
@@ -155,7 +171,7 @@ const freshTensions = [...tensions]
   {
     freshTensions.length ? (
       <section class="fresh-tensions" data-pagefind-ignore>
-        <p class="section-label">New arguments</p>
+        <p class="section-label">Across lenses</p>
         <div class="fresh-tensions__row">
           {freshTensions.map((t) => (
             <a class="fresh-tension" href={`/tensions/${t.id}`}>
@@ -293,7 +309,7 @@ const freshTensions = [...tensions]
                       {tags.length ? (
                         <div class="tags">
                           {tags.map((p) => (
-                            <span class="tag">{p}</span>
+                            <span class="tag">{practiceShort(p)}</span>
                           ))}
                         </div>
                       ) : null}
@@ -310,9 +326,14 @@ const freshTensions = [...tensions]
   {
     atlas.map_mermaid && companies.length ? (
       <section class="atlas-map">
-        <p class="section-label">Orgs × practices</p>
-        <Mermaid code={atlas.map_mermaid} clickable={true} />
-        <p class="atlas-map__hint">Click a company or practice node to open it.</p>
+        <details class="atlas-map__details" open>
+          <summary class="section-label">Orgs × practices graph</summary>
+          <Mermaid code={atlas.map_mermaid} clickable={true} />
+          <p class="atlas-map__hint">
+            Click a company or practice node to open it. Prefer the filtered map
+            above on small screens.
+          </p>
+        </details>
       </section>
     ) : null
   }

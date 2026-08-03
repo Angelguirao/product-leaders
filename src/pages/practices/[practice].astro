@@ -10,6 +10,13 @@ export function getStaticPaths() {
 }
 
 const { practice } = Astro.props;
+const compareSlugs = (practice.companies || []).slice(0, 3).map((c) => c.slug);
+const compareHref = compareSlugs.length
+  ? `/compare?${["a", "b", "c"]
+      .map((k, i) => (compareSlugs[i] ? `${k}=${compareSlugs[i]}` : null))
+      .filter(Boolean)
+      .join("&")}`
+  : "/compare";
 ---
 
 <Base
@@ -21,8 +28,18 @@ const { practice } = Astro.props;
     <h1>{practice.label}</h1>
     <p class="lede">
       {practice.companies?.length || 0} companies · {practice.episodes?.length || 0}{" "}
-      cards ·
-      <a href={`/compare`}>Open compare</a>
+      cards
+    </p>
+    <p class="hero-actions">
+      {
+        compareSlugs.length >= 2 ? (
+          <a class="hero-cta" href={compareHref}>
+            Compare {compareSlugs.length} in this practice →
+          </a>
+        ) : null
+      }
+      <a class="text-link" href="/practices">All practices</a>
+      <a class="text-link" href="/steal?go=1">Steal a bet</a>
     </p>
 
     <h2>Companies</h2>

@@ -325,6 +325,26 @@ main {
   animation: rise 0.75s 0.08s ease-out both;
 }
 
+.atlas-map__details {
+  border: 1px solid var(--map-rule);
+  padding: 0.85rem 1rem 1rem;
+  background: color-mix(in srgb, var(--surface) 80%, transparent);
+}
+
+.atlas-map__details > summary {
+  cursor: pointer;
+  list-style: none;
+  margin-bottom: 0.85rem;
+}
+
+.atlas-map__details > summary::-webkit-details-marker {
+  display: none;
+}
+
+.atlas-map__details[open] > summary {
+  margin-bottom: 1rem;
+}
+
 .atlas-map .diagram {
   margin-bottom: 0.75rem;
 }
@@ -334,6 +354,21 @@ main {
   font-family: var(--font-mono);
   font-size: 0.72rem;
   color: var(--muted);
+}
+
+@media (min-width: 901px) {
+  .atlas-map__details {
+    border: 0;
+    padding: 0;
+    background: transparent;
+  }
+}
+
+@media (max-width: 900px) {
+  .atlas-map__details:not([open]) .diagram,
+  .atlas-map__details:not([open]) .atlas-map__hint {
+    display: none;
+  }
 }
 
 .company-os > h1,
@@ -1657,6 +1692,10 @@ button.text-link {
 }
 
 @media print {
+  @page {
+    margin: 12mm;
+  }
+
   .grain,
   .site-header,
   .site-footer,
@@ -1668,6 +1707,8 @@ button.text-link {
   body {
     background: white;
     color: black;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
   }
 
   main {
@@ -1698,6 +1739,11 @@ button.text-link {
 
   .desk-card__pole {
     color: #444;
+  }
+
+  .craft-pill {
+    border-color: #999;
+    color: #333;
   }
 
   .desk-grid {
