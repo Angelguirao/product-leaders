@@ -1,0 +1,98 @@
+{
+  "_meta": {
+    "blurb": "Absence is part of the map. These are deliberate holds — not backlog shame."
+  },
+  "held": [
+    {
+      "slug": "que-es-un-design-system-marta-conde-81M99Da3NA8",
+      "bucket": "theory",
+      "why": "Design-system craft talk — no stable company operating model to map."
+    },
+    {
+      "slug": "las-claves-para-hacer-product-discovery-nacho-bassino-product-coach-GJZ4lXYJbLw",
+      "bucket": "theory",
+      "why": "Discovery coaching episode — thesis never cleared the org-specificity gate."
+    },
+    {
+      "slug": "las-claves-para-que-una-campana-en-meta-funcione-luis-encabo-founder-e-vZSvU-q3XS0",
+      "bucket": "theory",
+      "why": "Ads playbook, not a product-org operating system."
+    },
+    {
+      "slug": "la-product-fest-desde-dentro-7-entrevistas-a-speakers-sponsors-y-staff-3RDIOPMh9sk",
+      "bucket": "festival",
+      "why": "Multi-guest festival roundup — no single org bet."
+    },
+    {
+      "slug": "la-mayor-comunidad-de-product-managers-carlos-gonzalez-de-villaumbrosi-th22yAbrhFA",
+      "bucket": "education",
+      "why": "Education business, not how a product company runs discovery/delivery."
+    },
+    {
+      "slug": "creo-contenido-y-lo-monetizo-en-youtube-con-mattia-pantaloni-head-of-p-4Th9e6v3TnE",
+      "bucket": "education",
+      "why": "Content-MBA productization — useful, but off the org-map promise."
+    },
+    {
+      "slug": "product-leaders-7-la-escuela-lider-de-product-management-con-yosu-ceo--1mR0sAr9eQk",
+      "bucket": "education",
+      "why": "PM school as product — held until we treat education orgs as a deliberate cluster."
+    },
+    {
+      "slug": "el-growth-manager-es-el-nuevo-ceo-de-la-compania-corti-cmo-coo-de-prod-HDzhA_UFrnA",
+      "bucket": "soft",
+      "why": "Agency growth philosophy overlaps Product Hackers’ other card — needs a sharper unique bet."
+    },
+    {
+      "slug": "todo-el-mundo-deberia-querer-que-la-empresa-crezca-con-juanma-varo-hea-OE3BlZmK610",
+      "bucket": "soft",
+      "why": "Second Product Hackers voice — still too generic vs Factorial’s growth loop."
+    },
+    {
+      "slug": "los-falsos-mitos-del-product-management-simon-munoz-principal-pm-voice-ogSSLfyv44o",
+      "bucket": "soft",
+      "why": "Voicemod thesis is role philosophy more than Voicemod’s operating system."
+    },
+    {
+      "slug": "el-cruce-entre-la-belleza-y-utilidad-en-el-instituto-tramontana-con-in-pimnu4vsdvk",
+      "bucket": "soft",
+      "why": "School org shape without a distinguishing operating choice."
+    },
+    {
+      "slug": "asi-trabaje-como-product-manager-en-silicon-valley-carlos-jimenez-vp-p-RmV4PRadMd8",
+      "bucket": "unstable",
+      "why": "Career montage across firms — not enough steady-state KingMakers detail."
+    },
+    {
+      "slug": "el-rol-del-product-manager-con-bernat-farrero-co-fundador-de-itnig-KyasUly8KpI",
+      "bucket": "unstable",
+      "why": "Mostly Factorial philosophy via Itnig — Factorial already published."
+    }
+  ],
+  "tension_seeds": [
+    {
+      "axis": "Banking product vs insurtech product",
+      "a": "n26",
+      "b": "tuio",
+      "note": "Both fintech on the map — not yet paired as an operating argument."
+    },
+    {
+      "axis": "API wedge vs agent wedge",
+      "a": "crossmint",
+      "b": "gurusup",
+      "note": "Compare already presets this trio with SaferLayer — worth a formal tension."
+    },
+    {
+      "axis": "Marketplace liquidity vs talent marketplace",
+      "a": "cabify",
+      "b": "shakers",
+      "note": "Cabify is in liquidity-vs-retention; Shakers is the freelancers-side cousin."
+    },
+    {
+      "axis": "Retail tech process vs digital-native autonomy",
+      "a": "mercadona-tech",
+      "b": "dcycle",
+      "note": "Permission-vs-process already uses Dcycle; Mercadona Tech could anchor retail-scale process."
+    }
+  ]
+}

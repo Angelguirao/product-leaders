@@ -150,5 +150,18 @@ const counts = Object.fromEntries(
   document
     .getElementById("browse-empty-reset")
     ?.addEventListener("click", resetBrowse);
+
+  const params = new URLSearchParams(window.location.search);
+  const statusParam = params.get("status");
+  const statusSel = /** @type {HTMLSelectElement} */ (
+    document.getElementById("browse-status")
+  );
+  if (
+    statusSel &&
+    statusParam &&
+    ["published", "weak", "stub", "all"].includes(statusParam)
+  ) {
+    statusSel.value = statusParam;
+  }
   apply();
 </script>

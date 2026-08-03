@@ -80,7 +80,7 @@ const compareHref =
             <p>{craft.note}</p>
             <p class="craft-callout__hint">
               Craft lean is curated from ownership signals — see{" "}
-              <a href="/tensions#product-engineering-vs-pm"
+              <a href="/tensions/product-engineering-vs-pm"
                 >product engineering vs PM craft</a
               >.
             </p>
@@ -88,7 +88,8 @@ const compareHref =
         ) : (
           <p class="craft-unset">
             No strong craft lean tagged yet — the interview doesn’t clearly land
-            eng vs PM vs design ownership.
+            eng vs PM vs design ownership. See{" "}
+            <a href="/gaps#craft">all unset craft leans</a>.
           </p>
         )
       }
@@ -105,15 +106,18 @@ const compareHref =
       }
       <p class="company-os__actions">
         <a class="text-link" href={compareHref}>Compare with peers →</a>
+        <a class="text-link" href={`/desk?a=${company.slug}`}>
+          Print desk card
+        </a>
         {
           relatedTensions.length ? (
-            <a class="text-link" href="/tensions">
+            <a class="text-link" href={`/tensions/${relatedTensions[0].id}`}>
               In {relatedTensions.length} tension
               {relatedTensions.length === 1 ? "" : "s"}
             </a>
           ) : (
-            <a class="text-link" href="/tensions">
-              Browse tensions
+            <a class="text-link" href="/gaps#seeds">
+              Suggest a tension
             </a>
           )
         }
@@ -131,7 +135,7 @@ const compareHref =
           <ul class="company-tensions__list">
             {relatedTensions.map((t) => (
               <li>
-                <a href={`/tensions#${t.id}`}>{t.axis}</a>
+                <a href={`/tensions/${t.id}`}>{t.axis}</a>
                 <span class="company-tensions__vs">
                   {t.selfPole} vs {t.otherPole}
                 </span>

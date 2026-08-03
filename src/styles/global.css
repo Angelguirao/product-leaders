@@ -1106,12 +1106,260 @@ button.text-link {
   color: var(--accent);
 }
 
-.craft-unset {
-  margin: 1rem 0 0;
-  max-width: 36rem;
+.craft-unset a {
+  color: var(--accent);
+}
+
+.gaps-hero,
+.desk-hero {
+  max-width: 56rem;
+  margin: 0 0 2rem;
+  animation: rise 0.55s ease-out both;
+}
+
+.gaps-section {
+  max-width: 56rem;
+  margin: 0 0 3rem;
+  padding-top: 0.5rem;
+}
+
+.gaps-section h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(1.25rem, 2.5vw, 1.55rem);
+  letter-spacing: -0.02em;
+  margin: 0 0 0.65rem;
+}
+
+.gaps-section h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.1rem;
+  margin: 1.5rem 0 0.65rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.gaps-section__lede {
+  margin: 0 0 1.25rem;
+  max-width: 40rem;
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+
+.gaps-section__lede a {
+  color: var(--accent);
+}
+
+.gaps-bucket__count {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.gaps-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.gaps-list a {
+  color: var(--foreground);
+  text-decoration: none;
+}
+
+.gaps-list a:hover strong {
+  color: var(--accent);
+}
+
+.gaps-list__thesis {
+  margin: 0.25rem 0 0;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.gaps-list__why {
+  margin: 0.35rem 0 0;
   font-size: 0.9rem;
   color: var(--muted);
-  font-style: italic;
+}
+
+.gaps-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.gaps-details {
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--map-rule);
+  color: var(--muted);
+}
+
+.gaps-details summary {
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+}
+
+.desk-picker {
+  margin: 0 0 1.75rem;
+  max-width: 56rem;
+}
+
+.desk-picker__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.1rem;
+  margin-top: 0.85rem;
+}
+
+.desk-picker__actions .text-link {
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
+.desk-grid {
+  display: grid;
+  gap: 1rem;
+  max-width: 72rem;
+}
+
+.desk-grid--1 {
+  grid-template-columns: minmax(0, 28rem);
+}
+
+.desk-grid--2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.desk-grid--3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.desk-card {
+  border: 1px solid var(--map-rule);
+  background: var(--surface);
+  padding: 1.25rem 1.35rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  min-height: 100%;
+  break-inside: avoid;
+}
+
+.desk-card__meta {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.desk-card h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.45rem;
+  letter-spacing: -0.02em;
+  margin: 0;
+  line-height: 1.15;
+}
+
+.desk-card__thesis {
+  margin: 0;
+  font-size: 1.02rem;
+  line-height: 1.4;
+}
+
+.desk-card__label {
+  margin: 0.35rem 0 0;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.desk-card ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: 0.92rem;
+  color: var(--foreground);
+}
+
+.desk-card__unset {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.desk-card__foot {
+  margin-top: auto;
+  padding-top: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--muted);
+}
+
+@media (max-width: 900px) {
+  .desk-grid--2,
+  .desk-grid--3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media print {
+  .grain,
+  .site-header,
+  .site-footer,
+  .skip,
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  main {
+    padding: 0 !important;
+  }
+
+  .desk-card {
+    border-color: #bbb;
+    background: white;
+    box-shadow: none;
+  }
+
+  .desk-grid--2,
+  .desk-grid--3 {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+
+  .tension--solo .tension__actions,
+  .tensions-foot {
+    display: none !important;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 }
 
 .company-tensions {

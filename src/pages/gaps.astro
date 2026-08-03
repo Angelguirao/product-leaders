@@ -1,0 +1,208 @@
+---
+import Base from "../layouts/Base.astro";
+import atlas from "../data/atlas.json";
+import companies from "../data/companies.json";
+import episodes from "../data/episodes.json";
+import tensions from "../data/tensions.json";
+import gaps from "../data/gaps.json";
+import { craftFor } from "../lib/craft.mjs";
+
+const bySlug = Object.fromEntries(companies.map((c) => [c.slug, c]));
+const epBySlug = Object.fromEntries(episodes.map((e) => [e.slug, e]));
+
+const bucketLabels = {
+  theory: "Theory / playbook",
+  festival: "Festival / roundup",
+  education: "Education business",
+  soft: "Soft thesis",
+  unstable: "Unstable org signal",
+};
+
+const held = (gaps.held || [])
+  .map((h) => {
+    const e = epBySlug[h.slug];
+    if (!e) return null;
+    return {
+      ...h,
+      episode: e,
+      title: e.company || e.guest || e.title || h.slug,
+      thesis: e.thesis || "",
+      bucketLabel: bucketLabels[h.bucket] || h.bucket,
+    };
+  })
+  .filter(Boolean);
+
+const heldByBucket = {};
+for (const h of held) {
+  if (!heldByBucket[h.bucket]) heldByBucket[h.bucket] = [];
+  heldByBucket[h.bucket].push(h);
+}
+
+const unsetCraft = companies
+  .filter((c) => !craftFor(c.slug))
+  .sort((a, b) => a.name.localeCompare(b.name));
+
+const inTension = new Set();
+for (const t of tensions) {
+  inTension.add(t.a.slug);
+  inTension.add(t.b.slug);
+}
+const notInTension = companies
+  .filter((c) => !inTension.has(c.slug))
+  .sort((a, b) => a.name.localeCompare(b.name));
+
+const seeds = (gaps.tension_seeds || [])
+  .map((s) => {
+    const a = bySlug[s.a];
+    const b = bySlug[s.b];
+    if (!a || !b) return null;
+    return { ...s, aOrg: a, bOrg: b };
+  })
+  .filter(Boolean);
+
+const craftTagged = companies.filter((c) => craftFor(c.slug)).length;
+---
+
+<Base
+  title="Gaps"
+  description="What the atlas deliberately leaves off the map — weak holds, unset craft leans, and tension seeds."
+>
+  <section class="gaps-hero">
+    <p class="section-label">Honesty mode</p>
+    <h1>Gaps</h1>
+    <p class="lede">
+      {gaps._meta?.blurb || "Absence is part of the map."}
+      {" "}
+      {atlas.company_count} published orgs · {held.length} held weak ·{" "}
+      {unsetCraft.length} without craft lean · {notInTension.length} not yet in a
+      tension.
+    </p>
+    <p class="hero-actions">
+      <a class="text-link" href="#held">Held weak</a>
+      <a class="text-link" href="#craft">Unset craft</a>
+      <a class="text-link" href="#seeds">Tension seeds</a>
+      <a class="text-link" href="/desk">Print desk cards</a>
+    </p>
+  </section>
+
+  <section class="gaps-section" id="held">
+    <p class="section-label">Held weak</p>
+    <h2>Off the map on purpose</h2>
+    <p class="gaps-section__lede">
+      These briefs exist in git for rework. They fail the twenty-second
+      distinguishability test or aren’t a stable product-org signal.
+    </p>
+    {
+      Object.entries(heldByBucket).map(([bucket, rows]) => (
+        <div class="gaps-bucket">
+          <h3>
+            {bucketLabels[bucket] || bucket}
+            <span class="gaps-bucket__count">{rows.length}</span>
+          </h3>
+          <ul class="gaps-list">
+            {rows.map((h) => (
+              <li>
+                <a href={`/episodes/${h.slug}`}>
+                  <strong>{h.title}</strong>
+                </a>
+                {h.thesis ? <p class="gaps-list__thesis">{h.thesis}</p> : null}
+                <p class="gaps-list__why">{h.why}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
+  </section>
+
+  <section class="gaps-section" id="craft">
+    <p class="section-label">Craft lean</p>
+    <h2>Unset on purpose</h2>
+    <p class="gaps-section__lede">
+      Only {craftTagged} of {companies.length} published orgs have a craft lean.
+      Silence means the interview doesn’t clearly land eng vs PM vs design
+      ownership — not that we forgot to tag them.
+    </p>
+    <div class="gaps-chips">
+      {
+        unsetCraft.map((c) => (
+          <a class="peer-chip" href={`/companies/${c.slug}`}>
+            <strong>{c.name}</strong>
+            <span>{c.stage || "—"}</span>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="gaps-section" id="seeds">
+    <p class="section-label">Not yet argued</p>
+    <h2>Tension seeds</h2>
+    <p class="gaps-section__lede">
+      Candidate opposing bets — open them in compare, then promote to
+      <a href="/tensions">/tensions</a> when the argument is sharp enough.
+    </p>
+    <div class="tension-list">
+      {
+        seeds.map((s, i) => (
+          <article class="tension" style={`--i: ${i}`}>
+            <header class="tension__axis">
+              <span class="tension__index">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <h3>{s.axis}</h3>
+            </header>
+            <div class="tension__duel">
+              <a class="tension__pole" href={`/companies/${s.a}`}>
+                <h3>{s.aOrg.name}</h3>
+                <p class="tension__thesis">{s.aOrg.thesis}</p>
+              </a>
+              <div class="tension__vs" aria-hidden="true">
+                <span>vs</span>
+              </div>
+              <a class="tension__pole tension__pole--b" href={`/companies/${s.b}`}>
+                <h3>{s.bOrg.name}</h3>
+                <p class="tension__thesis">{s.bOrg.thesis}</p>
+              </a>
+            </div>
+            <p class="tension__note">{s.note}</p>
+            <p class="tension__actions">
+              <a class="text-link" href={`/compare?a=${s.a}&b=${s.b}`}>
+                Open in compare →
+              </a>
+              <a class="text-link" href={`/desk?a=${s.a}&b=${s.b}`}>
+                Print desk cards
+              </a>
+            </p>
+          </article>
+        ))
+      }
+    </div>
+
+    <details class="gaps-details">
+      <summary>
+        All published orgs not yet in a tension ({notInTension.length})
+      </summary>
+      <div class="gaps-chips" style="margin-top: 1rem;">
+        {
+          notInTension.map((c) => (
+            <a class="peer-chip" href={`/companies/${c.slug}`}>
+              <strong>{c.name}</strong>
+              <span>{c.stage || "—"}</span>
+            </a>
+          ))
+        }
+      </div>
+    </details>
+  </section>
+
+  <p class="tensions-foot">
+    <a href="/pole">Which pole are you?</a>
+    ·
+    <a href="/tensions">Tensions</a>
+    ·
+    <a href="/browse?status=weak">Browse weak cards</a>
+    ·
+    <a href="/">Map</a>
+  </p>
+</Base>

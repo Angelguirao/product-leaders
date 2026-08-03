@@ -37,6 +37,9 @@ npm run dev
 |------|------|
 | `/` | Org map by stage + practice graph (filters + clickable nodes) |
 | `/tensions` | Curated opposing bets — the atlas as argument |
+| `/pole` | Five forced choices → your operating pole |
+| `/gaps` | Held weak, unset craft, tension seeds |
+| `/desk` | Printable 1–3 org cards for a desk debate |
 | `/compare` | Side-by-side thesis / loop / ownership for 2–3 orgs |
 | `/companies/:slug` | Thesis-first company card + peer suggestions |
 | `/practices` | Cross-company practice browse |

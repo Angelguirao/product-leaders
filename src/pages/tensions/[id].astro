@@ -81,6 +81,12 @@ const description = `${tension.a.pole} (${aOrg.name}) vs ${tension.b.pole} (${bO
       </a>
       <a
         class="text-link"
+        href={`/desk?a=${tension.a.slug}&b=${tension.b.slug}`}
+      >
+        Print desk cards
+      </a>
+      <a
+        class="text-link"
         href={`/pole?tension=${tension.id}&side=a`}
       >
         Take the pole quiz

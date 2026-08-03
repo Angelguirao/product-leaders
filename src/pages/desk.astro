@@ -1,0 +1,188 @@
+---
+import Base from "../layouts/Base.astro";
+import companies from "../data/companies.json";
+import { craftFor, craftShort } from "../lib/craft.mjs";
+
+const options = companies
+  .map((c) => {
+    const primary = c.episodes?.[0];
+    const craft = craftFor(c.slug);
+    return {
+      slug: c.slug,
+      name: c.name,
+      stage: c.stage || "other",
+      thesis: c.thesis || "",
+      ownership: (primary?.ownership || []).slice(0, 4),
+      loop: (primary?.loop_bullets || []).slice(0, 4),
+      craft: craft
+        ? { lean: craft.lean, short: craftShort(craft.lean), note: craft.note }
+        : null,
+      guest: primary?.guest || "",
+      role: primary?.role || "",
+    };
+  })
+  .sort((a, b) => a.name.localeCompare(b.name));
+
+const payload = JSON.stringify(options);
+---
+
+<Base
+  title="Desk cards"
+  description="Print 1–3 product-org cards for a strategy debate — thesis, ownership, and craft lean on one sheet."
+>
+  <section class="desk-hero no-print">
+    <p class="section-label">Print mode</p>
+    <h1>Desk cards</h1>
+    <p class="lede">
+      Pick one to three orgs. Print them. Put the opposing bets on the table
+      before you copy a framework.
+    </p>
+  </section>
+
+  <div class="desk-root" id="desk-root" data-orgs={payload}>
+    <div class="desk-picker no-print compare-selects">
+      <label>
+        Card A
+        <select id="desk-a"></select>
+      </label>
+      <label>
+        Card B
+        <select id="desk-b">
+          <option value="">—</option>
+        </select>
+      </label>
+      <label>
+        Card C <span class="optional">(optional)</span>
+        <select id="desk-c">
+          <option value="">—</option>
+        </select>
+      </label>
+      <div class="desk-picker__actions">
+        <button type="button" class="filter-reset" id="desk-print">
+          Print
+        </button>
+        <button type="button" class="text-link" id="desk-copy">
+          Copy link
+        </button>
+        <a class="text-link" href="/gaps#seeds">From tension seeds</a>
+      </div>
+    </div>
+
+    <div class="desk-sheet" id="desk-sheet" aria-live="polite"></div>
+  </div>
+</Base>
+
+<script>
+  const root = document.getElementById("desk-root");
+  if (!root) throw new Error("desk root missing");
+  /** @type {any[]} */
+  const orgs = JSON.parse(root.dataset.orgs || "[]");
+  const bySlug = Object.fromEntries(orgs.map((o) => [o.slug, o]));
+
+  const selA = /** @type {HTMLSelectElement} */ (document.getElementById("desk-a"));
+  const selB = /** @type {HTMLSelectElement} */ (document.getElementById("desk-b"));
+  const selC = /** @type {HTMLSelectElement} */ (document.getElementById("desk-c"));
+  const sheet = document.getElementById("desk-sheet");
+
+  function fillSelect(sel, includeEmpty) {
+    const keep = sel.value;
+    sel.innerHTML = includeEmpty ? `<option value="">—</option>` : "";
+    for (const o of orgs) {
+      const opt = document.createElement("option");
+      opt.value = o.slug;
+      opt.textContent = o.name;
+      sel.appendChild(opt);
+    }
+    if (keep && bySlug[keep]) sel.value = keep;
+  }
+
+  fillSelect(selA, false);
+  fillSelect(selB, true);
+  fillSelect(selC, true);
+
+  const params = new URLSearchParams(window.location.search);
+  if (params.get("a") && bySlug[params.get("a")]) selA.value = params.get("a");
+  else if (orgs[0]) selA.value = orgs[0].slug;
+  if (params.get("b") && bySlug[params.get("b")]) selB.value = params.get("b");
+  if (params.get("c") && bySlug[params.get("c")]) selC.value = params.get("c");
+
+  function escapeHtml(s) {
+    return String(s || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+
+  function cardHtml(o) {
+    const ownership = (o.ownership || [])
+      .map((b) => `<li>${escapeHtml(b)}</li>`)
+      .join("");
+    const loop = (o.loop || [])
+      .map((b) => `<li>${escapeHtml(b)}</li>`)
+      .join("");
+    return `
+      <article class="desk-card">
+        <p class="desk-card__meta">${escapeHtml(o.stage)}${
+          o.guest ? ` · ${escapeHtml(o.guest)}` : ""
+        }</p>
+        <h2>${escapeHtml(o.name)}</h2>
+        ${
+          o.craft
+            ? `<span class="craft-pill craft-pill--${escapeHtml(o.craft.lean)}">${escapeHtml(o.craft.short)}</span>`
+            : `<span class="desk-card__unset">Craft lean unset</span>`
+        }
+        <p class="desk-card__thesis">${escapeHtml(o.thesis)}</p>
+        ${
+          ownership
+            ? `<p class="desk-card__label">Ownership</p><ul>${ownership}</ul>`
+            : ""
+        }
+        ${loop ? `<p class="desk-card__label">Loop</p><ul>${loop}</ul>` : ""}
+        <p class="desk-card__foot">product-leaders · /companies/${escapeHtml(o.slug)}</p>
+      </article>
+    `;
+  }
+
+  function syncUrl() {
+    const u = new URL(window.location.href);
+    u.searchParams.set("a", selA.value);
+    if (selB.value) u.searchParams.set("b", selB.value);
+    else u.searchParams.delete("b");
+    if (selC.value) u.searchParams.set("c", selC.value);
+    else u.searchParams.delete("c");
+    history.replaceState({}, "", u.pathname + u.search);
+  }
+
+  function render() {
+    const slugs = [selA.value, selB.value, selC.value].filter(Boolean);
+    const unique = [...new Set(slugs)];
+    const cards = unique.map((s) => bySlug[s]).filter(Boolean);
+    if (!sheet) return;
+    if (!cards.length) {
+      sheet.innerHTML = `<p class="empty">Pick at least one org.</p>`;
+      return;
+    }
+    sheet.innerHTML = `<div class="desk-grid desk-grid--${cards.length}">${cards
+      .map(cardHtml)
+      .join("")}</div>`;
+    syncUrl();
+  }
+
+  [selA, selB, selC].forEach((sel) => sel.addEventListener("change", render));
+  document.getElementById("desk-print")?.addEventListener("click", () => window.print());
+  document.getElementById("desk-copy")?.addEventListener("click", async (e) => {
+    const btn = /** @type {HTMLElement} */ (e.currentTarget);
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      btn.textContent = "Copied";
+      setTimeout(() => {
+        btn.textContent = "Copy link";
+      }, 1600);
+    } catch {
+      btn.textContent = "Copy failed";
+    }
+  });
+
+  render();
+</script>
