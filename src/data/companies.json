@@ -2404,13 +2404,13 @@
     "stage": "early",
     "practices": [
       "ai_product",
-      "growth",
+      "founder",
       "platform"
     ],
     "guests": [
       {
         "name": "Michele Trevisiol",
-        "role": "Co Founder",
+        "role": "Co-founder",
         "episode_slug": "product-leaders-9-el-futuro-de-los-datos-con-michele-trevisiol-co-foun-t7Jsim7c1vY"
       }
     ],
@@ -2419,41 +2419,43 @@
         "slug": "product-leaders-9-el-futuro-de-los-datos-con-michele-trevisiol-co-foun-t7Jsim7c1vY",
         "title": "Product Leaders #9 - El futuro de los datos con Michele Trevisiol, Co Founder en Piper y former SVP of Data en Jobandtalent",
         "guest": "Michele Trevisiol",
-        "role": "Co Founder",
+        "role": "Co-founder",
         "pub_date": "2023-06-23T08:46:31.000Z",
         "url": "https://www.youtube.com/watch?v=t7Jsim7c1vY",
-        "thesis": "Piper automates sales lead qualification and forecasting with AI — product value is seller hours recovered, not another CRM dashboard.",
-        "context": "Piper offers an AI-powered platform designed to assist sales teams by automating lead qualification, providing sales forecasts, and generating insights from customer interactions. The company is in its early stage, focusing on developing and refining its AI solutions for the B2B sales market.",
+        "thesis": "Piper is a data founder’s sales OS — proprietary models score pipeline forecasts and conversation confidence so sellers act on probability, not another CRM dashboard.",
+        "context": "Piper is an early sales-intelligence startup co-founded by Michele Trevisiol (ex–SVP of Data at Jobandtalent; research path through Yahoo advertising / recommendation systems). The product listens to seller conversations, drafts a daily diary of what happened, and feeds forecasting and CRM updates from that history.",
         "ownership": [
-          "**Discovery**: Unknown",
-          "**Prioritization**: Unknown",
-          "**Shipping**: Unknown",
-          "**Sales Input**: Unknown",
-          "**Design**: Unknown"
+          "**Discovery:** Founder-led from a data/ML career (Jobandtalent data org, applied research) — the product bet is how sales data becomes a model, not a reporting layer.",
+          "**Prioritization:** Forecast confidence and pipeline gaps decide what sellers see next.",
+          "**Shipping:** Transcription → structured sales memory → model scores → CRM sync.",
+          "**Sales input:** Sellers are the user; the co-founder frames the problem as maximizing time spent selling.",
+          "**Design:** Diary-style interface that resumes meetings and surfaces what to ask next."
         ],
         "evidence": [
-          "*The idea of a sales rep is to sell, and the AI's job is to maximize that.*",
-          "*The AI's job is to maximize that, to give them the information they need to sell more.*"
+          "Episode frames Piper as helping sellers “vender mucho más” by automating the information work around the sale.",
+          "Forecast confidence and CRM sync are called out as product surfaces — the model should say when it does not trust the deal state.",
+          "Guest path is explicitly data leadership (Jobandtalent SVP of Data) applied to a sales product, not a generic CRM rebuild."
         ],
         "gaps": [
-          "The specific methodologies for AI model training and validation are not detailed.",
-          "The company's go-to-market strategy and customer acquisition process are not elaborated upon.",
-          "Details regarding the team structure and specific roles within Piper are absent."
+          "ASR for this episode is noisy (mixed Italian/Spanish); ownership detail beyond founder intent is thin.",
+          "Exact model stack and training loop are not specified beyond proprietary models + transcripts.",
+          "Team shape beyond the co-founder is unclear."
         ],
         "loop_bullets": [
           "flowchart TD",
-          "A[AI analyzes sales interactions] --> B{Lead Qualification};",
-          "B --> C[Sales Forecasting];",
-          "C --> D[Automated Insights Generation];",
-          "D --> E[Seller Actionable Recommendations];",
-          "E --> F[CRM Integration & Data Update];"
+          "A[Capture calls / conversations] --> B[Transcribe + extract signals]",
+          "B --> C[Update seller diary and pipeline facts]",
+          "C --> D[Proprietary model scores forecast confidence]",
+          "D --> E{Low confidence?}",
+          "E -->|yes| F[Flag for human review]",
+          "E -->|no| G[Prioritize next seller actions]"
         ],
-        "loop_mermaid": "flowchart TD\n    A[AI analyzes sales interactions] --> B{Lead Qualification};\n    B --> C[Sales Forecasting];\n    C --> D[Automated Insights Generation];\n    D --> E[Seller Actionable Recommendations];\n    E --> F[CRM Integration & Data Update];",
-        "overview": "Piper automates sales lead qualification and forecasting with AI — product value is seller hours recovered, not another CRM dashboard.",
-        "workflow_mermaid": "flowchart TD\n    A[AI analyzes sales interactions] --> B{Lead Qualification};\n    B --> C[Sales Forecasting];\n    C --> D[Automated Insights Generation];\n    D --> E[Seller Actionable Recommendations];\n    E --> F[CRM Integration & Data Update];"
+        "loop_mermaid": "flowchart TD\n    A[Capture calls / conversations] --> B[Transcribe + extract signals]\n    B --> C[Update seller diary and pipeline facts]\n    C --> D[Proprietary model scores forecast confidence]\n    D --> E{Low confidence?}\n    E -->|yes| F[Flag for human review]\n    E -->|no| G[Prioritize next seller actions]\n    F --> G\n    G --> H[Sync CRM and follow-ups]",
+        "overview": "Piper is a data founder’s sales OS — proprietary models score pipeline forecasts and conversation confidence so sellers act on probability, not another CRM dashboard.",
+        "workflow_mermaid": "flowchart TD\n    A[Capture calls / conversations] --> B[Transcribe + extract signals]\n    B --> C[Update seller diary and pipeline facts]\n    C --> D[Proprietary model scores forecast confidence]\n    D --> E{Low confidence?}\n    E -->|yes| F[Flag for human review]\n    E -->|no| G[Prioritize next seller actions]\n    F --> G\n    G --> H[Sync CRM and follow-ups]"
       }
     ],
-    "thesis": "Piper automates sales lead qualification and forecasting with AI — product value is seller hours recovered, not another CRM dashboard.",
+    "thesis": "Piper is a data founder’s sales OS — proprietary models score pipeline forecasts and conversation confidence so sellers act on probability, not another CRM dashboard.",
     "episode_count": 1
   },
   {

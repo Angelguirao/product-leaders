@@ -427,5 +427,18 @@
       "pole": "Crypto primitives for apps"
     },
     "note": "hello.app turns unused device capacity into a decentralized storage network users earn from; Crossmint sells wallet and chain primitives so product teams embed crypto without becoming a protocol company."
+  },
+  {
+    "id": "talk-time-vs-forecast-models",
+    "axis": "What should sales AI optimize?",
+    "a": {
+      "slug": "ting",
+      "pole": "Recover talk-time from admin"
+    },
+    "b": {
+      "slug": "piper",
+      "pole": "Score forecasts from conversation data"
+    },
+    "note": "Ting sells measurable talk-time by automating CRM admin outside the call; Piper — from a data founder — trains proprietary models on conversation history to score pipeline forecasts and confidence."
   }
 ]

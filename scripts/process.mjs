@@ -441,6 +441,8 @@ Source: Entrevistas a Product Leaders (Dani Diestre). Write ALL sections in Engl
 If extract guest/company disagree with the RSS title guess, trust the extract.
 RSS titles are often wrong or clickbait — never invent a company from the title alone.
 If the extract clearly names an employer (e.g. Real Madrid) and the title names a different brand, use the extract's employer.
+company must be a short brand name only (e.g. "Piper") — never paste RSS fragments like "former SVP of…" into company or company_slug.
+If ownership is mostly Unknown, set publishable: no unless the thesis still names a sharp, evidence-backed operating bet.
 
 Practice taxonomy (pick 2-4 that truly fit):
 \`\`\`yaml

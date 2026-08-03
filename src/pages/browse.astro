@@ -1,11 +1,32 @@
 ---
 import Base from "../layouts/Base.astro";
 import episodes from "../data/episodes.json";
+import companies from "../data/companies.json";
+import { craftFor, craftShort, craftLabels } from "../lib/craft.mjs";
 
+const companySlugs = new Set(companies.map((c) => c.slug));
 const statuses = ["published", "weak", "stub"];
 const counts = Object.fromEntries(
   statuses.map((s) => [s, episodes.filter((e) => e.status === s).length])
 );
+const craftLabelMap = craftLabels();
+const craftOptions = Object.entries(craftLabelMap).map(([key, label]) => ({
+  key,
+  label,
+  count: companies.filter((c) => craftFor(c.slug)?.lean === key).length,
+}));
+
+const rows = episodes.map((e) => {
+  const slug = e.company_slug || null;
+  const craft = slug ? craftFor(slug) : null;
+  return {
+    ...e,
+    company_slug: slug,
+    has_company: Boolean(slug && companySlugs.has(slug)),
+    craft_lean: craft?.lean || "",
+    craft_short: craft ? craftShort(craft.lean) : "",
+  };
+});
 ---
 
 <Base
@@ -43,6 +64,20 @@ const counts = Object.fromEntries(
           <option value="all">All ({episodes.length})</option>
         </select>
       </label>
+      <label>
+        Craft lean
+        <select id="browse-craft">
+          <option value="all">All leans</option>
+          {
+            craftOptions.map((o) => (
+              <option value={o.key}>
+                {o.label} ({o.count})
+              </option>
+            ))
+          }
+          <option value="unset">Unset</option>
+        </select>
+      </label>
       <button type="button" id="browse-reset" class="filter-reset">
         Reset
       </button>
@@ -51,7 +86,7 @@ const counts = Object.fromEntries(
   </div>
 
   {
-    episodes.length === 0 ? (
+    rows.length === 0 ? (
       <p class="empty">No episodes processed yet.</p>
     ) : (
       <div id="browse-wrap">
@@ -63,9 +98,10 @@ const counts = Object.fromEntries(
           .
         </p>
         <ul class="episode-list" style="margin-top: 1.5rem;" id="browse-list">
-          {episodes.map((e) => (
+          {rows.map((e) => (
             <li
               data-status={e.status || "unknown"}
+              data-craft={e.craft_lean || "unset"}
               data-search={[
                 e.company,
                 e.guest,
@@ -74,14 +110,21 @@ const counts = Object.fromEntries(
                 e.overview,
                 e.title,
                 e.slug,
+                e.craft_short,
               ]
                 .filter(Boolean)
                 .join(" ")
                 .toLowerCase()}
             >
-              <a href={`/episodes/${e.slug}`}>
+              <a
+                href={
+                  e.has_company
+                    ? `/companies/${e.company_slug}`
+                    : `/episodes/${e.slug}`
+                }
+              >
                 <div class="meta">
-                  {[e.company, e.guest, e.role, e.status]
+                  {[e.company, e.guest, e.role, e.status, e.craft_short]
                     .filter(Boolean)
                     .join(" · ") || "—"}
                 </div>
@@ -104,8 +147,12 @@ const counts = Object.fromEntries(
     const s = /** @type {HTMLSelectElement} */ (
       document.getElementById("browse-status")
     );
+    const c = /** @type {HTMLSelectElement} */ (
+      document.getElementById("browse-craft")
+    );
     if (q) q.value = "";
     if (s) s.value = "published";
+    if (c) c.value = "all";
     apply();
   }
 
@@ -113,6 +160,9 @@ const counts = Object.fromEntries(
     const status =
       /** @type {HTMLSelectElement} */ (document.getElementById("browse-status"))
         ?.value || "published";
+    const craft =
+      /** @type {HTMLSelectElement} */ (document.getElementById("browse-craft"))
+        ?.value || "all";
     const q = (
       /** @type {HTMLInputElement} */ (document.getElementById("browse-q"))
         ?.value || ""
@@ -123,28 +173,30 @@ const counts = Object.fromEntries(
     let visible = 0;
     items.forEach((li) => {
       const s = li.getAttribute("data-status") || "";
+      const lean = li.getAttribute("data-craft") || "unset";
       const okStatus = status === "all" || s === status;
+      const okCraft =
+        craft === "all" ||
+        (craft === "unset" ? lean === "unset" : lean === craft);
       const hay = li.getAttribute("data-search") || "";
       const okQ = !q || hay.includes(q);
-      const show = okStatus && okQ;
+      const show = okStatus && okCraft && okQ;
       li.toggleAttribute("hidden", !show);
       if (show) visible++;
     });
-    const filtering = Boolean(q) || status !== "published";
+    const filtering = Boolean(q) || status !== "published" || craft !== "all";
     const count = document.getElementById("browse-count");
     if (count) {
-      count.hidden = !filtering && status === "published";
-      // always show count when searching or not on default published-only with all matching
-      count.hidden = !(q || status !== "published");
-      count.textContent =
-        q || status !== "published"
-          ? `Showing ${visible} of ${items.length} cards`
-          : "";
+      count.hidden = !filtering;
+      count.textContent = filtering
+        ? `Showing ${visible} of ${items.length} cards`
+        : "";
     }
     const empty = document.getElementById("browse-empty");
     if (empty) empty.hidden = visible !== 0;
   }
   document.getElementById("browse-status")?.addEventListener("change", apply);
+  document.getElementById("browse-craft")?.addEventListener("change", apply);
   document.getElementById("browse-q")?.addEventListener("input", apply);
   document.getElementById("browse-reset")?.addEventListener("click", resetBrowse);
   document
@@ -153,8 +205,12 @@ const counts = Object.fromEntries(
 
   const params = new URLSearchParams(window.location.search);
   const statusParam = params.get("status");
+  const craftParam = params.get("craft");
   const statusSel = /** @type {HTMLSelectElement} */ (
     document.getElementById("browse-status")
+  );
+  const craftSel = /** @type {HTMLSelectElement} */ (
+    document.getElementById("browse-craft")
   );
   if (
     statusSel &&
@@ -163,5 +219,6 @@ const counts = Object.fromEntries(
   ) {
     statusSel.value = statusParam;
   }
+  if (craftSel && craftParam) craftSel.value = craftParam;
   apply();
 </script>

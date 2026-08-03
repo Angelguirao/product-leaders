@@ -1,7 +1,10 @@
 ---
 import Base from "../layouts/Base.astro";
 import companies from "../data/companies.json";
+import tensions from "../data/tensions.json";
 import { craftFor, craftShort } from "../lib/craft.mjs";
+
+const bySlug = Object.fromEntries(companies.map((c) => [c.slug, c]));
 
 const options = companies
   .map((c) => {
@@ -23,6 +26,16 @@ const options = companies
   })
   .sort((a, b) => a.name.localeCompare(b.name));
 
+const presets = tensions
+  .filter((t) => bySlug[t.a.slug] && bySlug[t.b.slug])
+  .slice(-8)
+  .reverse()
+  .map((t) => ({
+    label: t.axis,
+    a: t.a.slug,
+    b: t.b.slug,
+  }));
+
 const payload = JSON.stringify(options);
 ---
 
@@ -38,6 +51,24 @@ const payload = JSON.stringify(options);
       before you copy a framework.
     </p>
   </section>
+
+  <div class="desk-presets no-print" id="desk-presets">
+    <p class="section-label">From a tension</p>
+    <div class="compare-presets__row">
+      {
+        presets.map((p) => (
+          <a
+            class="peer-chip"
+            href={`/desk?a=${p.a}&b=${p.b}`}
+            data-a={p.a}
+            data-b={p.b}
+          >
+            {p.label}
+          </a>
+        ))
+      }
+    </div>
+  </div>
 
   <div class="desk-root" id="desk-root" data-orgs={payload}>
     <div class="desk-picker no-print compare-selects">
@@ -64,7 +95,7 @@ const payload = JSON.stringify(options);
         <button type="button" class="text-link" id="desk-copy">
           Copy link
         </button>
-        <a class="text-link" href="/gaps#seeds">From tension seeds</a>
+        <a class="text-link" href="/tensions">Browse tensions</a>
       </div>
     </div>
 
@@ -182,6 +213,16 @@ const payload = JSON.stringify(options);
     } catch {
       btn.textContent = "Copy failed";
     }
+  });
+
+  document.getElementById("desk-presets")?.addEventListener("click", (e) => {
+    const a = e.target.closest("[data-a]");
+    if (!a) return;
+    e.preventDefault();
+    selA.value = a.dataset.a || "";
+    selB.value = a.dataset.b || "";
+    selC.value = "";
+    render();
   });
 
   render();

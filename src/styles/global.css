@@ -1221,6 +1221,10 @@ button.text-link {
   animation: rise 0.55s ease-out both;
 }
 
+.desk-presets {
+  margin: 0 0 1.75rem;
+}
+
 .gaps-section {
   max-width: 56rem;
   margin: 0 0 3rem;

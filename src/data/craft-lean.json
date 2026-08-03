@@ -176,6 +176,10 @@
     "suntropy": {
       "lean": "founder_led",
       "note": "Founder-led pivot from dead PLG to sales-led discovery after conversion collapse."
+    },
+    "piper": {
+      "lean": "founder_led",
+      "note": "Data founder (ex–Jobandtalent SVP of Data) shapes sales AI as proprietary forecast models."
     }
   }
 }
