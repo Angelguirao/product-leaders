@@ -14,9 +14,11 @@ status: weak
 processed_at: 2026-08-03T18:56:13.272Z
 ---
 
-## Thesis — YouTube's product organization prioritizes structured discovery and delivery processes.
+## Thesis
+YouTube's product organization prioritizes structured discovery and delivery processes.
 
-## Context — YouTube is a large-scale video-sharing platform enabling users to upload, share, and enjoy content globally.
+## Context
+YouTube is a large-scale video-sharing platform enabling users to upload, share, and enjoy content globally.
 
 ## Operating loop
 ```mermaid

@@ -18,9 +18,10 @@ processed_at: 2026-08-03T18:01:31.151Z
 GuruWalk’s org bet is radical autonomy — a crisis swarm shipped Anem (Valencia flood car-sharing) without hierarchy gates, treating mission speed as the operating system.
 
 
-## Context — GuruWalk is a global platform for free tours, connecting travelers with local guides. The company operates with a unique culture prioritizing employee motivation and commitment, which facilitated the swift creation of a new product, Anem, to address immediate mobility issues in Valencia following severe flooding.
+## Context
+GuruWalk is a global platform for free tours, connecting travelers with local guides. The company operates with a unique culture prioritizing employee motivation and commitment, which facilitated the swift creation of a new product, Anem, to address immediate mobility issues in Valencia following severe flooding.
 
-## Operating loop —
+## Operating loop
 *   Identify crisis (Valencia flooding)
 *   Recognize mobility problem
 *   Recall prior vertical idea (car sharing)
@@ -30,18 +31,18 @@ GuruWalk’s org bet is radical autonomy — a crisis swarm shipped Anem (Valenc
 *   Build MVP (Anem)
 *   Deploy rapidly and iterate
 
-## Ownership —
+## Ownership
 *   Discovery: Team-driven, based on identifying missions and problems.
 *   Prioritization: Based on potential value to the company long-term.
 *   Shipping: Handled by dedicated "swarming" teams.
 *   Sales-input: Not explicitly detailed, but Anem was built without a monetization model initially.
 *   Design: Initially handled by engineers due to rapid development needs.
 
-## Evidence —
+## Evidence
 *   *We have a very particular culture where you can't tell anyone what to do.*
 *   *The mission is to help as many people affected by this as possible.*
 
-## Gaps —
+## Gaps
 *   The long-term monetization strategy for Anem is not detailed.
 *   Specific metrics for Anem's success beyond user growth are not discussed.
 *   The process for scaling Anem beyond the Valencia region is only briefly mentioned.

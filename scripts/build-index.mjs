@@ -14,7 +14,7 @@ import {
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { parse as parseYaml } from "yaml";
-import { extractThesis, isGenericThesis } from "./quality.mjs";
+import { extractThesis, isGenericThesis, section, firstParagraph } from "./quality.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const episodesDir = join(root, "episodes");
@@ -57,23 +57,6 @@ function parseFrontmatter(raw) {
     }
   }
   return { meta, body };
-}
-
-function section(body, heading) {
-  const re = new RegExp(
-    `## ${heading}\\s*\\n([\\s\\S]*?)(?=\\n## |$)`,
-    "i"
-  );
-  const m = body.match(re);
-  return m ? m[1].trim() : "";
-}
-
-function firstParagraph(text) {
-  const lines = text
-    .split(/\n/)
-    .map((l) => l.trim())
-    .filter((l) => l && !l.startsWith("_") && !l.startsWith("```"));
-  return lines[0] || "";
 }
 
 function bulletLines(text, limit = 8) {

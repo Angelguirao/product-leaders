@@ -14,28 +14,30 @@ status: weak
 processed_at: 2026-08-03T18:55:42.778Z
 ---
 
-## Thesis — Nacho Bassino coaches product teams on structured discovery practices.
+## Thesis
+Nacho Bassino coaches product teams on structured discovery practices.
 
-## Context — This episode focuses on product discovery, with Nacho Bassino acting as a Product Coach. The context of the company he coaches for is not specified, but the general platform discussed is YouTube.
+## Context
+This episode focuses on product discovery, with Nacho Bassino acting as a Product Coach. The context of the company he coaches for is not specified, but the general platform discussed is YouTube.
 
-## Operating loop —
+## Operating loop
 *   Hypothesis generation
 *   Customer interviews
 *   Validation of hypotheses
 *   Iterative product development
 
-## Ownership —
+## Ownership
 *   Discovery: Product teams coached by Nacho Bassino.
 *   Prioritization: Not specified.
 *   Shipping: Not specified.
 *   Sales input: Not specified.
 *   Design: Not specified.
 
-## Evidence —
+## Evidence
 *   *The core of product discovery is about validating hypotheses.*
 *   *It's crucial to talk to users to understand their problems.*
 
-## Gaps —
+## Gaps
 *   The specific company Nacho Bassino coaches is not identified.
 *   Details on prioritization, shipping, sales input, and design ownership are absent.
 *   The stage and market of the company are not mentioned.

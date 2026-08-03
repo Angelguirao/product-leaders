@@ -71,16 +71,16 @@
   ],
   "tension_seeds": [
     {
-      "axis": "Instrument later vs continuous tax product",
-      "a": "tuio",
-      "b": "taxdown",
-      "note": "Tuio starts with qualitative insight and messy spreadsheets; Taxdown productizes year-round tax relief as a subscription."
+      "axis": "Retail P&L vs white-label energy SaaS",
+      "a": "iskaypet",
+      "b": "clevergy",
+      "note": "IskayPet bends product to store economics; Clevergy sells white-label energy tools to utilities — different buyers, same ‘not pure tech’ constraint."
     },
     {
-      "axis": "Democratize bots vs founder R&D bets",
-      "a": "landbot",
-      "b": "typeform",
-      "note": "Landbot sells non-engineers shipping chatbots; Typeform explores founder-led bets that fold in or spin out."
+      "axis": "Content community vs education product",
+      "a": "bonilista",
+      "b": "ucademy",
+      "note": "Bonilista says a list isn’t community; Ucademy runs education as rapid business-driven iteration."
     }
   ]
 }

@@ -193,5 +193,31 @@
       "pole": "Curation house first"
     },
     "note": "Real Madrid uses digital to compete with Netflix for fan attention while never monetizing socios; Filmin leads with catalog taste as a cinema curation house."
+  },
+  {
+    "id": "instrument-later-vs-year-round",
+    "axis": "When does data need to be perfect?",
+    "a": {
+      "slug": "tuio",
+      "pole": "Qualitative + spreadsheet now"
+    },
+    "b": {
+      "slug": "taxdown",
+      "pole": "Year-round AI tax product"
+    },
+    "note": "Tuio makes early product calls on interviews and whatever spreadsheet already exists; Taxdown productizes continuous tax relief so the data loop runs all year, not once at filing season."
+  },
+  {
+    "id": "democratize-bots-vs-founder-rd",
+    "axis": "Who ships the next surface?",
+    "a": {
+      "slug": "landbot",
+      "pole": "Non-engineers ship bots"
+    },
+    "b": {
+      "slug": "typeform",
+      "pole": "Founder-led R&D bets"
+    },
+    "note": "Landbot + PMM sell time saved so non-engineers launch conversational automation; Typeform explores founder-led bets that fold into the form product or spin out as separate brands."
   }
 ]

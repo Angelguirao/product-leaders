@@ -17,27 +17,28 @@ processed_at: 2026-08-03T18:13:28.279Z
 ## Thesis
 Innovamat replaces math textbooks with problem-first classroom discovery plus adaptive digital practice — schools buy a curriculum OS, not another workbook.
 
-## Context — Innovamat develops and sells a curriculum for mathematics education, targeting students from ages 3 to 14. Their offering aims to replace traditional textbooks in schools, promoting a more engaging and effective learning approach.
+## Context
+Innovamat develops and sells a curriculum for mathematics education, targeting students from ages 3 to 14. Their offering aims to replace traditional textbooks in schools, promoting a more engaging and effective learning approach.
 
-## Operating loop —
+## Operating loop
 1.  **Problem Presentation**: Teacher presents a problem designed to be challenging yet accessible.
 2.  **Collaborative Discovery**: Students discuss, question, and build knowledge together.
 3.  **Teacher Facilitation**: Teacher guides conversations and influences knowledge construction.
 4.  **Digital Practice**: Students engage in personalized, adaptive exercises on a digital platform.
 5.  **Teacher Feedback**: Teacher receives reports and insights to adjust future sessions.
 
-## Ownership —
+## Ownership
 *   **Discovery**: Primarily owned by the teacher, facilitated by Innovamat's curriculum and problem design.
 *   **Prioritization**: Driven by Innovamat's learning science team and product managers, focusing on curriculum development and platform features.
 *   **Shipping**: Managed by the engineering and product teams, with input from content and learning science.
 *   **Sales-input**: Primarily from school administrators and teachers, influencing adoption decisions.
 *   **Design**: Shared between Tech Product Managers (platform) and Content Product Managers (experience and curriculum).
 
-## Evidence —
+## Evidence
 *   *The problem is not in the format, but in how the format is used. The current format is essentially an element that contains knowledge, and the student extracts it.*
 *   *The school's role is to ensure that people succeed in the world they will enter.*
 
-## Gaps —
+## Gaps
 *   The specific metrics used to evaluate the success of the digital practice component are not fully detailed.
 *   The long-term impact on standardized test scores (like selectividad) is still being assessed as no students have yet reached that stage.
 *   The exact process for how teachers provide feedback on the digital platform's effectiveness is not elaborated upon.

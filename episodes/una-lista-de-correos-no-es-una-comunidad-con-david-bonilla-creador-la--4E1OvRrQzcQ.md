@@ -18,26 +18,27 @@ processed_at: 2026-08-03T17:58:10.550Z
 Bonilista treats an email list as insufficient for community — product is belonging and participation, not broadcast reach.
 
 
-## Context — David Bonilla is a product leader and entrepreneur who has founded multiple companies and created a prominent tech newsletter, La Bonilista. His ventures span recruitment, creator community tools, and M&A advisory, all stemming from his deep understanding of community building and product development.
+## Context
+David Bonilla is a product leader and entrepreneur who has founded multiple companies and created a prominent tech newsletter, La Bonilista. His ventures span recruitment, creator community tools, and M&A advisory, all stemming from his deep understanding of community building and product development.
 
-## Operating loop —
+## Operating loop
 *   **Community Definition:** A community is a group of people helping each other improve, not just a list of subscribers or followers.
 *   **Business Model:** Businesses are built by providing value to a dedicated community, enabling monetization through services and products that genuinely serve their needs.
 *   **Product Development:** Focus on solving real user problems and validating hypotheses through direct customer interaction, rather than solely relying on market trends or generic features.
 *   **Growth Strategy:** Prioritize deep engagement and value creation for a smaller, loyal audience over mass acquisition, as a strong community can be more powerful and sustainable.
 
-## Ownership —
+## Ownership
 *   **Discovery:** Direct user interaction, understanding needs beyond stated requests.
 *   **Prioritization:** Based on genuine community value and business sense, with the ability to say no to non-viable ideas.
 *   **Shipping:** Ensuring products and services align with core values and provide tangible benefits.
 *   **Sales-input:** Essential for understanding market demand and validating product-market fit.
 *   **Design:** Focused on user experience and creating value, not just aesthetics.
 
-## Evidence —
+## Evidence
 *   *A community is a group of people who help each other improve.*
 *   *I don't work to have 100,000 subscribers, I don't care. I work to have 10,000 people who are a community.*
 
-## Gaps —
+## Gaps
 *   The specific metrics used to measure community health beyond open rates are not detailed.
 *   The long-term strategy for scaling service-based businesses like Pétalo while maintaining a high-touch, tailored approach is not fully elaborated.
 *   Details on how AI is currently integrated into the operational workflows of his ventures are not provided.

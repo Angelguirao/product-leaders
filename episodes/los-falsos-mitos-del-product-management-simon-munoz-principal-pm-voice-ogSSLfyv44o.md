@@ -17,26 +17,27 @@ processed_at: 2026-08-03T18:12:56.385Z
 ## Thesis
 Voicemod’s guest argues PMs should live in the business bubble (value and problem choice) rather than as ticket brokers between design and eng. Held weak: myths essay, thin steady-state Voicemod OS detail.
 
-## Context — This episode features Simón Muñoz, Principal PM at Voicemod and founder of the Estrategia de Producto newsletter, discussing common myths in product management.
+## Context
+This episode features Simón Muñoz, Principal PM at Voicemod and founder of the Estrategia de Producto newsletter, discussing common myths in product management.
 
-## Operating loop —
+## Operating loop
 *   Identify problems worth solving.
 *   Shape the product vision.
 *   Ship the product.
 *   Operate and maintain the product.
 
-## Ownership —
+## Ownership
 *   Discovery: Product Manager (through customer and business understanding).
 *   Prioritization: Product Manager (focus on business value).
 *   Shipping: Product Manager (responsible for output and impact).
 *   Sales Input: Unknown.
 *   Design: Product Designer.
 
-## Evidence —
+## Evidence
 *   *A product manager should be more in the business bubble, rather than between product and technology.*
 *   *There's a lot of art in making products, very similar to making movies.*
 
-## Gaps —
+## Gaps
 *   The specific metrics used to measure product success.
 *   Details on the product delivery process beyond the PM's responsibility for shipping.
 *   How sales input is integrated into the product development cycle.

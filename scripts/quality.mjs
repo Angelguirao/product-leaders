@@ -3,12 +3,16 @@
  */
 
 export function section(body, heading) {
+  // Accept "## Context\n..." and legacy "## Context — inline..."
   const re = new RegExp(
-    `## ${heading}\\s*\\n([\\s\\S]*?)(?=\\n## |$)`,
+    `## ${heading}\\s*(?:[—–:]\\s*([^\\n]+)\\n?|\\n)([\\s\\S]*?)(?=\\n## |$)`,
     "i"
   );
   const m = String(body || "").match(re);
-  return m ? m[1].trim() : "";
+  if (!m) return "";
+  const inline = (m[1] || "").trim();
+  const rest = (m[2] || "").trim();
+  return [inline, rest].filter(Boolean).join("\n\n");
 }
 
 export function firstParagraph(text) {
