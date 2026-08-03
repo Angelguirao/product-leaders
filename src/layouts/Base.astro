@@ -9,7 +9,7 @@ interface Props {
 
 const {
   title = "Product Leaders Atlas",
-  description = "A living map of how product teams operate — workflows, roles, and practices from Entrevistas a Product Leaders.",
+  description = "A living map of how product teams operate — thesis, loop, and ownership from Entrevistas a Product Leaders.",
 } = Astro.props;
 const pageTitle =
   title === "Product Leaders Atlas" ? title : `${title} · Product Leaders Atlas`;
@@ -29,6 +29,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content="en_US" />
     <title>{pageTitle}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -52,9 +53,12 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
       <a class="brand" href="/">Product <span>orgs</span></a>
       <nav>
         <a href="/">Map</a>
+        <a href="/compare">Compare</a>
         <a href="/browse">Cards</a>
         <a class="nav-hide-sm" href="/practices">Practices</a>
-        <pagefind-modal-trigger instance="pl" class="nav-search">Search</pagefind-modal-trigger>
+        <pagefind-modal-trigger instance="pl" class="nav-search"
+          >Search</pagefind-modal-trigger
+        >
         <a class="nav-hide-sm" href="/docs/legal">Legal</a>
       </nav>
     </header>
@@ -63,7 +67,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
     </main>
     <footer class="site-footer">
       <p>
-        Unofficial map of Spanish product orgs, seeded from
+        Unofficial English map of how product orgs operate, seeded from
         <a href="https://podcasters.spotify.com/pod/show/danidiestre"
           >Entrevistas a Product Leaders</a
         >

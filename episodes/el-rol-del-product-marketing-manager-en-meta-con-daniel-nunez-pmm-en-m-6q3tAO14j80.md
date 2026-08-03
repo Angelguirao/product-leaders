@@ -10,7 +10,7 @@ company: "Meta"
 company_slug: "meta"
 stage: "growth"
 practices: ["discovery", "delivery", "roles", "growth"]
-status: published
+status: weak
 processed_at: 2026-08-03T18:21:40.941Z
 ---
 

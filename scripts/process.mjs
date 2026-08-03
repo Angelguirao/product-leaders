@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Process podcast episodes → public Spanish product-org cards (thesis-first).
+ * Process podcast episodes → public English product-org cards (thesis-first).
  *
  * Usage:
  *   npm run process -- --limit 3
@@ -433,10 +433,10 @@ function buildOperatingModelPrompt(episode, practicesYaml, extract) {
     extract.length > 120_000
       ? extract.slice(0, 120_000) + "\n\n[truncated]"
       : extract;
-  return `You are writing a PUBLIC company card for a Spanish product-org map.
+  return `You are writing a PUBLIC company card for an English-language product-org map.
 
 Goal: a stranger must distinguish THIS company from two peers in 20 seconds.
-Source: Entrevistas a Product Leaders (Dani Diestre). English synthesis. Do not invent facts.
+Source: Entrevistas a Product Leaders (Dani Diestre). Write ALL sections in English only — never Spanish. Do not invent facts.
 If extract guest/company disagree with the RSS title guess, trust the extract.
 
 Practice taxonomy (pick 2-4 that truly fit):

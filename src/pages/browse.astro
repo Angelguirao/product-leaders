@@ -3,11 +3,15 @@ import Base from "../layouts/Base.astro";
 import episodes from "../data/episodes.json";
 ---
 
-<Base title="Episodes" description="All briefed Product Leaders episodes.">
+<Base
+  title="Cards"
+  description="All Product Leaders cards — English thesis-first notes from each interview."
+>
   <div class="prose">
-    <h1>Episodes</h1>
+    <h1>Cards</h1>
     <p class="lede">
-      Each card extracts how the guest’s company runs product — not a full transcript.
+      Each card extracts how the guest’s company runs product — English thesis,
+      loop, and ownership. Original episode titles stay as source labels.
     </p>
   </div>
 
@@ -20,11 +24,12 @@ import episodes from "../data/episodes.json";
           <li>
             <a href={`/episodes/${e.slug}`}>
               <div class="meta">
-                {[e.company, e.guest, e.role].filter(Boolean).join(" · ") || "—"}
-                {e.status === "stub" ? " · stub" : ""}
+                {[e.company, e.guest, e.role, e.status !== "published" ? e.status : null]
+                  .filter(Boolean)
+                  .join(" · ") || "—"}
               </div>
-              <h3>{e.title}</h3>
-              {e.overview ? <p>{e.overview}</p> : null}
+              <h3>{e.thesis || e.overview || e.company || "Untitled card"}</h3>
+              {e.title ? <p class="source-title">Source: {e.title}</p> : null}
             </a>
           </li>
         ))}

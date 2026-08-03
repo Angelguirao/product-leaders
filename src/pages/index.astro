@@ -7,6 +7,12 @@ const companies = atlas.companies || [];
 const practices = Object.values(atlas.practices || {}).filter(
   (p) => p.companies?.length
 );
+const stages = [
+  ...new Set(companies.map((c) => c.stage || "other")),
+].sort((a, b) => {
+  const order = ["early", "growth", "scale", "enterprise", "agency", "other"];
+  return order.indexOf(a) - order.indexOf(b);
+});
 const byStage = {};
 for (const c of companies) {
   const s = c.stage || "other";
@@ -14,17 +20,30 @@ for (const c of companies) {
   byStage[s].push(c);
 }
 const stageOrder = ["early", "growth", "scale", "enterprise", "agency", "other"];
+const companiesJson = JSON.stringify(
+  companies.map((c) => ({
+    slug: c.slug,
+    name: c.name,
+    stage: c.stage || "other",
+    practices: c.practices || [],
+    thesis: c.thesis || "",
+    guest: c.guests?.[0]
+      ? `${c.guests[0].name}${c.guests[0].role ? ` · ${c.guests[0].role}` : ""}`
+      : "",
+  }))
+);
 ---
 
 <Base
   title="Product Leaders Atlas"
-  description="A public map of how Spanish product orgs operate — thesis, loop, ownership."
+  description="How product teams operate — one thesis per company. Compare ownership, loops, and stage."
 >
   <section class="hero">
-    <h1>Spanish product-org map</h1>
+    <h1>Product-org map</h1>
     <p>
       How real product teams operate — one thesis per company, seeded from Dani
       Diestre’s Product Leaders interviews. Compare ownership, loops, and stage.
+      All cards in English.
     </p>
     <div class="stats">
       <div>
@@ -40,16 +59,48 @@ const stageOrder = ["early", "growth", "scale", "enterprise", "agency", "other"]
         held as weak
       </div>
     </div>
+    <p class="hero-actions">
+      <a class="text-link" href="/compare">Compare two or three orgs →</a>
+    </p>
   </section>
 
   {
     atlas.map_mermaid && companies.length ? (
       <section class="atlas-map">
         <p class="section-label">Orgs × practices</p>
-        <Mermaid code={atlas.map_mermaid} />
+        <Mermaid code={atlas.map_mermaid} clickable={true} />
+        <p class="atlas-map__hint">Click a company or practice node to open it.</p>
       </section>
     ) : null
   }
+
+  <section class="map-filters" id="map-filters" data-companies={companiesJson}>
+    <p class="section-label">Filter the map</p>
+    <div class="filter-row">
+      <label>
+        Stage
+        <select id="filter-stage" name="stage">
+          <option value="">All stages</option>
+          {stages.map((s) => (
+            <option value={s}>{s}</option>
+          ))}
+        </select>
+      </label>
+      <label>
+        Practice
+        <select id="filter-practice" name="practice">
+          <option value="">All practices</option>
+          {practices.map((p) => (
+            <option value={p.key}>{p.label}</option>
+          ))}
+        </select>
+      </label>
+      <button type="button" id="filter-reset" class="filter-reset">
+        Reset
+      </button>
+    </div>
+    <p class="filter-count" id="filter-count" hidden></p>
+  </section>
 
   {
     companies.length === 0 ? (
@@ -58,33 +109,41 @@ const stageOrder = ["early", "growth", "scale", "enterprise", "agency", "other"]
         <code>npm run index</code>.
       </p>
     ) : (
-      stageOrder
-        .filter((s) => byStage[s]?.length)
-        .map((stage) => (
-          <section style="margin-bottom: 2.5rem;">
-            <p class="section-label">{stage}</p>
-            <div class="company-grid">
-              {byStage[stage].map((c) => (
-                <a class="company-cell" href={`/companies/${c.slug}`}>
-                  <h2>{c.name}</h2>
-                  <div class="meta">
-                    {c.guests?.[0]
-                      ? `${c.guests[0].name}${c.guests[0].role ? ` · ${c.guests[0].role}` : ""}`
-                      : "—"}
-                  </div>
-                  {c.thesis ? <p>{c.thesis}</p> : null}
-                  {c.practices?.length ? (
-                    <div class="tags">
-                      {c.practices.slice(0, 4).map((p) => (
-                        <span class="tag">{p}</span>
-                      ))}
+      <div id="company-map">
+        {stageOrder
+          .filter((s) => byStage[s]?.length)
+          .map((stage) => (
+            <section class="stage-block" data-stage={stage} style="margin-bottom: 2.5rem;">
+              <p class="section-label">{stage}</p>
+              <div class="company-grid">
+                {byStage[stage].map((c) => (
+                  <a
+                    class="company-cell"
+                    href={`/companies/${c.slug}`}
+                    data-slug={c.slug}
+                    data-stage={c.stage || "other"}
+                    data-practices={(c.practices || []).join(" ")}
+                  >
+                    <h2>{c.name}</h2>
+                    <div class="meta">
+                      {c.guests?.[0]
+                        ? `${c.guests[0].name}${c.guests[0].role ? ` · ${c.guests[0].role}` : ""}`
+                        : "—"}
                     </div>
-                  ) : null}
-                </a>
-              ))}
-            </div>
-          </section>
-        ))
+                    {c.thesis ? <p>{c.thesis}</p> : null}
+                    {c.practices?.length ? (
+                      <div class="tags">
+                        {c.practices.slice(0, 4).map((p) => (
+                          <span class="tag">{p}</span>
+                        ))}
+                      </div>
+                    ) : null}
+                  </a>
+                ))}
+              </div>
+            </section>
+          ))}
+      </div>
     )
   }
 
@@ -103,3 +162,52 @@ const stageOrder = ["early", "growth", "scale", "enterprise", "agency", "other"]
     ) : null
   }
 </Base>
+
+<script>
+  function applyFilters() {
+    const stage = /** @type {HTMLSelectElement} */ (
+      document.getElementById("filter-stage")
+    )?.value;
+    const practice = /** @type {HTMLSelectElement} */ (
+      document.getElementById("filter-practice")
+    )?.value;
+    const cells = document.querySelectorAll(".company-cell");
+    let visible = 0;
+    cells.forEach((cell) => {
+      const okStage = !stage || cell.getAttribute("data-stage") === stage;
+      const practices = (cell.getAttribute("data-practices") || "").split(/\s+/);
+      const okPractice = !practice || practices.includes(practice);
+      const show = okStage && okPractice;
+      cell.toggleAttribute("hidden", !show);
+      if (show) visible++;
+    });
+    document.querySelectorAll(".stage-block").forEach((block) => {
+      const any = block.querySelector(".company-cell:not([hidden])");
+      block.toggleAttribute("hidden", !any);
+    });
+    const count = document.getElementById("filter-count");
+    if (count) {
+      const filtering = Boolean(stage || practice);
+      count.hidden = !filtering;
+      count.textContent = filtering
+        ? `Showing ${visible} of ${cells.length} orgs`
+        : "";
+    }
+  }
+
+  document.getElementById("filter-stage")?.addEventListener("change", applyFilters);
+  document
+    .getElementById("filter-practice")
+    ?.addEventListener("change", applyFilters);
+  document.getElementById("filter-reset")?.addEventListener("click", () => {
+    const s = /** @type {HTMLSelectElement} */ (
+      document.getElementById("filter-stage")
+    );
+    const p = /** @type {HTMLSelectElement} */ (
+      document.getElementById("filter-practice")
+    );
+    if (s) s.value = "";
+    if (p) p.value = "";
+    applyFilters();
+  });
+</script>

@@ -10,7 +10,7 @@ company: "The Power"
 company_slug: "the-power"
 stage: null
 practices: ["discovery", "delivery", "roles", "platform"]
-status: published
+status: weak
 processed_at: 2026-08-03T18:19:00.231Z
 ---
 

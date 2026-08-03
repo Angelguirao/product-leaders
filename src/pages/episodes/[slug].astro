@@ -80,6 +80,8 @@ function renderMd(md) {
 }
 
 const { meta, body } = parseFrontmatter(raw);
+const thesisMatch = body.match(/## Thesis\s*\n+([^\n#]+)/i);
+const thesis = thesisMatch ? thesisMatch[1].trim() : "";
 const workflow = firstMermaid(section(body, "Product workflow"));
 const org = firstMermaid(section(body, "Roles & org"));
 const practice = firstMermaid(section(body, "Practice map"));
@@ -87,23 +89,29 @@ const html = renderMd(body);
 ---
 
 <Base
-  title={meta.title || slug}
-  description={meta.company
+  title={meta.company || thesis || slug}
+  description={thesis || (meta.company
     ? `Operating-model map for ${meta.company}.`
-    : "Episode operating-model map."}
+    : "Episode operating-model map.")}
 >
   <article class="company-os">
-    <p class="section-label">Episode map</p>
+    <p class="section-label">Episode card</p>
     {
       meta.company_slug ? (
         <p class="lede">
           <a href={`/companies/${meta.company_slug}`}>{meta.company}</a>
           {meta.guest ? ` · ${meta.guest}` : ""}
           {meta.role ? ` · ${meta.role}` : ""}
+          {meta.status && meta.status !== "published" ? ` · ${meta.status}` : ""}
         </p>
       ) : null
     }
-    <h1>{meta.title || slug}</h1>
+    <h1>{thesis || meta.company || "Product card"}</h1>
+    {
+      meta.title ? (
+        <p class="company-os__source">Source episode: {meta.title}</p>
+      ) : null
+    }
     {
       meta.practices?.length ? (
         <div class="tags" style="margin: 1rem 0;">

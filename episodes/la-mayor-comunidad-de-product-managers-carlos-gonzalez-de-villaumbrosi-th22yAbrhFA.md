@@ -10,7 +10,7 @@ company: "Product School"
 company_slug: "product-school"
 stage: "enterprise"
 practices: ["enterprise", "ai_product", "discovery", "delivery"]
-status: published
+status: weak
 processed_at: 2026-08-03T18:18:48.655Z
 ---
 

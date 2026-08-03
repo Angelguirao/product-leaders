@@ -1033,7 +1033,7 @@
       "discovery",
       "delivery"
     ],
-    "status": "published",
+    "status": "weak",
     "processed_at": "2026-08-03T18:21:03.221Z",
     "thesis": "Eva shipped an adolescent-health chatbot in Uruguay in days on Dialogflow — public-health problem first; early conversational AI as distribution for teens.",
     "context": "Cristina Santamarina is an experienced product leader with a background in AI and digital product development. She founded an AI chatbot named Eva in 2016 to address adolescent pregnancies in Uruguay, which reached over 10,000 users and was presented to the Uruguayan Ministry of Health.",
@@ -1530,7 +1530,7 @@
       "metrics",
       "growth"
     ],
-    "status": "published",
+    "status": "weak",
     "processed_at": "2026-08-03T18:18:35.493Z",
     "thesis": "Thiga España treats La Product Conf as market-positioning infrastructure — credibility and talent magnet first, ticket revenue second.",
     "context": "Tiga España is a product management consultancy that also fosters Spain's largest product community through events and content. The company was founded in 2019, aiming to replicate its successful French model in the Spanish market.",
@@ -1879,7 +1879,7 @@
       "discovery",
       "delivery"
     ],
-    "status": "published",
+    "status": "weak",
     "processed_at": "2026-08-03T18:18:48.655Z",
     "thesis": "Product School scaled from founder bootcamps to enterprise AI training via live cohort learning and B2B partnerships — community is the distribution engine.",
     "context": "Product School, founded by Carlos González, is a global organization offering training and community for product managers and other tech professionals. It has evolved from in-person workshops to a primarily online, live-instruction model, and now focuses significantly on enterprise-level AI transformation services.",
@@ -1980,7 +1980,7 @@
       "roles",
       "growth"
     ],
-    "status": "published",
+    "status": "weak",
     "processed_at": "2026-08-03T18:21:40.941Z",
     "thesis": "Product marketing managers at Meta focus on deeply understanding customer needs and portfolio performance to drive product strategy and market success.",
     "context": "Meta operates in the advertising technology space, offering sophisticated advertising platforms that aim to make ads relevant to users and maximize return for advertisers. The company is a large-scale, established player in the digital advertising market.",
@@ -2031,7 +2031,7 @@
       "roles",
       "platform"
     ],
-    "status": "published",
+    "status": "weak",
     "processed_at": "2026-08-03T18:19:00.231Z",
     "thesis": "The Power productizes accessible online MBAs — content + YouTube distribution undercut traditional business-school price points.",
     "context": "The Power is an online education company that initially gained traction with its MBA program, aiming to make business education more affordable and practical. It has since expanded into various other fields, including tech, sports, and pharma, positioning itself as a broad educational institution rather than solely a business school.",
@@ -2820,7 +2820,7 @@
       "roles",
       "discovery"
     ],
-    "status": "published",
+    "status": "weak",
     "processed_at": "2026-08-03T18:20:22.693Z",
     "thesis": "The Hero Camp builds PM education like a product — courses iterate from student outcomes; practical product-first mentality over theory catalogs.",
     "context": "The Hero Camp is an ecosystem built around product management, offering a school for training, services for companies, and a recruitment agency specializing in product talent. They cater to individuals with 7-8 years of experience looking to advance their careers and companies seeking specialized product talent.",

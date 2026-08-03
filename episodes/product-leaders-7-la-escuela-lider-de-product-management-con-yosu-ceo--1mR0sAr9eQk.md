@@ -10,7 +10,7 @@ company: "The Hero Camp"
 company_slug: "the-hero-camp"
 stage: "growth"
 practices: ["leadership", "founder", "roles", "discovery"]
-status: published
+status: weak
 processed_at: 2026-08-03T18:20:22.693Z
 ---
 

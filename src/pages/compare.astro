@@ -1,0 +1,157 @@
+---
+import Base from "../layouts/Base.astro";
+import companies from "../data/companies.json";
+
+const options = companies
+  .map((c) => ({
+    slug: c.slug,
+    name: c.name,
+    stage: c.stage || "other",
+    thesis: c.thesis || "",
+    practices: c.practices || [],
+    ownership: c.episodes?.[0]?.ownership || [],
+    loop_bullets: c.episodes?.[0]?.loop_bullets || [],
+    loop_mermaid: Boolean(c.episodes?.[0]?.loop_mermaid),
+    context: c.episodes?.[0]?.context || "",
+    guest: c.episodes?.[0]?.guest || "",
+    role: c.episodes?.[0]?.role || "",
+  }))
+  .sort((a, b) => a.name.localeCompare(b.name));
+
+const payload = JSON.stringify(options);
+---
+
+<Base
+  title="Compare"
+  description="Compare how two or three product orgs operate — thesis, loop, and ownership side by side."
+>
+  <div class="prose compare-intro">
+    <h1>Compare orgs</h1>
+    <p class="lede">
+      Pick two or three companies. Read theses side by side — if you can’t tell
+      them apart in twenty seconds, the card isn’t sharp enough.
+    </p>
+  </div>
+
+  <div class="compare-picker" id="compare-root" data-orgs={payload}>
+    <div class="compare-selects">
+      <label>
+        Org A
+        <select id="cmp-a"></select>
+      </label>
+      <label>
+        Org B
+        <select id="cmp-b"></select>
+      </label>
+      <label>
+        Org C <span class="optional">(optional)</span>
+        <select id="cmp-c">
+          <option value="">—</option>
+        </select>
+      </label>
+    </div>
+    <div class="compare-grid" id="compare-grid" aria-live="polite"></div>
+  </div>
+</Base>
+
+<script>
+  const root = document.getElementById("compare-root");
+  if (root) {
+    /** @type {Array<any>} */
+    const orgs = JSON.parse(root.getAttribute("data-orgs") || "[]");
+    const bySlug = Object.fromEntries(orgs.map((o) => [o.slug, o]));
+
+    const selA = /** @type {HTMLSelectElement} */ (document.getElementById("cmp-a"));
+    const selB = /** @type {HTMLSelectElement} */ (document.getElementById("cmp-b"));
+    const selC = /** @type {HTMLSelectElement} */ (document.getElementById("cmp-c"));
+    const grid = document.getElementById("compare-grid");
+
+    function fillSelect(sel, includeEmpty) {
+      if (!sel) return;
+      const keep = sel.value;
+      sel.innerHTML = includeEmpty ? '<option value="">—</option>' : "";
+      for (const o of orgs) {
+        const opt = document.createElement("option");
+        opt.value = o.slug;
+        opt.textContent = o.name;
+        sel.appendChild(opt);
+      }
+      if (keep && [...sel.options].some((o) => o.value === keep)) sel.value = keep;
+    }
+
+    fillSelect(selA, false);
+    fillSelect(selB, false);
+    fillSelect(selC, true);
+
+    const params = new URLSearchParams(location.search);
+    const defaults = [
+      params.get("a") || orgs[0]?.slug,
+      params.get("b") || orgs[1]?.slug,
+      params.get("c") || "",
+    ];
+    if (selA && defaults[0]) selA.value = defaults[0];
+    if (selB && defaults[1]) selB.value = defaults[1];
+    if (selC) selC.value = defaults[2] || "";
+
+    function esc(s) {
+      return String(s || "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+    }
+
+    function card(o) {
+      if (!o) return "";
+      const ownership = (o.ownership || [])
+        .slice(0, 5)
+        .map((b) => `<li>${esc(b)}</li>`)
+        .join("");
+      const loop = (o.loop_bullets || [])
+        .slice(0, 5)
+        .map((b) => `<li>${esc(b)}</li>`)
+        .join("");
+      return `<article class="compare-card">
+        <p class="section-label">${esc(o.stage)}</p>
+        <h2><a href="/companies/${esc(o.slug)}">${esc(o.name)}</a></h2>
+        <p class="compare-card__meta">${esc([o.guest, o.role].filter(Boolean).join(" · "))}</p>
+        <p class="compare-card__thesis">${esc(o.thesis)}</p>
+        ${o.context ? `<p class="compare-card__context">${esc(o.context)}</p>` : ""}
+        <h3>Operating loop</h3>
+        ${
+          loop
+            ? `<ul>${loop}</ul>`
+            : o.loop_mermaid
+              ? `<p class="compare-card__note">See full diagram on the <a href="/companies/${esc(o.slug)}">company page</a>.</p>`
+              : `<p class="compare-card__note">No loop captured.</p>`
+        }
+        <h3>Ownership</h3>
+        ${ownership ? `<ul>${ownership}</ul>` : `<p class="compare-card__note">No ownership notes.</p>`}
+        <div class="tags">${(o.practices || [])
+          .map((p) => `<a class="tag" href="/practices/${esc(p)}">${esc(p)}</a>`)
+          .join("")}</div>
+      </article>`;
+    }
+
+    function render() {
+      const a = bySlug[selA?.value || ""];
+      const b = bySlug[selB?.value || ""];
+      const c = bySlug[selC?.value || ""];
+      const picked = [a, b, c].filter(Boolean);
+      if (grid) {
+        grid.style.setProperty("--compare-cols", String(Math.max(picked.length, 1)));
+        grid.innerHTML = picked.map(card).join("");
+      }
+      const q = new URLSearchParams();
+      if (selA?.value) q.set("a", selA.value);
+      if (selB?.value) q.set("b", selB.value);
+      if (selC?.value) q.set("c", selC.value);
+      history.replaceState(null, "", `?${q.toString()}`);
+    }
+
+    selA?.addEventListener("change", render);
+    selB?.addEventListener("change", render);
+    selC?.addEventListener("change", render);
+    render();
+  }
+</script>

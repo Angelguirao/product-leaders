@@ -10,7 +10,7 @@ company: "Thiga"
 company_slug: "thiga"
 stage: "growth"
 practices: ["discovery", "delivery", "metrics", "growth"]
-status: published
+status: weak
 processed_at: 2026-08-03T18:18:35.493Z
 ---
 

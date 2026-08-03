@@ -1,8 +1,8 @@
 # Product Leaders Atlas
 
-A **public Spanish product-org map** — how real teams run product (thesis, loop, ownership) — seeded from [Entrevistas a Product Leaders](https://podcasters.spotify.com/pod/show/danidiestre) (Dani Diestre).
+A **public English product-org map** — how real teams run product (thesis, loop, ownership) — seeded from [Entrevistas a Product Leaders](https://podcasters.spotify.com/pod/show/danidiestre) (Dani Diestre).
 
-Unofficial. Not affiliated. See [docs/LEGAL.md](docs/LEGAL.md).
+All published card content is English. Unofficial. Not affiliated. See [docs/LEGAL.md](docs/LEGAL.md).
 
 ## What a card is
 
@@ -20,7 +20,7 @@ Only `status: published` cards appear on the public map. `weak` / `stub` stay in
 ## Pipeline
 
 ```
-RSS catalog → extract (raw/) → thesis-first brief → index → Astro site
+RSS catalog → extract (raw/) → thesis-first brief (English) → index → Astro site
 ```
 
 ```bash
@@ -35,7 +35,10 @@ npm run dev
 
 | Path | What |
 |------|------|
-| `/` | Org map by stage + practice graph |
+| `/` | Org map by stage + practice graph (filters + clickable nodes) |
+| `/compare` | Side-by-side thesis / loop / ownership for 2–3 orgs |
 | `/companies/:slug` | Thesis-first company card |
 | `/practices` | Cross-company practice browse |
 | `/browse` | All episode cards (incl. weak) |
+
+Live: [product-leaders-self.vercel.app](https://product-leaders-self.vercel.app)

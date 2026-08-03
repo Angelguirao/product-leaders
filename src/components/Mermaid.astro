@@ -1,20 +1,26 @@
 ---
 /**
  * Client-rendered Mermaid block. Pass diagram source (no fences).
+ * Set clickable for atlas maps that use Mermaid click → URL.
  */
 interface Props {
   code: string;
   caption?: string;
+  clickable?: boolean;
 }
 
-const { code, caption } = Astro.props;
+const { code, caption, clickable = false } = Astro.props;
 const cleaned = String(code || "")
   .replace(/^```mermaid\s*/i, "")
   .replace(/```$/i, "")
   .trim();
 ---
 
-<figure class="diagram" data-mermaid-figure>
+<figure
+  class:list={["diagram", clickable && "diagram--clickable"]}
+  data-mermaid-figure
+  data-clickable={clickable ? "true" : "false"}
+>
   <pre class="mermaid">{cleaned}</pre>
   {caption ? <figcaption>{caption}</figcaption> : null}
 </figure>
@@ -22,20 +28,26 @@ const cleaned = String(code || "")
 <script>
   import mermaid from "mermaid";
 
-  let booted = false;
+  const inits = new WeakSet();
 
   async function renderAll() {
-    if (!booted) {
+    const figures = document.querySelectorAll("[data-mermaid-figure]");
+    for (const fig of figures) {
+      if (inits.has(fig)) continue;
+      const clickable = fig.getAttribute("data-clickable") === "true";
       mermaid.initialize({
         startOnLoad: false,
-        securityLevel: "strict",
+        securityLevel: clickable ? "loose" : "strict",
         theme: "neutral",
         fontFamily: "Source Serif 4, Georgia, serif",
         flowchart: { curve: "basis", htmlLabels: true },
       });
-      booted = true;
+      const node = fig.querySelector(".mermaid");
+      if (node && !node.getAttribute("data-processed")) {
+        await mermaid.run({ nodes: [node] });
+      }
+      inits.add(fig);
     }
-    await mermaid.run({ querySelector: ".mermaid" });
   }
 
   renderAll();

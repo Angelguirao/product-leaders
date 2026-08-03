@@ -239,6 +239,7 @@ function buildAtlasMermaid(companies, practiceLabels) {
     const cid = "C_" + c.slug.replace(/[^a-z0-9_]/gi, "_");
     const label = String(c.name).replace(/"/g, "'");
     lines.push(`  ${cid}["${label}"]:::company`);
+    lines.push(`  click ${cid} "/companies/${c.slug}" "Open ${label}"`);
     for (const p of c.practices || []) {
       usedPractices.add(p);
       lines.push(`  ${cid} --- P_${p}`);
@@ -248,6 +249,7 @@ function buildAtlasMermaid(companies, practiceLabels) {
     const short = (practiceLabels[p] || p).replace(/"/g, "'");
     const compact = short.split(/[&/]/)[0].trim().slice(0, 28);
     lines.push(`  P_${p}(["${compact}"]):::practice`);
+    lines.push(`  click P_${p} "/practices/${p}" "Browse ${compact}"`);
   }
   return lines.join("\n");
 }

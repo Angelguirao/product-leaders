@@ -10,7 +10,7 @@ company: "Eva"
 company_slug: "eva"
 stage: "early"
 practices: ["ai_product", "discovery", "delivery"]
-status: published
+status: weak
 processed_at: 2026-08-03T18:21:03.221Z
 ---
 
