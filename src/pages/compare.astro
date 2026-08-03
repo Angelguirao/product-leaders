@@ -31,6 +31,25 @@ const payload = JSON.stringify(options);
       Pick two or three companies. Read theses side by side — if you can’t tell
       them apart in twenty seconds, the card isn’t sharp enough.
     </p>
+    <div class="compare-presets" id="compare-presets">
+      <p class="section-label">Try a preset</p>
+      <div class="compare-presets__row">
+        <a
+          class="peer-chip"
+          href="/compare?a=tinybird&amp;b=factorial&amp;c=mercadona-tech"
+          >No PM layer vs growth machine vs 3x model</a
+        >
+        <a class="peer-chip" href="/compare?a=cabify&amp;b=webel&amp;c=shakers"
+          >Marketplace liquidity bets</a
+        >
+        <a class="peer-chip" href="/compare?a=n26&amp;b=tuio&amp;c=taxdown"
+          >Fintech operating choices</a
+        >
+        <a class="peer-chip" href="/compare?a=dcycle&amp;b=inology&amp;c=typeform"
+          >Autonomy, config, and R&amp;D bets</a
+        >
+      </div>
+    </div>
   </div>
 
   <div class="compare-picker" id="compare-root" data-orgs={payload}>

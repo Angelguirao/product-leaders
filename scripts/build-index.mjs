@@ -255,6 +255,82 @@ function buildAtlasMermaid(companies, practiceLabels) {
   return lines.join("\n");
 }
 
+function escapeXml(s) {
+  return String(s || "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+function wrapWords(text, maxChars, maxLines) {
+  const words = String(text || "")
+    .replace(/\s+/g, " ")
+    .trim()
+    .split(" ");
+  const lines = [];
+  let cur = "";
+  for (const w of words) {
+    const next = cur ? `${cur} ${w}` : w;
+    if (next.length > maxChars && cur) {
+      lines.push(cur);
+      cur = w;
+      if (lines.length >= maxLines) break;
+    } else {
+      cur = next;
+    }
+  }
+  if (lines.length < maxLines && cur) lines.push(cur);
+  if (words.join(" ").length > lines.join(" ").length) {
+    const last = lines.length - 1;
+    if (last >= 0 && lines[last].length > 3) {
+      lines[last] = lines[last].replace(/\s+\S*$/, "") + "…";
+    }
+  }
+  return lines;
+}
+
+function companyOgSvg(company) {
+  const name = escapeXml(company.name);
+  const thesisLines = wrapWords(company.thesis || "How this product org operates.", 42, 4);
+  const thesisTspans = thesisLines
+    .map(
+      (line, i) =>
+        `<tspan x="80" dy="${i === 0 ? 0 : 44}">${escapeXml(line)}</tspan>`
+    )
+    .join("");
+  const stage = escapeXml(company.stage || "product org");
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="${name}">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f4efe6"/>
+      <stop offset="100%" stop-color="#efe8dc"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1040" cy="80" r="180" fill="#e8c4b0" opacity="0.45"/>
+  <circle cx="120" cy="540" r="140" fill="#ddd4c4" opacity="0.55"/>
+  <text x="80" y="120" font-family="Georgia, 'Times New Roman', serif" font-size="26" fill="#6b6358" letter-spacing="3">PRODUCT LEADERS ATLAS</text>
+  <text x="80" y="200" font-family="Georgia, 'Times New Roman', serif" font-size="22" fill="#b85c38">${stage}</text>
+  <text x="80" y="270" font-family="Georgia, 'Times New Roman', serif" font-size="64" fill="#2a2318">${name}</text>
+  <text x="80" y="360" font-family="Georgia, 'Times New Roman', serif" font-size="34" fill="#2a2318">${thesisTspans}</text>
+</svg>
+`;
+}
+
+function writeOgAssets(companies) {
+  const ogDir = join(root, "public", "og");
+  mkdirSync(ogDir, { recursive: true });
+  const keep = new Set(companies.map((c) => `${c.slug}.svg`));
+  for (const file of readdirSync(ogDir).filter((f) => f.endsWith(".svg"))) {
+    if (!keep.has(file)) unlinkSync(join(ogDir, file));
+  }
+  for (const c of companies) {
+    writeFileSync(join(ogDir, `${c.slug}.svg`), companyOgSvg(c));
+  }
+}
+
 const published = episodes.filter((e) => e.status === "published");
 const weak = episodes.filter((e) => e.status === "weak");
 const stubs = episodes.filter((e) => e.status === "stub");
@@ -277,6 +353,8 @@ const payload = {
 writeFileSync(join(outDir, "atlas.json"), JSON.stringify(payload, null, 2));
 writeFileSync(join(outDir, "episodes.json"), JSON.stringify(episodes, null, 2));
 writeFileSync(join(outDir, "companies.json"), JSON.stringify(companies, null, 2));
+
+writeOgAssets(companies);
 
 const companiesDir = join(root, "companies");
 mkdirSync(companiesDir, { recursive: true });

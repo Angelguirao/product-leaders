@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-08-03T18:45:14.437Z",
+  "built_at": "2026-08-03T18:51:04.137Z",
   "episode_count": 65,
   "company_count": 45,
   "published_count": 52,
@@ -841,10 +841,10 @@
       "url": "https://www.youtube.com/watch?v=4E1OvRrQzcQ",
       "audio_url": "https://anchor.fm/s/ddca5200/podcast/play/97362490/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2025-0-21%2F393462081-44100-2-598a107100563.mp3",
       "pub_date": "2025-01-22T15:00:00.000Z",
-      "guest": null,
-      "role": null,
-      "company": null,
-      "company_slug": null,
+      "guest": "David Bonilla",
+      "role": "Creator",
+      "company": "Bonilista",
+      "company_slug": "bonilista",
       "stage": "growth",
       "practices": [
         "ai_product",
@@ -854,14 +854,14 @@
       ],
       "status": "weak",
       "processed_at": "2026-08-03T17:58:10.550Z",
-      "thesis": "",
+      "thesis": "Bonilista treats an email list as insufficient for community — product is belonging and participation, not broadcast. Held weak: media/community thesis, not a product-org operating system.",
       "context": "",
       "ownership": [],
       "evidence": [],
       "gaps": [],
       "loop_bullets": [],
       "loop_mermaid": null,
-      "overview": "",
+      "overview": "Bonilista treats an email list as insufficient for community — product is belonging and participation, not broadcast. Held weak: media/community thesis, not a product-org operating system.",
       "workflow_mermaid": null
     },
     {
@@ -923,9 +923,9 @@
       "audio_url": "https://anchor.fm/s/ddca5200/podcast/play/94668505/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2024-10-19%2F390118628-44100-2-38ae4debde11d.mp3",
       "pub_date": "2024-11-20T15:00:00.000Z",
       "guest": "Simón Muñoz",
-      "role": "Principal PM Voicemod",
-      "company": null,
-      "company_slug": null,
+      "role": "Principal PM",
+      "company": "Voicemod",
+      "company_slug": "voicemod",
       "stage": null,
       "practices": [
         "discovery",
@@ -935,14 +935,14 @@
       ],
       "status": "weak",
       "processed_at": "2026-08-03T18:12:56.385Z",
-      "thesis": "",
+      "thesis": "Voicemod’s guest argues PMs should live in the business bubble (value and problem choice) rather than as ticket brokers between design and eng. Held weak: myths essay, thin steady-state Voicemod OS detail.",
       "context": "",
       "ownership": [],
       "evidence": [],
       "gaps": [],
       "loop_bullets": [],
       "loop_mermaid": null,
-      "overview": "",
+      "overview": "Voicemod’s guest argues PMs should live in the business bubble (value and problem choice) rather than as ticket brokers between design and eng. Held weak: myths essay, thin steady-state Voicemod OS detail.",
       "workflow_mermaid": null
     },
     {
@@ -1003,9 +1003,9 @@
       "audio_url": "https://anchor.fm/s/ddca5200/podcast/play/94039612/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2024-10-6%2F389340898-44100-2-6baf27d1e41cf.mp3",
       "pub_date": "2024-11-06T15:00:00.000Z",
       "guest": "Juan Castillo",
-      "role": "Founder GuruWalk",
-      "company": null,
-      "company_slug": null,
+      "role": "Founder",
+      "company": "GuruWalk",
+      "company_slug": "guruwalk",
       "stage": "growth",
       "practices": [
         "discovery",
@@ -1015,14 +1015,14 @@
       ],
       "status": "weak",
       "processed_at": "2026-08-03T18:01:31.151Z",
-      "thesis": "",
+      "thesis": "GuruWalk’s radical autonomy culture let a crisis swarm ship Anem (Valencia flood car-sharing) without hierarchy gates — mission over monetization. Held weak: one-off crisis product, not a steady org card.",
       "context": "",
       "ownership": [],
       "evidence": [],
       "gaps": [],
       "loop_bullets": [],
       "loop_mermaid": null,
-      "overview": "",
+      "overview": "GuruWalk’s radical autonomy culture let a crisis swarm ship Anem (Valencia flood car-sharing) without hierarchy gates — mission over monetization. Held weak: one-off crisis product, not a steady org card.",
       "workflow_mermaid": null
     },
     {
@@ -2291,7 +2291,7 @@
       ],
       "status": "weak",
       "processed_at": "2026-08-03T18:13:05.815Z",
-      "thesis": "Growth is a continuous, data-driven process of experimentation focused on identifying and executing opportunities to accelerate business expansion.",
+      "thesis": "Product Hackers frames growth as continuous experimentation owned across the company — not a siloed growth team. Held weak: agency/playbook episode, soft thesis for the public map.",
       "context": "Product Hackers is an agency that embeds growth teams into client companies to drive expansion. They operate across various business models, from e-commerce to SaaS, focusing on measurable growth outcomes.",
       "ownership": [
         "**Discovery:** Growth team, in collaboration with client stakeholders.",
@@ -2319,7 +2319,7 @@
         "F --> G(Iterate or Scale);"
       ],
       "loop_mermaid": "flowchart TD\n    A[Define Goals] --> B(Identify Opportunities);\n    B --> C(Generate Ideas);\n    C --> D(Formulate Hypotheses);\n    D --> E(Design & Run Experiments);\n    E --> F(Analyze Results);\n    F --> G(Iterate or Scale);",
-      "overview": "Growth is a continuous, data-driven process of experimentation focused on identifying and executing opportunities to accelerate business expansion.",
+      "overview": "Product Hackers frames growth as continuous experimentation owned across the company — not a siloed growth team. Held weak: agency/playbook episode, soft thesis for the public map.",
       "workflow_mermaid": "flowchart TD\n    A[Define Goals] --> B(Identify Opportunities);\n    B --> C(Generate Ideas);\n    C --> D(Formulate Hypotheses);\n    D --> E(Design & Run Experiments);\n    E --> F(Analyze Results);\n    F --> G(Iterate or Scale);"
     },
     {

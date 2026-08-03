@@ -5,16 +5,17 @@ url: "https://www.youtube.com/watch?v=Y2_1WVGUKjw"
 audio_url: "https://anchor.fm/s/ddca5200/podcast/play/94039612/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2024-10-6%2F389340898-44100-2-6baf27d1e41cf.mp3"
 pub_date: "2024-11-06T15:00:00.000Z"
 guest: "Juan Castillo"
-role: "Founder GuruWalk"
-company: null
-company_slug: null
+role: "Founder"
+company: "GuruWalk"
+company_slug: "guruwalk"
 stage: "growth"
 practices: ["discovery", "delivery", "growth", "founder"]
 status: weak
 processed_at: 2026-08-03T18:01:31.151Z
 ---
 
-## Thesis — A company's culture of radical autonomy and intrinsic motivation enables rapid, mission-driven product development in response to emergent crises.
+## Thesis
+GuruWalk’s radical autonomy culture let a crisis swarm ship Anem (Valencia flood car-sharing) without hierarchy gates — mission over monetization. Held weak: one-off crisis product, not a steady org card.
 
 ## Context — GuruWalk is a global platform for free tours, connecting travelers with local guides. The company operates with a unique culture prioritizing employee motivation and commitment, which facilitated the swift creation of a new product, Anem, to address immediate mobility issues in Valencia following severe flooding.
 

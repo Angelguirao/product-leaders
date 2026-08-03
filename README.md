@@ -43,3 +43,5 @@ npm run dev
 | `/docs/how-to-read` | How to read a card |
 
 Live: [product-leaders-self.vercel.app](https://product-leaders-self.vercel.app)
+
+**Daily refresh:** GitHub Actions runs `npm run refresh` (catalog → process pending → index). See [docs/CRON.md](docs/CRON.md).

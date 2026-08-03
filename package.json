@@ -8,6 +8,8 @@
     "catalog": "node scripts/catalog.mjs",
     "process": "node scripts/process.mjs",
     "rebrief": "node scripts/process.mjs --from-raw",
+    "refresh": "node scripts/refresh.mjs",
+    "pending": "node scripts/pending.mjs",
     "check-keys": "node scripts/check-keys.mjs",
     "index": "node scripts/build-index.mjs",
     "predev": "node scripts/build-index.mjs",

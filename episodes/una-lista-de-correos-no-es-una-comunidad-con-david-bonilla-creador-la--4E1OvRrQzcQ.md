@@ -4,17 +4,18 @@ youtube_id: "4E1OvRrQzcQ"
 url: "https://www.youtube.com/watch?v=4E1OvRrQzcQ"
 audio_url: "https://anchor.fm/s/ddca5200/podcast/play/97362490/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2025-0-21%2F393462081-44100-2-598a107100563.mp3"
 pub_date: "2025-01-22T15:00:00.000Z"
-guest: null
-role: null
-company: null
-company_slug: null
+guest: "David Bonilla"
+role: "Creator"
+company: "Bonilista"
+company_slug: "bonilista"
 stage: "growth"
 practices: ["ai_product", "discovery", "delivery", "growth"]
 status: weak
 processed_at: 2026-08-03T17:58:10.550Z
 ---
 
-## Thesis — Building businesses around community requires focusing on genuine engagement rather than follower counts.
+## Thesis
+Bonilista treats an email list as insufficient for community — product is belonging and participation, not broadcast. Held weak: media/community thesis, not a product-org operating system.
 
 ## Context — David Bonilla is a product leader and entrepreneur who has founded multiple companies and created a prominent tech newsletter, La Bonilista. His ventures span recruitment, creator community tools, and M&A advisory, all stemming from his deep understanding of community building and product development.
 

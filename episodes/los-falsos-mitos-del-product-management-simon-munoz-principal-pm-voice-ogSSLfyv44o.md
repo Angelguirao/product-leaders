@@ -5,16 +5,17 @@ url: "https://www.youtube.com/watch?v=ogSSLfyv44o"
 audio_url: "https://anchor.fm/s/ddca5200/podcast/play/94668505/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2024-10-19%2F390118628-44100-2-38ae4debde11d.mp3"
 pub_date: "2024-11-20T15:00:00.000Z"
 guest: "Simón Muñoz"
-role: "Principal PM Voicemod"
-company: null
-company_slug: null
+role: "Principal PM"
+company: "Voicemod"
+company_slug: "voicemod"
 stage: null
 practices: ["discovery", "delivery", "roles", "founder"]
 status: weak
 processed_at: 2026-08-03T18:12:56.385Z
 ---
 
-## Thesis — Product managers should focus on business value and problem-solving rather than just execution.
+## Thesis
+Voicemod’s guest argues PMs should live in the business bubble (value and problem choice) rather than as ticket brokers between design and eng. Held weak: myths essay, thin steady-state Voicemod OS detail.
 
 ## Context — This episode features Simón Muñoz, Principal PM at Voicemod and founder of the Estrategia de Producto newsletter, discussing common myths in product management.
 

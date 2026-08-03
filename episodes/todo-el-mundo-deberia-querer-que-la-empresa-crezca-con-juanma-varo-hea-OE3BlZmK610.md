@@ -15,7 +15,8 @@ processed_at: 2026-08-03T18:13:05.815Z
 ---
 
 ## Thesis
-Growth is a continuous, data-driven process of experimentation focused on identifying and executing opportunities to accelerate business expansion.
+Product Hackers frames growth as continuous experimentation owned across the company — not a siloed growth team. Held weak: agency/playbook episode, soft thesis for the public map.
+
 
 ## Context
 Product Hackers is an agency that embeds growth teams into client companies to drive expansion. They operate across various business models, from e-commerce to SaaS, focusing on measurable growth outcomes.

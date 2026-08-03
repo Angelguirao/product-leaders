@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="ApoloKids">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f4efe6"/>
+      <stop offset="100%" stop-color="#efe8dc"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1040" cy="80" r="180" fill="#e8c4b0" opacity="0.45"/>
+  <circle cx="120" cy="540" r="140" fill="#ddd4c4" opacity="0.55"/>
+  <text x="80" y="120" font-family="Georgia, 'Times New Roman', serif" font-size="26" fill="#6b6358" letter-spacing="3">PRODUCT LEADERS ATLAS</text>
+  <text x="80" y="200" font-family="Georgia, 'Times New Roman', serif" font-size="22" fill="#b85c38">product org</text>
+  <text x="80" y="270" font-family="Georgia, 'Times New Roman', serif" font-size="64" fill="#2a2318">ApoloKids</text>
+  <text x="80" y="360" font-family="Georgia, 'Times New Roman', serif" font-size="34" fill="#2a2318"><tspan x="80" dy="0">ApoloKids treats inclusion as a core</tspan><tspan x="80" dy="44">product constraint for kids’ learning</tspan><tspan x="80" dy="44">games — accessibility shapes scope, not a</tspan><tspan x="80" dy="44">late compliance checklist.</tspan></text>
+</svg>
