@@ -66,6 +66,9 @@ const compareHref =
       }
       <p class="company-os__actions">
         <a class="text-link" href={compareHref}>Compare with peers →</a>
+        <button type="button" class="text-link" id="copy-page-link" data-copied="Copied link">
+          Copy link
+        </button>
         <a class="text-link" href="/docs/how-to-read">How to read</a>
       </p>
     </header>
@@ -87,8 +90,21 @@ const compareHref =
     }
 
     {
-      company.episodes.map((e) => (
+      company.episodes.map((e, i) => (
         <section class="company-os__block">
+          {company.episodes.length > 1 ? (
+            <header class="company-os__ep-head">
+              <p class="section-label">
+                Interview {i + 1} of {company.episodes.length}
+                {e.guest
+                  ? ` · ${e.guest}${e.role ? `, ${e.role}` : ""}`
+                  : ""}
+              </p>
+              {e.thesis && e.thesis !== thesis ? (
+                <p class="company-os__ep-thesis">{e.thesis}</p>
+              ) : null}
+            </header>
+          ) : null}
           {e.context ? <p class="company-os__snapshot">{e.context}</p> : null}
 
           <h2>Operating loop</h2>
@@ -151,3 +167,22 @@ const compareHref =
     }
   </article>
 </Base>
+
+<script>
+  document.getElementById("copy-page-link")?.addEventListener("click", async (ev) => {
+    const btn = /** @type {HTMLButtonElement} */ (ev.currentTarget);
+    const label = btn.textContent;
+    try {
+      await navigator.clipboard.writeText(location.href);
+      btn.textContent = btn.getAttribute("data-copied") || "Copied";
+      setTimeout(() => {
+        btn.textContent = label;
+      }, 1600);
+    } catch {
+      btn.textContent = "Copy failed";
+      setTimeout(() => {
+        btn.textContent = label;
+      }, 1600);
+    }
+  });
+</script>

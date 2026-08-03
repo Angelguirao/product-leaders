@@ -33,7 +33,8 @@ processed_at: 2026-08-03T18:55:52.287Z
 * Design: Unknown
 
 ## Evidence
-* *Enjoy the videos and music you love, upload original content, and share it all with friends, family, and the world on YouTube.*
+*No clean quote extracted — see interview link.*
+
 
 ## Gaps
 * The extract does not detail the company's product development lifecycle or internal operating model.

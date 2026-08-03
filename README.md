@@ -41,6 +41,7 @@ npm run dev
 | `/practices` | Cross-company practice browse |
 | `/browse` | All episode cards (filter by published / weak / stub) |
 | `/docs/how-to-read` | How to read a card |
+| `/docs/about` | What this is + share links |
 
 Live: [product-leaders-self.vercel.app](https://product-leaders-self.vercel.app)
 

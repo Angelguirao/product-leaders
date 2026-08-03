@@ -36,7 +36,8 @@ flowchart TD
 * Design: Not explicitly mentioned.
 
 ## Evidence
-* *Enjoy the videos and music you love, upload original content, and share it all with friends, family, and the world on YouTube.*
+*No clean quote extracted — see interview link.*
+
 
 ## Gaps
 * Specific methodologies for structured discovery are not detailed.

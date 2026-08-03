@@ -2793,6 +2793,65 @@
     "episode_count": 1
   },
   {
+    "slug": "thiga",
+    "name": "Thiga",
+    "stage": "agency",
+    "practices": [
+      "discovery",
+      "delivery",
+      "metrics",
+      "growth"
+    ],
+    "guests": [
+      {
+        "name": "Diego Chico de Guzmán",
+        "role": "CEO",
+        "episode_slug": "el-evento-de-producto-mas-grande-de-espana-diego-chico-de-guzman-ceo-d-mRynvBSzzLo"
+      }
+    ],
+    "episodes": [
+      {
+        "slug": "el-evento-de-producto-mas-grande-de-espana-diego-chico-de-guzman-ceo-d-mRynvBSzzLo",
+        "title": "\\\"El evento de PRODUCTO más GRANDE de España\\\" | Diego Chico de Guzmán, CEO de Thiga España",
+        "guest": "Diego Chico de Guzmán",
+        "role": "CEO",
+        "pub_date": "2024-04-24T14:00:00.000Z",
+        "url": "https://www.youtube.com/watch?v=mRynvBSzzLo",
+        "thesis": "Thiga España treats La Product Conf as positioning infrastructure — credibility and talent magnet first, ticket revenue second; consulting rides the community halo.",
+        "context": "Thiga España is a product management consultancy that also fosters Spain's largest product community through events and content. The company was founded in 2019, aiming to replicate its successful French model in the Spanish market.",
+        "ownership": [
+          "**Discovery:** Primarily owned by consultants engaging with clients and understanding market needs.",
+          "**Prioritization:** Supported by consultants and people managers who align with client objectives.",
+          "**Shipping:** Driven by consultants executing projects for clients.",
+          "**Sales Input:** Handled by the business development and leadership team, including the CEO.",
+          "**Design:** Supported by consultants with design backgrounds and collaboration with client design teams."
+        ],
+        "evidence": [
+          "*The most important thing is positioning, positioning, and positioning.*",
+          "*Our main objective is positioning. The Product Conf helps Thiga position itself and gain credibility.*"
+        ],
+        "gaps": [
+          "The specific metrics Thiga uses to measure the success of its consulting engagements are not detailed.",
+          "The interview does not elaborate on the internal product development processes for Thiga's own tools or content.",
+          "Details regarding the day-to-day operational cadence and rituals within Thiga's consulting teams are not provided."
+        ],
+        "loop_bullets": [
+          "The core operating loop for Thiga España involves:",
+          "1.  **Consulting Services:** Providing experienced product management consultants to clients.",
+          "2.  **Community Building:** Organizing events like La Product Conf to connect and educate the product community.",
+          "3.  **Content Creation:** Publishing books and sharing tools for product professionals.",
+          "4.  **Talent Development:** Focusing on consultant growth through internal knowledge sharing and structured onboarding.",
+          "5.  **Market Positioning:** Using events and community engagement to establish Thiga as a leading product consultancy."
+        ],
+        "loop_mermaid": null,
+        "overview": "Thiga España treats La Product Conf as positioning infrastructure — credibility and talent magnet first, ticket revenue second; consulting rides the community halo.",
+        "workflow_mermaid": null
+      }
+    ],
+    "thesis": "Thiga España treats La Product Conf as positioning infrastructure — credibility and talent magnet first, ticket revenue second; consulting rides the community halo.",
+    "episode_count": 1
+  },
+  {
     "slug": "ting",
     "name": "Ting",
     "stage": "early",

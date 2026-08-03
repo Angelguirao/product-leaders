@@ -8,26 +8,25 @@ guest: "Diego Chico de Guzmán"
 role: "CEO"
 company: "Thiga"
 company_slug: "thiga"
-stage: "growth"
+stage: "agency"
 practices: ["discovery", "delivery", "metrics", "growth"]
-status: weak
+status: published
 processed_at: 2026-08-03T18:18:35.493Z
 ---
 
 ## Thesis
-Thiga España treats La Product Conf as market-positioning infrastructure — credibility and talent magnet first, ticket revenue second.
-
+Thiga España treats La Product Conf as positioning infrastructure — credibility and talent magnet first, ticket revenue second; consulting rides the community halo.
 
 ## Context
-Tiga España is a product management consultancy that also fosters Spain's largest product community through events and content. The company was founded in 2019, aiming to replicate its successful French model in the Spanish market.
+Thiga España is a product management consultancy that also fosters Spain's largest product community through events and content. The company was founded in 2019, aiming to replicate its successful French model in the Spanish market.
 
 ## Operating loop
-The core operating loop for Tiga España involves:
+The core operating loop for Thiga España involves:
 1.  **Consulting Services:** Providing experienced product management consultants to clients.
 2.  **Community Building:** Organizing events like La Product Conf to connect and educate the product community.
 3.  **Content Creation:** Publishing books and sharing tools for product professionals.
 4.  **Talent Development:** Focusing on consultant growth through internal knowledge sharing and structured onboarding.
-5.  **Market Positioning:** Using events and community engagement to establish Tiga as a leading product consultancy.
+5.  **Market Positioning:** Using events and community engagement to establish Thiga as a leading product consultancy.
 
 ## Ownership
 -   **Discovery:** Primarily owned by consultants engaging with clients and understanding market needs.
@@ -37,13 +36,13 @@ The core operating loop for Tiga España involves:
 -   **Design:** Supported by consultants with design backgrounds and collaboration with client design teams.
 
 ## Evidence
--   *The most important thing is positioning, positioning, and positioning.*
--   *Our main objective is positioning. The Product Conf helps Tiga position itself and gain credibility.*
+*   *The most important thing is positioning, positioning, and positioning.*
+*   *Our main objective is positioning. The Product Conf helps Thiga position itself and gain credibility.*
 
 ## Gaps
--   The specific metrics Tiga uses to measure the success of its consulting engagements are not detailed.
--   The interview does not elaborate on the internal product development processes for Tiga's own tools or content.
--   Details regarding the day-to-day operational cadence and rituals within Tiga's consulting teams are not provided.
+*   The specific metrics Thiga uses to measure the success of its consulting engagements are not detailed.
+*   The interview does not elaborate on the internal product development processes for Thiga's own tools or content.
+*   Details regarding the day-to-day operational cadence and rituals within Thiga's consulting teams are not provided.
 
 ## Listen
 

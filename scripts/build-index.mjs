@@ -174,7 +174,8 @@ for (const ep of episodes) {
   }
   const c = companyMap.get(ep.company_slug);
   if (ep.stage && (!c.stage || c.stage === "other")) c.stage = ep.stage;
-  // Keep first published thesis as company headline (later episodes stay linked)
+  // Newest episode is processed first (list is date-desc). Do not let older
+  // interviews overwrite the company headline thesis.
   if (ep.thesis && !c.thesis) c.thesis = ep.thesis;
   for (const p of ep.practices || []) c.practices.add(p);
   if (ep.guest) {

@@ -69,6 +69,18 @@ const companiesJson = JSON.stringify(
       <a class="text-link" href="/compare">Compare two or three orgs →</a>
       <a class="text-link" href="/docs/how-to-read">How to read a card</a>
       <a class="text-link" href="/docs/about">About & share</a>
+      {
+        companies.length ? (
+          <a
+            class="text-link"
+            id="random-org"
+            href={`/companies/${companies[0].slug}`}
+            data-slugs={companies.map((c) => c.slug).join(",")}
+          >
+            Random org
+          </a>
+        ) : null
+      }
     </p>
   </section>
 
@@ -282,4 +294,23 @@ const companiesJson = JSON.stringify(
   document
     .getElementById("filter-empty-reset")
     ?.addEventListener("click", resetFilters);
+
+  const random = document.getElementById("random-org");
+  if (random) {
+    const slugs = (random.getAttribute("data-slugs") || "")
+      .split(",")
+      .filter(Boolean);
+    if (slugs.length) {
+      const pick = slugs[Math.floor(Math.random() * slugs.length)];
+      random.setAttribute("href", `/companies/${pick}`);
+      random.addEventListener("click", (ev) => {
+        const next = slugs[Math.floor(Math.random() * slugs.length)];
+        random.setAttribute("href", `/companies/${next}`);
+        // allow navigation on this click with updated href
+        if (ev.metaKey || ev.ctrlKey) return;
+        ev.preventDefault();
+        location.href = `/companies/${next}`;
+      });
+    }
+  }
 </script>

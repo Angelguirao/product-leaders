@@ -83,6 +83,9 @@ const payload = JSON.stringify(options);
       <button type="button" class="filter-reset" id="cmp-surprise">
         Surprise me
       </button>
+      <button type="button" class="filter-reset" id="cmp-copy" data-copied="Copied">
+        Copy compare link
+      </button>
     </p>
     <div class="compare-grid" id="compare-grid" aria-live="polite"></div>
   </div>
@@ -194,6 +197,23 @@ const payload = JSON.stringify(options);
       if (selB) selB.value = pool[1].slug;
       if (selC) selC.value = pool[2]?.slug || "";
       render();
+    });
+
+    document.getElementById("cmp-copy")?.addEventListener("click", async (ev) => {
+      const btn = /** @type {HTMLButtonElement} */ (ev.currentTarget);
+      const label = btn.textContent;
+      try {
+        await navigator.clipboard.writeText(location.href);
+        btn.textContent = btn.getAttribute("data-copied") || "Copied";
+        setTimeout(() => {
+          btn.textContent = label;
+        }, 1600);
+      } catch {
+        btn.textContent = "Copy failed";
+        setTimeout(() => {
+          btn.textContent = label;
+        }, 1600);
+      }
     });
 
     render();
