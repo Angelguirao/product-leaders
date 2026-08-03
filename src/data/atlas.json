@@ -1,12 +1,12 @@
 {
-  "built_at": "2026-08-03T18:51:04.137Z",
-  "episode_count": 65,
+  "built_at": "2026-08-03T18:56:22.629Z",
+  "episode_count": 70,
   "company_count": 45,
-  "published_count": 52,
-  "weak_count": 12,
+  "published_count": 54,
+  "weak_count": 15,
   "stub_count": 0,
-  "briefed_count": 52,
-  "diagrammed_count": 28,
+  "briefed_count": 54,
+  "diagrammed_count": 29,
   "episodes": [
     {
       "slug": "por-que-crear-producto-para-enterprise-es-tan-dificil-eric-llonch-pm-d-lwm0eQP_nDs",
@@ -916,6 +916,35 @@
       "workflow_mermaid": "flowchart TD\n    A[Developers ingest data into Tinybird] --> B{Data is usable and productized};\n    B --> C[Developers build data products];\n    C --> D[Expose data endpoints for applications];\n    D --> E[Analyze product usage and identify issues];\n    E --> F[Team leads make product decisions];\n    F --> A;"
     },
     {
+      "slug": "las-claves-para-hacer-product-discovery-nacho-bassino-product-coach-GJZ4lXYJbLw",
+      "title": "Las Claves para hacer Product Discovery | Nacho Bassino, Product Coach",
+      "youtube_id": "GJZ4lXYJbLw",
+      "url": "https://www.youtube.com/watch?v=GJZ4lXYJbLw",
+      "audio_url": "https://anchor.fm/s/ddca5200/podcast/play/95295679/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2024-11-3%2F390900684-44100-2-1faf68f1442ae.mp3",
+      "pub_date": "2024-12-04T15:00:00.000Z",
+      "guest": "Nacho Bassino",
+      "role": "Product Coach",
+      "company": null,
+      "company_slug": null,
+      "stage": null,
+      "practices": [
+        "discovery",
+        "delivery",
+        "platform"
+      ],
+      "status": "weak",
+      "processed_at": "2026-08-03T18:55:42.778Z",
+      "thesis": "",
+      "context": "",
+      "ownership": [],
+      "evidence": [],
+      "gaps": [],
+      "loop_bullets": [],
+      "loop_mermaid": null,
+      "overview": "",
+      "workflow_mermaid": null
+    },
+    {
       "slug": "los-falsos-mitos-del-product-management-simon-munoz-principal-pm-voice-ogSSLfyv44o",
       "title": "Los Falsos Mitos del Product Management | Simón Muñoz, Principal PM Voicemod",
       "youtube_id": "ogSSLfyv44o",
@@ -1072,6 +1101,198 @@
       ],
       "loop_mermaid": null,
       "overview": "Eva shipped an adolescent-health chatbot in Uruguay in days on Dialogflow — public-health problem first; early conversational AI as distribution for teens.",
+      "workflow_mermaid": null
+    },
+    {
+      "slug": "las-claves-para-que-una-campana-en-meta-funcione-luis-encabo-founder-e-vZSvU-q3XS0",
+      "title": "Las Claves Para que una Campaña en Meta Funcione | Luis Encabo, Founder Encabo Consulting",
+      "youtube_id": "vZSvU-q3XS0",
+      "url": "https://www.youtube.com/watch?v=vZSvU-q3XS0",
+      "audio_url": "https://anchor.fm/s/ddca5200/podcast/play/93403616/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2024-9-22%2F388550683-44100-2-367a9bb283d7a.mp3",
+      "pub_date": "2024-10-23T14:00:00.000Z",
+      "guest": "Luis Encabo",
+      "role": "Founder Encabo Consulting",
+      "company": null,
+      "company_slug": null,
+      "stage": null,
+      "practices": [
+        "discovery",
+        "delivery",
+        "founder",
+        "platform"
+      ],
+      "status": "weak",
+      "processed_at": "2026-08-03T18:55:52.287Z",
+      "thesis": "",
+      "context": "",
+      "ownership": [
+        "Discovery: Unknown",
+        "Prioritization: Unknown",
+        "Shipping: Unknown",
+        "Sales-input: Unknown",
+        "Design: Unknown"
+      ],
+      "evidence": [
+        "*Enjoy the videos and music you love, upload original content, and share it all with friends, family, and the world on YouTube.*"
+      ],
+      "gaps": [
+        "The extract does not detail the company's product development lifecycle or internal operating model.",
+        "Information regarding specific metrics, team structures, or product leadership practices is absent.",
+        "The context does not elaborate on the specific services or unique value proposition beyond campaign execution."
+      ],
+      "loop_bullets": [
+        "Campaign planning and strategy",
+        "Audience segmentation and targeting",
+        "Ad creative development",
+        "Campaign launch and monitoring",
+        "Performance analysis and optimization"
+      ],
+      "loop_mermaid": null,
+      "overview": "",
+      "workflow_mermaid": null
+    },
+    {
+      "slug": "el-growth-manager-es-el-nuevo-ceo-de-la-compania-corti-cmo-coo-de-prod-HDzhA_UFrnA",
+      "title": "\\\"El Growth Manager es el nuevo CEO de la compañía\\\" | Corti CMO & COO de Product Hackers",
+      "youtube_id": "HDzhA_UFrnA",
+      "url": "https://www.youtube.com/watch?v=HDzhA_UFrnA",
+      "audio_url": "https://anchor.fm/s/ddca5200/podcast/play/93077672/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2024-9-15%2F388143820-44100-2-2fe0d0949d968.mp3",
+      "pub_date": "2024-10-16T14:00:00.000Z",
+      "guest": "Corti CMO & COO de Product Hackers",
+      "role": null,
+      "company": null,
+      "company_slug": null,
+      "stage": "growth",
+      "practices": [
+        "discovery",
+        "delivery",
+        "growth"
+      ],
+      "status": "published",
+      "processed_at": "2026-08-03T18:56:04.139Z",
+      "thesis": "Corti's team prioritizes product discovery and validation through a structured, continuous process to inform their delivery cycle.",
+      "context": "Product Hackers offers educational content and community for product professionals. The company appears to be in a growth or scale stage, serving a market focused on product management and growth strategies.",
+      "ownership": [
+        "**Discovery:** Owned by the product team, involving customer feedback and market research.",
+        "**Prioritization:** Based on validation of hypotheses.",
+        "**Shipping:** Part of the iterative development cycle.",
+        "**Sales-input:** Not explicitly mentioned.",
+        "**Design:** Not explicitly mentioned."
+      ],
+      "evidence": [
+        "*The Growth Manager is the new CEO of the company.*"
+      ],
+      "gaps": [
+        "The specific metrics used to measure success are not detailed.",
+        "The exact structure of product teams and their reporting lines is unclear.",
+        "The role of engineering in the discovery and prioritization process is not elaborated upon."
+      ],
+      "loop_bullets": [
+        "flowchart TD",
+        "A[Customer Feedback & Market Research] --> B(Hypothesis Generation);",
+        "B --> C{Validation & Prioritization};",
+        "C -- Validated --> D[Development & Iteration];",
+        "D --> E[Shipping & Monitoring];",
+        "E --> A;"
+      ],
+      "loop_mermaid": "flowchart TD\n    A[Customer Feedback & Market Research] --> B(Hypothesis Generation);\n    B --> C{Validation & Prioritization};\n    C -- Validated --> D[Development & Iteration];\n    D --> E[Shipping & Monitoring];\n    E --> A;",
+      "overview": "Corti's team prioritizes product discovery and validation through a structured, continuous process to inform their delivery cycle.",
+      "workflow_mermaid": "flowchart TD\n    A[Customer Feedback & Market Research] --> B(Hypothesis Generation);\n    B --> C{Validation & Prioritization};\n    C -- Validated --> D[Development & Iteration];\n    D --> E[Shipping & Monitoring];\n    E --> A;"
+    },
+    {
+      "slug": "la-product-fest-desde-dentro-7-entrevistas-a-speakers-sponsors-y-staff-3RDIOPMh9sk",
+      "title": "La Product Fest Desde Dentro - 7 Entrevistas a Speakers, Sponsors y Staff",
+      "youtube_id": "3RDIOPMh9sk",
+      "url": "https://www.youtube.com/watch?v=3RDIOPMh9sk",
+      "audio_url": "https://anchor.fm/s/ddca5200/podcast/play/92763329/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2024-9-8%2F387761899-44100-2-7b89c18e87e86.mp3",
+      "pub_date": "2024-10-09T14:00:00.000Z",
+      "guest": null,
+      "role": null,
+      "company": null,
+      "company_slug": null,
+      "stage": null,
+      "practices": [
+        "discovery",
+        "delivery",
+        "platform"
+      ],
+      "status": "weak",
+      "processed_at": "2026-08-03T18:56:13.272Z",
+      "thesis": "",
+      "context": "",
+      "ownership": [
+        "Discovery: Supported by user feedback and data analysis.",
+        "Prioritization: Guided by a specific framework.",
+        "Shipping: Involves development and iteration.",
+        "Sales Input: Not explicitly mentioned.",
+        "Design: Not explicitly mentioned."
+      ],
+      "evidence": [
+        "*Enjoy the videos and music you love, upload original content, and share it all with friends, family, and the world on YouTube.*"
+      ],
+      "gaps": [
+        "Specific methodologies for structured discovery are not detailed.",
+        "The exact nature of the prioritization framework is unclear.",
+        "Details on how design is integrated into the product process are absent."
+      ],
+      "loop_bullets": [
+        "flowchart TD",
+        "A[User Feedback & Data Analysis] --> B(Structured Discovery & Hypothesis Generation)",
+        "B --> C{Prioritization Framework}",
+        "C --> D[Development & Iteration]",
+        "D --> E[Shipping & Monitoring]",
+        "E --> A"
+      ],
+      "loop_mermaid": "flowchart TD\n    A[User Feedback & Data Analysis] --> B(Structured Discovery & Hypothesis Generation)\n    B --> C{Prioritization Framework}\n    C --> D[Development & Iteration]\n    D --> E[Shipping & Monitoring]\n    E --> A",
+      "overview": "",
+      "workflow_mermaid": "flowchart TD\n    A[User Feedback & Data Analysis] --> B(Structured Discovery & Hypothesis Generation)\n    B --> C{Prioritization Framework}\n    C --> D[Development & Iteration]\n    D --> E[Shipping & Monitoring]\n    E --> A"
+    },
+    {
+      "slug": "el-cruce-entre-la-belleza-y-utilidad-en-el-instituto-tramontana-con-in-pimnu4vsdvk",
+      "title": "El cruce entre la belleza y utilidad en el Instituto Tramontana con Iñigo Medina (Parte 2)",
+      "youtube_id": "pimnu4vsdvk",
+      "url": "https://www.youtube.com/watch?v=pimnu4vsdvk",
+      "audio_url": "https://anchor.fm/s/ddca5200/podcast/play/92460265/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2024-9-1%2F387381517-44100-2-acacdd56f91a3.mp3",
+      "pub_date": "2024-10-02T14:00:00.000Z",
+      "guest": null,
+      "role": null,
+      "company": null,
+      "company_slug": null,
+      "stage": null,
+      "practices": [
+        "discovery",
+        "delivery"
+      ],
+      "status": "published",
+      "processed_at": "2026-08-03T18:56:22.542Z",
+      "thesis": "Tramontana Institute operates with a product team structured around distinct disciplines, emphasizing deep expertise within each area.",
+      "context": "Tramontana Institute is an educational institution offering courses in beauty and personal care. The interview focuses on their product development approach within this context.",
+      "ownership": [
+        "Discovery: Product team, instructors",
+        "Prioritization: Product team, leadership",
+        "Shipping: Product team",
+        "Sales-input: Unknown",
+        "Design: Product team, instructors"
+      ],
+      "evidence": [
+        "*The focus is on creating a learning experience that is both beautiful and useful.*",
+        "*We want to ensure that our courses are relevant and engaging for our students.*"
+      ],
+      "gaps": [
+        "Specific metrics used to evaluate course success.",
+        "Details on the team's approach to continuous discovery.",
+        "Information on how sales or market feedback directly influences product decisions."
+      ],
+      "loop_bullets": [
+        "Define curriculum needs",
+        "Develop course content",
+        "Pilot course with select students",
+        "Gather feedback from instructors and students",
+        "Iterate on course materials",
+        "Launch course to wider audience"
+      ],
+      "loop_mermaid": null,
+      "overview": "Tramontana Institute operates with a product team structured around distinct disciplines, emphasizing deep expertise within each area.",
       "workflow_mermaid": null
     },
     {
@@ -3084,9 +3305,9 @@
         "E --> F(Focus on Narrative & Sensory Experience);",
         "F --> G(Brand Tangibility & Physical Presence);"
       ],
-      "loop_mermaid": "flowchart TD\r\n    A[Historical Tech Shifts] --> B(AI's Impact on Interaction);\r\n    B --> C(Shift from UI to Conversational/Voice);\r\n    C --> D(Loss of Designer Control);\r\n    D --> E(New Design Roles: Director/Orchestrator);\r\n    E --> F(Focus on Narrative & Sensory Experience);\r\n    F --> G(Brand Tangibility & Physical Presence);",
+      "loop_mermaid": "flowchart TD\n    A[Historical Tech Shifts] --> B(AI's Impact on Interaction);\n    B --> C(Shift from UI to Conversational/Voice);\n    C --> D(Loss of Designer Control);\n    D --> E(New Design Roles: Director/Orchestrator);\n    E --> F(Focus on Narrative & Sensory Experience);\n    F --> G(Brand Tangibility & Physical Presence);",
       "overview": "The future of product design will shift from optimizing user interfaces to embracing narrative, sensory experiences, and a deeper understanding of human psychology, especially as AI transforms interaction paradigms.",
-      "workflow_mermaid": "flowchart TD\r\n    A[Historical Tech Shifts] --> B(AI's Impact on Interaction);\r\n    B --> C(Shift from UI to Conversational/Voice);\r\n    C --> D(Loss of Designer Control);\r\n    D --> E(New Design Roles: Director/Orchestrator);\r\n    E --> F(Focus on Narrative & Sensory Experience);\r\n    F --> G(Brand Tangibility & Physical Presence);"
+      "workflow_mermaid": "flowchart TD\n    A[Historical Tech Shifts] --> B(AI's Impact on Interaction);\n    B --> C(Shift from UI to Conversational/Voice);\n    C --> D(Loss of Designer Control);\n    D --> E(New Design Roles: Director/Orchestrator);\n    E --> F(Focus on Narrative & Sensory Experience);\n    F --> G(Brand Tangibility & Physical Presence);"
     }
   ],
   "companies": [
@@ -6040,6 +6261,20 @@
           "thesis": "Mercado Libre ships product as an ecosystem of connected surfaces — each bet is judged by how it compounds the platform, not by a single app KPI."
         },
         {
+          "slug": "el-growth-manager-es-el-nuevo-ceo-de-la-compania-corti-cmo-coo-de-prod-HDzhA_UFrnA",
+          "title": "\\\"El Growth Manager es el nuevo CEO de la compañía\\\" | Corti CMO & COO de Product Hackers",
+          "company": null,
+          "company_slug": null,
+          "thesis": "Corti's team prioritizes product discovery and validation through a structured, continuous process to inform their delivery cycle."
+        },
+        {
+          "slug": "el-cruce-entre-la-belleza-y-utilidad-en-el-instituto-tramontana-con-in-pimnu4vsdvk",
+          "title": "El cruce entre la belleza y utilidad en el Instituto Tramontana con Iñigo Medina (Parte 2)",
+          "company": null,
+          "company_slug": null,
+          "thesis": "Tramontana Institute operates with a product team structured around distinct disciplines, emphasizing deep expertise within each area."
+        },
+        {
           "slug": "el-software-es-una-caja-negra-con-inigo-medina-cpo-de-filmin-parte-1-iMNLrbhi4cw",
           "title": "\\\"El Software es una CAJA NEGRA\\\" con Iñigo Medina, CPO de Filmin (Parte 1)",
           "company": "Filmin",
@@ -6601,6 +6836,20 @@
           "company": "Mercado Libre",
           "company_slug": "mercado-libre",
           "thesis": "Mercado Libre ships product as an ecosystem of connected surfaces — each bet is judged by how it compounds the platform, not by a single app KPI."
+        },
+        {
+          "slug": "el-growth-manager-es-el-nuevo-ceo-de-la-compania-corti-cmo-coo-de-prod-HDzhA_UFrnA",
+          "title": "\\\"El Growth Manager es el nuevo CEO de la compañía\\\" | Corti CMO & COO de Product Hackers",
+          "company": null,
+          "company_slug": null,
+          "thesis": "Corti's team prioritizes product discovery and validation through a structured, continuous process to inform their delivery cycle."
+        },
+        {
+          "slug": "el-cruce-entre-la-belleza-y-utilidad-en-el-instituto-tramontana-con-in-pimnu4vsdvk",
+          "title": "El cruce entre la belleza y utilidad en el Instituto Tramontana con Iñigo Medina (Parte 2)",
+          "company": null,
+          "company_slug": null,
+          "thesis": "Tramontana Institute operates with a product team structured around distinct disciplines, emphasizing deep expertise within each area."
         },
         {
           "slug": "el-software-es-una-caja-negra-con-inigo-medina-cpo-de-filmin-parte-1-iMNLrbhi4cw",
@@ -7879,6 +8128,13 @@
           "company": "Devengo",
           "company_slug": "devengo",
           "thesis": "Devengo killed an undifferentiated salary-advance product and rebuilt as account-to-account payments infrastructure — the wedge was rails, not consumer UX."
+        },
+        {
+          "slug": "el-growth-manager-es-el-nuevo-ceo-de-la-compania-corti-cmo-coo-de-prod-HDzhA_UFrnA",
+          "title": "\\\"El Growth Manager es el nuevo CEO de la compañía\\\" | Corti CMO & COO de Product Hackers",
+          "company": null,
+          "company_slug": null,
+          "thesis": "Corti's team prioritizes product discovery and validation through a structured, continuous process to inform their delivery cycle."
         },
         {
           "slug": "los-comerciales-solo-llaman-2-horas-al-dia-marta-cavestany-ceo-founder-v8QuIhRXGIw",
