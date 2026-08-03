@@ -1,0 +1,81 @@
+{
+  "_meta": {
+    "labels": {
+      "product_engineering": "Product engineering",
+      "pm_craft": "PM craft",
+      "design_led": "Design-led",
+      "founder_led": "Founder craft"
+    },
+    "blurb": "Only orgs with a clear ownership signal. Most stay unset — silence is honest."
+  },
+  "leans": {
+    "hellotickets": {
+      "lean": "product_engineering",
+      "note": "Engineers debate strategy in grooming and own product context."
+    },
+    "tinybird": {
+      "lean": "product_engineering",
+      "note": "Deleted the PM layer; technical leads own product decisions."
+    },
+    "dcycle": {
+      "lean": "product_engineering",
+      "note": "Engineers talk to customers; teams ship without CEO/sales gates."
+    },
+    "getinvoice": {
+      "lean": "founder_led",
+      "note": "Solo-founder maker loop — no classic product org."
+    },
+    "typeform": {
+      "lean": "founder_led",
+      "note": "Founder-led R&D over framework worship."
+    },
+    "automattic": {
+      "lean": "design_led",
+      "note": "Product designers absorb discovery and prioritization."
+    },
+    "shopify": {
+      "lean": "pm_craft",
+      "note": "PMs own buyer-side surfaces — checkout, payments, post-purchase."
+    },
+    "trucksters": {
+      "lean": "pm_craft",
+      "note": "Each PM owns a business-unit metric end-to-end."
+    },
+    "inology": {
+      "lean": "pm_craft",
+      "note": "PM sits in pre-sales to refuse enterprise one-offs."
+    },
+    "meta": {
+      "lean": "pm_craft",
+      "note": "PMMs sit inside product strategy with PMs."
+    },
+    "factorial": {
+      "lean": "pm_craft",
+      "note": "Growth team owns the acquire→activate experiment loop."
+    },
+    "hubspot": {
+      "lean": "pm_craft",
+      "note": "Classic PM + designer discovery collaboration."
+    },
+    "cabify": {
+      "lean": "pm_craft",
+      "note": "Head-of-product / research-led marketplace ownership."
+    },
+    "webel": {
+      "lean": "pm_craft",
+      "note": "CPO + founders + product committee own priority; product squad ships."
+    },
+    "spotify": {
+      "lean": "pm_craft",
+      "note": "Strategy re-centered at VP level after squad autonomy."
+    },
+    "citibox": {
+      "lean": "pm_craft",
+      "note": "Product prioritizes B2B economics over end-user feature polish."
+    },
+    "cobee": {
+      "lean": "pm_craft",
+      "note": "Product prioritizes employee pull so HR buys the platform."
+    }
+  }
+}

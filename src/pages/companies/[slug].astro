@@ -3,6 +3,7 @@ import Base from "../../layouts/Base.astro";
 import companies from "../../data/companies.json";
 import tensions from "../../data/tensions.json";
 import Mermaid from "../../components/Mermaid.astro";
+import { craftFor, craftShort } from "../../lib/craft.mjs";
 
 export function getStaticPaths() {
   return companies.map((c) => ({
@@ -14,6 +15,7 @@ export function getStaticPaths() {
 const { company } = Astro.props;
 const primary = company.episodes?.[0];
 const thesis = company.thesis || primary?.thesis || "";
+const craft = craftFor(company.slug);
 const bySlug = Object.fromEntries(companies.map((c) => [c.slug, c]));
 
 function peerScore(a, b) {
@@ -69,6 +71,27 @@ const compareHref =
             : ""
         }
       </p>
+      {
+        craft ? (
+          <div class="craft-callout">
+            <span class={`craft-pill craft-pill--${craft.lean}`}>
+              {craftShort(craft.lean)}
+            </span>
+            <p>{craft.note}</p>
+            <p class="craft-callout__hint">
+              Craft lean is curated from ownership signals — see{" "}
+              <a href="/tensions#product-engineering-vs-pm"
+                >product engineering vs PM craft</a
+              >.
+            </p>
+          </div>
+        ) : (
+          <p class="craft-unset">
+            No strong craft lean tagged yet — the interview doesn’t clearly land
+            eng vs PM vs design ownership.
+          </p>
+        )
+      }
       {
         company.practices?.length ? (
           <div class="tags" style="margin-top: 1rem;">

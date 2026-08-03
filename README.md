@@ -1,8 +1,8 @@
 # Product Leaders Atlas
 
-A **public English product-org map** — how real teams run product (thesis, loop, ownership) — seeded from [Entrevistas a Product Leaders](https://podcasters.spotify.com/pod/show/danidiestre) (Dani Diestre).
+A **public English product-org map** — how real teams run product, and how they disagree — seeded from [Entrevistas a Product Leaders](https://podcasters.spotify.com/pod/show/danidiestre) (Dani Diestre).
 
-All published card content is English. Unofficial. Not affiliated. See [docs/LEGAL.md](docs/LEGAL.md).
+Promise: **see opposing operating bets, then steal the one that fits.** All published card content is English. Unofficial. Not affiliated. See [docs/LEGAL.md](docs/LEGAL.md).
 
 ## What a card is
 
