@@ -2,6 +2,7 @@
 import Base from "../../layouts/Base.astro";
 import companies from "../../data/companies.json";
 import tensions from "../../data/tensions.json";
+import themesData from "../../data/tension-themes.json";
 import { craftFor, craftShort } from "../../lib/craft.mjs";
 
 export function getStaticPaths() {
@@ -28,12 +29,43 @@ const aCraft = craftFor(tension.a.slug);
 const bCraft = craftFor(tension.b.slug);
 const ogImage = `/og/tensions/${tension.id}.svg`;
 const description = `${tension.a.pole} (${aOrg.name}) vs ${tension.b.pole} (${bOrg.name}). ${tension.note}`;
+
+const themeHits = (themesData.themes || []).filter((th) =>
+  th.ids.includes(tension.id),
+);
+const relatedThemeIds = new Set(themeHits.flatMap((th) => th.ids));
+relatedThemeIds.delete(tension.id);
+
+const relatedTensions = [...relatedThemeIds]
+  .map((rid) => {
+    const t = tensions.find((x) => x.id === rid);
+    if (!t) return null;
+    const a = bySlug[t.a.slug];
+    const b = bySlug[t.b.slug];
+    if (!a || !b) return null;
+    return { ...t, aOrg: a, bOrg: b };
+  })
+  .filter(Boolean)
+  .slice(0, 4);
 ---
 
 <Base title={tension.axis} description={description} ogImage={ogImage}>
   <article class="tension tension--solo">
     <p class="section-label">
       <a href="/tensions">Tensions</a>
+      {
+        themeHits.length ? (
+          <>
+            {" · "}
+            {themeHits.map((th, i) => (
+              <>
+                {i > 0 ? " · " : null}
+                <a href={`/tensions?theme=${th.id}`}>{th.label}</a>
+              </>
+            ))}
+          </>
+        ) : null
+      }
     </p>
     <header class="tension__axis">
       <h1>{tension.axis}</h1>
@@ -85,22 +117,38 @@ const description = `${tension.a.pole} (${aOrg.name}) vs ${tension.b.pole} (${bO
       >
         Print desk cards
       </a>
-      <a
-        class="text-link"
-        href={`/pole?tension=${tension.id}&side=a`}
-      >
-        Take the pole quiz
-      </a>
+      <a class="text-link" href="/pole">Take the pole quiz</a>
+      <a class="text-link" href="/steal?go=1">Steal another bet</a>
       <button type="button" class="text-link" id="tension-copy">
         Copy link
       </button>
     </p>
   </article>
 
+  {
+    relatedTensions.length ? (
+      <section class="related-tensions">
+        <p class="section-label">More in this lens</p>
+        <div class="related-tensions__row">
+          {relatedTensions.map((t) => (
+            <a class="related-tension-chip" href={`/tensions/${t.id}`}>
+              <span class="related-tension-chip__axis">{t.axis}</span>
+              <span class="related-tension-chip__pair">
+                {t.aOrg.name} vs {t.bOrg.name}
+              </span>
+            </a>
+          ))}
+        </div>
+      </section>
+    ) : null
+  }
+
   <p class="tensions-foot">
     <a href="/tensions">All tensions</a>
     ·
     <a href="/pole">Which pole are you?</a>
+    ·
+    <a href="/steal">Steal a bet</a>
     ·
     <a href="/">Map</a>
   </p>

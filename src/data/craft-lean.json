@@ -140,6 +140,42 @@
     "nova-talent": {
       "lean": "pm_craft",
       "note": "Small product/eng team validates community features against MAU and engagement."
+    },
+    "filmin": {
+      "lean": "design_led",
+      "note": "Editorial + CPO taste own the product — cinema identity before software craft."
+    },
+    "mercadona-tech": {
+      "lean": "design_led",
+      "note": "Product designers lead discovery with PMs and domain specialists."
+    },
+    "ikualo": {
+      "lean": "founder_led",
+      "note": "Founder’s migrant banking pain sets discovery and who the product is for."
+    },
+    "gurusup": {
+      "lean": "founder_led",
+      "note": "Founder experience and internal ops pain drive the agent product bet."
+    },
+    "apolokids": {
+      "lean": "pm_craft",
+      "note": "PM owns discovery informed by research with professionals and kids’ data."
+    },
+    "n26": {
+      "lean": "pm_craft",
+      "note": "Product teams own local market insights with autonomy inside banking constraints."
+    },
+    "mercado-libre": {
+      "lean": "pm_craft",
+      "note": "Product specialists and VP-level leadership allocate ecosystem battles."
+    },
+    "nvidia": {
+      "lean": "product_engineering",
+      "note": "Architectural research owns discovery — platform craft over classic PM loops."
+    },
+    "suntropy": {
+      "lean": "founder_led",
+      "note": "Founder-led pivot from dead PLG to sales-led discovery after conversion collapse."
     }
   }
 }

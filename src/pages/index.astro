@@ -94,8 +94,9 @@ const freshTensions = newTensionIds
       <a class="text-link" href="/compare">Compare</a>
     </p>
     <p class="hero-meta">
-      {atlas.company_count} orgs · {craftOptions.reduce((n, o) => n + o.count, 0)}{" "}
-      with a craft lean · {atlas.weak_count || 0} held weak
+      {atlas.company_count} orgs · {tensions.length} tensions ·{" "}
+      {craftOptions.reduce((n, o) => n + o.count, 0)} with a craft lean ·{" "}
+      {atlas.weak_count || 0} held weak
     </p>
   </section>
 

@@ -18,21 +18,6 @@ const thesis = company.thesis || primary?.thesis || "";
 const craft = craftFor(company.slug);
 const bySlug = Object.fromEntries(companies.map((c) => [c.slug, c]));
 
-function peerScore(a, b) {
-  const ap = new Set(a.practices || []);
-  const shared = (b.practices || []).filter((p) => ap.has(p)).length;
-  const sameStage = (a.stage || "") === (b.stage || "") ? 1 : 0;
-  return shared * 2 + sameStage;
-}
-
-const peers = companies
-  .filter((c) => c.slug !== company.slug)
-  .map((c) => ({ c, score: peerScore(company, c) }))
-  .filter((x) => x.score > 0)
-  .sort((a, b) => b.score - a.score || a.c.name.localeCompare(b.c.name))
-  .slice(0, 3)
-  .map((x) => x.c);
-
 const relatedTensions = tensions
   .filter((t) => t.a.slug === company.slug || t.b.slug === company.slug)
   .map((t) => {
@@ -47,10 +32,36 @@ const relatedTensions = tensions
   })
   .filter(Boolean);
 
+const opponentSlugs = new Set(relatedTensions.map((t) => t.other.slug));
+
+function peerScore(a, b) {
+  let score = 0;
+  if (opponentSlugs.has(b.slug)) score += 12;
+  const aLean = craftFor(a.slug)?.lean;
+  const bLean = craftFor(b.slug)?.lean;
+  if (aLean && aLean === bLean) score += 4;
+  const ap = new Set(a.practices || []);
+  const shared = (b.practices || []).filter((p) => ap.has(p)).length;
+  const sameStage = (a.stage || "") === (b.stage || "") ? 1 : 0;
+  return score + shared * 2 + sameStage;
+}
+
+const peers = companies
+  .filter((c) => c.slug !== company.slug)
+  .map((c) => ({ c, score: peerScore(company, c) }))
+  .filter((x) => x.score > 0)
+  .sort((a, b) => b.score - a.score || a.c.name.localeCompare(b.c.name))
+  .slice(0, 4)
+  .map((x) => x.c);
+
 const compareHref =
-  peers.length >= 1
-    ? `/compare?a=${company.slug}&b=${peers[0].slug}${peers[1] ? `&c=${peers[1].slug}` : ""}`
-    : `/compare?a=${company.slug}`;
+  relatedTensions.length >= 1
+    ? `/compare?a=${company.slug}&b=${relatedTensions[0].other.slug}${
+        relatedTensions[1] ? `&c=${relatedTensions[1].other.slug}` : ""
+      }`
+    : peers.length >= 1
+      ? `/compare?a=${company.slug}&b=${peers[0].slug}${peers[1] ? `&c=${peers[1].slug}` : ""}`
+      : `/compare?a=${company.slug}`;
 ---
 
 <Base
@@ -148,21 +159,28 @@ const compareHref =
       ) : null
     }
 
-    {
-      peers.length ? (
-        <section class="peer-strip">
-          <p class="section-label">Nearby on the map</p>
-          <div class="peer-strip__row">
-            {peers.map((p) => (
-              <a class="peer-chip" href={`/companies/${p.slug}`}>
-                <strong>{p.name}</strong>
-                <span>{p.thesis}</span>
-              </a>
-            ))}
-          </div>
-        </section>
-      ) : null
-    }
+      {
+        peers.length ? (
+          <section class="peer-strip">
+            <p class="section-label">
+              {opponentSlugs.size
+                ? "Opponents & nearby"
+                : "Nearby on the map"}
+            </p>
+            <div class="peer-strip__row">
+              {peers.map((p) => (
+                <a class="peer-chip" href={`/companies/${p.slug}`}>
+                  <strong>{p.name}</strong>
+                  <span>
+                    {opponentSlugs.has(p.slug) ? "Argues with you · " : ""}
+                    {p.thesis}
+                  </span>
+                </a>
+              ))}
+            </div>
+          </section>
+        ) : null
+      }
 
     {
       company.episodes.map((e, i) => (
