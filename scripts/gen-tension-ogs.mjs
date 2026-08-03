@@ -1,10 +1,22 @@
 #!/usr/bin/env node
-import { writeFileSync, mkdirSync } from "node:fs";
+/**
+ * Generate missing public/og/tensions/<id>.svg files from tensions.json + companies.json.
+ * Usage: node scripts/gen-tension-ogs.mjs
+ */
+import { writeFileSync, mkdirSync, existsSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
+import { readFileSync } from "node:fs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const out = join(root, "public", "og", "tensions");
+const tensions = JSON.parse(
+  readFileSync(join(root, "src/data/tensions.json"), "utf8"),
+);
+const companies = JSON.parse(
+  readFileSync(join(root, "src/data/companies.json"), "utf8"),
+);
+const bySlug = Object.fromEntries(companies.map((c) => [c.slug, c]));
 
 function esc(s) {
   return String(s)
@@ -62,36 +74,28 @@ function svg({ axis, aPole, aName, bPole, bName }) {
 `;
 }
 
-const items = [
-  {
-    id: "underwriting-vs-rails",
-    axis: "What is the fintech wedge?",
-    aPole: "Underwriting as core IP",
-    aName: "Capchase",
-    bPole: "Kill UX — sell rails",
-    bName: "Devengo",
-  },
-  {
-    id: "factory-vs-humanization",
-    axis: "What makes DTC defensible?",
-    aPole: "Own the factory",
-    aName: "Freshly Cosmetics",
-    bPole: "Humanize the subscription",
-    bName: "Dogfy Diet",
-  },
-  {
-    id: "explore-data-vs-govern-ai",
-    axis: "How do companies unlock their data?",
-    aPole: "Explore without a gatekeeper",
-    aName: "Graphext",
-    bPole: "Prep + govern for AI",
-    bName: "Capably",
-  },
-];
-
 mkdirSync(out, { recursive: true });
-for (const item of items) {
-  const path = join(out, `${item.id}.svg`);
-  writeFileSync(path, svg(item));
+let wrote = 0;
+for (const t of tensions) {
+  const path = join(out, `${t.id}.svg`);
+  if (existsSync(path) && !process.argv.includes("--force")) continue;
+  const a = bySlug[t.a.slug];
+  const b = bySlug[t.b.slug];
+  if (!a || !b) {
+    console.warn("skip missing org", t.id);
+    continue;
+  }
+  writeFileSync(
+    path,
+    svg({
+      axis: t.axis,
+      aPole: t.a.pole,
+      aName: a.name,
+      bPole: t.b.pole,
+      bName: b.name,
+    }),
+  );
   console.log("wrote", path);
+  wrote += 1;
 }
+console.log(`done — ${wrote} new/updated`);

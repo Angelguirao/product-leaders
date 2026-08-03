@@ -132,6 +132,14 @@
     "eva": {
       "lean": "founder_led",
       "note": "Founder shipped a days-long public-health chatbot MVP before process."
+    },
+    "pitch": {
+      "lean": "design_led",
+      "note": "Competes on collaborative decks with design-system consistency as the product bet."
+    },
+    "nova-talent": {
+      "lean": "pm_craft",
+      "note": "Small product/eng team validates community features against MAU and engagement."
     }
   }
 }

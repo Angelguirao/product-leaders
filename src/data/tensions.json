@@ -310,5 +310,96 @@
       "pole": "Prep + govern for AI"
     },
     "note": "Graphext’s bet is unused data becomes useful when exploration isn’t locked behind data science; Capably sells enterprise AI adoption as data prep, governance, and ops integration before hours can be delegated."
+  },
+  {
+    "id": "talk-time-vs-solo-maker",
+    "axis": "Whose hours does automation recover?",
+    "a": {
+      "slug": "ting",
+      "pole": "Talk-time for sales reps"
+    },
+    "b": {
+      "slug": "getinvoice",
+      "pole": "Solo founder automates invoices"
+    },
+    "note": "Ting sells measurable talk-time and pipeline hygiene back to sales teams; GetInvoice is a solo-founder AI maker loop that automates SMB invoice pain without a classic product org."
+  },
+  {
+    "id": "community-product-vs-halo",
+    "axis": "Is community the product or the halo?",
+    "a": {
+      "slug": "nova-talent",
+      "pole": "Community is the product"
+    },
+    "b": {
+      "slug": "thiga",
+      "pole": "Community as consulting halo"
+    },
+    "note": "Nova Talent builds a premium B2C professional community on top of B2B headhunting; Thiga treats La Product Conf as positioning infrastructure so consulting rides the community halo."
+  },
+  {
+    "id": "lifestyle-app-vs-retail-pnl",
+    "axis": "How does retail digital earn its keep?",
+    "a": {
+      "slug": "decathlon",
+      "pole": "Sell experiences, not only gear"
+    },
+    "b": {
+      "slug": "iskaypet",
+      "pole": "Bend to retail P&L"
+    },
+    "note": "Decathlon Outdoor uses the app to reposition from selling gear to enabling outdoor experiences — PMM owns lifestyle; IskayPet ships digital only when stores and category economics can absorb it."
+  },
+  {
+    "id": "ecosystem-vs-liquidity",
+    "axis": "Platform compound or marketplace balance?",
+    "a": {
+      "slug": "mercado-libre",
+      "pole": "Ecosystem compound"
+    },
+    "b": {
+      "slug": "cabify",
+      "pole": "Two-sided liquidity"
+    },
+    "note": "Mercado Libre judges each bet by how it compounds connected surfaces; Cabify balances rider and driver liquidity as one marketplace system."
+  },
+  {
+    "id": "chat-channel-vs-netflix-kids",
+    "axis": "What ships the learning or health product?",
+    "a": {
+      "slug": "eva",
+      "pole": "Chat as public-health channel"
+    },
+    "b": {
+      "slug": "nominis",
+      "pole": "Netflix-style kids English"
+    },
+    "note": "Eva shipped adolescent sexual-health chat as a days-long Dialogflow MVP — problem first, conversational AI as distribution; Nominis teaches ages 6–12 through interactive stories and gamification instead of classroom drills."
+  },
+  {
+    "id": "mobile-mvp-vs-pmm-strategy",
+    "axis": "How does marketing craft sit in product?",
+    "a": {
+      "slug": "hubspot",
+      "pole": "Ship marketer journeys as MVPs"
+    },
+    "b": {
+      "slug": "meta",
+      "pole": "PMM inside product strategy"
+    },
+    "note": "HubSpot mobile adapts AI into on-the-go CRM workflows as fast marketer journeys; at Meta, PMMs own portfolio narrative and launch packaging with product — not bolted on after the roadmap."
+  },
+  {
+    "id": "collab-decks-vs-founder-forms",
+    "axis": "What is the collaborative content surface?",
+    "a": {
+      "slug": "pitch",
+      "pole": "Team decks + design system"
+    },
+    "b": {
+      "slug": "typeform",
+      "pole": "Founder-led form R&D"
+    },
+    "note": "Pitch assumes presentations are team work with design-system consistency, not solo PowerPoint files; Typeform explores founder-led bets that fold into the form product or spin out as separate brands."
   }
 ]
