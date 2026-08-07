@@ -216,8 +216,8 @@ for (const [key, label] of Object.entries(practiceLabels)) {
 function buildAtlasMermaid(companies, practiceLabels) {
   const lines = [
     "flowchart LR",
-    "  classDef company fill:#faf7f1,stroke:#2a2318,color:#2a2318",
-    "  classDef practice fill:#e8c4b0,stroke:#b85c38,color:#2a2318",
+    "  classDef company fill:#fafafa,stroke:#18181b,color:#18181b",
+    "  classDef practice fill:#fef3c7,stroke:#d97706,color:#18181b",
   ];
   const usedPractices = new Set();
   for (const c of companies) {
@@ -289,17 +289,17 @@ function companyOgSvg(company) {
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="${name}">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#f4efe6"/>
-      <stop offset="100%" stop-color="#efe8dc"/>
+      <stop offset="0%" stop-color="#fafafa"/>
+      <stop offset="100%" stop-color="#f4f4f5"/>
     </linearGradient>
   </defs>
   <rect width="1200" height="630" fill="url(#bg)"/>
-  <circle cx="1040" cy="80" r="180" fill="#e8c4b0" opacity="0.45"/>
-  <circle cx="120" cy="540" r="140" fill="#ddd4c4" opacity="0.55"/>
-  <text x="80" y="120" font-family="Georgia, 'Times New Roman', serif" font-size="26" fill="#6b6358" letter-spacing="3">PRODUCT LEADERS ATLAS</text>
-  <text x="80" y="200" font-family="Georgia, 'Times New Roman', serif" font-size="22" fill="#b85c38">${stage}</text>
-  <text x="80" y="270" font-family="Georgia, 'Times New Roman', serif" font-size="64" fill="#2a2318">${name}</text>
-  <text x="80" y="360" font-family="Georgia, 'Times New Roman', serif" font-size="34" fill="#2a2318">${thesisTspans}</text>
+  <circle cx="1040" cy="80" r="180" fill="#fef3c7" opacity="0.55"/>
+  <circle cx="120" cy="540" r="140" fill="#e4e4e7" opacity="0.65"/>
+  <text x="80" y="120" font-family="Georgia, 'Times New Roman', serif" font-size="26" fill="#71717a" letter-spacing="3">PRODUCT LEADERS ATLAS</text>
+  <text x="80" y="200" font-family="Georgia, 'Times New Roman', serif" font-size="22" fill="#d97706">${stage}</text>
+  <text x="80" y="270" font-family="Georgia, 'Times New Roman', serif" font-size="64" fill="#18181b">${name}</text>
+  <text x="80" y="360" font-family="Georgia, 'Times New Roman', serif" font-size="34" fill="#18181b">${thesisTspans}</text>
 </svg>
 `;
 }
@@ -320,22 +320,22 @@ function tensionOgSvg(tension, bySlug) {
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="${escapeXml(tension.axis)}">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#f4efe6"/>
-      <stop offset="100%" stop-color="#efe8dc"/>
+      <stop offset="0%" stop-color="#fafafa"/>
+      <stop offset="100%" stop-color="#f4f4f5"/>
     </linearGradient>
   </defs>
   <rect width="1200" height="630" fill="url(#bg)"/>
-  <circle cx="1040" cy="80" r="180" fill="#e8c4b0" opacity="0.45"/>
-  <circle cx="120" cy="540" r="140" fill="#ddd4c4" opacity="0.55"/>
-  <text x="80" y="100" font-family="Georgia, 'Times New Roman', serif" font-size="24" fill="#6b6358" letter-spacing="3">PRODUCT LEADERS · TENSION</text>
-  <text x="80" y="180" font-family="Georgia, 'Times New Roman', serif" font-size="48" fill="#2a2318">${axisTspans}</text>
-  <rect x="80" y="300" width="480" height="240" fill="#faf7f2" stroke="#d4cbbd"/>
-  <rect x="640" y="300" width="480" height="240" fill="#faf7f2" stroke="#d4cbbd"/>
-  <text x="110" y="350" font-family="Georgia, 'Times New Roman', serif" font-size="22" fill="#b85c38">${aPole}</text>
-  <text x="110" y="410" font-family="Georgia, 'Times New Roman', serif" font-size="40" fill="#2a2318">${aName}</text>
-  <text x="670" y="350" font-family="Georgia, 'Times New Roman', serif" font-size="22" fill="#b85c38">${bPole}</text>
-  <text x="670" y="410" font-family="Georgia, 'Times New Roman', serif" font-size="40" fill="#2a2318">${bName}</text>
-  <text x="580" y="430" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-style="italic" fill="#6b6358" text-anchor="middle">vs</text>
+  <circle cx="1040" cy="80" r="180" fill="#fef3c7" opacity="0.55"/>
+  <circle cx="120" cy="540" r="140" fill="#e4e4e7" opacity="0.65"/>
+  <text x="80" y="100" font-family="Georgia, 'Times New Roman', serif" font-size="24" fill="#71717a" letter-spacing="3">PRODUCT LEADERS · TENSION</text>
+  <text x="80" y="180" font-family="Georgia, 'Times New Roman', serif" font-size="48" fill="#18181b">${axisTspans}</text>
+  <rect x="80" y="300" width="480" height="240" fill="#ffffff" stroke="#e4e4e7"/>
+  <rect x="640" y="300" width="480" height="240" fill="#ffffff" stroke="#e4e4e7"/>
+  <text x="110" y="350" font-family="Georgia, 'Times New Roman', serif" font-size="22" fill="#d97706">${aPole}</text>
+  <text x="110" y="410" font-family="Georgia, 'Times New Roman', serif" font-size="40" fill="#18181b">${aName}</text>
+  <text x="670" y="350" font-family="Georgia, 'Times New Roman', serif" font-size="22" fill="#d97706">${bPole}</text>
+  <text x="670" y="410" font-family="Georgia, 'Times New Roman', serif" font-size="40" fill="#18181b">${bName}</text>
+  <text x="580" y="430" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-style="italic" fill="#71717a" text-anchor="middle">vs</text>
 </svg>
 `;
 }

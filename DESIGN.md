@@ -13,7 +13,7 @@ colors:
   foreground: "#18181B"
   muted: "#71717A"
   accent: "#D97706"
-  accent-soft: "#FEF3C7"
+  accent-soft: "rgba(217, 119, 6, 0.1)"
   accent-strong: "#B45309"
   surface: "#FFFFFF"
   border: "#E4E4E7"

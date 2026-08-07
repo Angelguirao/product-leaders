@@ -1,34 +1,36 @@
 /**
- * Personal cream tokens — SSOT for tbd · PersonalOS · footnotes alignment.
+ * Personal industrial tokens — SSOT for tbd · PersonalOS · footnotes alignment.
  * Holzen Nox is separate (@holzen/design-tokens).
  *
+ * @see personal-agent/DESIGN.md
  * @see docs/PERSONAL-SURFACE-TOKENS.md
  */
 :root {
-  /* Color */
-  --background: #f4efe6;
-  --background-breathe: #efe8dc;
-  --foreground: #2a2318;
-  --muted: #6b6358;
-  --accent: #b85c38;
-  --accent-soft: #e8c4b0;
-  --surface: #faf7f1;
-  --border: #ddd4c4;
-  --glow: rgba(184, 92, 56, 0.15);
+  /* Color — cool zinc + rare amber (LifeOS Industrial) */
+  --background: #fafafa;
+  --background-breathe: #f4f4f5;
+  --foreground: #18181b;
+  --muted: #71717a;
+  --accent: #d97706;
+  --accent-soft: rgba(217, 119, 6, 0.1);
+  --accent-strong: #b45309;
+  --surface: #ffffff;
+  --border: #e4e4e7;
+  --glow: rgba(217, 119, 6, 0.12);
 
-  /* Shape */
-  --radius-panel: 1.5rem;
-  --radius-card: 1rem;
-  --radius-control: 0.75rem;
+  /* Shape — tighter than cream-era soft panels */
+  --radius-panel: 0.75rem;
+  --radius-card: 0.5rem;
+  --radius-control: 0.375rem;
 
-  /* Depth (flat cream — soft only) */
-  --shadow-panel: 0 1px 0 rgba(255, 255, 255, 0.4),
-    0 16px 40px -28px rgba(42, 35, 24, 0.14);
-  --shadow-sheet: 0 24px 64px -20px rgba(42, 35, 24, 0.28);
+  /* Depth — cool ink lift, not warm brown */
+  --shadow-panel: 0 1px 0 rgba(255, 255, 255, 0.6),
+    0 12px 32px -24px rgba(24, 24, 27, 0.18);
+  --shadow-sheet: 0 24px 64px -20px rgba(24, 24, 27, 0.28);
 
   /* Type roles (fonts wired per-app via next/font) */
   --text-eyebrow: 0.625rem;
-  --tracking-eyebrow: 0.22em;
+  --tracking-eyebrow: 0.18em;
 
-  /* Fonts are wired per-app via next/font → --font-cormorant / --font-source-serif */
+  /* Fonts: --font-space-grotesk / --font-dm-sans / --font-jetbrains → display/body/mono */
 }
