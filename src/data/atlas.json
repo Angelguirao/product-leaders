@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-08-07T18:45:04.195Z",
+  "built_at": "2026-08-10T08:22:34.955Z",
   "episode_count": 73,
   "company_count": 57,
   "published_count": 59,
@@ -1272,9 +1272,9 @@
         "D --> E[Shipping & Monitoring];",
         "E --> A;"
       ],
-      "loop_mermaid": "flowchart TD\r\n    A[Customer Feedback & Market Research] --> B(Hypothesis Generation);\r\n    B --> C{Validation & Prioritization};\r\n    C -- Validated --> D[Development & Iteration];\r\n    D --> E[Shipping & Monitoring];\r\n    E --> A;",
+      "loop_mermaid": "flowchart TD\n    A[Customer Feedback & Market Research] --> B(Hypothesis Generation);\n    B --> C{Validation & Prioritization};\n    C -- Validated --> D[Development & Iteration];\n    D --> E[Shipping & Monitoring];\n    E --> A;",
       "overview": "Corti's team prioritizes product discovery and validation through a structured, continuous process to inform their delivery cycle.",
-      "workflow_mermaid": "flowchart TD\r\n    A[Customer Feedback & Market Research] --> B(Hypothesis Generation);\r\n    B --> C{Validation & Prioritization};\r\n    C -- Validated --> D[Development & Iteration];\r\n    D --> E[Shipping & Monitoring];\r\n    E --> A;"
+      "workflow_mermaid": "flowchart TD\n    A[Customer Feedback & Market Research] --> B(Hypothesis Generation);\n    B --> C{Validation & Prioritization};\n    C -- Validated --> D[Development & Iteration];\n    D --> E[Shipping & Monitoring];\n    E --> A;"
     },
     {
       "slug": "la-product-fest-desde-dentro-7-entrevistas-a-speakers-sponsors-y-staff-3RDIOPMh9sk",
@@ -1320,9 +1320,9 @@
         "D --> E[Shipping & Monitoring]",
         "E --> A"
       ],
-      "loop_mermaid": "flowchart TD\r\n    A[User Feedback & Data Analysis] --> B(Structured Discovery & Hypothesis Generation)\r\n    B --> C{Prioritization Framework}\r\n    C --> D[Development & Iteration]\r\n    D --> E[Shipping & Monitoring]\r\n    E --> A",
+      "loop_mermaid": "flowchart TD\n    A[User Feedback & Data Analysis] --> B(Structured Discovery & Hypothesis Generation)\n    B --> C{Prioritization Framework}\n    C --> D[Development & Iteration]\n    D --> E[Shipping & Monitoring]\n    E --> A",
       "overview": "YouTube's product organization prioritizes structured discovery and delivery processes.",
-      "workflow_mermaid": "flowchart TD\r\n    A[User Feedback & Data Analysis] --> B(Structured Discovery & Hypothesis Generation)\r\n    B --> C{Prioritization Framework}\r\n    C --> D[Development & Iteration]\r\n    D --> E[Shipping & Monitoring]\r\n    E --> A"
+      "workflow_mermaid": "flowchart TD\n    A[User Feedback & Data Analysis] --> B(Structured Discovery & Hypothesis Generation)\n    B --> C{Prioritization Framework}\n    C --> D[Development & Iteration]\n    D --> E[Shipping & Monitoring]\n    E --> A"
     },
     {
       "slug": "el-cruce-entre-la-belleza-y-utilidad-en-el-instituto-tramontana-con-in-pimnu4vsdvk",
@@ -3601,9 +3601,9 @@
         "E --> F(Focus on Narrative & Sensory Experience);",
         "F --> G(Brand Tangibility & Physical Presence);"
       ],
-      "loop_mermaid": "flowchart TD\r\n    A[Historical Tech Shifts] --> B(AI's Impact on Interaction);\r\n    B --> C(Shift from UI to Conversational/Voice);\r\n    C --> D(Loss of Designer Control);\r\n    D --> E(New Design Roles: Director/Orchestrator);\r\n    E --> F(Focus on Narrative & Sensory Experience);\r\n    F --> G(Brand Tangibility & Physical Presence);",
+      "loop_mermaid": "flowchart TD\n    A[Historical Tech Shifts] --> B(AI's Impact on Interaction);\n    B --> C(Shift from UI to Conversational/Voice);\n    C --> D(Loss of Designer Control);\n    D --> E(New Design Roles: Director/Orchestrator);\n    E --> F(Focus on Narrative & Sensory Experience);\n    F --> G(Brand Tangibility & Physical Presence);",
       "overview": "The future of product design will shift from optimizing user interfaces to embracing narrative, sensory experiences, and a deeper understanding of human psychology, especially as AI transforms interaction paradigms.",
-      "workflow_mermaid": "flowchart TD\r\n    A[Historical Tech Shifts] --> B(AI's Impact on Interaction);\r\n    B --> C(Shift from UI to Conversational/Voice);\r\n    C --> D(Loss of Designer Control);\r\n    D --> E(New Design Roles: Director/Orchestrator);\r\n    E --> F(Focus on Narrative & Sensory Experience);\r\n    F --> G(Brand Tangibility & Physical Presence);"
+      "workflow_mermaid": "flowchart TD\n    A[Historical Tech Shifts] --> B(AI's Impact on Interaction);\n    B --> C(Shift from UI to Conversational/Voice);\n    C --> D(Loss of Designer Control);\n    D --> E(New Design Roles: Director/Orchestrator);\n    E --> F(Focus on Narrative & Sensory Experience);\n    F --> G(Brand Tangibility & Physical Presence);"
     }
   ],
   "companies": [

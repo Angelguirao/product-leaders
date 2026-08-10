@@ -14,7 +14,7 @@
   <rect x="80" y="300" width="480" height="240" fill="#ffffff" stroke="#e4e4e7"/>
   <rect x="640" y="300" width="480" height="240" fill="#ffffff" stroke="#e4e4e7"/>
   <text x="110" y="350" font-family="Georgia, 'Times New Roman', serif" font-size="22" fill="#d97706">Own the factory</text>
-  <text x="110" y="410" font-family="Georgia, 'Times New Roman', serif" font-size="32" fill="#18181b">Freshly Cosmetics</text>
+  <text x="110" y="410" font-family="Georgia, 'Times New Roman', serif" font-size="40" fill="#18181b">Freshly Cosmetics</text>
   <text x="670" y="350" font-family="Georgia, 'Times New Roman', serif" font-size="22" fill="#d97706">Humanize the subscription</text>
   <text x="670" y="410" font-family="Georgia, 'Times New Roman', serif" font-size="40" fill="#18181b">Dogfy Diet</text>
   <text x="580" y="430" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-style="italic" fill="#71717a" text-anchor="middle">vs</text>
